@@ -8,17 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
-		DBC7324228972458006834B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7324128972458006834B1 /* ContentView.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
+		DBC7324E28972478006834B1 /* Card+Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7324D28972478006834B1 /* Card+Deck.swift */; };
+		DBC7325028972487006834B1 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7324F28972487006834B1 /* DownloadManager.swift */; };
+		DBC732522897D577006834B1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732512897D577006834B1 /* GameViewModel.swift */; };
+		DBC732542897E05F006834B1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732532897E05F006834B1 /* GameView.swift */; };
+		DBC732582897F391006834B1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732572897F391006834B1 /* Extensions.swift */; };
+		DBC7325A2897F469006834B1 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732592897F469006834B1 /* DeckManager.swift */; };
+		DBC7325C2897F91A006834B1 /* Kami_Deck_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */; };
+		DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7325E289857DB006834B1 /* GameView_Extensions.swift */; };
+		DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326028994EBD006834B1 /* LifePointsView.swift */; };
+		DBC732642899A97B006834B1 /* EncounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732632899A97B006834B1 /* EncounterView.swift */; };
+		DBC732662899B668006834B1 /* Encounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732652899B668006834B1 /* Encounters.swift */; };
+		DBC732682899BA29006834B1 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732672899BA29006834B1 /* Decks.swift */; };
+		DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732692899BAF8006834B1 /* AdventureViewModel.swift */; };
+		DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326B2899BEFE006834B1 /* AdventureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
-		DBC7324128972458006834B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBC732462897245A006834B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBC7324D28972478006834B1 /* Card+Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Deck.swift"; sourceTree = "<group>"; };
+		DBC7324F28972487006834B1 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		DBC732512897D577006834B1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		DBC732532897E05F006834B1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		DBC732572897F391006834B1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DBC732592897F469006834B1 /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
+		DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kami_Deck_01.txt; sourceTree = "<group>"; };
+		DBC7325E289857DB006834B1 /* GameView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView_Extensions.swift; sourceTree = "<group>"; };
+		DBC7326028994EBD006834B1 /* LifePointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifePointsView.swift; sourceTree = "<group>"; };
+		DBC732632899A97B006834B1 /* EncounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterView.swift; sourceTree = "<group>"; };
+		DBC732652899B668006834B1 /* Encounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters.swift; sourceTree = "<group>"; };
+		DBC732672899BA29006834B1 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
+		DBC732692899BAF8006834B1 /* AdventureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewModel.swift; sourceTree = "<group>"; };
+		DBC7326B2899BEFE006834B1 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +77,16 @@
 		DBC7323E28972458006834B1 /* MTG Singleplayer */ = {
 			isa = PBXGroup;
 			children = (
+				DBC732622899A969006834B1 /* Planes */,
+				DBC7325D2897F996006834B1 /* GameView */,
+				DBC732552897E087006834B1 /* Decks */,
 				DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */,
-				DBC7324128972458006834B1 /* ContentView.swift */,
 				DBC732432897245A006834B1 /* Assets.xcassets */,
 				DBC732452897245A006834B1 /* Preview Content */,
+				DBC7324D28972478006834B1 /* Card+Deck.swift */,
+				DBC7324F28972487006834B1 /* DownloadManager.swift */,
+				DBC732572897F391006834B1 /* Extensions.swift */,
+				DBC732592897F469006834B1 /* DeckManager.swift */,
 			);
 			path = "MTG Singleplayer";
 			sourceTree = "<group>";
@@ -65,6 +97,45 @@
 				DBC732462897245A006834B1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBC732552897E087006834B1 /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				DBC732562897E08F006834B1 /* Kamigawa */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		DBC732562897E08F006834B1 /* Kamigawa */ = {
+			isa = PBXGroup;
+			children = (
+				DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */,
+			);
+			path = Kamigawa;
+			sourceTree = "<group>";
+		};
+		DBC7325D2897F996006834B1 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				DBC732512897D577006834B1 /* GameViewModel.swift */,
+				DBC732532897E05F006834B1 /* GameView.swift */,
+				DBC7325E289857DB006834B1 /* GameView_Extensions.swift */,
+				DBC7326028994EBD006834B1 /* LifePointsView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		DBC732622899A969006834B1 /* Planes */ = {
+			isa = PBXGroup;
+			children = (
+				DBC732632899A97B006834B1 /* EncounterView.swift */,
+				DBC732652899B668006834B1 /* Encounters.swift */,
+				DBC732672899BA29006834B1 /* Decks.swift */,
+				DBC732692899BAF8006834B1 /* AdventureViewModel.swift */,
+				DBC7326B2899BEFE006834B1 /* AdventureView.swift */,
+			);
+			path = Planes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC7325C2897F91A006834B1 /* Kami_Deck_01.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +209,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC7324228972458006834B1 /* ContentView.swift in Sources */,
+				DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */,
+				DBC732662899B668006834B1 /* Encounters.swift in Sources */,
+				DBC7324E28972478006834B1 /* Card+Deck.swift in Sources */,
+				DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */,
 				DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */,
+				DBC732642899A97B006834B1 /* EncounterView.swift in Sources */,
+				DBC732522897D577006834B1 /* GameViewModel.swift in Sources */,
+				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,
+				DBC732542897E05F006834B1 /* GameView.swift in Sources */,
+				DBC7325028972487006834B1 /* DownloadManager.swift in Sources */,
+				DBC732682899BA29006834B1 /* Decks.swift in Sources */,
+				DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */,
+				DBC7325A2897F469006834B1 /* DeckManager.swift in Sources */,
+				DBC732582897F391006834B1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
