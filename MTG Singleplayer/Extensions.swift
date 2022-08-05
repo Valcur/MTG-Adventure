@@ -40,6 +40,21 @@ struct GrayButtonLabel: View {
     }
 }
 
+struct TextParagraph: View {
+    var text: String
+    
+    init(_ text: String) {
+        self.text = text
+    }
+    
+    var body: some View {
+        Text(text)
+            .fontWeight(.bold)
+            .font(.subheadline)
+            .foregroundColor(.white)
+    }
+}
+
 struct TextSubTitle: View {
     var text: String
     

@@ -1,0 +1,20 @@
+## Basic Deck ##
+3 NEO creature NO Simian Sling e49c4d9a-6413-440f-ba5b-396fea6c03d9 37a00f95-d563-4d51-a5f2-af139261921a
+2 NEO sorcery NO Explosive Entry 57544b37-fd5d-4da5-bbb6-7b4a09501dd1 7ba639ff-fe82-4ac3-9fb4-eac168bef053
+3 NEO creature NO Akki Ember-Keeper 8df42f4a-022c-4fcb-a953-fb165fdbfc13 4d83e837-fcd1-4833-9117-e6f1bb53caad
+3 NEO instant NO Kami's Flare d76fc3aa-3962-4d64-a082-765e09bcdf25 bef5d58e-b490-4682-9a44-12cd61a94c0f
+3 NEO creature NO Rabbit Battery c739e180-2f14-41ed-8e7e-50b7df985f35 5d33a5b7-797b-4079-8d62-edd124c0fb5a
+
+## Midrange Deck ##
+2 NEO creature NO Patchwork Automaton 0ba86a50-13df-4b26-8b3a-9e3917ff850f 7a4e1580-dd26-4f4b-ac98-3e6fa7b879d5
+2 NEO creature NO Runaway Trash-Bot 93b0bd0e-414b-45bd-9d3d-7323140ef0c0 3eebf6a6-f1fd-40a1-ac27-367deafa6f2a
+2 NEO creature NO Unstoppable Ogre 1733777d-87fe-4975-b099-1ff803a721e8 719f20d9-2baa-49b3-8c6a-89f21a07d538
+2 NEC creature NO Komainu Battle Armor 5e4d69de-1876-49a8-8ec6-a891d4a84ccf d6ecab4b-fcff-4cf9-8e26-f3c609179050
+2 NEO creature NO Bronzeplate Boar 0a09f825-0484-40b4-8adf-1028385db480 7c8f5da8-13a8-4b39-8ddc-7661892924af
+2 NEO creature NO Lizard Blades f6314e50-a610-4fff-8f60-803d23460ff0 a747e6cf-c687-4c4f-8e07-d51165d6cb62
+
+## Endgame Deck ##
+2 NEC creature NO Akki Battle Squad 5bd81d2f-46a1-4536-92e7-28c7e1892735 ca624ce6-5b99-41af-8e26-b952f5a30916
+1 NEC creature NO Taurean Mauler fd5ee26c-cc54-4dc0-b611-5cda14354a5e a4ee4648-dd6e-4ba9-b643-a7e4c430d51f
+5 NEO creature NO Kami of Industry b308fa9a-3f69-4e59-9d4b-8007d9a2b1f1 d3d00e61-3007-43da-960b-823e9ead2acf
+2 NEO instant NO Ambitious Assault 3fb399fa-123f-448e-a473-573a1fab2c78 d00d618d-abad-475b-b938-e111282ea1c3

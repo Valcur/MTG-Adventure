@@ -1,0 +1,35 @@
+## Basic Deck ##
+6 CHK creature NO Ember-Fist Zubera 52a98d1c-602b-4893-870c-190317294181 0150e3f0-237e-4669-9401-d2cd08e86387
+2 CHK creature NO Kami of Fire's Roar c247382f-821e-4f3c-9d34-450794ce74c3 4380118d-f209-446d-829b-3564796e0219
+4 BOK artifact NO Baku Altar 8443b8c2-d0ab-4fb1-ad35-7e5e4cb345b6 81e1dbb8-3df8-4e7e-b74b-baab7d6f97c1
+2 CHK artifact NO Long-Forgotten Gohei 897910d5-13a4-4e1d-8f83-235b773b8322 6fc4b500-ca74-4b90-9a8c-d4efa80ebe2c
+
+## Midrange Deck ##
+2 SOK creature NO Burning-Eye Zubera 24bf8773-c8bb-494c-a0af-aef80f5b3d47 ae9ca5c3-8367-4e08-a318-634f9d36dbdc
+2 SOK creature NO Adamaro, First to Desire 18f34bfd-7675-49df-91ea-695c510cd3c3 d2fa85ea-f5d5-4be3-a874-ce246c3e4245
+2 CHK creature NO Ore Gorger e5a9d34b-c7d4-4682-8e26-dd82e38ee84e ecc8bbb9-d6a1-474b-8f34-594b5a9d4178
+2 XLN artifact NO Vanquisher's Banner 8cf38025-5821-45a0-9483-266353b7e82d 60b7a85f-3a30-4ece-9bbb-61f3c4b796b8
+2 NEO creature NO Thundering Raiju 3d713c11-36a7-4b19-8c42-a9b61ef5902c ec1a2920-6d39-4276-921c-65cc16a45f17
+
+## Endgame Deck ##
+2 NEO creature NO Atsushi, the Blazing Sky 535f405d-94df-4f45-aedc-b331103720b7 73b64c17-8a52-4d9d-a28b-7e0e945be059
+2 CHK creature NO Earthshaker 944904a4-aab6-4ad9-96d7-6a3e47c118ca 283b47a9-c21e-4c0a-9c70-38b8ebbffab3
+2 CHK creature NO Ryusei, the Falling Star 5e99ba3b-dc2b-4c3c-84ce-228d4772cfee 17898412-6275-4762-a03b-04daf30fee7f
+2 SOK creature NO Skyfire Kirin 169c468e-0e17-450b-8954-df47d78ad8f8 2d425562-3f0f-4aa3-a761-48ba445b8380
+1 DDS artifact NO Coat of Arms 5f7f133e-58ea-41ab-b1be-be4b400fac4c 513d4c36-6ad4-4ee9-b161-3136eb59504f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

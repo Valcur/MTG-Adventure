@@ -18,15 +18,16 @@ struct EncounterView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
+                    .clipped()
                 
                 HStack {
                     Spacer()
-                    VStack(spacing: 50) {
+                    VStack(spacing: 10) {
                         ForEach(encounter.choices) { choice in
                             ChoiceView(choice: choice)
                         }
                     }
-                }.padding(.trailing, 60)
+                }
                 
                 VStack(alignment: .leading) {
                     TextLargeTitle(encounter.title)
@@ -38,7 +39,7 @@ struct EncounterView: View {
                         }
                     }
                     Spacer()
-                    TextSubTitle(encounter.description)
+                    TextParagraph(encounter.description)
                         .padding(20)
                         .frame(maxWidth: UIScreen.main.bounds.width / 2)
                         .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
@@ -59,8 +60,15 @@ struct ChoiceView: View {
             // Go to choice.encounterId
             adventureViewModel.choiceButtonPressed(choice: choice)
         }, label: {
-            GrayButtonLabel(choice.title)
-        })
+            //GrayButtonLabel(choice.title)
+            ZStack() {
+                LinearGradient(
+                            gradient: Gradient(colors: [Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)), Color(#colorLiteral(red: 0.06962847469, green: 0.06962847469, blue: 0.06962847469, alpha: 0.63))]),
+                            startPoint: .leading, endPoint: .trailing)
+
+                TextSubTitle(choice.title)
+            }
+        }).frame(width: 200)
     }
 }
 

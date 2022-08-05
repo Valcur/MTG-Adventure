@@ -19,11 +19,7 @@ struct WinningView: View {
             }.frame(height: UIScreen.main.bounds.height / 2)
         }
         .onTapGesture(count: 1) {
-            //adventureViewModel.choiceButtonPressed(choice: <#T##EncounterChoice#>)
-            let startEncounter = Encounters.plane_kamigawa["Kamigawa_Intro"]!
-            adventureViewModel.currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-            adventureViewModel.switchView()
-            
+            adventureViewModel.fightWon()
         }
     }
 }
@@ -89,6 +85,25 @@ struct CardOnBoardView: View {
                 gameViewModel.destroyPermanent(card: card)
             }
         })
+    }
+}
+
+struct EmblemView: View {
+    
+    let emblemText: String = "Creatures you control have SHROUD"
+    
+    var body: some View {
+        HStack {
+            Text(emblemText)
+                .foregroundColor(.white)
+            Spacer()
+        }
+        .padding(5)
+        .frame(width: CardSize.width.hand, height: CardSize.height.hand)
+        .overlay(
+            RoundedRectangle(cornerRadius: CardSize.cornerRadius.hand)
+                .stroke(Color.white, lineWidth: 2)
+        )
     }
 }
 

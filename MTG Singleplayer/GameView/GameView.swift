@@ -59,6 +59,9 @@ struct LeftView: View {
     
     var body: some View {
         VStack {
+            // Emblem
+            EmblemView()
+            
             // Turn Counter
             TextSubTitle("\(gameViewModel.turnCount)")
             
@@ -269,13 +272,13 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15, *) {
             GameView()
-                .environmentObject(GameViewModel(stage: 1, deckId: 1))
+                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1))
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice(PreviewDevice(rawValue: "iPad Air (5th generation)"))
                 //.previewDevice(PreviewDevice(rawValue: "iPhone 8"))
         } else {
             GameView()
-                .environmentObject(GameViewModel(stage: 1, deckId: 1))
+                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1))
         }
     }
 }

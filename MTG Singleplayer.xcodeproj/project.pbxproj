@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -16,7 +17,7 @@
 		DBC732542897E05F006834B1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732532897E05F006834B1 /* GameView.swift */; };
 		DBC732582897F391006834B1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732572897F391006834B1 /* Extensions.swift */; };
 		DBC7325A2897F469006834B1 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732592897F469006834B1 /* DeckManager.swift */; };
-		DBC7325C2897F91A006834B1 /* Kami_Deck_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */; };
+		DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBC7325B2897F91A006834B1 /* Kamigawa_Forge_01_1.txt */; };
 		DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7325E289857DB006834B1 /* GameView_Extensions.swift */; };
 		DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326028994EBD006834B1 /* LifePointsView.swift */; };
 		DBC732642899A97B006834B1 /* EncounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732632899A97B006834B1 /* EncounterView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Forge_02_1.txt; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		DBC732532897E05F006834B1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DBC732572897F391006834B1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DBC732592897F469006834B1 /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
-		DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kami_Deck_01.txt; sourceTree = "<group>"; };
+		DBC7325B2897F91A006834B1 /* Kamigawa_Forge_01_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Forge_01_1.txt; sourceTree = "<group>"; };
 		DBC7325E289857DB006834B1 /* GameView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView_Extensions.swift; sourceTree = "<group>"; };
 		DBC7326028994EBD006834B1 /* LifePointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifePointsView.swift; sourceTree = "<group>"; };
 		DBC732632899A97B006834B1 /* EncounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterView.swift; sourceTree = "<group>"; };
@@ -110,7 +112,8 @@
 		DBC732562897E08F006834B1 /* Kamigawa */ = {
 			isa = PBXGroup;
 			children = (
-				DBC7325B2897F91A006834B1 /* Kami_Deck_01.txt */,
+				DBC7325B2897F91A006834B1 /* Kamigawa_Forge_01_1.txt */,
+				DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */,
 			);
 			path = Kamigawa;
 			sourceTree = "<group>";
@@ -196,7 +199,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC7325C2897F91A006834B1 /* Kami_Deck_01.txt in Resources */,
+				DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01_1.txt in Resources */,
+				DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);

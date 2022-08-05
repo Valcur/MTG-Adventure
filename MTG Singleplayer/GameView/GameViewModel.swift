@@ -34,8 +34,8 @@ class GameViewModel: ObservableObject {
     ///  2. Add those cards to the board, graveyard or any zone where the card is supposed to go
     ///
     
-    init(stage: Int, deckId: Int) {
-        let deckData = DeckManager.getDeckFor(stage: stage, deckId: deckId)
+    init(deckName: String, stage: Int) {
+        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage)
         let deckBasic: [Card] = deckData.0
         let deckMidrange: [Card] = deckData.1
         let deckEndgame: [Card] = deckData.2
@@ -86,6 +86,18 @@ class GameViewModel: ObservableObject {
         // type and attack/not attack make the card appears at different place
         board.append(card)
         board = Card.regroupSameCardsInArray(board)
+    }
+    
+    private func sendToGraveyard(card: Card) {
+        graveyard.append(card)
+    }
+    
+    private func castCard(card: Card) {
+        if card.cardType == .instant || card.cardType == .sorcery {
+            sendToGraveyard(card: card)
+        } else {
+            addCardToBoad(card: card)
+        }
     }
     
     func removeOneCardOnBoard(card: Card) {
@@ -166,15 +178,15 @@ extension GameViewModel {
         showCardsToCastView = false
         
         for card in cardsToCast.cardsFromGraveyard {
-            addCardToBoad(card: card)
+            castCard(card: card)
         }
         
         for card in cardsToCast.cardsFromHand {
-            addCardToBoad(card: card)
+            castCard(card: card)
         }
         
         for card in cardsToCast.cardsFromLibrary {
-            addCardToBoad(card: card)
+            castCard(card: card)
         }
         
         //DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
@@ -196,6 +208,6 @@ extension GameViewModel {
         removeOneCardOnBoard(card: card)
         let tmpCard = card.recreateCard()
         tmpCard.cardCount = 1
-        graveyard.append(tmpCard)
+        sendToGraveyard(card: tmpCard)
     }
 }
