@@ -11,8 +11,8 @@ class GameViewModel: ObservableObject {
     var deck: DeckList
     var cardsToCast: CardsToCast
     @Published var hand: [Card]
-    @Published var turnCount: Int
-    let startEndGameAtTurn: Int = 5
+    @Published var manaCount: Int
+    let startEndGameAtMana: Int = 5
     @Published var board: [Card]
     @Published var graveyard: [Card]
     @Published var showCardsToCastView: Bool = false
@@ -42,7 +42,7 @@ class GameViewModel: ObservableObject {
         self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame)
         self.cardsToCast = CardsToCast(cardsFromLibrary: [], cardsFromHand: [], cardsFromGraveyard: [])
         self.hand = []
-        self.turnCount = 0
+        self.manaCount = 0
         self.board = []
         self.graveyard = []
         self.gameResult = 0
@@ -54,7 +54,7 @@ class GameViewModel: ObservableObject {
     private func drawCardFromRandomDeck() -> Card? {
         let dieResult = Int.random(in: 1...6)
         
-        if turnCount < startEndGameAtTurn {
+        if manaCount < startEndGameAtMana {
             if dieResult < 5 {
                 return getBasicCardFromDeck()
             } else {
@@ -161,8 +161,7 @@ extension GameViewModel {
     
     // Starting step 1
     func newTurn() {
-        turnCount += 1
-        print("Starting turn \(turnCount)")
+        manaCount += 1
         let card = drawCardFromRandomDeck()
         if card != nil {
             setUpCardsToCastWith(cardFromLibrary: card!)
@@ -209,5 +208,25 @@ extension GameViewModel {
         let tmpCard = card.recreateCard()
         tmpCard.cardCount = 1
         sendToGraveyard(card: tmpCard)
+    }
+    
+    func exileFromGraveyard(card: Card) {
+        for i in (0..<graveyard.count) {
+            let c = graveyard[i]
+            if card == c {
+                graveyard.remove(at: i)
+                return
+            }
+        }
+    }
+    
+    func castFromGraveyard(card: Card) {
+        castCard(card: card)
+        exileFromGraveyard(card: card)
+    }
+    
+    func returnToHandFromGraveyard(card: Card) {
+        hand.append(card)
+        exileFromGraveyard(card: card)
     }
 }

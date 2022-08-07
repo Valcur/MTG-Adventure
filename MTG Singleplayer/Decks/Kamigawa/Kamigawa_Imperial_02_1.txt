@@ -1,0 +1,18 @@
+## Basic Deck ##
+4 CHK creature NO Devoted Retainer 54970935-b3d3-4f65-a262-c4975f2787e5 fc41d6d6-d7e5-4874-b6e2-fa4c72454f15
+4 SOK creature NO Hand of Honor feb65f2e-6f71-4f29-bf31-b210c85f3ab3 ddef832c-b2be-4fa6-8d66-ac0d442f2d7d
+4 SOK creature NO Inner-Chamber Guard ea5e8920-1343-4335-b516-6db43c3bfeb0 4d34bfb9-abc7-4469-9546-aa8988da8259
+4 CHK creature NO Konda's Hatamoto 6c076776-f497-4abf-ab06-f551768cffae 83425cf6-f6ad-4302-8f07-099eabdd4b40
+
+## Midrange Deck ##
+2 CHK creature NO Masako the Humorless bb9e77c0-eb94-4bba-9b71-1935be280b75 d6b2507f-4035-47d5-8295-0a3773f187fb
+3 CHK creature NO Nagao, Bound by Honor 6207ec81-342a-49e4-ae07-426397eef0ec a45258f4-c36d-46cc-80e8-cc458351e003
+2 BOK enchantment NO Day of Destiny 64247fcb-0e1b-48c9-bdac-769d7edd8d1d 99f49ff1-54f6-4825-987b-c50a152f7275
+2 CHK artifact NO Konda's Banner a355908b-4359-4bfe-9bc4-ccf721ab3a13 759b2f39-e1b1-44aa-b49a-00ef6926a6ac
+3 XLN artifact NO Vanquisher's Banner 8cf38025-5821-45a0-9483-266353b7e82d 60b7a85f-3a30-4ece-9bbb-61f3c4b796b8
+
+## Endgame Deck ##
+3 CHK creature NO Konda, Lord of Eiganjo efea2342-bb24-472a-acfb-1b9e012af91b 5edab171-94b9-4e5e-ab61-bd8c6c8cfc38
+3 SOK creature NO Michiko Konda, Truth Seeker fbe190eb-fd4b-40e7-9a17-48c96b60f653 99c56bf0-ad9f-4419-902c-f3a3880c716c
+3 CHK creature NO Takeno, Samurai General f995e0cc-b2bd-41c3-8c08-c8873312cebe d038df46-4a30-4125-be0e-8781b16b523e
+

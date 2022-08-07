@@ -21,23 +21,43 @@ struct VisualEffectView: UIViewRepresentable {
 }
 
 struct GrayButtonLabel: View {
-    var text: String
+    let text: String?
+    let systemName: String?
     
     init(_ text: String) {
         self.text = text
+        self.systemName = nil
+    }
+    
+    init(systemName: String) {
+        self.text = nil
+        self.systemName = systemName
     }
     
     var body: some View {
-        Text(text)
-            .fontWeight(.bold)
-            .font(.subheadline)
-            .padding()
-            .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
-            .cornerRadius(40)
-            .foregroundColor(.white)
-            .padding(10)
-            .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+        if text != nil {
+            Text(text!)
+                .fontWeight(.bold)
+                .font(.subheadline)
+                .padding()
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(10)
+                .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+        } else {
+            Image(systemName: systemName!)
+                .font(.subheadline)
+                .padding()
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(10)
+                .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+        }
     }
+    
+    
 }
 
 struct TextParagraph: View {

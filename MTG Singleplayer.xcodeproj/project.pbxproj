@@ -25,6 +25,14 @@
 		DBC732682899BA29006834B1 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732672899BA29006834B1 /* Decks.swift */; };
 		DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732692899BAF8006834B1 /* AdventureViewModel.swift */; };
 		DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326B2899BEFE006834B1 /* AdventureView.swift */; };
+		DBE027E7289ECB8300F8F483 /* Kamigawa_Shrine_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027E6289ECB8300F8F483 /* Kamigawa_Shrine_1.txt */; };
+		DBE027E9289EEFB900F8F483 /* Extensions_Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE027E8289EEFB900F8F483 /* Extensions_Class.swift */; };
+		DBE027EB289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027EA289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt */; };
+		DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027EC289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt */; };
+		DBE027EF289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027EE289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt */; };
+		DBE027F1289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027F0289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt */; };
+		DBE027F328A04EE500F8F483 /* Kamigawa_BG_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027F228A04EE400F8F483 /* Kamigawa_BG_1.txt */; };
+		DBE027F528A04EFE00F8F483 /* Blank.txt in Resources */ = {isa = PBXBuildFile; fileRef = DBE027F428A04EFE00F8F483 /* Blank.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,14 @@
 		DBC732672899BA29006834B1 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		DBC732692899BAF8006834B1 /* AdventureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewModel.swift; sourceTree = "<group>"; };
 		DBC7326B2899BEFE006834B1 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
+		DBE027E6289ECB8300F8F483 /* Kamigawa_Shrine_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Shrine_1.txt; sourceTree = "<group>"; };
+		DBE027E8289EEFB900F8F483 /* Extensions_Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_Class.swift; sourceTree = "<group>"; };
+		DBE027EA289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Imperial_01_1.txt; sourceTree = "<group>"; };
+		DBE027EC289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Imperial_02_1.txt; sourceTree = "<group>"; };
+		DBE027EE289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Invader_02_1.txt; sourceTree = "<group>"; };
+		DBE027F0289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Invader_01_1.txt; sourceTree = "<group>"; };
+		DBE027F228A04EE400F8F483 /* Kamigawa_BG_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_BG_1.txt; sourceTree = "<group>"; };
+		DBE027F428A04EFE00F8F483 /* Blank.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Blank.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +105,7 @@
 				DBC7324F28972487006834B1 /* DownloadManager.swift */,
 				DBC732572897F391006834B1 /* Extensions.swift */,
 				DBC732592897F469006834B1 /* DeckManager.swift */,
+				DBE027E8289EEFB900F8F483 /* Extensions_Class.swift */,
 			);
 			path = "MTG Singleplayer";
 			sourceTree = "<group>";
@@ -104,6 +121,7 @@
 		DBC732552897E087006834B1 /* Decks */ = {
 			isa = PBXGroup;
 			children = (
+				DBE027F428A04EFE00F8F483 /* Blank.txt */,
 				DBC732562897E08F006834B1 /* Kamigawa */,
 			);
 			path = Decks;
@@ -114,6 +132,12 @@
 			children = (
 				DBC7325B2897F91A006834B1 /* Kamigawa_Forge_01_1.txt */,
 				DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */,
+				DBE027E6289ECB8300F8F483 /* Kamigawa_Shrine_1.txt */,
+				DBE027EA289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt */,
+				DBE027EC289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt */,
+				DBE027EE289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt */,
+				DBE027F0289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt */,
+				DBE027F228A04EE400F8F483 /* Kamigawa_BG_1.txt */,
 			);
 			path = Kamigawa;
 			sourceTree = "<group>";
@@ -199,7 +223,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE027EB289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt in Resources */,
+				DBE027F328A04EE500F8F483 /* Kamigawa_BG_1.txt in Resources */,
 				DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01_1.txt in Resources */,
+				DBE027EF289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt in Resources */,
+				DBE027F528A04EFE00F8F483 /* Blank.txt in Resources */,
+				DBE027F1289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt in Resources */,
+				DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt in Resources */,
+				DBE027E7289ECB8300F8F483 /* Kamigawa_Shrine_1.txt in Resources */,
 				DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
@@ -214,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */,
+				DBE027E9289EEFB900F8F483 /* Extensions_Class.swift in Sources */,
 				DBC732662899B668006834B1 /* Encounters.swift in Sources */,
 				DBC7324E28972478006834B1 /* Card+Deck.swift in Sources */,
 				DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */,

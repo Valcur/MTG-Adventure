@@ -43,6 +43,73 @@ struct LosingView: View {
     }
 }
 
+struct ManaCounterView: View {
+    
+    @EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            Button(action: {
+                gameViewModel.manaCount -= 1
+            }, label: {
+                Image(systemName: "minus")
+                    .font(.title2)
+                    .foregroundColor(.white)
+            })
+            Spacer()
+            ZStack {
+                Image(systemName: "pentagon.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+                TextSubTitle("\(gameViewModel.manaCount)")
+            }
+            Spacer()
+            Button(action: {
+                gameViewModel.manaCount += 1
+            }, label: {
+                Image(systemName: "plus")
+                    .font(.title2)
+                    .foregroundColor(.white)
+            })
+            Spacer()
+        }
+    }
+}
+
+struct PlayerGraveyardView: View {
+    
+    @EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        Button(action: {
+            withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                gameViewModel.showGraveyardView = true
+            }
+        }, label: {
+            ZStack {
+                VStack {
+                    if gameViewModel.graveyard.count > 0 {
+                        CardView(card: gameViewModel.graveyard.last!)
+                            .frame(width: CardSize.width.hand, height: CardSize.height.hand)
+                            .cornerRadius(CardSize.cornerRadius.hand)
+                            .offset(y: CardSize.height.hand / 2 - 40)
+                    } else {
+                        Image("BlackBackground")
+                            .resizable()
+                            .frame(width: CardSize.width.hand, height: CardSize.height.hand)
+                            .cornerRadius(CardSize.cornerRadius.hand)
+                            .offset(y: CardSize.height.hand / 2 - 40)
+                    }
+                }.frame(height: 80).clipped()
+                
+                
+                TextSubTitle("\(gameViewModel.graveyard.count)")
+            }
+        })
+    }
+}
+
 
 // MARK: Card Views
 struct CardView: View {
@@ -93,7 +160,7 @@ struct EmblemView: View {
     let emblemText: String = "Creatures you control have SHROUD"
     
     var body: some View {
-        HStack {
+        VStack {
             Text(emblemText)
                 .foregroundColor(.white)
             Spacer()
@@ -107,12 +174,66 @@ struct EmblemView: View {
     }
 }
 
+struct AddCountersOnPermanentsView: View {
+    var body: some View {
+        GrayButtonLabel("Counters")
+    }
+}
+
+struct ReturnToHandView: View {
+    var body: some View {
+        GrayButtonLabel(systemName: "hand.wave.fill")
+    }
+}
+
+struct TokenCreationRowView: View {
+    
+    let emblemText: String = "Creatures you control have SHROUD"
+    
+    var body: some View {
+        HStack(spacing: 10) {
+           TextSubTitle("Create")
+            
+           ScrollView(.horizontal) {
+               /*HStack(spacing: 10) {
+                   ForEach(gameViewModel.tokensAvailable) { token in
+                       Button(action: {
+                       }, label: {
+                           CardView(card: token)
+                               .frame(width: CardSize.width.small, height: CardSize.height.small)
+                               .cornerRadius(CardSize.cornerRadius.small)
+                               .onTapGesture(count: 1) {
+                                   print("Create token button pressed")
+                                   gameViewModel.createToken(token: token)
+                               }
+                               .gesture(LongPressGesture(minimumDuration: 0.1)
+                                   .sequenced(before: LongPressGesture(minimumDuration: .infinity))
+                                   .updating($isDetectingLongPress) { value, state, transaction in
+                                       switch value {
+                                           case .second(true, nil): //This means the first Gesture completed
+                                               state = true //Update the GestureState
+                                           gameViewModel.shouldZoomOnCard = true //Update the @ObservedObject property
+                                           gameViewModel.cardToZoomIn = token
+                                           default: break
+                                       }
+                                   })
+                           })
+                   }
+               }*/
+           }.frame(maxWidth: GameViewSize.tokenCreationRowWidth)
+       }
+    }
+}
+
+
+
 // MARK: Structs
 struct GameViewSize {
     static let bottomBar: CGFloat = 60
     static let leftPanelWitdh: CGFloat = 200
     static let handHeight: CGFloat = 80
     static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
+    static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 2
 }
 
 struct CardSize {

@@ -1,0 +1,22 @@
+## Basic Deck ##
+4 NEO creature NO Fang of Shigeki 9e187d43-ae75-4589-81fc-476ae95ba5b9 2dd0fef1-209f-4de5-a736-8f9bca2faa0a
+4 NEO creature NO Kappa Tech-Wrecker 2bc92c16-cd1e-4c32-9102-4593d77a9a9f d3a7bc69-4500-4e7e-94e4-67b85597bd82
+2 NEO creature NO Virus Beetle e1e489f6-37e5-469e-bca3-0e9d3fc3fa95 488ee202-0d28-4cc0-8a7d-644d9878e952
+2 NEO creature NO Kami of Transience 7baffe00-78a4-4675-9c74-29eb3882bd01 7d038a59-e589-45f4-b5ef-6d2f9875d560
+2 NEO instant NO Master's Rebuke e68ff836-6e51-4c3a-91e5-f0d649297245 7d42ca7c-5b36-45a9-b235-4f90e66f4377
+
+## Midrange Deck ##
+2 NEO creature NO Circuit Mender 1665ca9f-176d-40f1-a4e9-42da4f1236e9 defaeb68-3f8a-4740-b13f-8c71c7e9c8b4
+1 NEO creature NO Gravelighter 45ef5ea9-70a6-4999-8778-6a11cb97d28e 532c5b14-75cf-4e4c-9b80-2d56a86e2844
+4 NEO creature NO Gloomshrieker b58737a4-180e-4e2f-95ae-afd6d446d608 a2b50751-7f65-4321-86da-eef735bf8b67
+2 NEO creature NO Kami of Terrible Secrets d7d8784f-8d2d-4f7b-a6fb-5c841936d9e5 58f15af6-eaf5-41b8-b93d-5a90ca219478
+6 NEO creature NO Weaver of Harmony 494b31b2-27ef-4ca1-ac72-c2fcfc8a23a1 d1682673-e947-44e2-b9c9-cbcb9a16892b
+
+## Endgame Deck ##
+2 NEO creature NO Junji, the Midnight Sky 78a48f4e-ba4c-4d8d-938a-9ddb342a885b 9033cf27-d9e6-49b8-8ee1-c1f38c9680b9
+7 NEO creature NO Greater Tanuki b2d19232-9a80-4ea2-9aa7-c47b4719106c b4fbaee3-a10f-4b2d-b07e-d041a96a7e27
+3 NEO sorcery NO Invoke Despair f9ee4c80-20fb-4322-be02-1c78d37d7a99 35af9d5c-4449-4549-b549-c3ba4a67dee0
+
+
+
+

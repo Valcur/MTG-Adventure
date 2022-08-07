@@ -1,0 +1,30 @@
+## Basic Deck ##
+10 NEO creature NO Generous Visitor 0629747e-8dd8-4150-95ee-9d860264ccb0 d1066ccd-a932-4d05-98da-11ae4675364e
+10 NEO creature NO Spirited Companion 9c5f0d91-9d86-4e66-94fd-4af93ad01838 5aa91a9e-2fe2-43bc-aa9c-cfb8a71829ff
+4 NEO creature NO Golden-Tail Disciple 316f7091-0c75-4510-a89a-6b58bb7f0627 d631e7da-bd71-424a-a349-9bce0fd16b1f
+
+## Midrange Deck ##
+2 NEO creature NO Go-Shintai of Ancient Wars d145e4d4-a190-4c0b-8dfd-401c0111e995 5b915e8d-b972-4ae1-a1c3-74d6623963c8
+2 NEO creature NO Go-Shintai of Lost Wisdom f6a2092a-093e-4cd6-9eb0-d8ed32da896c 7ec1192c-25b8-4975-ae6c-86be28ac1840
+2 M21 enchantment NO Sanctum of Stone Fangs a1d8fcb9-26b2-4d09-9db7-e644294749f8 d1439412-618c-483d-89b9-5ea37f0f1edc
+2 CHK enchantment NO Honden of Infinite Rage 0cb76b04-d9c3-46fc-a3f2-5f0cb0d91761 b254f341-aac1-433b-a739-fee8bd7fdf69
+2 M19 creature NO Satyr Enchanter aa321138-b1a7-4b8e-a2ca-b9ce65704e92 e31c544f-a748-4180-8366-9bb1622bb99d
+1 THB creature NO Setessan Champion 38513660-260f-4663-b199-6473fa004a3b f8ce9858-747e-441c-95a8-6af44aa2098d
+1 MH2 creature NO Sythis, Harvest's Hand 0fc64fd6-f057-4056-9dca-47accb7ff036 0babfe00-9bad-48fc-b3b1-df8280242fd2
+2 MH2 enchantment NO Enchantress's Presence 795b096a-2bce-4588-a2c9-abc5ea40dc0c d18d62bc-5f3c-4b3b-88f2-693249635349
+1 MH2 enchantment NO Sterling Grove 2c275a85-5a15-46cd-a6e7-add63f9b853d ba03e105-a76c-4769-a35a-d780448890ec
+
+## Endgame Deck ##
+2 CHK enchantment NO Ghostly Prison e828b189-0e8f-43b8-b909-4c23e742e028 82d7de2b-c909-48dc-9ab7-c4a8328e37bb
+2 CHK enchantment NO Honden of Cleansing Fire 15ee7e1d-b13e-4fd0-bc41-345b6ed34f53 463f598a-7de0-4691-a61a-fe24c29f9e1b
+2 CHK enchantment NO Honden of Life's Web a1fdfcc6-4b3c-40f8-a9e4-dff9ace74a59 3c618af6-b02e-448f-9131-3c50ef0d433b
+2 CHK enchantment NO Honden of Night's Reach 3776d11b-18fb-4451-a8f8-bda4c7c23776 526419ae-5a49-40e8-ac45-f213a76c7326
+2 CHK enchantment NO Honden of Seeing Winds 45beca46-480c-4771-ba46-78b6ac7d5c2c ad732186-eeb9-4edb-a17a-51f8bac71802
+2 M21 enchantment NO Sanctum of Calm Waters 1cd1e3a8-e09d-4b61-8244-92b317132d6a 80b2fb65-5868-4cab-b45d-e103558ce7dc
+2 NEO creature NO Go-Shintai of Hidden Cruelty ff8cf669-a38a-44ae-baff-420f59492371 45e1ff1e-916b-4455-84cb-4125a79d76de
+2 NEO creature NO Go-Shintai of Shared Purpose 4cab6ea8-4a80-4b34-b758-7f2aa4d540e4 0ab91962-ebad-46f6-9f90-7477c224d93d
+
+
+
+
+

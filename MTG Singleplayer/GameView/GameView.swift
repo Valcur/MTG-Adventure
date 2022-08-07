@@ -58,30 +58,17 @@ struct LeftView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             // Emblem
             EmblemView()
             
             // Turn Counter
-            TextSubTitle("\(gameViewModel.turnCount)")
-            
-            // Draw a card
-            Button(action: {
-                withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                    gameViewModel.drawCard()
-                }
-            }, label: {
-                GrayButtonLabel("Draw a card")
-            })
+            ManaCounterView()
             
             // Show graveyard
-            Button(action: {
-                withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
-                    gameViewModel.showGraveyardView = true
-                }
-            }, label: {
-                GrayButtonLabel("Graveyard")
-            })
+            PlayerGraveyardView()
+            
+            EmblemView()
         }
     }
 }
@@ -114,6 +101,24 @@ struct BottomBarView: View {
     
     var body: some View {
         HStack {
+            // Draw a card
+            Button(action: {
+                withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                    gameViewModel.drawCard()
+                }
+            }, label: {
+                GrayButtonLabel("Draw a card")
+            })
+            
+            // Return to hand
+            ReturnToHandView()
+            
+            // Add counters
+            AddCountersOnPermanentsView()
+            
+            // Token Creation
+            TokenCreationRowView()
+            
             Spacer()
             Button(action: {
                 gameViewModel.newTurn()
@@ -132,7 +137,7 @@ struct CastedCardView: View {
         ZStack {
             VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
+                HStack(spacing: 50) {
                     Spacer()
                     if !gameViewModel.cardsToCast.cardsFromGraveyard.isEmpty {
                         CardToCastGroupView(text: "From Graveyard", cardArray: gameViewModel.cardsToCast.cardsFromGraveyard)
@@ -196,8 +201,8 @@ struct GraveyardView: View {
                         gameViewModel.showGraveyardView = false
                     }
                 }
-            VStack {
-                TextSubTitle("Touch a permanent card to put it back onto the battlefield")
+            VStack(spacing: 40) {
+                TextParagraph("Touch a permanent card to put it back onto the battlefield")
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
@@ -216,19 +221,20 @@ struct GraveyardView: View {
     
     struct GraveyardCardView: View {
         
+        @EnvironmentObject var gameViewModel: GameViewModel
         let card: Card
         
         var body: some View {
             HStack {
-                VStack {
+                VStack(spacing: 20) {
                     Button(action: {
-                        
+                        gameViewModel.exileFromGraveyard(card: card)
                     }, label: {
                         TextSubTitle("Exile")
                     })
                     
                     Button(action: {
-                        
+                        gameViewModel.castFromGraveyard(card: card)
                     }, label: {
                         CardView(card: card)
                             .frame(width: CardSize.width.big, height: CardSize.height.big)
@@ -236,9 +242,16 @@ struct GraveyardView: View {
                             .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
                     }).padding(.bottom, 10)
 
+                    HStack {
+                        // To hand
+                        Button(action: {
+                            gameViewModel.returnToHandFromGraveyard(card: card)
+                        }, label: {
+                            GrayButtonLabel(systemName: "hand.wave")
+                        })
                         
-                    
-                    // TO LIBRARY ???
+                        // To library ???
+                    }
                 }
             }
         }
