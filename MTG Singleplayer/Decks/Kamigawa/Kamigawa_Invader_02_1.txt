@@ -1,20 +1,20 @@
 ## Basic Deck ##
-3 SOK creature NO Hand of Cruelty ddbd4d8c-9763-43d7-882f-6edf8efffb0a ee194055-579a-4977-900e-e976259552ab
-3 CHK creature NO Kitsune Blademaster 2db73fff-1a89-4006-945d-a244ff2f0bef fb9d108d-ee19-4b1d-9d4b-b4c4d9b8ad0d
-3 CHK creature NO Nezumi Ronin 0f9672ac-f4fc-46e8-9fe5-93b3e66810a4 0c3b8d6f-c60a-4107-b931-31b10f497237
-3 NEO creature NO Peerless Samurai fe3b0393-dc50-4fa6-9b3f-1175a6a825e4 e5b2176d-8925-4474-9d3e-1c97192715fb
-3 CHK creature NO Ronin Houndmaster 69a3de91-bb18-4e37-975e-0f4becafa34f 614ead7b-1975-4a99-bdc2-f8afc6cf92d7
+3 SOK creature NO-AB Hand of Cruelty ddbd4d8c-9763-43d7-882f-6edf8efffb0a ee194055-579a-4977-900e-e976259552ab
+3 CHK creature NO-AB Kitsune Blademaster 2db73fff-1a89-4006-945d-a244ff2f0bef fb9d108d-ee19-4b1d-9d4b-b4c4d9b8ad0d
+3 CHK creature NO-AB  Nezumi Ronin 0f9672ac-f4fc-46e8-9fe5-93b3e66810a4 0c3b8d6f-c60a-4107-b931-31b10f497237
+3 NEO creature NO-AB  Peerless Samurai fe3b0393-dc50-4fa6-9b3f-1175a6a825e4 e5b2176d-8925-4474-9d3e-1c97192715fb
+3 CHK creature NO-AB  Ronin Houndmaster 69a3de91-bb18-4e37-975e-0f4becafa34f 614ead7b-1975-4a99-bdc2-f8afc6cf92d7
 2 NEO artifact NO Ancestral Katana 13a9b9fd-20fa-4734-9d95-3ab41ab9c7a0 d9b1ed43-ee6c-43a2-ba94-5bf71c63e070
 
 ## Midrange Deck ##
-3 NEO creature NO Heiko Yamazaki, the General a4d67f2d-6b0f-4feb-bf7d-90ab4f2e46ab 9ea5e61c-d903-410b-9acf-96a917ce05cc
-5 NEO creature NO Isshin, Two Heavens as One 65114758-9a75-43a7-96e8-0aa68faa6b24 f26eeb39-77ab-4e60-8b10-1420e755c372
-4 NEO creature NO Risona, Asari Commander 44c4839f-c92a-4535-817b-1838c47fcb5e 51d8f1fa-ca92-4e2e-91e8-195bdad82def
+3 NEO creature NO  Heiko Yamazaki, the General a4d67f2d-6b0f-4feb-bf7d-90ab4f2e46ab 9ea5e61c-d903-410b-9acf-96a917ce05cc
+5 NEO creature NO  Isshin, Two Heavens as One 65114758-9a75-43a7-96e8-0aa68faa6b24 f26eeb39-77ab-4e60-8b10-1420e755c372
+4 NEO creature NO-AB  Risona, Asari Commander 44c4839f-c92a-4535-817b-1838c47fcb5e 51d8f1fa-ca92-4e2e-91e8-195bdad82def
 3 NEO artifact NO Mirror Box 3bed1944-58dc-4679-9aee-7be4d94fb55c d507daa3-3f16-4ab1-81ea-794e5bb488fc
 
 ## Endgame Deck ##
-4 NEO creature NO Asari Captain 32e7385e-525e-4925-8cfd-bfea21fcd1bf 834b4e6a-1812-4399-8fe4-bb1686ba49ef
-2 NEO creature NO Raiyuu, Storm's Edge 9028f726-50c7-49f3-8386-e584415dcba2 37748b74-0eda-4b20-a08f-faa418adb9ff
-2 BOK creature NO Ronin Cliffrider ce8fc1bb-5dd0-41b1-909a-bbfe6b165158 f9f12b75-af29-49ea-a23d-915052db9fef
+4 NEO creature NO  Asari Captain 32e7385e-525e-4925-8cfd-bfea21fcd1bf 834b4e6a-1812-4399-8fe4-bb1686ba49ef
+2 NEO creature NO  Raiyuu, Storm's Edge 9028f726-50c7-49f3-8386-e584415dcba2 37748b74-0eda-4b20-a08f-faa418adb9ff
+2 BOK creature NO-AB Ronin Cliffrider ce8fc1bb-5dd0-41b1-909a-bbfe6b165158 f9f12b75-af29-49ea-a23d-915052db9fef
 2 2X2 instant NO Crackling Doom ee81f37b-2a81-46d7-8d2f-9091123846c4 a66e5673-e34b-46e8-a0e4-55f3ee20f99a
 2 NEO sorcery NO Invoke Despair f9ee4c80-20fb-4322-be02-1c78d37d7a99 35af9d5c-4449-4549-b549-c3ba4a67dee0

@@ -5,7 +5,7 @@
 4 CHK creature NO-AB Konda's Hatamoto 6c076776-f497-4abf-ab06-f551768cffae 83425cf6-f6ad-4302-8f07-099eabdd4b40
 
 ## Midrange Deck ##
-2 CHK creature NO-AB Masako the Humorless bb9e77c0-eb94-4bba-9b71-1935be280b75 d6b2507f-4035-47d5-8295-0a3773f187fb
+2 CHK creature NO Masako the Humorless bb9e77c0-eb94-4bba-9b71-1935be280b75 d6b2507f-4035-47d5-8295-0a3773f187fb
 3 CHK creature NO-AB Nagao, Bound by Honor 6207ec81-342a-49e4-ae07-426397eef0ec a45258f4-c36d-46cc-80e8-cc458351e003
 2 BOK enchantment NO Day of Destiny 64247fcb-0e1b-48c9-bdac-769d7edd8d1d 99f49ff1-54f6-4825-987b-c50a152f7275
 2 CHK artifact NO Konda's Banner a355908b-4359-4bfe-9bc4-ccf721ab3a13 759b2f39-e1b1-44aa-b49a-00ef6926a6ac

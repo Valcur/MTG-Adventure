@@ -1,17 +1,17 @@
 ## Basic Deck ##
-8 CHK creature NO Battle-Mad Ronin 39a7c52d-0b89-47c1-a376-5004c94c2e0f a6e4394a-fa91-4cf9-99c1-dc0bc1011c5b
-5 CHK creature NO Ronin Houndmaster 69a3de91-bb18-4e37-975e-0f4becafa34f 614ead7b-1975-4a99-bdc2-f8afc6cf92d7
-2 SOK creature NO Iizuka the Ruthless 4f40d66a-1fd8-4b06-b6cb-9cbcf33bc041 9ce461f7-385d-4379-83de-49571247c30d
+8 CHK creature NO-AB  Battle-Mad Ronin 39a7c52d-0b89-47c1-a376-5004c94c2e0f a6e4394a-fa91-4cf9-99c1-dc0bc1011c5b
+5 CHK creature NO-AB  Ronin Houndmaster 69a3de91-bb18-4e37-975e-0f4becafa34f 614ead7b-1975-4a99-bdc2-f8afc6cf92d7
+2 SOK creature NO-AB  Iizuka the Ruthless 4f40d66a-1fd8-4b06-b6cb-9cbcf33bc041 9ce461f7-385d-4379-83de-49571247c30d
 
 ## Midrange Deck ##
-4 CHK creature NO Brothers Yamazaki 5c820811-1775-4ea4-b003-721750a4d90f 7d854a02-661c-4071-9a92-a97a3ad607b3
-4 CHK creature NO Brothers Yamazaki 5c820811-1775-4ea4-b003-721750a4d90f acef8c94-469b-4a76-b507-25b51f2501ab
+4 CHK creature NO-AB  Brothers Yamazaki 5c820811-1775-4ea4-b003-721750a4d90f 7d854a02-661c-4071-9a92-a97a3ad607b3
+4 CHK creature NO-AB  Brothers Yamazaki 5c820811-1775-4ea4-b003-721750a4d90f acef8c94-469b-4a76-b507-25b51f2501ab
 4 XLN artifact NO Vanquisher's Banner 8cf38025-5821-45a0-9483-266353b7e82d 60b7a85f-3a30-4ece-9bbb-61f3c4b796b8
 
 ## Endgame Deck ##
-3 BOK creature NO Fumiko the Lowblood cba58942-b98c-45aa-8651-7dc666e31c93 482678b8-bce6-4847-9f43-1761d61645d8
-3 CHK creature NO Godo, Bandit Warlord f890d51a-dc90-4179-8423-4738a72a527c fcff0b92-edd0-4197-965b-3fd86bc884d8
-3 BOK creature NO Ronin Cliffrider ce8fc1bb-5dd0-41b1-909a-bbfe6b165158 f9f12b75-af29-49ea-a23d-915052db9fef
+3 BOK creature NO-AB  Fumiko the Lowblood cba58942-b98c-45aa-8651-7dc666e31c93 482678b8-bce6-4847-9f43-1761d61645d8
+3 CHK creature NO-AB  Godo, Bandit Warlord f890d51a-dc90-4179-8423-4738a72a527c fcff0b92-edd0-4197-965b-3fd86bc884d8
+3 BOK creature NO-AB  Ronin Cliffrider ce8fc1bb-5dd0-41b1-909a-bbfe6b165158 f9f12b75-af29-49ea-a23d-915052db9fef
 
 
 

@@ -1,0 +1,16 @@
+## Basic Deck ##
+12 NEO creature NO-B Patchwork Automaton 0ba86a50-13df-4b26-8b3a-9e3917ff850f 7a4e1580-dd26-4f4b-ac98-3e6fa7b879d5
+3 NEO sorcery NO Banishing Slash 2800830c-73c6-4097-be7b-d698c6813c38 e4b8946b-6604-49ca-98db-18a540b1b4e5
+
+## Midrange Deck ##
+7 NEO artifact NO-AB Dragonfly Suit f242d66c-011c-4b5b-a7d6-5e0bce257f73 4900862f-90f4-450b-a775-219da4ce67ef
+8 NEO artifact NO-A Imperial Recovery Unit 18ad0dd1-2d0e-46b4-8ab1-ece07180267f ac9b2c7b-c93b-4b97-999e-86faed8a26ee
+
+## Endgame Deck ##
+7 NEO artifact NO-AB Futurist Sentinel 78d9faff-2ad9-4cf9-a239-27c50435d007 8672f626-3e46-447b-841f-6a04cd380653
+3 NEC instant NO Armed and Armored 3d5b6151-d985-423b-8ade-f00958bbd3f6 133424c1-4d10-4da2-9d7c-c6ea00c0c98a
+5 NEC creature NO Research Thief ba5055ce-6809-47a4-bee6-fb97a5b60f8a d0ef159d-657a-4566-b9e0-f545df230025
+
+## Tokens ##
+1 TNEO token NO Pilot 425c9e23-3227-44a5-8e10-0cf4d0967799 be84f259-2809-48c9-9c70-861437f08c23
+1 TNEO token NO Samurai-B acdaf04d-19ef-4132-a3b6-5a99f0b5165f f68e5337-6e44-4f8f-a102-2f97b433beea

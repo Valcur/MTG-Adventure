@@ -244,6 +244,31 @@ struct TokenCreationRowView: View {
     }
 }
 
+struct ShowAttackersAndBlockersView: View {
+    @EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        HStack {
+            TextParagraph("Show")
+            Button(action: {
+                withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                    gameViewModel.toggleOnlyShowAttackers()
+                }
+            }, label: {
+                GrayButtonImageLabel("Attacker")
+            }).opacity(gameViewModel.onlyShowAttackers ? 0.5 : 1)
+            TextParagraph("/")
+            Button(action: {
+                withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                    gameViewModel.toggleOnlyShowBlockers()
+                }
+            }, label: {
+                GrayButtonImageLabel("Blocker")
+            }).opacity(gameViewModel.onlyShowBlockers ? 0.5 : 1)
+        }
+    }
+}
+
 
 
 // MARK: Structs
@@ -276,6 +301,6 @@ struct GameViewSize {
     static let leftPanelWitdh: CGFloat = 200
     static let handHeight: CGFloat = 80
     static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
-    static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 2
+    static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 5
     static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 7.5
 }

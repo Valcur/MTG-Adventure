@@ -80,12 +80,13 @@ struct BoardView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     
     var body: some View {
-        
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
                 ForEach(gameViewModel.board) { card in
-                    CardOnBoardView(card: card)
-                        .transition(.scale.combined(with: .opacity))
+                    if (!gameViewModel.onlyShowBlockers || (gameViewModel.onlyShowBlockers && card.shouldCardBlock)) && (!gameViewModel.onlyShowAttackers || (gameViewModel.onlyShowAttackers && card.shouldCardAttack)) {
+                        CardOnBoardView(card: card)
+                            .transition(.scale.combined(with: .opacity))
+                    }
                 }
             }
             .padding(.leading, 10)
@@ -102,7 +103,7 @@ struct BottomBarView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             // Draw a card
             Button(action: {
                 withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
@@ -119,11 +120,9 @@ struct BottomBarView: View {
             AddCountersOnPermanentsView()
             
             // Token Creation
-            TokenCreationRowView()
+            //TokenCreationRowView()
             
-            // Show Attackers
-            
-            // Show Blockers
+            ShowAttackersAndBlockersView()
             
             // Sword by By Bartama Graphic
             // Shield by Freepik

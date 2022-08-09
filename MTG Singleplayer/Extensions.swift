@@ -56,8 +56,26 @@ struct GrayButtonLabel: View {
                 .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
         }
     }
+}
+
+struct GrayButtonImageLabel: View {
+    let imageName: String
     
+    init(_ imageName: String) {
+        self.imageName = imageName
+    }
     
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .frame(width: 15, height: 15)
+            .padding()
+            .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+            .cornerRadius(40)
+            .foregroundColor(.white)
+            .padding(10)
+            .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+    }
 }
 
 struct TextParagraph: View {

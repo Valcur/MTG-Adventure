@@ -60,12 +60,12 @@ class Encounters {
                                         EncounterChoice(title: "Follow the river", encounterId: ["Kamigawa_Water_Haven", "Kamigawa_Water_Fight"]),
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
-        
+        /*
         "Kamigawa_Boseiju": Encounter(title: "Towashi", id: "Kamigawa_Boseiju", artistName: "Chris Ostrowski",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_01")
                                     ]),
-        
+        */
         "Kamigawa_Swamp_Intro": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Intro", artistName: "Julian Kok Joon Wen",
                                     choices: [
                                         EncounterChoice(title: "Follow the light", encounterId: "Kamigawa_Swamp_Lost_01"),

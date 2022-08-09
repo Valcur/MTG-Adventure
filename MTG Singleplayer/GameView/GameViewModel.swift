@@ -19,6 +19,10 @@ class GameViewModel: ObservableObject {
     @Published var showGraveyardView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
     
+    // For buttons
+    @Published var onlyShowAttackers: Bool = false
+    @Published var onlyShowBlockers: Bool = false
+    
     /// AI TURN
     ///
     /// 1. Draw a card from one of the deck at random following this rule
@@ -240,5 +244,15 @@ extension GameViewModel {
     func returnToHandFromGraveyard(card: Card) {
         hand.append(card)
         exileFromGraveyard(card: card)
+    }
+    
+    func toggleOnlyShowAttackers() {
+        self.onlyShowAttackers.toggle()
+        self.onlyShowBlockers = false
+    }
+    
+    func toggleOnlyShowBlockers() {
+        self.onlyShowBlockers.toggle()
+        self.onlyShowAttackers = false
     }
 }

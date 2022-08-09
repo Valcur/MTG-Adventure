@@ -6,7 +6,7 @@
 
 ## Midrange Deck ##
 4 NEO creature NO-AB Imperial Subduer bedf1dd5-b133-455b-bc3d-c7b1f469d91f 13246172-7554-4edc-b6db-23dc91e4290a
-3 NEO creature NO-AB Norika Yamazaki, the Poet 6f143c8f-cb5c-4abc-a01b-b6813f5a524c 09cb553c-58c1-4cfd-b441-297b5f09b263
+3 NEO creature NO Norika Yamazaki, the Poet 6f143c8f-cb5c-4abc-a01b-b6813f5a524c 09cb553c-58c1-4cfd-b441-297b5f09b263
 5 NEO creature NO-AB Selfless Samurai 20c9fb06-3941-456f-ba02-4fbde9deb1e2 76c27ec5-5a9b-4080-9a53-00630335a915
 
 ## Endgame Deck ##
@@ -15,6 +15,6 @@
 3 NEO sorcery NO Imperial Oath 4a4a061d-bc4e-49da-8d20-90fcb571b025 3d6750dd-2303-493b-885d-1bfb5787b16c
 
 ## Tokens ##
-1 TNEO token NO Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
-1 TNEO token NO Samurai acdaf04d-19ef-4132-a3b6-5a99f0b5165f f68e5337-6e44-4f8f-a102-2f97b433beea
+1 TNEO token NO-B Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
+1 TNEO token NO-AB Samurai acdaf04d-19ef-4132-a3b6-5a99f0b5165f f68e5337-6e44-4f8f-a102-2f97b433beea
 
