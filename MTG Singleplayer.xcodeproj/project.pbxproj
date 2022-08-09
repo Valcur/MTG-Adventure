@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */; };
+		DB31755528A2E83000799186 /* CardEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31755428A2E83000799186 /* CardEffects.swift */; };
 		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
 		DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01_1.txt */; };
 		DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02_1.txt */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Forge_02_1.txt; sourceTree = "<group>"; };
+		DB31755428A2E83000799186 /* CardEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEffects.swift; sourceTree = "<group>"; };
 		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_01_1.txt; sourceTree = "<group>"; };
 		DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02_1.txt; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				DBC732532897E05F006834B1 /* GameView.swift */,
 				DBC7325E289857DB006834B1 /* GameView_Extensions.swift */,
 				DBC7326028994EBD006834B1 /* LifePointsView.swift */,
+				DB31755428A2E83000799186 /* CardEffects.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				DBC7324E28972478006834B1 /* Card+Deck.swift in Sources */,
 				DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */,
 				DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */,
+				DB31755528A2E83000799186 /* CardEffects.swift in Sources */,
 				DBC732642899A97B006834B1 /* EncounterView.swift in Sources */,
 				DBC732522897D577006834B1 /* GameViewModel.swift in Sources */,
 				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,

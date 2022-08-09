@@ -22,6 +22,7 @@ class Card: Hashable, Identifiable, ObservableObject {
     let cardOracleId: String    // Unique id of a card but same for each reprints
     let cardId: String          // Unique id of card and unique between reprints
     @Published var cardCount: Int = 1
+    let cardEffect: CardEffect
         
     init(cardName: String, cardType: CardType, cardImageURL: String = "get-on-scryfall", cardUIImage: Image = Image("BlackBackground"), hasFlashback: Bool = false, shouldCardAttack: Bool = false, shouldCardBlock: Bool = false, specificSet: String = "", cardOracleId: String = "", cardId: String = ""){
         self.cardType = cardType
@@ -32,6 +33,7 @@ class Card: Hashable, Identifiable, ObservableObject {
         self.specificSet = specificSet.uppercased()
         self.cardOracleId = cardOracleId
         self.cardId = cardId
+        self.cardEffect = CardsEffects.cardsEffects_Kamigawa[cardName] ?? CardEffect()
    
         // Remove after "//" in name, example : "Amethyst Dragon // Explosive Crystal" -> only keep Amethyst Dragon
         var cardNameString = ""

@@ -99,6 +99,7 @@ class GameViewModel: ObservableObject {
     
     private func sendToGraveyard(card: Card) {
         graveyard.append(card)
+        applyLeaveTheBattlefieldEffectFor(card: card)
     }
     
     private func castCard(card: Card) {
@@ -107,6 +108,7 @@ class GameViewModel: ObservableObject {
         } else {
             addCardToBoad(card: card)
         }
+        applyEnterTheBattlefieldEffectFor(card: card)
     }
     
     func removeOneCardOnBoard(card: Card) {
@@ -219,6 +221,12 @@ extension GameViewModel {
         }
     }
     
+    func drawXCards(x: Int) {
+        for _ in 0..<x {
+            drawCard()
+        }
+    }
+    
     func destroyPermanent(card: Card) {
         removeOneCardOnBoard(card: card)
         let tmpCard = card.recreateCard()
@@ -254,5 +262,13 @@ extension GameViewModel {
     func toggleOnlyShowBlockers() {
         self.onlyShowBlockers.toggle()
         self.onlyShowAttackers = false
+    }
+    
+    func loseLife(life: Int) {
+        
+    }
+    
+    func gainLife(life: Int) {
+        
     }
 }

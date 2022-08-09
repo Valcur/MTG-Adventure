@@ -18,3 +18,6 @@
 1 NEC creature NO-AB Taurean Mauler fd5ee26c-cc54-4dc0-b611-5cda14354a5e a4ee4648-dd6e-4ba9-b643-a7e4c430d51f
 5 NEO creature NO-AB Kami of Industry b308fa9a-3f69-4e59-9d4b-8007d9a2b1f1 d3d00e61-3007-43da-960b-823e9ead2acf
 2 NEO instant NO Ambitious Assault 3fb399fa-123f-448e-a473-573a1fab2c78 d00d618d-abad-475b-b938-e111282ea1c3
+
+## Tokens ##
+1 TNEO token NO-AB Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
