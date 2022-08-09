@@ -16,14 +16,18 @@ class Card: Hashable, Identifiable, ObservableObject {
     let cardImageURL: String
     @Published var cardUIImage: Image = Image("BlackBackground")
     var hasFlashback: Bool
+    let shouldCardAttack: Bool
+    let shouldCardBlock: Bool
     let specificSet: String
     let cardOracleId: String    // Unique id of a card but same for each reprints
     let cardId: String          // Unique id of card and unique between reprints
     @Published var cardCount: Int = 1
-    
-    init(cardName: String, cardType: CardType, cardImageURL: String = "get-on-scryfall", cardUIImage: Image = Image("BlackBackground"), hasFlashback: Bool = false, specificSet: String = "", cardOracleId: String = "", cardId: String = ""){
+        
+    init(cardName: String, cardType: CardType, cardImageURL: String = "get-on-scryfall", cardUIImage: Image = Image("BlackBackground"), hasFlashback: Bool = false, shouldCardAttack: Bool = false, shouldCardBlock: Bool = false, specificSet: String = "", cardOracleId: String = "", cardId: String = ""){
         self.cardType = cardType
         self.hasFlashback = hasFlashback
+        self.shouldCardAttack = shouldCardAttack
+        self.shouldCardBlock = shouldCardBlock
         self.cardUIImage = cardUIImage
         self.specificSet = specificSet.uppercased()
         self.cardOracleId = cardOracleId
@@ -58,7 +62,7 @@ class Card: Hashable, Identifiable, ObservableObject {
     }
     
     func recreateCard() -> Card {
-        let tmpCard = Card(cardName: self.cardName, cardType: self.cardType, cardImageURL: self.cardImageURL, hasFlashback: self.hasFlashback, specificSet: self.specificSet, cardOracleId: self.cardOracleId, cardId: self.cardId)
+        let tmpCard = Card(cardName: self.cardName, cardType: self.cardType, cardImageURL: self.cardImageURL, hasFlashback: self.hasFlashback, shouldCardAttack: self.shouldCardAttack, shouldCardBlock: self.shouldCardBlock, specificSet: self.specificSet, cardOracleId: self.cardOracleId, cardId: self.cardId)
         tmpCard.cardCount = self.cardCount
         tmpCard.cardUIImage = self.cardUIImage
         return tmpCard
@@ -149,6 +153,7 @@ struct DeckList {
     var deckBasic: [Card]
     var deckMidrange: [Card]
     var deckEndgame: [Card]
+    var tokensAvailable: [Card]
 }
 
 struct CardsToCast {

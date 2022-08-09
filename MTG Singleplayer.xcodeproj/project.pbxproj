@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */; };
+		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
+		DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */; };
+		DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */; };
+		DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */; };
+		DB510B0828A1AAC60037C760 /* Kamigawa_Swamp_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0728A1AAC60037C760 /* Kamigawa_Swamp_1.txt */; };
+		DB510B0A28A1B0870037C760 /* Kamigawa_Water_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0928A1B0870037C760 /* Kamigawa_Water_1.txt */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -37,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		DB11CD39289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Forge_02_1.txt; sourceTree = "<group>"; };
+		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_01.txt; sourceTree = "<group>"; };
+		DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02.txt; sourceTree = "<group>"; };
+		DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02_B.txt; sourceTree = "<group>"; };
+		DB510B0728A1AAC60037C760 /* Kamigawa_Swamp_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Swamp_1.txt; sourceTree = "<group>"; };
+		DB510B0928A1B0870037C760 /* Kamigawa_Water_1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Water_1.txt; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 				DBC732572897F391006834B1 /* Extensions.swift */,
 				DBC732592897F469006834B1 /* DeckManager.swift */,
 				DBE027E8289EEFB900F8F483 /* Extensions_Class.swift */,
+				DB510B0028A13CEA0037C760 /* Localizable.strings */,
 			);
 			path = "MTG Singleplayer";
 			sourceTree = "<group>";
@@ -138,6 +151,11 @@
 				DBE027EE289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt */,
 				DBE027F0289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt */,
 				DBE027F228A04EE400F8F483 /* Kamigawa_BG_1.txt */,
+				DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */,
+				DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */,
+				DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */,
+				DB510B0728A1AAC60037C760 /* Kamigawa_Swamp_1.txt */,
+				DB510B0928A1B0870037C760 /* Kamigawa_Water_1.txt */,
 			);
 			path = Kamigawa;
 			sourceTree = "<group>";
@@ -206,7 +224,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = DBC7323328972458006834B1;
 			productRefGroup = DBC7323D28972458006834B1 /* Products */;
@@ -224,15 +241,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE027EB289FF0A600F8F483 /* Kamigawa_Imperial_01_1.txt in Resources */,
+				DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */,
+				DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */,
 				DBE027F328A04EE500F8F483 /* Kamigawa_BG_1.txt in Resources */,
 				DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01_1.txt in Resources */,
+				DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */,
 				DBE027EF289FF0D500F8F483 /* Kamigawa_Invader_02_1.txt in Resources */,
+				DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */,
 				DBE027F528A04EFE00F8F483 /* Blank.txt in Resources */,
 				DBE027F1289FF0DE00F8F483 /* Kamigawa_Invader_01_1.txt in Resources */,
 				DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02_1.txt in Resources */,
+				DB510B0828A1AAC60037C760 /* Kamigawa_Swamp_1.txt in Resources */,
 				DBE027E7289ECB8300F8F483 /* Kamigawa_Shrine_1.txt in Resources */,
 				DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02_1.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
+				DB510B0A28A1B0870037C760 /* Kamigawa_Water_1.txt in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +286,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB510B0028A13CEA0037C760 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB510AFF28A13CEA0037C760 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DBC732482897245A006834B1 /* Debug */ = {

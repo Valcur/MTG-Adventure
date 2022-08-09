@@ -24,7 +24,7 @@
 2 NEO creature NO Go-Shintai of Hidden Cruelty ff8cf669-a38a-44ae-baff-420f59492371 45e1ff1e-916b-4455-84cb-4125a79d76de
 2 NEO creature NO Go-Shintai of Shared Purpose 4cab6ea8-4a80-4b34-b758-7f2aa4d540e4 0ab91962-ebad-46f6-9f90-7477c224d93d
 
-
-
+## Tokens ##
+1 TNEO token NO Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
 
 

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  MTG Singleplayer
+
+  Created by Loic D on 08/08/2022.
+  
+*/
+
+"Kamigawa_Intro" = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world.";
+
+"Kamigawa_Swamp_Intro" = "You are lost, folow light or venture into wood";
+
+"Kamigawa_Swamp_Lost_01" = "You reach cemetery, throught or go back";
+
+"Kamigawa_Swamp_Lost_Fight" = "Don't go cemetery you dumbass";
+
+"Kamigawa_Swamp_Lost_02" = "The forest turns into a swamp, stay in water or go in ground";
+
+"Kamigawa_Swamp_Lost_Success" = "you find a stair and follow him, a Kami GIVE YOU REWARD";
+
+"Kamigawa_Swamp_Lost_End" = "After a day wandering between the trees, you find your path back and continue your adventure";
+
+"Kamigawa_Boseiju" = "Boseiju was the oldest and tallest tree of the Jukai forest, on the plane of Kamigawa. It now is the only remnant of Jukai Forest left within city limits of Towashi.";

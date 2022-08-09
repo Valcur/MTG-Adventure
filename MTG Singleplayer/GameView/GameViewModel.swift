@@ -39,7 +39,8 @@ class GameViewModel: ObservableObject {
         let deckBasic: [Card] = deckData.0
         let deckMidrange: [Card] = deckData.1
         let deckEndgame: [Card] = deckData.2
-        self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame)
+        let tokens: [Card] = deckData.3
+        self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame, tokensAvailable: tokens)
         self.cardsToCast = CardsToCast(cardsFromLibrary: [], cardsFromHand: [], cardsFromGraveyard: [])
         self.hand = []
         self.manaCount = 0
@@ -84,7 +85,11 @@ class GameViewModel: ObservableObject {
     
     private func addCardToBoad(card: Card) {
         // type and attack/not attack make the card appears at different place
-        board.append(card)
+        if card.cardType == .enchantment || card.cardType == .artifact {
+            board.insert(card, at: 0)
+        } else {
+            board.append(card)
+        }
         board = Card.regroupSameCardsInArray(board)
     }
     
@@ -112,6 +117,10 @@ class GameViewModel: ObservableObject {
             }
         }
     }
+    
+    func tokenRowPressed(token: Card) {
+        castCard(card: token)
+    }
 }
 
 // MARK: Draw from decks
@@ -123,10 +132,11 @@ extension GameViewModel {
         } else if !deck.deckMidrange.isEmpty {
             print("Draw from midrange as basic is empty")
             return deck.deckMidrange.removeFirst()
-        } else {
+        } else if !deck.deckEndgame.isEmpty {
             print("Draw from endgame as basic and midrange are empty")
             return deck.deckEndgame.removeFirst()
         }
+        return nil
     }
     
     private func getMidrangeCardFromDeck() -> Card? {
@@ -136,10 +146,11 @@ extension GameViewModel {
         } else if !deck.deckBasic.isEmpty {
             print("Draw from basic as midrange is empty")
             return deck.deckBasic.removeFirst()
-        } else {
+        } else if !deck.deckEndgame.isEmpty {
             print("Draw from endgame as midrange and basic are empty")
             return deck.deckEndgame.removeFirst()
         }
+        return nil
     }
     
     private func getEndgameCardFromDeck() -> Card? {
@@ -149,10 +160,11 @@ extension GameViewModel {
         } else if !deck.deckMidrange.isEmpty {
             print("Draw from midrange as endgame is empty")
             return deck.deckMidrange.removeFirst()
-        } else {
+        } else if !deck.deckBasic.isEmpty {
             print("Draw from basic as endgame and midrange are empty")
             return deck.deckBasic.removeFirst()
         }
+        return nil
     }
 }
 
@@ -185,7 +197,7 @@ extension GameViewModel {
         }
         
         for card in cardsToCast.cardsFromLibrary {
-            castCard(card: card)
+            castCard(card: card) // Should be casted from hand
         }
         
         //DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {

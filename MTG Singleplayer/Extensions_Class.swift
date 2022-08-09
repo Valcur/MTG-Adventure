@@ -9,17 +9,15 @@ import Foundation
 
 class Encounter {
     let title: String
-    let description: String
-    let imageName: String
+    let id: String
     let artistName: String
     let reward: [Reward]?
     let offer: [Offer]?
     let choices: [EncounterChoice]
     
-    init(title: String, description: String, imageName: String, artistName: String, reward: Reward? = nil, offer: Offer? = nil, choices: [EncounterChoice]) {
+    init(title: String, id: String, artistName: String, reward: Reward? = nil, offer: Offer? = nil, choices: [EncounterChoice]) {
         self.title = title
-        self.description = description
-        self.imageName = imageName
+        self.id = id
         self.artistName = artistName
         if reward != nil {
             self.reward = [reward!]
@@ -34,20 +32,18 @@ class Encounter {
         self.choices = choices
     }
     
-    init(title: String, description: String, imageName: String, artistName: String, reward: [Reward]? = nil, offer: [Offer]? = nil, choices: [EncounterChoice]) {
+    init(title: String, id: String, artistName: String, reward: [Reward]? = nil, offer: [Offer]? = nil, choices: [EncounterChoice]) {
         self.title = title
-        self.description = description
-        self.imageName = imageName
+        self.id = id
         self.artistName = artistName
         self.reward = reward
         self.offer = offer
         self.choices = choices
     }
     
-    init(title: String, description: String, imageName: String, artistName: String, choices: [EncounterChoice]) {
+    init(title: String, id: String, artistName: String, choices: [EncounterChoice]) {
         self.title = title
-        self.description = description
-        self.imageName = imageName
+        self.id = id
         self.artistName = artistName
         self.reward = nil
         self.offer = nil
@@ -101,7 +97,7 @@ class RewardGold: Reward {
     
     init(value: Int) {
         self.value = value
-        super.init(title: "+ \(value)", imageName: "Gold")
+        super.init(title: "+ \(value) ", imageName: "Gold")
     }
 }
 
@@ -110,7 +106,7 @@ class RewardLife: Reward {
     
     init(value: Int) {
         self.value = value
-        super.init(title: "+ \(value)", imageName: "Life")
+        super.init(title: "+ \(value) ", imageName: "Life")
     }
 }
 
@@ -142,12 +138,12 @@ class Cost {
 
 class CostGold: Cost {
     init(value: Int) {
-        super.init(title: "x \(value)", value: value)
+        super.init(title: "x \(value) ", value: value)
     }
 }
 
 class CostLife: Cost {
     init(value: Int) {
-        super.init(title: "x \(value)", value: value)
+        super.init(title: "x \(value) ", value: value)
     }
 }

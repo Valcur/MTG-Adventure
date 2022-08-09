@@ -16,14 +16,14 @@ struct GameView: View {
         GeometryReader { geo in
             ZStack {
                 GradientView()
-                VStack(spacing: 0) {
-                    HStack(spacing: 0) {
-                        LeftView()
-                            .frame(width: GameViewSize.leftPanelWitdh)
+                HStack(spacing: 0) {
+                    LeftView()
+                        .frame(width: GameViewSize.leftPanelWitdh)
+                    VStack(spacing: 0) {
                         BoardView()
+                        BottomBarView()
+                            .frame(height: GameViewSize.bottomBar)
                     }
-                    BottomBarView()
-                        .frame(height: GameViewSize.bottomBar)
                 }
                 if lifePointsViewModel != nil {
                     HStack {
@@ -59,17 +59,19 @@ struct LeftView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            // Emblem
-            EmblemView()
-            
             // Turn Counter
             ManaCounterView()
+            
+            // Emblem
+            EmblemView()
             
             // Show graveyard
             PlayerGraveyardView()
             
+            Spacer()
+            
             EmblemView()
-        }
+        }.frame(maxHeight: .infinity).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).padding(.vertical, 20)
     }
 }
 
@@ -118,6 +120,13 @@ struct BottomBarView: View {
             
             // Token Creation
             TokenCreationRowView()
+            
+            // Show Attackers
+            
+            // Show Blockers
+            
+            // Sword by By Bartama Graphic
+            // Shield by Freepik
             
             Spacer()
             Button(action: {

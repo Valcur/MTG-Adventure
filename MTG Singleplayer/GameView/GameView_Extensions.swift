@@ -62,7 +62,7 @@ struct ManaCounterView: View {
                 Image(systemName: "pentagon.fill")
                     .font(.largeTitle)
                     .foregroundColor(.gray)
-                TextSubTitle("\(gameViewModel.manaCount)")
+                TextTitle("\(gameViewModel.manaCount)")
             }
             Spacer()
             Button(action: {
@@ -145,6 +145,24 @@ struct CardOnBoardView: View {
                         .font(.title2)
                         .foregroundColor(.white)
                 }
+                
+                HStack {
+                    Spacer()
+                    if card.shouldCardAttack {
+                        Image("Attacker")
+                            .resizable()
+                            .frame(width: GameViewSize.attackBlockerImageSize, height: GameViewSize.attackBlockerImageSize)
+                    }
+                    if card.shouldCardAttack && card.shouldCardBlock {
+                        TextTitle("/")
+                    }
+                    if card.shouldCardBlock {
+                        Image("Blocker")
+                            .resizable()
+                            .frame(width: GameViewSize.attackBlockerImageSize, height: GameViewSize.attackBlockerImageSize)
+                    }
+                }.offset(y: -CardSize.height.normal / 2 + GameViewSize.attackBlockerImageSize * 1.4).padding(.trailing, CardSize.height.normal / 18)
+                
             }
             .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
             .onTapGesture(count: 1) {
@@ -188,15 +206,16 @@ struct ReturnToHandView: View {
 
 struct TokenCreationRowView: View {
     
+    @EnvironmentObject var gameViewModel: GameViewModel
     let emblemText: String = "Creatures you control have SHROUD"
     
     var body: some View {
         HStack(spacing: 10) {
-           TextSubTitle("Create")
+           TextParagraph("Create")
             
            ScrollView(.horizontal) {
-               /*HStack(spacing: 10) {
-                   ForEach(gameViewModel.tokensAvailable) { token in
+               HStack(spacing: 10) {
+                   ForEach(gameViewModel.deck.tokensAvailable) { token in
                        Button(action: {
                        }, label: {
                            CardView(card: token)
@@ -204,9 +223,9 @@ struct TokenCreationRowView: View {
                                .cornerRadius(CardSize.cornerRadius.small)
                                .onTapGesture(count: 1) {
                                    print("Create token button pressed")
-                                   gameViewModel.createToken(token: token)
+                                   gameViewModel.tokenRowPressed(token: token)
                                }
-                               .gesture(LongPressGesture(minimumDuration: 0.1)
+                               /*.gesture(LongPressGesture(minimumDuration: 0.1)
                                    .sequenced(before: LongPressGesture(minimumDuration: .infinity))
                                    .updating($isDetectingLongPress) { value, state, transaction in
                                        switch value {
@@ -216,10 +235,10 @@ struct TokenCreationRowView: View {
                                            gameViewModel.cardToZoomIn = token
                                            default: break
                                        }
-                                   })
+                                   })*/
                            })
                    }
-               }*/
+               }
            }.frame(maxWidth: GameViewSize.tokenCreationRowWidth)
        }
     }
@@ -228,13 +247,6 @@ struct TokenCreationRowView: View {
 
 
 // MARK: Structs
-struct GameViewSize {
-    static let bottomBar: CGFloat = 60
-    static let leftPanelWitdh: CGFloat = 200
-    static let handHeight: CGFloat = 80
-    static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
-    static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 2
-}
 
 struct CardSize {
     struct width {
@@ -257,4 +269,13 @@ struct CardSize {
         static let hand = (UIScreen.main.bounds.height / 100) * 0.35 * 3.5 as CGFloat
         static let small = 3 as CGFloat
     }
+}
+
+struct GameViewSize {
+    static let bottomBar: CGFloat = 60
+    static let leftPanelWitdh: CGFloat = 200
+    static let handHeight: CGFloat = 80
+    static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
+    static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 2
+    static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 7.5
 }

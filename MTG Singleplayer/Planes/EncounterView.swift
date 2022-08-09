@@ -14,7 +14,7 @@ struct EncounterView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(encounter.imageName)
+                Image(encounter.id)
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
@@ -50,7 +50,7 @@ struct EncounterView: View {
                     }
                     
                     Spacer()
-                    TextParagraph(encounter.description)
+                    TextParagraph(NSLocalizedString("\(encounter.id)", comment: "The encounter description"))
                         .padding(20)
                         .frame(maxWidth: UIScreen.main.bounds.width / 2)
                         .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
@@ -149,7 +149,7 @@ struct RewardsView: View {
                     .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
                 
                 TextSubTitle(reward.title)
-            }
+            }.padding(30).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(10))
         }
     }
 }
@@ -167,11 +167,18 @@ struct OffersView: View {
         @EnvironmentObject var adventureViewModel: AdventureViewModel
         let offer: Offer
         @State var alreadyPurchased = false
+        var isDisable: Bool {
+            return !adventureViewModel.canPlayerBuyOffer(offer: offer) || alreadyPurchased
+        }
         
         var body: some View {
             Button(action: {
                 adventureViewModel.buyOffer(offer: offer)
-                alreadyPurchased = true
+                withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                    if !offer.repeatable {
+                        alreadyPurchased = true
+                    }
+                }
             }, label: {
                 VStack(spacing: 20) {
                     Image(offer.imageName)
@@ -181,8 +188,8 @@ struct OffersView: View {
                     TextParagraph(offer.title)
                     
                     TextSubTitle(offer.cost.title)
-                }
-            }).disabled(!adventureViewModel.canPlayerBuyOffer(offer: offer) || alreadyPurchased)
+                }.opacity(isDisable ? 0.5 : 1)
+            }).padding(30).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(10).opacity(isDisable ? 0 : 1)).disabled(isDisable)
         }
     }
 }

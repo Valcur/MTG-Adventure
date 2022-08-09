@@ -11,105 +11,129 @@ import Foundation
 class Encounters {
     static let plane_kamigawa =
     [
-        "Kamigawa_Intro": Encounter(title: "Kamigawa", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Intro", artistName: "Adam Paquette",
+        "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Adam Paquette",
+                                    reward: Reward.reward_life1,
+                                    offer: Offer.offer_life1,
                                     choices: [
-                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "AA"),
+                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Swamp"),
                                         EncounterChoice(title: "Run", encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
-        "Kamigawa_Forest": Encounter(title: "Peacefull forest walk", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forest", artistName: "Piotr Dura",
+        "Kamigawa_Forest_Intro": Encounter(title: "Peacefull forest walk", id: "Kamigawa_Forest_Intro", artistName: "Piotr Dura",
                                     choices: [
-                                        EncounterChoice(title: "Go off road", encounterId: ["Kamigawa_Forest_Attack", "Kamigawa_Forest_Break", "Kamigawa_Forest_Penitent"]),
+                                        EncounterChoice(title: "Go off road", encounterId: ["Kamigawa_Forest_Attack", "Kamigawa_Forest_Haven", "Kamigawa_Forest_Penitent"]),
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
-        "Kamigawa_Shop": Encounter(title: "Shop", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Shop", artistName: "Adam Paquette",
+        "Kamigawa_Shop": Encounter(title: "Shop", id: "Kamigawa_Shop", artistName: "Adam Paquette",
                                     offer: [Offer.offer_life1, Offer.offer_life1, Offer.offer_life1],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
-        
-        "Kamigawa_Samurai_Intro": Encounter(title: "A city in the distance", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Plain", artistName: "Piotr Dura",
+        /*
+        "Kamigawa_Samurai_Intro": Encounter(title: "A city in the distance", id: "Kamigawa_Samurai_Intro", artistName: "Piotr Dura",
                                     reward: Reward.reward_life1,
                                     choices: [
                                         EncounterChoice(title: "Approach the city", encounterId: "Kamigawa_Samurai_MakeAChoice")
                                     ]),
         
-        "Kamigawa_Shrine": Encounter(title: "Time to shrine", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Shrine", artistName: "Johannes Voss",
+        "Kamigawa_Shrine": Encounter(title: "Time to shrine", id: "Kamigawa_Shrine", artistName: "Johannes Voss",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine")
                                     ]),
         
-        /*
-        "Kamigawa_Rat_01": Encounter(title: "Rat", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Rat_01", artistName: "Adam Paquette",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_02")
-                                    ]),
         */
         /*
-        "Kamigawa_Forge_01": Encounter(title: "Forge", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forge_01", artistName: "Alayna Danner",
+        "Kamigawa_Forge_01": Encounter(title: "Forge", id: "Kamigawa_Forge_01", artistName: "Alayna Danner",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_02")
                                     ]),
      */
+        "Kamigawa_Otawara_Intro": Encounter(title: "Fight", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
+                                    choices: [
+                                        EncounterChoice(title: "Help the city of Otawara", encounterId: "Kamigawa_Otawara_Fight_01"),
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Water_Intro": Encounter(title: "Hangar", id: "Kamigawa_Water_Intro", artistName: "Piotr Dura",
+                                    choices: [
+                                        EncounterChoice(title: "Follow the river", encounterId: ["Kamigawa_Water_Haven", "Kamigawa_Water_Fight"]),
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Boseiju": Encounter(title: "Towashi", id: "Kamigawa_Boseiju", artistName: "Chris Ostrowski",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_01")
+                                    ]),
+        
+        "Kamigawa_Swamp_Intro": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Intro", artistName: "Julian Kok Joon Wen",
+                                    choices: [
+                                        EncounterChoice(title: "Follow the light", encounterId: "Kamigawa_Swamp_Lost_01"),
+                                        EncounterChoice(title: "Venture into the woods", encounterId: "Kamigawa_Swamp_Lost_End")
+                                    ]),
     ]
     
     static let plane_kamigawa_direct = [
         
         // MARK: Rat
         
-        "Kamigawa_Rat_02": Encounter(title: "Fight 1", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Rat_02", artistName: "Manuel Castañón",
+        "Kamigawa_Rat_01": Encounter(title: "Rat", id: "Kamigawa_Rat_01", artistName: "Adam Paquette",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_02")
+                                    ]),
+        
+        "Kamigawa_Rat_02": Encounter(title: "Fight 1", id: "Kamigawa_Rat_02", artistName: "Manuel Castañón",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_03", deckToFight: "AA")
                                     ]),
         
-        "Kamigawa_Rat_03": Encounter(title: "Fight 2", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Rat_03", artistName: "Raymond Swanland",
+        "Kamigawa_Rat_03": Encounter(title: "Fight 2", id: "Kamigawa_Rat_03", artistName: "Raymond Swanland",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_04", deckToFight: "AA")
                                     ]),
         
-        "Kamigawa_Rat_04": Encounter(title: "Victory", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Rat_04", artistName: "Ilse Gort",
+        "Kamigawa_Rat_04": Encounter(title: "Victory", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         // MARK: Forge
         
-        "Kamigawa_Forge_02": Encounter(title: "Fight 1", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forge_02", artistName: "Chris Rahn",
+        "Kamigawa_Forge_02": Encounter(title: "Fight 1", id: "Kamigawa_Forge_02", artistName: "Chris Rahn",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_03", deckToFight: "Kamigawa_Forge_01")
                                     ]),
         
-        "Kamigawa_Forge_03": Encounter(title: "Fight 2", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forge_03", artistName: "Isis Sangaré",
+        "Kamigawa_Forge_03": Encounter(title: "Fight 2", id: "Kamigawa_Forge_03", artistName: "Isis Sangaré",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_04", deckToFight: "Kamigawa_Forge_02")
                                     ]),
         
-        "Kamigawa_Forge_04": Encounter(title: "Victory", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
+        "Kamigawa_Forge_04": Encounter(title: "Victory", id: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         // MARK: Forest
         
-        "Kamigawa_Forest_Attack": Encounter(title: "Fight", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forest_Attack", artistName: "Ryan Pancoast",
+        "Kamigawa_Forest_Attack": Encounter(title: "Fight", id: "Kamigawa_Forest_Attack", artistName: "Ryan Pancoast",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_BG")
                                     ]),
         
-        "Kamigawa_Forest_Break": Encounter(title: "Fight", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forest_Haven", artistName: "Lorenzo Lanfranconi",
+        "Kamigawa_Forest_Haven": Encounter(title: "Fight", id: "Kamigawa_Forest_Haven", artistName: "Lorenzo Lanfranconi",
                                     reward: Reward.reward_life1,
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
-        "Kamigawa_Forest_Penitent": Encounter(title: "Penitent Warlord", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forest_Penitent", artistName: "Matt Stewart",
+        "Kamigawa_Forest_Penitent": Encounter(title: "Penitent Warlord", id: "Kamigawa_Forest_Penitent", artistName: "Matt Stewart",
                                     choices: [
                                         EncounterChoice(title: "Follow him", encounterId: "Kamigawa_Forest_Offer"),
                                         EncounterChoice(title: "Ignore and continue", encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
-        "Kamigawa_Forest_Offer": Encounter(title: "Offer to the spirit", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Forest_Offer", artistName: "Aurore Folny",
+        "Kamigawa_Forest_Offer": Encounter(title: "Offer to the spirit", id: "Kamigawa_Forest_Offer", artistName: "Aurore Folny",
                                     offer: Offer.offer_life1,
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
@@ -117,37 +141,113 @@ class Encounters {
         
         // MARK: Samurai
         
-        "Kamigawa_Samurai_MakeAChoice": Encounter(title: "Fight", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Invader_ChooseSide", artistName: "Johan Grenier",
+        "Kamigawa_Samurai_MakeAChoice": Encounter(title: "Fight", id: "Kamigawa_Samurai_MakeAChoice", artistName: "Johan Grenier",
                                     choices: [
                                         EncounterChoice(title: "Help the imperial army", encounterId: "Kamigawa_Samurai_ImperialSide_01", deckToFight: "Kamigawa_Invader_01"),
                                         EncounterChoice(title: "Help the invading army", encounterId: "Kamigawa_Samurai_InvaderSide_01", deckToFight: "Kamigawa_Imperial_01")
                                     ]),
         
-        "Kamigawa_Samurai_ImperialSide_01": Encounter(title: "Fight the invader", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Invader_Imperial_01", artistName: "Ryan Pancoast",
+        "Kamigawa_Samurai_ImperialSide_01": Encounter(title: "Fight the invader", id: "Kamigawa_Samurai_ImperialSide_01", artistName: "Ryan Pancoast",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Samurai_ImperialSide_02", deckToFight: "Kamigawa_Invader_02")
                                     ]),
         
-        "Kamigawa_Samurai_ImperialSide_02": Encounter(title: "Reward", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Invader_Imperial_02", artistName: "Randy Vargas",
+        "Kamigawa_Samurai_ImperialSide_02": Encounter(title: "Reward", id: "Kamigawa_Samurai_ImperialSide_02", artistName: "Randy Vargas",
                                     reward: Reward.reward_life1,
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
-        "Kamigawa_Samurai_InvaderSide_01": Encounter(title: "Fight the empire", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Invader_Invader_01", artistName: "Nicholas Elias",
+        "Kamigawa_Samurai_InvaderSide_01": Encounter(title: "Fight the empire", id: "Kamigawa_Samurai_InvaderSide_01", artistName: "Nicholas Elias",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Samurai_InvaderSide_02", deckToFight: "Kamigawa_Imperial_02")
                                     ]),
         
-        "Kamigawa_Samurai_InvaderSide_02": Encounter(title: "Reward", description: Desciptions.Kamigawa_Intro, imageName: "Kamigawa_Invader_Invader_02", artistName: "Joseph Weston",
+        "Kamigawa_Samurai_InvaderSide_02": Encounter(title: "Reward", id: "Kamigawa_Samurai_InvaderSide_02", artistName: "Joseph Weston",
                                     reward: Reward.reward_life1,
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
+        
+        // MARK: Otawara
+        
+        "Kamigawa_Otawara_Fight_01": Encounter(title: "Fight", id: "Kamigawa_Otawara_Fight_01", artistName: "Victor Adame Minguez",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Otawara_Hangar", deckToFight: "Kamigawa_Vehicle_01")
+                                    ]),
+        
+        "Kamigawa_Otawara_Hangar": Encounter(title: "Hangar", id: "Kamigawa_Otawara_Hangar", artistName: "Julian Kok Joon Wen",
+                                    reward: Reward.reward_gold10,
+                                    choices: [
+                                        EncounterChoice(title: "Fight the remaining troups", encounterId: "Kamigawa_Otawara_Fight_02"),
+                                        EncounterChoice(title: "Send some soldiers to sabotage the enemy mechs", encounterId: "Kamigawa_Otawara_Fight_02_B"),
+                                        EncounterChoice(title: "Leave", encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Otawara_Fight_02": Encounter(title: "Fight", id: "Kamigawa_Otawara_Fight_02", artistName: "Victor Adame Minguez",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Otawara_Reward", deckToFight: "Kamigawa_Vehicle_02")
+                                    ]),
+        
+        "Kamigawa_Otawara_Fight_02_B": Encounter(title: "Fight", id: "Kamigawa_Otawara_Fight_02_B", artistName: "Victor Adame Minguez",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Otawara_Reward", deckToFight: "Kamigawa_Vehicle_02_B")
+                                    ]),
+        
+        "Kamigawa_Otawara_Reward": Encounter(title: "Reward", id: "Kamigawa_Otawara_Reward", artistName: "Alayna Danner",
+                                    reward: Reward.reward_life1,
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        // MARK: Water
     
+        "Kamigawa_Water_Fight": Encounter(title: "Reward", id: "Kamigawa_Water_Fight", artistName: "Jesper Ejsing",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Water")
+                                    ]),
+        
+        "Kamigawa_Water_Haven": Encounter(title: "Reward", id: "Kamigawa_Water_Haven", artistName: "Ryan Pancoast",
+                                    reward: Reward.reward_life1,
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        // MARK: Swamp
+        
+        "Kamigawa_Swamp_Lost_01": Encounter(title: "Cemetery", id: "Kamigawa_Swamp_Lost_01", artistName: "Alayna Danner",
+                                    choices: [
+                                        EncounterChoice(title: "Walk through the cemetery", encounterId: "Kamigawa_Swamp_Lost_Fight"),
+                                        EncounterChoice(title: "Venture into the woods", encounterId: "Kamigawa_Swamp_Lost_End")
+                                    ]),
+        
+        "Kamigawa_Swamp_Lost_Fight": Encounter(title: "Cemeterey", id: "Kamigawa_Swamp_Lost_Fight", artistName: "Jason A. Engle",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Swamp")
+                                    ]),
+        
+        "Kamigawa_Swamp_Lost_02": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Lost_02", artistName: "Piotr Dura",
+                                    choices: [
+                                        EncounterChoice(title: "Stay in the water", encounterId: "Kamigawa_Swamp_Lost_Fight"),
+                                        EncounterChoice(title: "Back to the ground and venture into the woods", encounterId: "Kamigawa_Swamp_Lost_End")
+                                    ]),
+        
+        "Kamigawa_Swamp_Lost_Success": Encounter(title: "A hidden Kami", id: "Kamigawa_Swamp_Lost_Success", artistName: "Marta Nael",
+                                    reward: [Reward.reward_life1, Reward.reward_life1],
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Swamp_Lost_End": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Lost_End", artistName: "Jesper Ejsing",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        // MARK: Mountain
+        
+        /*www.artofmtg.com/art/mountain-35/
+        /www.artofmtg.com/art/swiftwater-cliffs-2/
+        www.artofmtg.com/art/goblin-shaman-token/
+         */
     ]
-}
-
-class Desciptions {
-    static let Kamigawa_Intro = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world."
 }

@@ -105,6 +105,21 @@ struct TextLargeTitle: View {
     }
 }
 
+struct TextTitle: View {
+    var text: String
+    
+    init(_ text: String) {
+        self.text = text
+    }
+    
+    var body: some View {
+        Text(text)
+            .fontWeight(.bold)
+            .font(.system(size: 40))
+            .foregroundColor(.white)
+    }
+}
+
 struct GradientView: View {
     
     let gradient: Gradient

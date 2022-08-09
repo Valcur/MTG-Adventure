@@ -18,7 +18,8 @@
 2 SOK creature NO Skyfire Kirin 169c468e-0e17-450b-8954-df47d78ad8f8 2d425562-3f0f-4aa3-a761-48ba445b8380
 1 DDS artifact NO Coat of Arms 5f7f133e-58ea-41ab-b1be-be4b400fac4c 513d4c36-6ad4-4ee9-b161-3136eb59504f
 
-
+## Tokens ##
+1 TNEO token NO Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
 
 
 

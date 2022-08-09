@@ -1,15 +1,20 @@
 ## Basic Deck ##
-8 NEO creature NO Eiganjo Exemplar 8e0f4e22-0677-4246-a4c5-6fcc74cb54a3 3b0a9cc0-bb6d-47f7-b0d5-3956c46a1b3a
+8 NEO creature NO-AB Eiganjo Exemplar 8e0f4e22-0677-4246-a4c5-6fcc74cb54a3 3b0a9cc0-bb6d-47f7-b0d5-3956c46a1b3a
 5 NEO artifact NO Ancestral Katana 13a9b9fd-20fa-4734-9d95-3ab41ab9c7a0 d9b1ed43-ee6c-43a2-ba94-5bf71c63e070
 3 SOK enchantment NO Promise of Bunrei 6158ab85-a929-472c-9618-8e76d2d4b228 1250735d-d43b-488f-bddf-ed10261a6382
 3 NEO sorcery NO Banishing Slash 2800830c-73c6-4097-be7b-d698c6813c38 e4b8946b-6604-49ca-98db-18a540b1b4e5
 
 ## Midrange Deck ##
-4 NEO creature NO Imperial Subduer bedf1dd5-b133-455b-bc3d-c7b1f469d91f 13246172-7554-4edc-b6db-23dc91e4290a
-3 NEO creature NO Norika Yamazaki, the Poet 6f143c8f-cb5c-4abc-a01b-b6813f5a524c 09cb553c-58c1-4cfd-b441-297b5f09b263
-5 NEO creature NO Selfless Samurai 20c9fb06-3941-456f-ba02-4fbde9deb1e2 76c27ec5-5a9b-4080-9a53-00630335a915
+4 NEO creature NO-AB Imperial Subduer bedf1dd5-b133-455b-bc3d-c7b1f469d91f 13246172-7554-4edc-b6db-23dc91e4290a
+3 NEO creature NO-AB Norika Yamazaki, the Poet 6f143c8f-cb5c-4abc-a01b-b6813f5a524c 09cb553c-58c1-4cfd-b441-297b5f09b263
+5 NEO creature NO-AB Selfless Samurai 20c9fb06-3941-456f-ba02-4fbde9deb1e2 76c27ec5-5a9b-4080-9a53-00630335a915
 
 ## Endgame Deck ##
-5 NEO creature NO Sky-Blessed Samurai dad767d4-e7d4-4fe0-8a18-bb434c5268eb c9c7ba6f-c58e-4347-92e4-51ae8f2d5a88
-5 NEO creature NO Sunblade Samurai b767bd0a-a8fe-49d7-a3e7-4f9ac6a3280f e6c577bb-5e21-4a3e-b0a7-713a4ff7dce6
+5 NEO creature NO-AB Sky-Blessed Samurai dad767d4-e7d4-4fe0-8a18-bb434c5268eb c9c7ba6f-c58e-4347-92e4-51ae8f2d5a88
+5 NEO creature NO-AB Sunblade Samurai b767bd0a-a8fe-49d7-a3e7-4f9ac6a3280f e6c577bb-5e21-4a3e-b0a7-713a4ff7dce6
 3 NEO sorcery NO Imperial Oath 4a4a061d-bc4e-49da-8d20-90fcb571b025 3d6750dd-2303-493b-885d-1bfb5787b16c
+
+## Tokens ##
+1 TNEO token NO Spirit 6a7a9dff-ff9e-4005-a17f-6ea0c11c1d5a ca20548f-6324-4858-adbe-87303ff1ca52
+1 TNEO token NO Samurai acdaf04d-19ef-4132-a3b6-5a99f0b5165f f68e5337-6e44-4f8f-a102-2f97b433beea
+

@@ -1,0 +1,26 @@
+## Basic Deck ##
+9 CHK creature NO-B Ashen-Skin Zubera af9dc302-0345-402f-8e6b-e9706da14bca 40cee88d-849d-4715-ad88-7cdb855a3088
+3 M10 sorcery NO Sign in Blood c6207f6a-a624-4754-88f5-dbe700c841ff 1975ed97-acb8-4bb6-804a-e5da725d876e
+3 CHK instant NO Rend Flesh 079d4698-dc11-4d29-91b6-725d78dfb75d 92b300a3-e6a8-4ca9-bb26-03f57b5ff6ec
+
+## Midrange Deck ##
+2 BOK creature NO-A Crawling Filth d76522e0-324f-4ec9-b36e-0fe7448aae69 9c735bda-5454-4177-a23a-f9f00b7480d2
+3 DIS creature NO-A Enemy of the Guildpact e5cf7b75-b59b-4cac-bfd2-13e452457d74 3dcc7d53-2510-4322-969c-1e138287562c
+3 CHK creature NO-A Gibbering Kami 8a5610bd-5f04-43f3-9e2e-d6c728ee899b 9a3e988f-314c-4e83-b279-c2a736933e64
+2 CHK creature NO-B Kami of Lunacy 5c848e4a-f0f7-4659-b7b1-f468efba9563 4baef070-d265-4c6d-9b4b-3cafbd3b34c3
+3 CHK creature NO Thief of Hope d3fa1320-9e95-437a-aa36-102a2722fc42 0a3029b8-01e2-4419-817e-318f23d6ce04
+2 CHK artifact NO Long-Forgotten Gohei 897910d5-13a4-4e1d-8f83-235b773b8322 6fc4b500-ca74-4b90-9a8c-d4efa80ebe2c
+
+## Endgame Deck ##
+2 BOK creature NO Kyoki, Sanity's Eclipse f5240f9a-597b-43e7-9876-74559df1354e dc0969e6-f667-4e29-a038-8569022cce32
+2 NEC creature NO Myojin of Grim Betrayal 896fc91a-1f57-45e2-b135-37bc9c2c80a7 3fa18695-e10f-4dd5-b116-8a9891e58c20
+2 CHK creature NO Horobi, Death's Wail 44e8d51e-0885-49df-a77c-cf4a88e41bc1 b41983cb-c4e4-4384-bd69-df3fc6e74cd0
+2 SOK creature NO Infernal Kirin 4f07a2e6-692b-4d8c-9ecf-4d94b03706a0 c79e7a4c-e0e7-42ac-b125-1db2f3d9325c
+7 CHK sorcery NO Devouring Greed efbe96b5-1f58-4818-a346-ea554813adbc 4a72347d-91cd-45a8-a026-a655e5507322
+
+
+
+
+
+
+
