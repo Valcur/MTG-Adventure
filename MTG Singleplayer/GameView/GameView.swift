@@ -37,6 +37,7 @@ struct GameView: View {
                     }
                 }
                 HandView()
+                StackView()
                 GraveyardView()
                     .opacity(gameViewModel.showGraveyardView ? 1 : 0)
                 CastedCardView()

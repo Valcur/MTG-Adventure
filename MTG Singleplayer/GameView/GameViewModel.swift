@@ -116,8 +116,11 @@ class GameViewModel: ObservableObject {
         } else {
             addCardToBoad(card: card)
         }
-        for _ in 0..<card.cardCount {
-            applyEnterTheBattlefieldEffectFor(card: card)
+        if card.cardEffect.enterTheBattlefield != nil {
+            for _ in 0..<card.cardCount {
+                //applyEnterTheBattlefieldEffectFor(card: card)
+                stack.append(card)
+            }
         }
     }
     
@@ -244,12 +247,6 @@ extension GameViewModel {
         }
     }
     
-    func drawXCards(x: Int) {
-        for _ in 0..<x {
-            drawCard()
-        }
-    }
-    
     func destroyPermanent(card: Card) {
         removeOneCardOnBoard(card: card)
         let tmpCard = card.recreateCard()
@@ -333,11 +330,33 @@ extension GameViewModel {
         board = Card.regroupSameCardsInArray(board)
     }
     
+    func applyStackEffect() {
+        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+            let stackCard = stack.removeLast()
+            applyEffectFor(card: stackCard)
+        }
+    }
+    
+    func cancelStackEffect() {
+        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+            stack.removeLast()
+        }
+    }
+    
+    
+    
+    
     func loseLife(life: Int) {
         
     }
     
     func gainLife(life: Int) {
         
+    }
+    
+    func drawXCards(x: Int) {
+        for _ in 0..<x {
+            drawCard()
+        }
     }
 }

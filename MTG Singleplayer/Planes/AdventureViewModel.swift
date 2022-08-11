@@ -30,10 +30,15 @@ class AdventureViewModel: ObservableObject {
     }
     
     private func applyChoice(choice: EncounterChoice) {
-        // If player have to fight a deck befroe going to the specified encounter
-        if choice.deckToFight != nil {
+        // If plane is completed, siwtch to the next plane
+        if fightCompleted >= 5 {
+            
+        }
+        // If player have to fight a deck before going to the specified encounter
+        else if choice.deckToFight != nil {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: 1)))
             fightCompleted += 1
+            print("Starting fight \(fightCompleted)")
         }
         // Else if we have to go to a random encounter not already played
         else if choice.encounterId.contains(EncounterChoice.randomEncounter) {
@@ -58,13 +63,19 @@ class AdventureViewModel: ObservableObject {
         if fightCompleted >= 3 && shopVisited {
             // Ending
             encounter = Encounters.plane_kamigawa_ending.randomElement()!.value
-        } else if fightCompleted == 1 && !shopVisited {
+        } else if fightCompleted >= 3 && !shopVisited {
             // Shop only
-            encounter = Encounters.plane_kamigawa_ending["\(currentPlane)_Shop"]!
-        } else if fightCompleted == 1 && shopVisited {
+            encounter = Encounters.plane_kamigawa_direct["\(currentPlane)_Shop"]!
+            shopVisited = true
+        } else if fightCompleted == 1 {
             // Double only
             encounter = Encounters.plane_kamigawa_double.randomElement()!.value
-        } else {
+        } else if fightCompleted == 2 {
+            // Single only
+            let randomEncounter = availableRandomEncounter.randomElement()
+            availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
+            encounter = randomEncounter!.value
+        }else {
             // A single or a double
             if Bool.random() {
                 let randomEncounter = availableRandomEncounter.randomElement()

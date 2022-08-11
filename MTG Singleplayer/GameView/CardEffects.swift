@@ -95,4 +95,11 @@ extension GameViewModel {
             applyEffect(effect: effect)
         }
     }
+    
+    func applyEffectFor(card: Card) {
+        guard let effects = card.cardEffect.enterTheBattlefield else { return }
+        for effect in effects {
+            applyEffect(effect: effect)
+        }
+    }
 }

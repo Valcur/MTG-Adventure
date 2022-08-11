@@ -335,6 +335,39 @@ struct TokenCreationRowView: View {
     }
 }
 
+struct StackView: View {
+    @EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        if gameViewModel.stack.count > 0 {
+            VStack {
+                ZStack {
+                    ForEach(0..<gameViewModel.stack.count, id: \.self) { i in
+                        CardView(card: gameViewModel.stack[i])
+                            .frame(width: CardSize.width.big, height: CardSize.height.big)
+                            .cornerRadius(CardSize.cornerRadius.big)
+                            .rotationEffect(.degrees(Double(-(gameViewModel.stack.count - i - 1) * 5)))
+                            .transition(.asymmetric(insertion: .identity, removal: .slide))
+                    }
+                }
+                HStack {
+                    Button(action: {
+                        gameViewModel.applyStackEffect()
+                    }, label: {
+                        GrayButtonLabel("Validate")
+                    })
+                    
+                    Button(action: {
+                        gameViewModel.cancelStackEffect()
+                    }, label: {
+                        GrayButtonLabel("Refuse")
+                    })
+                }
+            }
+        }
+    }
+}
+
 struct ShowAttackersAndBlockersView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     
