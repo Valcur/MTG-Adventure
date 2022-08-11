@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Encounter {
     let title: String
@@ -78,72 +79,72 @@ class EncounterChoice: Identifiable {
     
 }
 
-class Reward {
-    let title: String
-    let imageName: String
+enum Offer: Equatable {
+    case gold(Int, Reward, Repeatable)
+    case life(Int, Reward, Repeatable)
     
-    init(title: String, imageName: String) {
-        self.title = title
-        self.imageName = imageName
+    enum Repeatable {
+        case repeatable
+        case nonrepeatable
     }
     
-    static let reward_boosterReward = Reward(title: "open a booster", imageName: "boosterIcon")
-    static let reward_life1 = RewardLife(value: 1)
-    static let reward_gold10 = RewardGold(value: 10)
-}
-
-class RewardGold: Reward {
-    let value: Int
-    
-    init(value: Int) {
-        self.value = value
-        super.init(title: "+ \(value) ", imageName: "Gold")
-    }
-}
-
-class RewardLife: Reward {
-    let value: Int
-    
-    init(value: Int) {
-        self.value = value
-        super.init(title: "+ \(value) ", imageName: "Life")
-    }
-}
-
-class Offer: Reward {
-    let cost: Cost
-    let repeatable: Bool
-    
-    init(title: String, imageName: String, cost: Cost, repeatable: Bool = false) {
-        self.cost = cost
-        self.repeatable = repeatable
-        super.init(title: title, imageName: imageName)
+    func title() -> String {
+        switch self {
+        case .gold(let value, _, _):
+            return "x \(value)"
+        case .life(let value, _, _):
+            return "x \(value)"
+        }
     }
     
-    static let offer_life1 = Offer(title: "1 life", imageName: "Life", cost: Cost.cost_gold10)
-}
-
-class Cost {
-    let title: String
-    let value: Int
-    
-    init(title: String, value: Int = 0) {
-        self.title = title
-        self.value = value
+    func reward() -> Reward {
+        switch self {
+        case .gold(_, let reward, _):
+            return reward
+        case .life(_, let reward, _):
+            return reward
+        }
     }
     
-    static let cost_gold10 = CostGold(value: 10)
-    static let cost_life1 = CostLife(value: 1)
-}
-
-class CostGold: Cost {
-    init(value: Int) {
-        super.init(title: "x \(value) ", value: value)
+    func isRepeatable() -> Bool {
+        switch self {
+        case .gold(_, _, let isRepeatable):
+            return isRepeatable == .repeatable
+        case .life(_, _, let isRepeatable):
+            return isRepeatable == .repeatable
+        }
     }
 }
 
-class CostLife: Cost {
-    init(value: Int) {
-        super.init(title: "x \(value) ", value: value)
+enum Reward: Equatable {
+    case gold(Int)
+    case life(Int)
+    case booster
+    case partner
+    
+    func image() -> Image {
+        switch self {
+        case .gold(_):
+            return Image("Gold")
+        case .life(_):
+            return Image("Life")
+        case .booster:
+            return Image("Booster")
+        case .partner:
+            return Image("Partner")
+        }
+    }
+    
+    func title() -> String {
+        switch self {
+        case .gold(let value):
+            return "+ \(value)"
+        case .life(let value):
+            return "+ \(value)"
+        case .booster:
+            return "Open a booster"
+        case .partner:
+            return "Get a new partner"
+        }
     }
 }

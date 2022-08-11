@@ -54,7 +54,11 @@ struct EncounterView: View {
                         .padding(20)
                         .frame(maxWidth: UIScreen.main.bounds.width / 2)
                         .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
-                    TextSubTitle("Art by \(encounter.artistName)")
+                    HStack {
+                        TextSubTitle("Art by \(encounter.artistName)")
+                        Spacer()
+                        TextSubTitle("@ Wizards of the Coast")
+                    }.frame(maxWidth: UIScreen.main.bounds.width / 2)
                 }.padding(60)
             }
         }.ignoresSafeArea()
@@ -131,6 +135,7 @@ struct GoldAndLifeCountView: View {
 struct RewardsView: View {
     let rewards: [Reward]
     // IMAGE BY FREEPIK
+    // Victoruler
     
     var body: some View {
         ForEach(0..<rewards.count, id:\.self) { i in
@@ -144,11 +149,11 @@ struct RewardsView: View {
         
         var body: some View {
             VStack(spacing: 20) {
-                Image(reward.imageName)
+                reward.image()
                     .resizable()
                     .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
                 
-                TextSubTitle(reward.title)
+                TextSubTitle(reward.title())
             }.padding(30).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(10))
         }
     }
@@ -175,19 +180,19 @@ struct OffersView: View {
             Button(action: {
                 adventureViewModel.buyOffer(offer: offer)
                 withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
-                    if !offer.repeatable {
+                    if !offer.isRepeatable() {
                         alreadyPurchased = true
                     }
                 }
             }, label: {
                 VStack(spacing: 20) {
-                    Image(offer.imageName)
+                    offer.reward().image()
                         .resizable()
                         .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
                     
-                    TextParagraph(offer.title)
+                    TextParagraph(offer.reward().title())
                     
-                    TextSubTitle(offer.cost.title)
+                    TextSubTitle(offer.title())
                 }.opacity(isDisable ? 0.5 : 1)
             }).padding(30).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(10).opacity(isDisable ? 0 : 1)).disabled(isDisable)
         }

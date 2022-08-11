@@ -111,11 +111,7 @@ extension AdventureViewModel {
         DispatchQueue.main.asyncAfter(deadline: .now() + (withDelay ? AnimationsDuration.long : 0)) {
             if let rewards = rewards {
                 for reward in rewards {
-                    if let goldReward = reward as? RewardGold {
-                        self.currentGold += goldReward.value
-                    } else if let lifeReward = reward as? RewardLife {
-                        self.currentLife += lifeReward.value
-                    }
+                    self.giveReward(reward: reward)
                 }
             }
         }
@@ -123,22 +119,35 @@ extension AdventureViewModel {
     
     func buyOffer(offer: Offer) {
         // Pay the offer
-        if let goldCost = offer.cost as? CostGold {
-            currentGold -= goldCost.value
-        } else if let lifeCost = offer.cost as? CostLife {
-            currentLife -= lifeCost.value
+        switch offer {
+        case .gold(let value, _, _):
+            currentGold -= value
+        case .life(let value, _, _):
+            currentLife -= value
         }
-        currentLife += 1
-        giveRewards(rewards: [offer])
+        giveReward(reward: offer.reward())
+    }
+    
+    private func giveReward(reward: Reward) {
+        switch reward {
+        case .gold(let value):
+            currentGold += value
+        case .life(let value):
+            currentLife += value
+        case .booster:
+            print("OK")
+        case .partner:
+            print("OK")
+        }
     }
     
     func canPlayerBuyOffer(offer: Offer) -> Bool {
-        if let goldCost = offer.cost as? CostGold {
-            return currentGold >= goldCost.value
-        } else if let lifeCost = offer.cost as? CostLife {
-            return currentLife >= lifeCost.value
+        switch offer {
+        case .gold(let value, _, _):
+            return currentGold >= value
+        case .life(let value, _, _):
+            return currentLife >= value
         }
-        return true
     }
     
     func playerCanAffordOffer(offer: Offer) -> Bool {

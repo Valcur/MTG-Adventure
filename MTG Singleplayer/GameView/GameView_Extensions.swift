@@ -330,8 +330,8 @@ struct TokenCreationRowView: View {
                            })
                    }
                }
-           }
-       }.frame(width: 200)
+           }.frame(width: CardSize.width.small * 2 + 10)
+       }
     }
 }
 
@@ -343,11 +343,7 @@ struct StackView: View {
             VStack {
                 ZStack {
                     ForEach(0..<gameViewModel.stack.count, id: \.self) { i in
-                        CardView(card: gameViewModel.stack[i])
-                            .frame(width: CardSize.width.big, height: CardSize.height.big)
-                            .cornerRadius(CardSize.cornerRadius.big)
-                            .rotationEffect(.degrees(Double(-(gameViewModel.stack.count - i - 1) * 5)))
-                            .transition(.asymmetric(insertion: .identity, removal: .slide))
+                        CardStackView(card: gameViewModel.stack[i], indice: i)
                     }
                 }
                 HStack {
@@ -364,6 +360,21 @@ struct StackView: View {
                     })
                 }
             }
+        }
+    }
+    
+    struct CardStackView: View {
+        @EnvironmentObject var gameViewModel: GameViewModel
+        let card: Card
+        let indice: Int
+        var body: some View {
+            CardView(card: card)
+                .frame(width: CardSize.width.big, height: CardSize.height.big)
+                .cornerRadius(CardSize.cornerRadius.big)
+                
+                .rotationEffect(.degrees(Double(-(gameViewModel.stack.count - indice - 1) * 5)))
+                .offset(x: CGFloat(-(gameViewModel.stack.count - indice - 1)) * CardSize.width.big / CGFloat(20))
+                //.transition(.asymmetric(insertion: .identity, removal: .slide))
         }
     }
 }

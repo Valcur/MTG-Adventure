@@ -124,7 +124,7 @@ struct BottomBarView: View {
             ShowAttackersAndBlockersView()
             
             // Token Creation
-            TokenCreationRowView().background(Color.red)
+            TokenCreationRowView()
             
             // Sword by By Bartama Graphic
             // Shield by Freepik
