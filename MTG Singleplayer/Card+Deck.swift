@@ -23,6 +23,7 @@ class Card: Hashable, Identifiable, ObservableObject {
     let cardId: String          // Unique id of card and unique between reprints
     @Published var cardCount: Int = 1
     let cardEffect: CardEffect
+    @Published var countersOnCard: Int = 0
         
     init(cardName: String, cardType: CardType, cardImageURL: String = "get-on-scryfall", cardUIImage: Image = Image("BlackBackground"), hasFlashback: Bool = false, shouldCardAttack: Bool = false, shouldCardBlock: Bool = false, specificSet: String = "", cardOracleId: String = "", cardId: String = ""){
         self.cardType = cardType
@@ -129,7 +130,7 @@ class Card: Hashable, Identifiable, ObservableObject {
         while i < tmpArray.count {
             var j = i + 1
             while j < tmpArray.count {
-                if tmpArray[i] == tmpArray[j] {
+                if tmpArray[i] == tmpArray[j] && tmpArray[i].countersOnCard == 0 && tmpArray[j].countersOnCard == 0 {
                     tmpArray[i].cardCount += tmpArray[j].cardCount
                     tmpArray.remove(at: j)
                     j -= 1

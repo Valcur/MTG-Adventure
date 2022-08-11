@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GameViewModel: ObservableObject {
     var deck: DeckList
@@ -15,13 +16,18 @@ class GameViewModel: ObservableObject {
     let startEndGameAtMana: Int = 5
     @Published var board: [Card]
     @Published var graveyard: [Card]
+    @Published var stack: [Card]
     @Published var showCardsToCastView: Bool = false
     @Published var showGraveyardView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
+    let deckName: String
     
     // For buttons
     @Published var onlyShowAttackers: Bool = false
     @Published var onlyShowBlockers: Bool = false
+    @Published var returnToHandModeEnable: Bool = false
+    @Published var addCountersModeEnable: Bool = false
+    @Published var removeCountersModeEnable: Bool = false
     
     /// AI TURN
     ///
@@ -50,7 +56,9 @@ class GameViewModel: ObservableObject {
         self.manaCount = 0
         self.board = []
         self.graveyard = []
+        self.stack = []
         self.gameResult = 0
+        self.deckName = deckName
     }
     
     
@@ -108,7 +116,9 @@ class GameViewModel: ObservableObject {
         } else {
             addCardToBoad(card: card)
         }
-        applyEnterTheBattlefieldEffectFor(card: card)
+        for _ in 0..<card.cardCount {
+            applyEnterTheBattlefieldEffectFor(card: card)
+        }
     }
     
     func removeOneCardOnBoard(card: Card) {
@@ -125,7 +135,7 @@ class GameViewModel: ObservableObject {
     }
     
     func tokenRowPressed(token: Card) {
-        castCard(card: token)
+        castCard(card: token.recreateCard())
     }
 }
 
@@ -172,6 +182,14 @@ extension GameViewModel {
         }
         return nil
     }
+    
+    private func resetAllModes() {
+        returnToHandModeEnable = false
+        onlyShowBlockers = false
+        onlyShowAttackers = false
+        addCountersModeEnable = false
+        removeCountersModeEnable = false
+    }
 }
 
 // MARK: Buttons
@@ -187,7 +205,10 @@ extension GameViewModel {
             // All decks are empty, player won
             gameResult = 1
         }
-        showCardsToCastView = true
+        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+            showCardsToCastView = true
+        }
+        resetAllModes()
     }
     
     // Ending step 1
@@ -214,7 +235,9 @@ extension GameViewModel {
     func drawCard() {
         let card = drawCardFromRandomDeck()
         if card != nil {
-            hand.append(card!)
+            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                hand.append(card!)
+            }
         } else {
             // All decks are empty, player won
             gameResult = 1
@@ -262,6 +285,52 @@ extension GameViewModel {
     func toggleOnlyShowBlockers() {
         self.onlyShowBlockers.toggle()
         self.onlyShowAttackers = false
+    }
+    
+    func discardACardAtRandom() {
+        if hand.count > 0 {
+            let card = hand.remove(at: Int.random(in: 0..<hand.count))
+            graveyard.append(card)
+        }
+    }
+    
+    func returnToHand(card: Card) {
+        removeOneCardOnBoard(card: card)
+        if card.cardType != .token {
+            let tmpCard = card.recreateCard()
+            tmpCard.cardCount = 1
+            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                hand.append(tmpCard)
+            }
+        } else {
+            board = Card.regroupSameCardsInArray(board)
+        }
+    }
+    
+    func addCountersToCardOnBoard(card: Card) {
+        if card.cardCount > 1 {
+            let tmpCard = card.recreateCard()
+            tmpCard.cardCount = card.cardCount - 1
+            card.cardCount = 1
+            card.countersOnCard += 1
+            var cardIndexOnBoard = 0
+            for i in 0..<board.count {
+                if board[i] == card {
+                    cardIndexOnBoard = i
+                }
+            }
+            board.insert(tmpCard, at: cardIndexOnBoard + 1)
+        } else {
+            card.countersOnCard += 1
+        }
+        board = Card.regroupSameCardsInArray(board)
+    }
+    
+    func removeCountersFromCardOnBoard(card: Card) {
+        if card.countersOnCard > 0 {
+            card.countersOnCard -= 1
+        }
+        board = Card.regroupSameCardsInArray(board)
     }
     
     func loseLife(life: Int) {

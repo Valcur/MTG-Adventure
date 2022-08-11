@@ -1,0 +1,13 @@
+## Basic Deck ##
+10 BOK creature NO-AB Skullsnatcher 5326381e-e5e7-4c3e-9565-4837b3ffaec0 6cb76fa1-a930-468d-bfd4-dd06c2a9fe9e
+5 NEO creature NO-AB Inkrise Infiltrator 6a45d09a-6af3-45fb-8f7c-cf630cb37f24 cbb6e447-5f40-4039-8a17-257b4a55382c
+
+## Midrange Deck ##
+6 NEO creature NO Silver-Fur Master 60ec735d-c9be-4776-beb7-f603ae22edbf cacc36d9-4c4b-43b2-a8b4-d265deb1e6b2
+4 NEO sorcery NO Kaito's Pursuit 23b7fd18-3129-448f-881f-947ba988f98d dd73fa5a-be0f-49a4-a921-afefbc8fa9c5
+5 C18 creature NO-AB Ninja of the Deep Hours 1f3c2b00-0000-4ae1-9650-9553accac52e 5fea7980-55e1-47c1-ab18-a89c976b55fc
+
+## Endgame Deck ##
+5 NEO sorcery NO Invoke Despair f9ee4c80-20fb-4322-be02-1c78d37d7a99 35af9d5c-4449-4549-b549-c3ba4a67dee0
+5 BOK creature NO-AB Okiba-Gang Shinobi efe3b58f-6f83-45d5-beb1-7dde1cae9dd7 5cd9297e-301e-4e70-af9b-3218eacacf8d
+5 BOK creature NO-AB Throat Slitter 56f782b7-d46c-4aa1-ae16-66d6401c72ae c4dcfdb4-c2ff-4fc5-aa2a-0c6e311d2910

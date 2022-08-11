@@ -18,27 +18,28 @@ class AdventureViewModel: ObservableObject {
     @Published var currentLife: Int = 3
     
     var availableRandomEncounter: [String:Encounter]
+    var fightCompleted: Int = 0
+    var shopVisited: Bool = false
+    var currentPlane = "Kamigawa"
     
     init() {
         availableRandomEncounter = Encounters.plane_kamigawa
         
-        let startEncounter = Encounters.plane_kamigawa["Kamigawa_Intro"]!
+        let startEncounter = Encounters.plane_kamigawa_direct["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-        availableRandomEncounter.removeValue(forKey: "Kamigawa_Intro")
     }
     
     private func applyChoice(choice: EncounterChoice) {
         // If player have to fight a deck befroe going to the specified encounter
         if choice.deckToFight != nil {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: 1)))
+            fightCompleted += 1
         }
         // Else if we have to go to a random encounter not already played
         else if choice.encounterId.contains(EncounterChoice.randomEncounter) {
-            let nextEncounter = availableRandomEncounter.randomElement()
-            currentEncounterView = AnyView(EncounterView(encounter: nextEncounter!.value))
-            giveRewards(rewards: nextEncounter!.value.reward, withDelay: true)
-            
-            availableRandomEncounter.removeValue(forKey: nextEncounter!.key)
+            let nextEncounter = getRandomEncounter()
+            currentEncounterView = AnyView(EncounterView(encounter: nextEncounter))
+            giveRewards(rewards: nextEncounter.reward, withDelay: true)
         }
         // Else we go to the specified encounter
         else {
@@ -50,6 +51,30 @@ class AdventureViewModel: ObservableObject {
         currentEncounterChoice = choice
         switchView()
         
+    }
+    
+    private func getRandomEncounter() -> Encounter {
+        var encounter: Encounter
+        if fightCompleted >= 3 && shopVisited {
+            // Ending
+            encounter = Encounters.plane_kamigawa_ending.randomElement()!.value
+        } else if fightCompleted == 1 && !shopVisited {
+            // Shop only
+            encounter = Encounters.plane_kamigawa_ending["\(currentPlane)_Shop"]!
+        } else if fightCompleted == 1 && shopVisited {
+            // Double only
+            encounter = Encounters.plane_kamigawa_double.randomElement()!.value
+        } else {
+            // A single or a double
+            if Bool.random() {
+                let randomEncounter = availableRandomEncounter.randomElement()
+                availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
+                encounter = randomEncounter!.value
+            } else {
+                encounter = Encounters.plane_kamigawa_double.randomElement()!.value
+            }
+        }
+        return encounter
     }
 
     private func switchView() {

@@ -11,30 +11,10 @@ import Foundation
 class Encounters {
     static let plane_kamigawa =
     [
-        "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Adam Paquette",
-                                    reward: Reward.reward_life1,
-                                    offer: Offer.offer_life1,
-                                    choices: [
-                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Swamp"),
-                                        EncounterChoice(title: "Run", encounterId: EncounterChoice.randomEncounter)
-                                    ]),
-        
         "Kamigawa_Forest_Intro": Encounter(title: "Peacefull forest walk", id: "Kamigawa_Forest_Intro", artistName: "Piotr Dura",
                                     choices: [
                                         EncounterChoice(title: "Go off road", encounterId: ["Kamigawa_Forest_Attack", "Kamigawa_Forest_Haven", "Kamigawa_Forest_Penitent"]),
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
-                                    ]),
-        
-        "Kamigawa_Shop": Encounter(title: "Shop", id: "Kamigawa_Shop", artistName: "Adam Paquette",
-                                    offer: [Offer.offer_life1, Offer.offer_life1, Offer.offer_life1],
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
-                                    ]),
-        /*
-        "Kamigawa_Samurai_Intro": Encounter(title: "A city in the distance", id: "Kamigawa_Samurai_Intro", artistName: "Piotr Dura",
-                                    reward: Reward.reward_life1,
-                                    choices: [
-                                        EncounterChoice(title: "Approach the city", encounterId: "Kamigawa_Samurai_MakeAChoice")
                                     ]),
         
         "Kamigawa_Shrine": Encounter(title: "Time to shrine", id: "Kamigawa_Shrine", artistName: "Johannes Voss",
@@ -42,30 +22,12 @@ class Encounters {
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine")
                                     ]),
         
-        */
-        /*
-        "Kamigawa_Forge_01": Encounter(title: "Forge", id: "Kamigawa_Forge_01", artistName: "Alayna Danner",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_02")
-                                    ]),
-     */
-        "Kamigawa_Otawara_Intro": Encounter(title: "Fight", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
-                                    choices: [
-                                        EncounterChoice(title: "Help the city of Otawara", encounterId: "Kamigawa_Otawara_Fight_01"),
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
-                                    ]),
-        
         "Kamigawa_Water_Intro": Encounter(title: "Hangar", id: "Kamigawa_Water_Intro", artistName: "Piotr Dura",
                                     choices: [
                                         EncounterChoice(title: "Follow the river", encounterId: ["Kamigawa_Water_Haven", "Kamigawa_Water_Fight"]),
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
-        /*
-        "Kamigawa_Boseiju": Encounter(title: "Towashi", id: "Kamigawa_Boseiju", artistName: "Chris Ostrowski",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_01")
-                                    ]),
-        */
+
         "Kamigawa_Swamp_Intro": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Intro", artistName: "Julian Kok Joon Wen",
                                     choices: [
                                         EncounterChoice(title: "Follow the light", encounterId: "Kamigawa_Swamp_Lost_01"),
@@ -73,7 +35,49 @@ class Encounters {
                                     ]),
     ]
     
+    static let plane_kamigawa_double = [
+        
+        "Kamigawa_Otawara_Intro": Encounter(title: "Fight", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
+                                    choices: [
+                                        EncounterChoice(title: "Help the city of Otawara", encounterId: "Kamigawa_Otawara_Fight_01"),
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Samurai_Intro": Encounter(title: "A city in the distance", id: "Kamigawa_Samurai_Intro", artistName: "Piotr Dura",
+                                    reward: Reward.reward_life1,
+                                    choices: [
+                                        EncounterChoice(title: "Approach the city", encounterId: "Kamigawa_Samurai_MakeAChoice")
+                                    ]),
+    ]
+    
+    static let plane_kamigawa_ending = [
+
+        "Kamigawa_Boseiju": Encounter(title: "Towashi", id: "Kamigawa_Boseiju", artistName: "Chris Ostrowski",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_01")
+                                    ]),
+        
+        "Kamigawa_Forge_01": Encounter(title: "Forge", id: "Kamigawa_Forge_01", artistName: "Alayna Danner",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_02")
+                                    ]),
+    ]
+    
     static let plane_kamigawa_direct = [
+        
+        "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Adam Paquette",
+                                    reward: Reward.reward_life1,
+                                    offer: Offer.offer_life1,
+                                    choices: [
+                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine"),
+                                        EncounterChoice(title: "Run", encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Kamigawa_Shop": Encounter(title: "Shop", id: "Kamigawa_Shop", artistName: "Adam Paquette",
+                                    offer: [Offer.offer_life1, Offer.offer_life1, Offer.offer_life1],
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
         
         // MARK: Rat
         

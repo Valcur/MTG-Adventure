@@ -68,10 +68,13 @@ struct LeftView: View {
             // Show graveyard
             PlayerGraveyardView()
             
+            // Show library
+            PlayerLibraryView()
+            
             Spacer()
             
-            EmblemView()
-        }.frame(maxHeight: .infinity).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).padding(.vertical, 20)
+            //EmblemView()
+        }.ignoresSafeArea().frame(maxHeight: .infinity).padding(.vertical, 20).background(/*VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))*/ Color.black.opacity(0.3))
     }
 }
 
@@ -106,9 +109,7 @@ struct BottomBarView: View {
         HStack(spacing: 0) {
             // Draw a card
             Button(action: {
-                withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                    gameViewModel.drawCard()
-                }
+                gameViewModel.drawCard()
             }, label: {
                 GrayButtonLabel("Draw a card")
             })
@@ -119,10 +120,10 @@ struct BottomBarView: View {
             // Add counters
             AddCountersOnPermanentsView()
             
-            // Token Creation
-            //TokenCreationRowView()
-            
             ShowAttackersAndBlockersView()
+            
+            // Token Creation
+            TokenCreationRowView().background(Color.red)
             
             // Sword by By Bartama Graphic
             // Shield by Freepik
@@ -163,7 +164,9 @@ struct CastedCardView: View {
             }
         }
         .onTapGesture(count: 1) {
-            gameViewModel.closeCardsToCast()
+            withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                gameViewModel.closeCardsToCast()
+            }
         }
     }
     
@@ -277,15 +280,20 @@ struct HandView: View {
     var body: some View {
         HStack {
             ForEach(gameViewModel.hand) { card in
-                Image("CardBack")
-                    .resizable()
-                    .frame(width: CardSize.width.hand * cardSizeCoeff, height: CardSize.height.hand * cardSizeCoeff)
-                    .cornerRadius(CardSize.cornerRadius.hand * cardSizeCoeff)
-                    .rotationEffect(.degrees(180))
-                    .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
-                    .transition(.move(edge: .top))
+                Button(action: {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                        gameViewModel.discardACardAtRandom()
+                    }
+                }, label: {
+                    Image("CardBack")
+                        .resizable()
+                        .frame(width: CardSize.width.hand * cardSizeCoeff, height: CardSize.height.hand * cardSizeCoeff)
+                        .cornerRadius(CardSize.cornerRadius.hand * cardSizeCoeff)
+                        .offset(y: CardSize.height.hand / 2 - GameViewSize.graveyardAndLibraryHeight / 2)
+                        .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+                }).frame(height: GameViewSize.graveyardAndLibraryHeight).clipped()                        .rotationEffect(.degrees(180)).transition(.move(edge: .top))
             }
-        }.position(x: (UIScreen.main.bounds.width - GameViewSize.leftPanelWitdh) / 2 + GameViewSize.leftPanelWitdh, y: 0)
+        }.position(x: (UIScreen.main.bounds.width - GameViewSize.leftPanelWitdh) / 2 + GameViewSize.leftPanelWitdh, y: GameViewSize.graveyardAndLibraryHeight / 2)
     }
 }
 

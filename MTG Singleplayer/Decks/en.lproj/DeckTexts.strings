@@ -1,0 +1,31 @@
+/* 
+  DeckSpecialText.strings
+  MTG Singleplayer
+
+  Created by Loic D on 10/08/2022.
+  
+*/
+
+"Deck_Kamigawa_Forge_01" = "If only one nonequipment creature is attacking, equip all equipments to it";
+
+"Deck_Kamigawa_Forge_02" = "";
+
+"Deck_Kamigawa_Shrine" = "Activate all shrine abilities each turn";
+
+"Deck_Kamigawa_Imperial_01" = "Only the strongest creature attack alone each turn";
+
+"Deck_Kamigawa_Imperial_02" = "";
+
+"Deck_Kamigawa_Invader_01" = "";
+
+"Deck_Kamigawa_Invader_02" = "Only the strongest creature attack alone each turn";
+
+"Deck_Kamigawa_Vehicle_01" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+
+"Deck_Kamigawa_Vehicle_02" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+
+"Deck_Kamigawa_Vehicle_02_B" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+
+"Deck_Kamigawa_Swamp" = "When casting Devouring Greed, sacrifice all nonlegendary spirits";
+
+"Deck_Kamigawa_Water" = "";

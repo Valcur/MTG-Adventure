@@ -56,6 +56,7 @@ struct ManaCounterView: View {
                 Image(systemName: "minus")
                     .font(.title2)
                     .foregroundColor(.white)
+                    .padding(5)
             })
             Spacer()
             ZStack {
@@ -71,9 +72,10 @@ struct ManaCounterView: View {
                 Image(systemName: "plus")
                     .font(.title2)
                     .foregroundColor(.white)
+                    .padding(5)
             })
             Spacer()
-        }
+        }.padding(.vertical, 10).background(Color.black.opacity(0.3))
     }
 }
 
@@ -93,18 +95,55 @@ struct PlayerGraveyardView: View {
                         CardView(card: gameViewModel.graveyard.last!)
                             .frame(width: CardSize.width.hand, height: CardSize.height.hand)
                             .cornerRadius(CardSize.cornerRadius.hand)
-                            .offset(y: CardSize.height.hand / 2 - 40)
+                            .offset(y: CardSize.height.hand / 2 - GameViewSize.graveyardAndLibraryHeight / 2)
                     } else {
                         Image("BlackBackground")
                             .resizable()
                             .frame(width: CardSize.width.hand, height: CardSize.height.hand)
                             .cornerRadius(CardSize.cornerRadius.hand)
-                            .offset(y: CardSize.height.hand / 2 - 40)
+                            .offset(y: CardSize.height.hand / 2 - GameViewSize.graveyardAndLibraryHeight / 2)
                     }
-                }.frame(height: 80).clipped()
+                }.frame(height: GameViewSize.graveyardAndLibraryHeight).clipped()
                 
                 
                 TextSubTitle("\(gameViewModel.graveyard.count)")
+            }
+        })
+    }
+}
+
+struct PlayerLibraryView: View {
+    
+    @EnvironmentObject var gameViewModel: GameViewModel
+    var libraryCount: Int {
+        return gameViewModel.deck.deckBasic.count + gameViewModel.deck.deckMidrange.count + gameViewModel.deck.deckEndgame.count
+    }
+    
+    var body: some View {
+        Button(action: {
+            withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                gameViewModel.showGraveyardView = true
+            }
+        }, label: {
+            ZStack {
+                VStack {
+                    if libraryCount > 0 {
+                        Image("CardBack")
+                            .resizable()
+                            .frame(width: CardSize.width.hand, height: CardSize.height.hand)
+                            .cornerRadius(CardSize.cornerRadius.hand)
+                            .offset(y: CardSize.height.hand / 2 - GameViewSize.graveyardAndLibraryHeight / 2)
+                    } else {
+                        Image("BlackBackground")
+                            .resizable()
+                            .frame(width: CardSize.width.hand, height: CardSize.height.hand)
+                            .cornerRadius(CardSize.cornerRadius.hand)
+                            .offset(y: CardSize.height.hand / 2 - GameViewSize.graveyardAndLibraryHeight / 2)
+                    }
+                }.frame(height: GameViewSize.graveyardAndLibraryHeight).clipped()
+                
+                
+                TextSubTitle("\(libraryCount)")
             }
         })
     }
@@ -140,13 +179,13 @@ struct CardOnBoardView: View {
                     .cornerRadius(CardSize.cornerRadius.normal)
                 
                 if card.cardCount > 1 {
-                    Text("x\(card.cardCount)")
-                        .fontWeight(.bold)
-                        .font(.title2)
-                        .foregroundColor(.white)
+                    TextSubTitle("x\(card.cardCount)")
                 }
                 
                 HStack {
+                    if card.countersOnCard > 0 {
+                        CountersOnCardView(countersCount: card.countersOnCard)
+                    }
                     Spacer()
                     if card.shouldCardAttack {
                         Image("Attacker")
@@ -161,46 +200,98 @@ struct CardOnBoardView: View {
                             .resizable()
                             .frame(width: GameViewSize.attackBlockerImageSize, height: GameViewSize.attackBlockerImageSize)
                     }
-                }.offset(y: -CardSize.height.normal / 2 + GameViewSize.attackBlockerImageSize * 1.4).padding(.trailing, CardSize.height.normal / 18)
+                }.offset(y: -CardSize.height.normal / 3.1).padding(.horizontal, CardSize.height.normal / 17)
                 
             }
             .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
             .onTapGesture(count: 1) {
-                print("Remove card")
-                gameViewModel.destroyPermanent(card: card)
+                // Remove or return to hand
+                if gameViewModel.returnToHandModeEnable {
+                    print("Send \(card.cardName) to hand")
+                    gameViewModel.returnToHand(card: card)
+                } else if gameViewModel.addCountersModeEnable {
+                    gameViewModel.addCountersToCardOnBoard(card: card)
+                } else if gameViewModel.removeCountersModeEnable {
+                    gameViewModel.removeCountersFromCardOnBoard(card: card)
+                } else {
+                    print("Send \(card.cardName) to graveyard")
+                    gameViewModel.destroyPermanent(card: card)
+                }
             }
         })
+    }
+    
+    struct CountersOnCardView: View {
+        let countersCount: Int
+        var body: some View {
+            ZStack {
+                TextSubTitle("\(countersCount)")
+            }
+            .frame(width: GameViewSize.attackBlockerImageSize * 1.1, height: GameViewSize.attackBlockerImageSize * 1.1)
+            .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+            .cornerRadius(40)
+            .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+        }
     }
 }
 
 struct EmblemView: View {
     
-    let emblemText: String = "Creatures you control have SHROUD"
+    @EnvironmentObject var gameViewModel: GameViewModel
     
     var body: some View {
         VStack {
-            Text(emblemText)
-                .foregroundColor(.white)
-            Spacer()
+            TextParagraph(NSLocalizedString("Deck_\(gameViewModel.deckName)", tableName: "DeckTexts", comment: "The deck special text"))
+            //Spacer()
         }
         .padding(5)
-        .frame(width: CardSize.width.hand, height: CardSize.height.hand)
-        .overlay(
+        //.frame(width: CardSize.width.hand, height: CardSize.height.hand)
+        /*.overlay(
             RoundedRectangle(cornerRadius: CardSize.cornerRadius.hand)
                 .stroke(Color.white, lineWidth: 2)
-        )
+        )*/
     }
 }
 
 struct AddCountersOnPermanentsView: View {
+    @EnvironmentObject var gameViewModel: GameViewModel
     var body: some View {
-        GrayButtonLabel("Counters")
+        HStack {
+            Button(action: {
+                gameViewModel.removeCountersModeEnable.toggle()
+                gameViewModel.addCountersModeEnable = false
+            }, label: {
+                Image(systemName: "minus.circle.fill")
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+                    .padding(15)
+            }).opacity(gameViewModel.removeCountersModeEnable ? 0.5 : 1)
+            TextParagraph("/")
+            Button(action: {
+                gameViewModel.addCountersModeEnable.toggle()
+                gameViewModel.removeCountersModeEnable = false
+            }, label: {
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+                    .padding(15)
+            }).opacity(gameViewModel.addCountersModeEnable ? 0.5 : 1)
+        }
+        .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+        .cornerRadius(40)
+        .padding(10)
+        .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
     }
 }
 
 struct ReturnToHandView: View {
+    @EnvironmentObject var gameViewModel: GameViewModel
     var body: some View {
-        GrayButtonLabel(systemName: "hand.wave.fill")
+        Button(action: {
+            gameViewModel.returnToHandModeEnable.toggle()
+        }, label: {
+            GrayButtonLabel(systemName: "hand.wave.fill")
+        }).opacity(gameViewModel.returnToHandModeEnable ? 0.5 : 1)
     }
 }
 
@@ -239,8 +330,8 @@ struct TokenCreationRowView: View {
                            })
                    }
                }
-           }.frame(maxWidth: GameViewSize.tokenCreationRowWidth)
-       }
+           }
+       }.frame(width: 200)
     }
 }
 
@@ -249,7 +340,7 @@ struct ShowAttackersAndBlockersView: View {
     
     var body: some View {
         HStack {
-            TextParagraph("Show")
+            //TextParagraph("Show")
             Button(action: {
                 withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
                     gameViewModel.toggleOnlyShowAttackers()
@@ -278,14 +369,14 @@ struct CardSize {
         static let big = (UIScreen.main.bounds.height / 100) * 6.3 * 5.5 as CGFloat
         static let normal = (UIScreen.main.bounds.height / 100) * 6.3 * 4.5 as CGFloat
         static let hand = (UIScreen.main.bounds.height / 100) * 6.3 * 3.5 as CGFloat
-        static let small = 54 as CGFloat
+        static let small = 49 as CGFloat
     }
     
     struct height {
         static let big = (UIScreen.main.bounds.height / 100) * 8.8 * 5.5 as CGFloat
         static let normal = (UIScreen.main.bounds.height / 100) * 8.8 * 4.5 as CGFloat
         static let hand = (UIScreen.main.bounds.height / 100) * 8.8 * 3.5 as CGFloat
-        static let small = 75 as CGFloat
+        static let small = 67 as CGFloat
     }
     
     struct cornerRadius {
@@ -302,5 +393,6 @@ struct GameViewSize {
     static let handHeight: CGFloat = 80
     static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
     static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 5
-    static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 7.5
+    static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 8.5
+    static let graveyardAndLibraryHeight: CGFloat = 100
 }

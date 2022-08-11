@@ -11,7 +11,7 @@ import SwiftUI
 struct DeckManager {
     
     static func getDeckFor(deckName: String, stage: Int) -> ([Card], [Card], [Card], [Card]) {
-        let deckData: String = readDeckDataFromFile(fileName: "\(deckName)_\(stage)")
+        let deckData: String = readDeckDataFromFile(fileName: "\(deckName)")
         return createDeckListFromDeckData(deckData: deckData)
     }
     
@@ -73,6 +73,10 @@ struct DeckManager {
         else if selectedDeckListNumber == DeckManagerSelectedDeck.endgameDeck
         {
             deck.deckEndgame = addCardToDeck(card: card, deck: deck.deckEndgame)
+        }
+        else if selectedDeckListNumber == DeckManagerSelectedDeck.tokensAvailable
+        {
+            deck.tokensAvailable.append(card)
         }
         
         return deck
