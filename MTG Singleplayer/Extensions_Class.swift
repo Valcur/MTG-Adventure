@@ -60,6 +60,7 @@ class EncounterChoice: Identifiable {
     static let randomEncounter: String = "Random" // Use this as encounterId if no specific encounter for this choice
     static let deckEncounter: String = "DeckEncounter:"
     static let defaultTitle: String = "Continue"
+    static let planeEnd: String = "Planeswalk"
     
     init(title: String, encounterId: String, deckToFight: String? = nil) {
         self.title = title

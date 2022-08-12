@@ -9,12 +9,38 @@ import Foundation
 
 // All encounters
 class Encounters {
+    
+    static func getArrayForPlane(_ planeName: String, array: PlaneEncounterArray) -> [String:Encounter] {
+        switch(planeName) {
+        case "Kamigawa":
+            switch(array) {
+            case .singleEncounter:
+                return plane_kamigawa
+            case .doubleEncounter:
+                return plane_kamigawa_double
+            case .endingEncounter:
+                return plane_kamigawa_ending
+            case .directEncounter:
+                return plane_kamigawa_direct
+            }
+        default:
+            return bosses
+        }
+    }
+    
+    enum PlaneEncounterArray {
+        case singleEncounter
+        case doubleEncounter
+        case endingEncounter
+        case directEncounter
+    }
+    
     static let plane_kamigawa =
     [
         "Kamigawa_Forest_Intro": Encounter(title: "Peacefull forest walk", id: "Kamigawa_Forest_Intro", artistName: "Piotr Dura",
                                     choices: [
-                                        EncounterChoice(title: "Go off road", encounterId: ["Kamigawa_Forest_Attack", "Kamigawa_Forest_Haven", "Kamigawa_Forest_Penitent"]),
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: "Go off road", encounterId: ["Kamigawa_Forest_Attack", "Kamigawa_Forest_Attack", "Kamigawa_Forest_Haven", "Kamigawa_Forest_Penitent"]),
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, "Kamigawa_Forest_Attack"])
                                     ]),
         
         "Kamigawa_Shrine": Encounter(title: "Time to shrine", id: "Kamigawa_Shrine", artistName: "Johannes Voss",
@@ -24,8 +50,8 @@ class Encounters {
         
         "Kamigawa_Water_Intro": Encounter(title: "Hangar", id: "Kamigawa_Water_Intro", artistName: "Piotr Dura",
                                     choices: [
-                                        EncounterChoice(title: "Follow the river", encounterId: ["Kamigawa_Water_Haven", "Kamigawa_Water_Fight"]),
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: "Follow the river", encounterId: ["Kamigawa_Water_Haven", "Kamigawa_Water_Fight", "Kamigawa_Water_Fight"]),
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, "Kamigawa_Water_Fight"])
                                     ]),
 
         "Kamigawa_Swamp_Intro": Encounter(title: "Lost in the swamps", id: "Kamigawa_Swamp_Intro", artistName: "Julian Kok Joon Wen",
@@ -64,12 +90,12 @@ class Encounters {
     
     static let plane_kamigawa_direct = [
         
-        "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Adam Paquette",
+        "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Piotr Dura",
                                     reward: [.life(1), .gold(10), .booster, .partner],
                                     offer: [.gold(10, .life(1), .nonrepeatable)],
                                     choices: [
                                         EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine"),
-                                        EncounterChoice(title: "Run", encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         "Kamigawa_Shop": Encounter(title: "Shop", id: "Kamigawa_Shop", artistName: "Adam Paquette",
@@ -97,7 +123,7 @@ class Encounters {
         
         "Kamigawa_Rat_04": Encounter(title: "Victory", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
                                     ]),
         
         // MARK: Forge
@@ -114,7 +140,7 @@ class Encounters {
         
         "Kamigawa_Forge_04": Encounter(title: "Victory", id: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
                                     ]),
         
         // MARK: Forest

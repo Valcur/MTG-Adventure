@@ -13,7 +13,7 @@ struct EncounterView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
+            ZStack(alignment: .leading) {
                 Image(encounter.id)
                     .resizable()
                     .scaledToFill()
@@ -30,13 +30,13 @@ struct EncounterView: View {
                 }
                 
                 GoldAndLifeCountView()
-                    .position(x: geo.size.width - EncounterViewSize.choiceWidth - 60, y: 100)
+                    .position(x: geo.size.width - EncounterViewSize.choiceWidth - 60, y: 80)
                 
                 VStack(alignment: .leading) {
                     TextLargeTitle(encounter.title)
                     Spacer()
                     
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 60) {
                             Spacer()
                             if encounter.reward != nil {
@@ -46,8 +46,8 @@ struct EncounterView: View {
                                 OffersView(offers: encounter.offer!)
                             }
                             Spacer()
-                        }.frame(minWidth: geo.size.width - EncounterViewSize.choiceWidth - 40)
-                    }
+                        }
+                    }.frame(width: geo.size.width - EncounterViewSize.choiceWidth - 40)
                     
                     Spacer()
                     TextParagraph(NSLocalizedString("\(encounter.id)", comment: "The encounter description"))
@@ -55,11 +55,11 @@ struct EncounterView: View {
                         .frame(maxWidth: UIScreen.main.bounds.width / 2)
                         .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
                     HStack {
-                        TextSubTitle("Art by \(encounter.artistName)")
+                        TextParagraph("Art by \(encounter.artistName)")
                         Spacer()
-                        TextSubTitle("@ Wizards of the Coast")
+                        TextParagraph("@ Wizards of the Coast")
                     }.frame(maxWidth: UIScreen.main.bounds.width / 2)
-                }.padding(60)
+                }.padding(.horizontal, 60).padding(.vertical, 20)
             }
         }.ignoresSafeArea()
     }

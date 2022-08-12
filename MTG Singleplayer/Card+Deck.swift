@@ -150,6 +150,7 @@ enum CardType {
     case artifact
     case sorcery
     case instant
+    case planeswalker
 }
 
 struct DeckList {

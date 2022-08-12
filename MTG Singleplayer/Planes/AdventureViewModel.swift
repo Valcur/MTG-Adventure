@@ -21,24 +21,31 @@ class AdventureViewModel: ObservableObject {
     var fightCompleted: Int = 0
     var shopVisited: Bool = false
     var currentPlane = "Kamigawa"
+    var stage = 0
     
     init() {
-        availableRandomEncounter = Encounters.plane_kamigawa
-        
-        let startEncounter = Encounters.plane_kamigawa_direct["\(currentPlane)_Intro"]!
+        availableRandomEncounter = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
+        let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
     }
     
     private func applyChoice(choice: EncounterChoice) {
         // If plane is completed, siwtch to the next plane
-        if fightCompleted >= 5 {
+        if choice.encounterId[0] == EncounterChoice.planeEnd {
+            stage += 1
             
+            switch(stage) {
+            case 1:             // Final shop before the boss
+                setFinalShopEncounter()
+            case 2:             // We reach the boss
+                setFinalBossEncounter()
+            default:            // Next plane
+                setIntroEncounter(planeName: "Kamigawa")
+            }
         }
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: 1)))
-            fightCompleted += 1
-            print("Starting fight \(fightCompleted)")
         }
         // Else if we have to go to a random encounter not already played
         else if choice.encounterId.contains(EncounterChoice.randomEncounter) {
@@ -48,28 +55,46 @@ class AdventureViewModel: ObservableObject {
         }
         // Else we go to the specified encounter
         else {
-            let nextEncounter = Encounters.plane_kamigawa_direct[choice.encounterId.randomElement()!]
+            let nextEncounter = Encounters.getArrayForPlane("Kamigawa", array: .directEncounter)[choice.encounterId.randomElement()!]
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter!))
             giveRewards(rewards: nextEncounter!.reward, withDelay: true)
         }
 
         currentEncounterChoice = choice
         switchView()
-        
+    }
+    
+    private func setIntroEncounter(planeName: String) {
+        currentPlane = planeName
+        availableRandomEncounter = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
+        let startEncounter = Encounters.getArrayForPlane(planeName, array: .directEncounter)["\(currentPlane)_Intro"]!
+        currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
+    }
+    
+    private func setFinalShopEncounter() {
+        currentPlane = "Final Shop"
+        let bossShop = Encounters.bosses_shop
+        currentEncounterView = AnyView(EncounterView(encounter: bossShop))
+    }
+    
+    private func setFinalBossEncounter() {
+        currentPlane = "Final Boss"
+        let bossEncounter = Encounters.bosses["Boss_Garruk"]!
+        currentEncounterView = AnyView(EncounterView(encounter: bossEncounter))
     }
     
     private func getRandomEncounter() -> Encounter {
         var encounter: Encounter
         if fightCompleted >= 3 && shopVisited {
             // Ending
-            encounter = Encounters.plane_kamigawa_ending.randomElement()!.value
+            encounter = Encounters.getArrayForPlane("Kamigawa", array: .endingEncounter).randomElement()!.value
         } else if fightCompleted >= 3 && !shopVisited {
             // Shop only
-            encounter = Encounters.plane_kamigawa_direct["\(currentPlane)_Shop"]!
+            encounter = Encounters.getArrayForPlane("Kamigawa", array: .directEncounter)["\(currentPlane)_Shop"]!
             shopVisited = true
         } else if fightCompleted == 1 {
             // Double only
-            encounter = Encounters.plane_kamigawa_double.randomElement()!.value
+            encounter = Encounters.getArrayForPlane("Kamigawa", array: .doubleEncounter).randomElement()!.value
         } else if fightCompleted == 2 {
             // Single only
             let randomEncounter = availableRandomEncounter.randomElement()
@@ -82,7 +107,7 @@ class AdventureViewModel: ObservableObject {
                 availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
                 encounter = randomEncounter!.value
             } else {
-                encounter = Encounters.plane_kamigawa_double.randomElement()!.value
+                encounter = Encounters.getArrayForPlane("Kamigawa", array: .doubleEncounter).randomElement()!.value
             }
         }
         return encounter
@@ -104,7 +129,11 @@ extension AdventureViewModel {
     
     func fightWon() {
         let choice = EncounterChoice(title: currentEncounterChoice!.title, encounterId: currentEncounterChoice!.encounterId)
+        fightCompleted += 1
         applyChoice(choice: choice)
+        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.short) {
+            self.currentGold += 10
+        }
     }
     
     func giveRewards(rewards: [Reward]?, withDelay: Bool = false) {

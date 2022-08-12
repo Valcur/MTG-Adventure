@@ -258,8 +258,7 @@ struct AddCountersOnPermanentsView: View {
     var body: some View {
         HStack {
             Button(action: {
-                gameViewModel.removeCountersModeEnable.toggle()
-                gameViewModel.addCountersModeEnable = false
+                gameViewModel.toggleRemoveCounters()
             }, label: {
                 Image(systemName: "minus.circle.fill")
                     .foregroundColor(.white)
@@ -268,8 +267,7 @@ struct AddCountersOnPermanentsView: View {
             }).opacity(gameViewModel.removeCountersModeEnable ? 0.5 : 1)
             TextParagraph("/")
             Button(action: {
-                gameViewModel.addCountersModeEnable.toggle()
-                gameViewModel.removeCountersModeEnable = false
+                gameViewModel.toggleAddCounters()
             }, label: {
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.white)
@@ -288,7 +286,7 @@ struct ReturnToHandView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     var body: some View {
         Button(action: {
-            gameViewModel.returnToHandModeEnable.toggle()
+            gameViewModel.toggleReturnToHand()
         }, label: {
             GrayButtonLabel(systemName: "hand.wave.fill")
         }).opacity(gameViewModel.returnToHandModeEnable ? 0.5 : 1)

@@ -12,6 +12,7 @@
 		DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31755A28A3CFC400799186 /* DeckTexts.strings */; };
 		DB31755C28A539F900799186 /* Kamigawa_Ninja_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */; };
 		DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */ = {isa = PBXBuildFile; fileRef = DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */; };
+		DB31756128A67B8700799186 /* EncountersBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* EncountersBoss.swift */; };
 		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
 		DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */; };
 		DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */; };
@@ -51,6 +52,7 @@
 		DB31755928A3CFC400799186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeckTexts.strings; sourceTree = "<group>"; };
 		DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_01.txt; sourceTree = "<group>"; };
 		DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_02; sourceTree = "<group>"; };
+		DB31756028A67B8700799186 /* EncountersBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountersBoss.swift; sourceTree = "<group>"; };
 		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_01.txt; sourceTree = "<group>"; };
 		DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02.txt; sourceTree = "<group>"; };
@@ -96,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB31755F28A67B6400799186 /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+				DBC732652899B668006834B1 /* Encounters.swift */,
+				DB31756028A67B8700799186 /* EncountersBoss.swift */,
+				DB510B0028A13CEA0037C760 /* Localizable.strings */,
+			);
+			path = Encounters;
+			sourceTree = "<group>";
+		};
 		DBC7323328972458006834B1 = {
 			isa = PBXGroup;
 			children = (
@@ -185,12 +197,11 @@
 		DBC732622899A969006834B1 /* Planes */ = {
 			isa = PBXGroup;
 			children = (
+				DB31755F28A67B6400799186 /* Encounters */,
 				DBC732632899A97B006834B1 /* EncounterView.swift */,
-				DBC732652899B668006834B1 /* Encounters.swift */,
 				DBC732672899BA29006834B1 /* Decks.swift */,
 				DBC732692899BAF8006834B1 /* AdventureViewModel.swift */,
 				DBC7326B2899BEFE006834B1 /* AdventureView.swift */,
-				DB510B0028A13CEA0037C760 /* Localizable.strings */,
 			);
 			path = Planes;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 				DBC732522897D577006834B1 /* GameViewModel.swift in Sources */,
 				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,
 				DBC732542897E05F006834B1 /* GameView.swift in Sources */,
+				DB31756128A67B8700799186 /* EncountersBoss.swift in Sources */,
 				DBC7325028972487006834B1 /* DownloadManager.swift in Sources */,
 				DBC732682899BA29006834B1 /* Decks.swift in Sources */,
 				DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */,

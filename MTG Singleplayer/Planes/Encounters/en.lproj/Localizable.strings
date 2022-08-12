@@ -1,0 +1,75 @@
+/* 
+  Localizable.strings
+  MTG Singleplayer
+
+  Created by Loic D on 08/08/2022.
+  
+*/
+
+"Kamigawa_Intro" = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world.";
+
+"Kamigawa_Forest_Intro" = "";
+
+"Kamigawa_Shop" = "You take a break in a city on your way. It might be time to spend the gold you have while you can";
+
+"Kamigawa_Samurai_Intro" = "In the distance, a beautifull city.";
+
+"Kamigawa_Samurai_MakeAChoice" = "As you approach the city, you see an army waiting outside. The battle will begin soon between the imperial army holding the city and the invaders";
+
+"Kamigawa_Samurai_ImperialSide_01" = "A strong enemy general coming close to the palace to the east. You are sent to stop him";
+
+"Kamigawa_Samurai_ImperialSide_02" = "The city might have fallen without your help, they thank you with adequate reward";
+
+"Kamigawa_Samurai_InvaderSide_01" = "You are now reaching the palace.";
+
+"Kamigawa_Samurai_InvaderSide_02" = "FIRENDS MADE ALONG THE WAY BETTER THAN GOLD";
+
+"Kamigawa_Shrine" = "After several days in the mountains you see what appears to be an ancient temple. You get closer hoping to find refuge there. As you get closer, you realize that you are not welcome here. But it's too late and they won't let you leave this place alive.";
+
+"Kamigawa_Forge_01" = "You finally find the place you heard about";
+
+"Kamigawa_Forge_02" = "";
+
+"Kamigawa_Forge_03" = "";
+
+"Kamigawa_Forge_04" = "";
+
+"Kamigawa_Otawara_Intro" = "You reach the city of Otawara, a Moonfolk city resting on clouds, floating in the sky. After more than a thousand year, the floating city has opened its doors to intrepid researchers of all kinds";
+
+"Kamigawa_Otawara_Fight_01" = "Their biggest group is in the hangar. You join the Moonfolk in a fight to clear the way to the hangar";
+
+"Kamigawa_Otawara_Hangar" = "You have already helped them a lot. They would understood that you want to get back to your adventure. But they still need your help to fight the remaining invaders near the hangar. They might have too many mechs and one of merfolk have an idea to sabotage them if you are willing to send some men with him";
+
+"Kamigawa_Otawara_Fight_02" = "The enemys mech's army doesn't scare you. It's time to free the city of Otawara";
+
+"Kamigawa_Otawara_Fight_02_B" = "The Moonfolk's plan is a success but you men are injured and won't be able to help you during the battle.\n\nStart this fight with 2 cards less in hand";
+
+"Kamigawa_Otawara_Reward" = "They reward you for all your help and let you rest here before continuing your adventure.";
+
+"Kamigawa_Water_Intro" = "";
+
+"Kamigawa_Water_Fight" = "";
+
+"Kamigawa_Water_Haven" = "The river lead you to CHIIIL";
+
+"Kamigawa_Swamp_Intro" = "After a few hours in the swap, you realize that you are lost. You end up finding lanterns wich seems to indicate a path to follow.";
+
+"Kamigawa_Swamp_Lost_01" = "You reach a cemetery, after a few minutes here you can no longer find the path by which you arrived.";
+
+"Kamigawa_Swamp_Lost_Fight" = "You have disturbed the sleep of the spirits.";
+
+"Kamigawa_Swamp_Lost_02" = "The water level is rising.";
+
+"Kamigawa_Swamp_Lost_Success" = "You find a stair between the trees and follow him. A Kami welcomes you and offer you to stay with him while he heals your wounds.";
+
+"Kamigawa_Swamp_Lost_End" = "You find your path back and continue your adventure out of the swamp.";
+
+"Kamigawa_Boseiju" = "Boseiju was the oldest and tallest tree of the Jukai forest, on the plane of Kamigawa. It now is the only remnant of Jukai Forest left within city limits of Towashi.";
+
+"Kamigawa_Rat_01" = "";
+
+"Kamigawa_Rat_02" = "";
+
+"Kamigawa_Rat_03" = "";
+
+"Kamigawa_Rat_04" = "";

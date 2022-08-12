@@ -106,7 +106,9 @@ class GameViewModel: ObservableObject {
     }
     
     private func sendToGraveyard(card: Card) {
-        graveyard.append(card)
+        if card.cardType != .token {
+            graveyard.append(card)
+        }
         applyLeaveTheBattlefieldEffectFor(card: card)
     }
     
@@ -186,12 +188,12 @@ extension GameViewModel {
         return nil
     }
     
-    private func resetAllModes() {
-        returnToHandModeEnable = false
-        onlyShowBlockers = false
-        onlyShowAttackers = false
-        addCountersModeEnable = false
-        removeCountersModeEnable = false
+    private func resetModes(returnToHandModeEnable: Bool = false, onlyShowBlockers: Bool = false, onlyShowAttackers: Bool = false, addCountersModeEnable: Bool = false, removeCountersModeEnable: Bool = false) {
+        self.returnToHandModeEnable = returnToHandModeEnable
+        self.onlyShowBlockers = onlyShowBlockers
+        self.onlyShowAttackers = onlyShowAttackers
+        self.addCountersModeEnable = addCountersModeEnable
+        self.removeCountersModeEnable = removeCountersModeEnable
     }
 }
 
@@ -211,7 +213,7 @@ extension GameViewModel {
         withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
             showCardsToCastView = true
         }
-        resetAllModes()
+        resetModes()
     }
     
     // Ending step 1
@@ -245,6 +247,7 @@ extension GameViewModel {
             // All decks are empty, player won
             gameResult = 1
         }
+        resetModes()
     }
     
     func destroyPermanent(card: Card) {
@@ -275,13 +278,28 @@ extension GameViewModel {
     }
     
     func toggleOnlyShowAttackers() {
-        self.onlyShowAttackers.toggle()
-        self.onlyShowBlockers = false
+        onlyShowAttackers.toggle()
+        resetModes(onlyShowAttackers: onlyShowAttackers)
     }
     
     func toggleOnlyShowBlockers() {
-        self.onlyShowBlockers.toggle()
-        self.onlyShowAttackers = false
+        onlyShowBlockers.toggle()
+        resetModes(onlyShowBlockers: onlyShowBlockers)
+    }
+    
+    func toggleReturnToHand() {
+        returnToHandModeEnable.toggle()
+        resetModes(returnToHandModeEnable: returnToHandModeEnable)
+    }
+    
+    func toggleAddCounters() {
+        addCountersModeEnable.toggle()
+        resetModes(addCountersModeEnable: addCountersModeEnable)
+    }
+    
+    func toggleRemoveCounters() {
+        removeCountersModeEnable.toggle()
+        resetModes(removeCountersModeEnable: removeCountersModeEnable)
     }
     
     func discardACardAtRandom() {
