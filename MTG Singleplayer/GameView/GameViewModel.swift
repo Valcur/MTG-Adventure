@@ -21,6 +21,7 @@ class GameViewModel: ObservableObject {
     @Published var showGraveyardView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
     let deckName: String
+    var lifePointsViewModel: LifePointsViewModel = LifePointsViewModel()
     
     // For buttons
     @Published var onlyShowAttackers: Bool = false
@@ -356,20 +357,18 @@ extension GameViewModel {
     }
     
     func cancelStackEffect() {
-        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
-            stack.removeLast()
-        }
+        stack.removeLast()
     }
     
     
     
     
     func loseLife(life: Int) {
-        
+        lifePointsViewModel.opponentLife -= life
     }
     
     func gainLife(life: Int) {
-        
+        lifePointsViewModel.opponentLife += life
     }
     
     func drawXCards(x: Int) {

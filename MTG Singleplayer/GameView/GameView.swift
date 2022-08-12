@@ -10,7 +10,6 @@ import SwiftUI
 struct GameView: View {
     
     @EnvironmentObject var gameViewModel: GameViewModel
-    @State var lifePointsViewModel: LifePointsViewModel?
     
     var body: some View {
         GeometryReader { geo in
@@ -25,16 +24,14 @@ struct GameView: View {
                             .frame(height: GameViewSize.bottomBar)
                     }
                 }
-                if lifePointsViewModel != nil {
-                    HStack {
-                        Spacer()
-                        LifePointsView()
-                            .environmentObject(lifePointsViewModel!)
-                            .frame(width: GameViewSize.lifePointsWidth, height: UIScreen.main.bounds.height / 2)
-                            .cornerRadius(15)
-                            .padding(.trailing, 10)
-                            .shadow(color: Color("ShadowColor"), radius: 6, x: 0, y: 4)
-                    }
+                HStack {
+                    Spacer()
+                    LifePointsView()
+                        .environmentObject(gameViewModel.lifePointsViewModel)
+                        .frame(width: GameViewSize.lifePointsWidth, height: UIScreen.main.bounds.height / 2)
+                        .cornerRadius(15)
+                        .padding(.trailing, 10)
+                        .shadow(color: Color("ShadowColor"), radius: 6, x: 0, y: 4)
                 }
                 HandView()
                 StackView()
@@ -48,9 +45,6 @@ struct GameView: View {
                     .opacity(gameViewModel.gameResult == -1 ? 1 : 0)
             }.frame(width: geo.size.width, height: geo.size.height)
         }.ignoresSafeArea()
-        .onAppear() {
-            lifePointsViewModel = LifePointsViewModel()
-        }
     }
 }
 

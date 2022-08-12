@@ -94,7 +94,7 @@ class Encounters {
                                     reward: [.life(1), .gold(10), .booster, .partner],
                                     offer: [.gold(10, .life(1), .nonrepeatable)],
                                     choices: [
-                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine"),
+                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Swamp"),//Kamigawa_Shrine
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         

@@ -12,9 +12,9 @@ struct LifePointsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            LifePointsPlayerPanelView(playerName: "AI",life: lifePointsViewModel.startingLife, blurEffect: .systemMaterialDark, isMainPlayerLife: false)
+            LifePointsPlayerPanelView(playerName: "Opponent", blurEffect: .systemMaterialDark, isMainPlayerLife: false)
                 .environmentObject(lifePointsViewModel)
-            LifePointsPlayerPanelView(playerName: "Player",life: lifePointsViewModel.startingLife, blurEffect: .systemThinMaterialDark, isMainPlayerLife: true)
+            LifePointsPlayerPanelView(playerName: "Player", blurEffect: .systemThinMaterialDark, isMainPlayerLife: true)
                 .environmentObject(lifePointsViewModel)
         }.ignoresSafeArea()
     }
@@ -29,13 +29,25 @@ struct LifePointsPlayerPanelView: View {
     @State var prevValue: CGFloat = 0
     @State var totalChange: Int = 0
     @State var totalChangeTimer: Timer?
-    @State var life: Int
+    var life: Binding<Int> {
+        if isMainPlayerLife {
+            return $lifePointsViewModel.mainPLayerLife
+        } else {
+            return $lifePointsViewModel.opponentLife
+        }
+    }
     let blurEffect: UIBlurEffect.Style
     let isMainPlayerLife: Bool
     
+    init(playerName: String, blurEffect: UIBlurEffect.Style, isMainPlayerLife: Bool) {
+        self.playerName = playerName
+        self.blurEffect = blurEffect
+        self.isMainPlayerLife = isMainPlayerLife
+    }
+    
     var body: some View {
         ZStack {
-            LifePointsPanelView(playerName: playerName, lifepoints: $life, totalChange: $totalChange, blurEffect: blurEffect)
+            LifePointsPanelView(playerName: playerName, lifepoints: life, totalChange: $totalChange, blurEffect: blurEffect)
             VStack(spacing: 0) {
                 Rectangle()
                     .opacity(0.0001)
@@ -71,14 +83,14 @@ struct LifePointsPlayerPanelView: View {
     
     private func addLifepoint() {
         totalChangeTimer?.invalidate()
-        life += 1
+        life.wrappedValue += 1
         totalChange += 1
     }
     
     private func removeLifepoint() {
         totalChangeTimer?.invalidate()
-        if life > 0 {
-            life -= 1
+        if life.wrappedValue > 0 {
+            life.wrappedValue -= 1
             totalChange -= 1
         }
     }
@@ -86,7 +98,7 @@ struct LifePointsPlayerPanelView: View {
     private func startTotalChangeTimer() {
         totalChangeTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
             totalChange = 0
-            if life <= 0 {
+            if life.wrappedValue <= 0 {
                 gameViewModel.gameResult = isMainPlayerLife ? -1 : 1
             }
         }
@@ -150,9 +162,13 @@ struct LifePointsView_Previews: PreviewProvider {
 class LifePointsViewModel: ObservableObject {
     
     let startingLife: Int
+    @Published var mainPLayerLife: Int
+    @Published var opponentLife: Int
     
     init() {
         self.startingLife = 1
+        self.mainPLayerLife = startingLife
+        self.opponentLife = startingLife
         // 60 if two player mode
     }
 }
