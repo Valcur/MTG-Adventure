@@ -45,7 +45,7 @@ class AdventureViewModel: ObservableObject {
         }
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
-            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: 1)))
+            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage)))
         }
         // Else if we have to go to a random encounter not already played
         else if choice.encounterId.contains(EncounterChoice.randomEncounter) {
@@ -134,6 +134,12 @@ extension AdventureViewModel {
         DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.short) {
             self.currentGold += 10
         }
+    }
+    
+    func fightLost() {
+        currentLife -= 1
+        currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: "Kamigawa_Invader_02", stage: stage)))
+        switchView()
     }
     
     func giveRewards(rewards: [Reward]?, withDelay: Bool = false) {

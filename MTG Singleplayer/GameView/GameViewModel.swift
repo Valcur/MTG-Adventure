@@ -60,9 +60,8 @@ class GameViewModel: ObservableObject {
         self.stack = []
         self.gameResult = 0
         self.deckName = deckName
+        print("STARTING WITH \(deckName)")
     }
-    
-    
     
     // Draw a card from one of the random deck if not empty, if empty draw from another one, if all empty return nil
     private func drawCardFromRandomDeck() -> Card? {

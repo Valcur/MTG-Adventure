@@ -99,7 +99,9 @@ struct LifePointsPlayerPanelView: View {
         totalChangeTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
             totalChange = 0
             if life.wrappedValue <= 0 {
-                gameViewModel.gameResult = isMainPlayerLife ? -1 : 1
+                withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                    gameViewModel.gameResult = isMainPlayerLife ? -1 : 1
+                }
             }
         }
     }

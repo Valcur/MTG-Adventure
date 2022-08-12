@@ -19,26 +19,69 @@ struct WinningView: View {
             }.frame(height: UIScreen.main.bounds.height / 2)
         }
         .onTapGesture(count: 1) {
-            adventureViewModel.fightWon()
+            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                adventureViewModel.fightWon()
+            }
         }
     }
 }
 
 struct LosingView: View {
     @EnvironmentObject var adventureViewModel: AdventureViewModel
+    @EnvironmentObject var gameViewModel: GameViewModel
+    @State var animateLifeLoss: Bool = false
+    private let halfImageViewSize: CGFloat = 15 + EncounterViewSize.rewardImageSize / 2
+    
     var body: some View {
         ZStack {
             VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
             VStack {
                 TextSubTitle("You lost")
                 Spacer()
-                TextSubTitle("press anywhere to continue")
+                GeometryReader { geo in
+                    HStack(spacing: 30) {
+                        HStack {
+                            Spacer()
+                            RemainingLifeView()
+                                .offset(x: animateLifeLoss ? -geo.size.width / 2 : 0)
+                                .opacity(animateLifeLoss ? 0 : 1)
+                                .onChange(of: gameViewModel.gameResult) { result in
+                                    if result == -1 {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
+                                            withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                                                self.animateLifeLoss = true
+                                            }
+                                        }
+                                    }
+                                }
+                        }.frame(width: geo.size.width / 2 - 15 + (animateLifeLoss ? -halfImageViewSize : halfImageViewSize))
+                        HStack(spacing: 30) {
+                            if adventureViewModel.currentLife >= 1 {
+                                ForEach(0..<adventureViewModel.currentLife - 1, id:\.self) { _ in
+                                    RemainingLifeView()
+                                }
+                            }
+                            Spacer()
+                        }
+                    }
+                }.frame(height: EncounterViewSize.rewardImageSize)
+
+                Spacer()
+                TextSubTitle("press anywhere to try again")
             }.frame(height: UIScreen.main.bounds.height / 2)
         }
         .onTapGesture(count: 1) {
-            withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                //gameViewModel.showGraveyardView = false
+            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                adventureViewModel.fightLost()
             }
+        }
+    }
+    
+    struct RemainingLifeView: View {
+        var body: some View {
+            Image("Life")
+                .resizable()
+                .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
         }
     }
 }

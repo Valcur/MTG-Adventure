@@ -66,7 +66,6 @@ class Encounters {
         "Kamigawa_Otawara_Intro": Encounter(title: "Fight", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
                                     choices: [
                                         EncounterChoice(title: "Help the city of Otawara", encounterId: "Kamigawa_Otawara_Fight_01"),
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         "Kamigawa_Samurai_Intro": Encounter(title: "A city in the distance", id: "Kamigawa_Samurai_Intro", artistName: "Piotr Dura",
@@ -247,7 +246,7 @@ class Encounters {
         "Kamigawa_Swamp_Lost_01": Encounter(title: "Cemetery", id: "Kamigawa_Swamp_Lost_01", artistName: "Alayna Danner",
                                     choices: [
                                         EncounterChoice(title: "Walk through the cemetery", encounterId: "Kamigawa_Swamp_Lost_Fight"),
-                                        EncounterChoice(title: "Venture into the woods", encounterId: "Kamigawa_Swamp_Lost_End")
+                                        EncounterChoice(title: "Venture into the woods", encounterId: "Kamigawa_Swamp_Lost_02")
                                     ]),
         
         "Kamigawa_Swamp_Lost_Fight": Encounter(title: "Cemeterey", id: "Kamigawa_Swamp_Lost_Fight", artistName: "Jason A. Engle",

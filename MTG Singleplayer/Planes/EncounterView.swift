@@ -46,7 +46,7 @@ struct EncounterView: View {
                                 OffersView(offers: encounter.offer!)
                             }
                             Spacer()
-                        }
+                        }.frame(minWidth: geo.size.width - EncounterViewSize.choiceWidth - 40)
                     }.frame(width: geo.size.width - EncounterViewSize.choiceWidth - 40)
                     
                     Spacer()
