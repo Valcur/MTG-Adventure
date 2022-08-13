@@ -1,0 +1,44 @@
+## Boss ##
+1 ELD enchantment NO Garruk, Cursed Huntsman e0cef79c-ad47-4cbc-9d73-a913e487ccb7 ea9f8dd7-b774-40c5-9e67-3eb87bb72541
+
+## Basic Deck ##
+13 SLD enchantment NO Forest b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 75d5a81e-1efc-46f3-b169-0422cbc8cd5e
+3 DKA creature NO-AB Young Wolf 8b492764-10b6-4506-be11-22daa9220a91 0c39aa40-ef5f-40f1-a6dd-fbce91172c50
+3 BBD creature NO-AB Wandering Wolf 1750cf0a-0709-4f02-90ea-572ff88a37a5 96d4361f-a889-4031-8b95-27dbef3922f3
+3 VOW creature NO-AB Sporeback Wolf 6fd5f773-e53e-4a7d-9093-dddd9b2e741f 3fb04879-9348-4d4f-9a23-c82fd99d04c6
+3 M20 creature NO-AB Ferocious Pup a1112750-8d38-49e0-ab1c-77110b2bbc4d 2354cb24-5c70-4aaa-8636-46866f0950c1
+
+## Midrange Deck ##
+3 KHM creature NO-AB Sarulf's Packmate f32caf11-abc1-4cae-a311-10210176ea3a 6061113e-7dd8-4739-b4dd-55bb7f9e39a2
+3 AFR creature NO-AB Werewolf Pack Leader 086a911f-9ed4-4260-ae46-58c9333b95f5 e88e6b39-bb4d-4d69-8007-d42f31bcbc29
+3 CMA enchantment NO Wolfcaller's Howl e4383685-04e2-4516-b089-863c8d309250 47f3f7bc-1dea-4c84-88b6-a36b23af82ff
+3 SOI creature NO Silverfur Partisan dfeb239b-8904-4ef0-9a91-edc901b0c49a a20f5392-5cde-4326-a322-7463ec4b0515
+3 VOW creature NO-AB Packsong Pup cd796e12-c422-4869-8d59-794600425381 d43d9686-a5e4-413b-8a34-3430788dd1b9
+3 EMN creature NO-AB Spirit of the Hunt 3a81a3a6-4940-4d69-94c1-d431023b275c 5c5f7b11-49ac-4078-aab7-efe3aff746b2
+
+## Endgame Deck ##
+6 M20 creature NO-AB Nightpack Ambusher 4d67357c-5939-45c8-a656-aaf76728a5a6 2c9b1f70-9861-4c66-a52f-c40002679e75
+5 VOW creature NO-AB Flourishing Hunter d714dc46-2db2-439f-b558-2b69d5c36b46 2abc54df-773d-4f46-b241-e1f42af8ab95
+4 SOI enchantment NO Howlpack Resurgence 614c3f71-e231-4c12-9e6b-cb8ea1d100bf a0063470-3728-4d7e-8f77-5e9c9c7d6a6a
+
+## Tokens ##
+1 TMID token NO-AB Wolf b2224843-8274-4872-a7ca-2adf69cc066b 364e04d9-9a8a-49df-921c-7a9bf62dc731
+1 TELD token NO-AB Wolf 21c3b763-b6a2-4e9e-8621-d2ab62e448f2 88452ed7-1065-41c3-94a6-dc41108c45c1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 SOI instant NO Moonlight Hunt f38a6cb4-79dd-4c12-9896-8c6655e275f8 d9633603-a80f-448d-98d9-00064d379c26
+
+

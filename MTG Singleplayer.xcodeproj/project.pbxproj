@@ -13,6 +13,8 @@
 		DB31755C28A539F900799186 /* Kamigawa_Ninja_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */; };
 		DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */ = {isa = PBXBuildFile; fileRef = DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */; };
 		DB31756128A67B8700799186 /* EncountersBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* EncountersBoss.swift */; };
+		DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31756228A7BD8200799186 /* PermanentBonusText.strings */; };
+		DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31756528A832B100799186 /* Boss_Garruk.txt */; };
 		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
 		DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */; };
 		DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */; };
@@ -53,6 +55,8 @@
 		DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_01.txt; sourceTree = "<group>"; };
 		DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_02; sourceTree = "<group>"; };
 		DB31756028A67B8700799186 /* EncountersBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountersBoss.swift; sourceTree = "<group>"; };
+		DB31756228A7BD8200799186 /* PermanentBonusText.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = PermanentBonusText.strings; sourceTree = "<group>"; };
+		DB31756528A832B100799186 /* Boss_Garruk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Garruk.txt; sourceTree = "<group>"; };
 		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_01.txt; sourceTree = "<group>"; };
 		DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02.txt; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 			path = Encounters;
 			sourceTree = "<group>";
 		};
+		DB31756428A832A100799186 /* Bosses */ = {
+			isa = PBXGroup;
+			children = (
+				DB31756528A832B100799186 /* Boss_Garruk.txt */,
+			);
+			path = Bosses;
+			sourceTree = "<group>";
+		};
 		DBC7323328972458006834B1 = {
 			isa = PBXGroup;
 			children = (
@@ -153,9 +165,11 @@
 		DBC732552897E087006834B1 /* Decks */ = {
 			isa = PBXGroup;
 			children = (
+				DB31756428A832A100799186 /* Bosses */,
 				DBE027F428A04EFE00F8F483 /* Blank.txt */,
 				DB31755A28A3CFC400799186 /* DeckTexts.strings */,
 				DBC732562897E08F006834B1 /* Kamigawa */,
+				DB31756228A7BD8200799186 /* PermanentBonusText.strings */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -274,6 +288,7 @@
 				DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */,
 				DBE027F528A04EFE00F8F483 /* Blank.txt in Resources */,
 				DBE027F1289FF0DE00F8F483 /* Kamigawa_Invader_01.txt in Resources */,
+				DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */,
 				DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02.txt in Resources */,
 				DB510B0828A1AAC60037C760 /* Kamigawa_Swamp.txt in Resources */,
 				DBE027E7289ECB8300F8F483 /* Kamigawa_Shrine.txt in Resources */,
@@ -282,6 +297,7 @@
 				DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
 				DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */,
+				DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

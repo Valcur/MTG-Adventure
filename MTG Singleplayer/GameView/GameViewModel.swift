@@ -15,8 +15,9 @@ class GameViewModel: ObservableObject {
     @Published var manaCount: Int
     let startEndGameAtMana: Int = 5
     @Published var board: [Card]
+    let bossCard: Card?
     @Published var graveyard: [Card]
-    @Published var stack: [Card]
+    @Published var stack: [StackCard]
     @Published var showCardsToCastView: Bool = false
     @Published var showGraveyardView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
@@ -51,6 +52,7 @@ class GameViewModel: ObservableObject {
         let deckMidrange: [Card] = deckData.1
         let deckEndgame: [Card] = deckData.2
         let tokens: [Card] = deckData.3
+        self.bossCard = deckData.4
         self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame, tokensAvailable: tokens)
         self.cardsToCast = CardsToCast(cardsFromLibrary: [], cardsFromHand: [], cardsFromGraveyard: [])
         self.hand = []
@@ -109,7 +111,9 @@ class GameViewModel: ObservableObject {
         if card.cardType != .token {
             graveyard.append(card)
         }
-        applyLeaveTheBattlefieldEffectFor(card: card)
+        if card.cardEffect.leaveTheBattlefield != nil {
+            stack.append(StackCard(card: card, stackEffectType: .leaveTheBattlefield))
+        }
     }
     
     private func castCard(card: Card) {
@@ -121,7 +125,7 @@ class GameViewModel: ObservableObject {
         if card.cardEffect.enterTheBattlefield != nil {
             for _ in 0..<card.cardCount {
                 //applyEnterTheBattlefieldEffectFor(card: card)
-                stack.append(card)
+                stack.append(StackCard(card: card, stackEffectType: .enterTheBattlefield))
             }
         }
     }
@@ -356,7 +360,9 @@ extension GameViewModel {
     }
     
     func cancelStackEffect() {
-        stack.removeLast()
+        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+            stack.removeLast()
+        }
     }
     
     

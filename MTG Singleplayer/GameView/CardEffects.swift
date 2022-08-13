@@ -13,7 +13,9 @@ class CardsEffects {
         "Atsushi, the Blazing Sky": CardEffect(leaveTheBattlefield: .draw(2)),
         "Circuit Mender": CardEffect(enterTheBattlefield: .gainLife(2), leaveTheBattlefield: .draw(1)),
         "Sign in Blood": CardEffect(enterTheBattlefield: [.loseLife(2), .draw(2)]),
-        "Papercraft Decoy": CardEffect(enterTheBattlefield: .draw(1)),
+        "Counsel of the Soratami": CardEffect(enterTheBattlefield: .draw(2)),
+        "Papercraft Decoy": CardEffect(leaveTheBattlefield: .draw(1)),
+        "Sarulf's Packmate": CardEffect(enterTheBattlefield: .draw(1)),
     ]
 }
 
@@ -82,22 +84,8 @@ extension GameViewModel {
         }
     }
     
-    func applyEnterTheBattlefieldEffectFor(card: Card) {
-        guard let effects = card.cardEffect.enterTheBattlefield else { return }
-        for effect in effects {
-            applyEffect(effect: effect)
-        }
-    }
-    
-    func applyLeaveTheBattlefieldEffectFor(card: Card) {
-        guard let effects = card.cardEffect.leaveTheBattlefield else { return }
-        for effect in effects {
-            applyEffect(effect: effect)
-        }
-    }
-    
-    func applyEffectFor(card: Card) {
-        guard let effects = card.cardEffect.enterTheBattlefield else { return }
+    func applyEffectFor(card: StackCard) {
+        guard let effects = card.stackEffectType == .enterTheBattlefield ? card.card.cardEffect.enterTheBattlefield : card.card.cardEffect.leaveTheBattlefield else { return }
         for effect in effects {
             applyEffect(effect: effect)
         }

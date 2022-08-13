@@ -77,14 +77,14 @@ struct GoldAndLifeCountView: View {
             VStack(spacing: 20) {
                 GoldView(title: "x \(adventureViewModel.currentGold)").scaleEffect(1 +  goldAnimationProgress / 5)
                 
-                GoldView(title: (newGoldValue > 0 ? "+" : "-") + " \(newGoldValue)")
+                GoldView(title: (newGoldValue > 0 ? "+" : "-") + " \(abs(newGoldValue))")
                     .offset(y: goldAnimationProgress * 50)
                     .opacity(goldAnimationProgress)
             }
             VStack(spacing: 20) {
                 LifeView(title: "x \(adventureViewModel.currentLife)").scaleEffect(1 +  lifeAnimationProgress / 5)
                 
-                LifeView(title: (newLifeValue > 0 ? "+" : "-") + " \(newLifeValue)")
+                LifeView(title: (newLifeValue > 0 ? "+" : "-") + " \(abs(newLifeValue))")
                     .offset(y: lifeAnimationProgress * 50)
                     .opacity(lifeAnimationProgress)
             }

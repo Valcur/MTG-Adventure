@@ -1,0 +1,9 @@
+/* 
+  PermanentBonusText.strings
+  MTG Singleplayer
+
+  Created by Loic D on 13/08/2022.
+  
+*/
+
+"Kamigawa_Forge" = "{2}: You gain 1 life, then if you ate a donut today, you win the game";

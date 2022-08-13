@@ -31,3 +31,5 @@
 "Deck_Kamigawa_Water" = "";
 
 "Deck_Kamigawa_BG" = "";
+
+"Deck_Boss_Garruk" = "+1 if you draw a forest\n-6 if you don't draw a forest and you control 6 or more wolves\n\nWerewolf Pack Leader never uses his activated ability";

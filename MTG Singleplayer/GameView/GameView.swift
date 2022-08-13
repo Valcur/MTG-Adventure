@@ -66,6 +66,8 @@ struct LeftView: View {
             // Show library
             PlayerLibraryView()
             
+            PlayerEmblemView()
+            
             Spacer()
             
             //EmblemView()
@@ -80,6 +82,12 @@ struct BoardView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
+                if gameViewModel.bossCard != nil {
+                    CardView(card: gameViewModel.bossCard!)
+                        .frame(width: CardSize.width.normal, height: CardSize.height.normal)
+                        .cornerRadius(CardSize.cornerRadius.normal)
+                        .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+                }
                 ForEach(gameViewModel.board) { card in
                     if (!gameViewModel.onlyShowBlockers || (gameViewModel.onlyShowBlockers && card.shouldCardBlock)) && (!gameViewModel.onlyShowAttackers || (gameViewModel.onlyShowAttackers && card.shouldCardAttack)) {
                         CardOnBoardView(card: card)

@@ -10,13 +10,14 @@ import SwiftUI
  
 struct DeckManager {
     
-    static func getDeckFor(deckName: String, stage: Int) -> ([Card], [Card], [Card], [Card]) {
+    static func getDeckFor(deckName: String, stage: Int) -> ([Card], [Card], [Card], [Card], Card?) {
         let deckData: String = readDeckDataFromFile(fileName: "\(deckName)")
         return createDeckListFromDeckData(deckData: deckData)
     }
     
-    static func createDeckListFromDeckData(deckData: String) -> ([Card], [Card], [Card], [Card]){
+    static func createDeckListFromDeckData(deckData: String) -> ([Card], [Card], [Card], [Card], Card?){
         var deck = DeckList(deckBasic: [], deckMidrange: [], deckEndgame: [], tokensAvailable: [])
+        var bossCard: Card? = nil
         
         if deckData != "" {
             let allLines = deckData.components(separatedBy: "\n")
@@ -33,6 +34,8 @@ struct DeckManager {
                         selectedDeckListNumber = DeckManagerSelectedDeck.endgameDeck
                     } else if line == DeckFilePattern.tokensAvailable {
                         selectedDeckListNumber = DeckManagerSelectedDeck.tokensAvailable
+                    } else if line == DeckFilePattern.bossCard {
+                        selectedDeckListNumber = DeckManagerSelectedDeck.boss
                     } else
                     {
                         // Or add card if its a card
@@ -51,13 +54,18 @@ struct DeckManager {
                         
                         let card = Card(cardName: cardName, cardType: getCardTypeFromTypeLine(typeLine: cardDataArray[2]), hasFlashback: cardHasFlashBack, shouldCardAttack: cardShouldAttack, shouldCardBlock: cardShouldBlock, specificSet: cardDataArray[1], cardOracleId: cardDataArray[cardDataArray.count - 2], cardId: cardDataArray.last ?? "")
                         card.cardCount = cardCount
-                        deck = addCardToSelectedDeck(card: card, selectedDeckListNumber: selectedDeckListNumber, deckList: deck)
+                        
+                        if selectedDeckListNumber == DeckManagerSelectedDeck.boss {
+                            bossCard = card
+                        } else {
+                            deck = addCardToSelectedDeck(card: card, selectedDeckListNumber: selectedDeckListNumber, deckList: deck)
+                        }
                     }
                 }
             }
         }
         
-        return (deck.deckBasic.shuffled(), deck.deckMidrange.shuffled(), deck.deckEndgame.shuffled(), deck.tokensAvailable)
+        return (deck.deckBasic.shuffled(), deck.deckMidrange.shuffled(), deck.deckEndgame.shuffled(), deck.tokensAvailable, bossCard)
     }
     
     private static func addCardToSelectedDeck(card: Card, selectedDeckListNumber: Int, deckList: DeckList) -> DeckList {
@@ -133,6 +141,7 @@ struct DeckManager {
         static let midrangeDeck: String = "## Midrange Deck ##"
         static let endgameDeck: String = "## Endgame Deck ##"
         static let tokensAvailable: String = "## Tokens ##"
+        static let bossCard: String = "## Boss ##"
         static let cardHaveFlashback = "YES"
         static let cardDontHaveFlashback = "NO"
         static let cardShouldAttack = "A"
@@ -144,5 +153,6 @@ struct DeckManager {
         static let midrangeDeck = 2
         static let endgameDeck = 3
         static let tokensAvailable = 4
+        static let boss = 5
     }
 }

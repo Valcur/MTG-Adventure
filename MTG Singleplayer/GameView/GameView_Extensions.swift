@@ -296,6 +296,24 @@ struct EmblemView: View {
     }
 }
 
+struct PlayerEmblemView: View {
+    
+    //@EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        VStack {
+            TextParagraphWithManaCost(NSLocalizedString("Kamigawa_Forge", tableName: "PermanentBonusText", comment: "Player permanent bonus"))
+            //Spacer()
+        }
+        .padding(5)
+        //.frame(width: CardSize.width.hand, height: CardSize.height.hand)
+        /*.overlay(
+            RoundedRectangle(cornerRadius: CardSize.cornerRadius.hand)
+                .stroke(Color.white, lineWidth: 2)
+        )*/
+    }
+}
+
 struct AddCountersOnPermanentsView: View {
     @EnvironmentObject var gameViewModel: GameViewModel
     var body: some View {
@@ -384,7 +402,7 @@ struct StackView: View {
             VStack {
                 ZStack {
                     ForEach(0..<gameViewModel.stack.count, id: \.self) { i in
-                        CardStackView(card: gameViewModel.stack[i], indice: i)
+                        CardStackView(card: gameViewModel.stack[i].card, indice: i)
                     }
                 }
                 HStack {
@@ -400,7 +418,8 @@ struct StackView: View {
                         GrayButtonLabel("Refuse")
                     })
                 }
-            }
+            }.position(x: CardSize.width.big / 2 + 10, y: UIScreen.main.bounds.height / 2)
+                .background(Color("ShadowColor").allowsHitTesting(false)).transition(.opacity)
         }
     }
     
@@ -413,8 +432,8 @@ struct StackView: View {
                 .frame(width: CardSize.width.big, height: CardSize.height.big)
                 .cornerRadius(CardSize.cornerRadius.big)
                 
-                .rotationEffect(.degrees(Double(-(gameViewModel.stack.count - indice - 1) * 5)))
-                .offset(x: CGFloat(-(gameViewModel.stack.count - indice - 1)) * CardSize.width.big / CGFloat(20))
+                .rotationEffect(.degrees(Double((gameViewModel.stack.count - indice - 1) * 5)))
+                .offset(x: CGFloat((gameViewModel.stack.count - indice - 1)) * CardSize.width.big / CGFloat(20))
                 //.transition(.asymmetric(insertion: .identity, removal: .slide))
         }
     }
@@ -480,4 +499,14 @@ struct GameViewSize {
     static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 5
     static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 8.5
     static let graveyardAndLibraryHeight: CGFloat = 100
+}
+
+struct StackCard {
+    var card: Card
+    var stackEffectType: StackEffectType
+    
+    enum StackEffectType {
+        case enterTheBattlefield
+        case leaveTheBattlefield
+    }
 }

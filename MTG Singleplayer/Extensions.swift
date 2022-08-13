@@ -138,6 +138,32 @@ struct TextTitle: View {
     }
 }
 
+struct TextParagraphWithManaCost: View {
+    let text: String
+    var manaCostText: Text
+    let imageSize: CGFloat = 13
+    
+    // {2}{W}: aaeazeae -> 2,W,:aeeaze
+    init(_ text: String) {
+        manaCostText = Text("")
+        let textSeparated = text.replacingOccurrences(of: "{", with: "").components(separatedBy: "}")
+        let manaCost = textSeparated.dropLast()
+        for cost in manaCost {
+            manaCostText = manaCostText + Text(Image(cost))
+        }
+        self.text = textSeparated.last!
+    }
+    
+    var body: some View {
+        manaCostText
+        +
+        Text(text)
+            .fontWeight(.bold)
+            .font(.subheadline)
+            .foregroundColor(.white)
+    }
+}
+
 struct GradientView: View {
     
     let gradient: Gradient
