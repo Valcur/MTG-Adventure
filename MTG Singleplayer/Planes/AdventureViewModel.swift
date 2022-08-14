@@ -16,7 +16,7 @@ class AdventureViewModel: ObservableObject {
     
     @Published var currentGold: Int = 10
     @Published var currentLife: Int = 3
-    var permanentBonusList: [String] = []
+    var permanentBonusList: [String] = ["Kamigawa_Forge", "Kamigawa_Forge"]
     
     var availableRandomEncounter: [String:Encounter]
     var fightCompleted: Int = 0
@@ -28,6 +28,7 @@ class AdventureViewModel: ObservableObject {
         
         availableRandomEncounter = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Intro"]!
+        //let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["Kamigawa_Forge_04"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
         //setFinalBossEncounter()
     }
@@ -141,8 +142,8 @@ extension AdventureViewModel {
     
     func fightLost() {
         currentLife -= 1
-        currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: "Kamigawa_Invader_02", stage: stage)))
-        switchView()
+        //currentEncounterView = AnyView(GameViewParent(gameViewModel: GameViewModel(deckName: "Kamigawa_Invader_02", stage: stage)))
+        //switchView()
     }
     
     func giveRewards(rewards: [Reward]?, withDelay: Bool = false) {
@@ -176,6 +177,8 @@ extension AdventureViewModel {
             print("OK")
         case .partner:
             print("OK")
+        case .permanentBonus(let bonusName):
+            permanentBonusList.append(bonusName)
         }
     }
     

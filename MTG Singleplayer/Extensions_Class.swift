@@ -122,8 +122,9 @@ enum Reward: Equatable {
     case life(Int)
     case booster
     case partner
+    case permanentBonus(String)
     
-    func image() -> Image {
+    func image() -> Image? {
         switch self {
         case .gold(_):
             return Image("Gold")
@@ -133,6 +134,8 @@ enum Reward: Equatable {
             return Image("Booster")
         case .partner:
             return Image("Partner")
+        case .permanentBonus(_):
+            return nil
         }
     }
     
@@ -146,6 +149,8 @@ enum Reward: Equatable {
             return "Open a booster"
         case .partner:
             return "Get a new partner"
+        case .permanentBonus(let bonusName):
+            return NSLocalizedString(bonusName, tableName: "PermanentBonusText", comment: "Player permanent bonus")
         }
     }
 }

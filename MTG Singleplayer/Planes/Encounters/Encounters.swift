@@ -90,7 +90,7 @@ class Encounters {
     static let plane_kamigawa_direct = [
         
         "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Piotr Dura",
-                                    reward: [.life(1), .gold(10), .booster, .partner],
+                                    reward: [.life(1), .permanentBonus("Kamigawa_Forge"), .gold(10), .booster, .partner],
                                     offer: [.gold(10, .life(1), .nonrepeatable)],
                                     choices: [
                                         EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine"),//Kamigawa_Shrine //Kamigawa_Swamp
@@ -121,6 +121,7 @@ class Encounters {
                                     ]),
         
         "Kamigawa_Rat_04": Encounter(title: "Victory", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
+                                    reward: [.permanentBonus("Kamigawa_Rat")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
                                     ]),
@@ -138,6 +139,7 @@ class Encounters {
                                     ]),
         
         "Kamigawa_Forge_04": Encounter(title: "Victory", id: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
+                                    reward: [.permanentBonus("Kamigawa_Forge")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
                                     ]),

@@ -151,11 +151,19 @@ struct RewardsView: View {
         
         var body: some View {
             VStack(spacing: 20) {
-                reward.image()
-                    .resizable()
-                    .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
+                if reward.image() != nil {
+                    reward.image()!
+                        .resizable()
+                        .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
+                    
+                    TextSubTitle(reward.title())
+                }
+                else {
+                    TextParagraphWithManaCost(reward.title())
+                        .frame(width: 150)
+                        .frame(height: EncounterViewSize.rewardImageSize + 20 + 23)
+                }
                 
-                TextSubTitle(reward.title())
             }.padding(30).background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(10))
         }
     }
@@ -188,7 +196,7 @@ struct OffersView: View {
                 }
             }, label: {
                 VStack(spacing: 20) {
-                    offer.reward().image()
+                    offer.reward().image()!
                         .resizable()
                         .frame(width: EncounterViewSize.rewardImageSize, height: EncounterViewSize.rewardImageSize)
                     

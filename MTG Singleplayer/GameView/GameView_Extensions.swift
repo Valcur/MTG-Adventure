@@ -46,6 +46,7 @@ struct LosingView: View {
                                 .offset(x: animateLifeLoss ? -geo.size.width / 2 : 0)
                                 .opacity(animateLifeLoss ? 0 : 1)
                                 .onChange(of: gameViewModel.gameResult) { result in
+                                    self.animateLifeLoss = false
                                     if result == -1 {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
                                             withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
@@ -73,6 +74,7 @@ struct LosingView: View {
         .onTapGesture(count: 1) {
             withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
                 adventureViewModel.fightLost()
+                gameViewModel.reset()
             }
         }
     }
@@ -298,11 +300,13 @@ struct EmblemView: View {
 
 struct PlayerEmblemView: View {
     
-    //@EnvironmentObject var gameViewModel: GameViewModel
+    @EnvironmentObject var adventureViewModel: AdventureViewModel
     
     var body: some View {
         VStack {
-            TextParagraphWithManaCost(NSLocalizedString("Kamigawa_Forge", tableName: "PermanentBonusText", comment: "Player permanent bonus"))
+            ForEach(adventureViewModel.permanentBonusList, id:\.self) { bonus in
+                TextParagraphWithManaCost(NSLocalizedString(bonus, tableName: "PermanentBonusText", comment: "Player permanent bonus"))
+            }
             //Spacer()
         }
         .padding(5)

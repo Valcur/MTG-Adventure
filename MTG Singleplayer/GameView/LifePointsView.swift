@@ -173,4 +173,9 @@ class LifePointsViewModel: ObservableObject {
         self.opponentLife = startingLife
         // 60 if two player mode
     }
+    
+    func reset() {
+        self.mainPLayerLife = startingLife
+        self.opponentLife = startingLife
+    }
 }

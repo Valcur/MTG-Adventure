@@ -7,3 +7,5 @@
 */
 
 "Kamigawa_Forge" = "{2}: You gain 1 life, then if you ate a donut today, you win the game";
+
+"Kamigawa_Rat" = "{8}: You gain 7 donuts";

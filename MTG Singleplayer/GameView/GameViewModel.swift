@@ -15,14 +15,15 @@ class GameViewModel: ObservableObject {
     @Published var manaCount: Int
     let startEndGameAtMana: Int = 5
     @Published var board: [Card]
-    let bossCard: Card?
+    var bossCard: Card?
     @Published var graveyard: [Card]
     @Published var stack: [StackCard]
     @Published var showCardsToCastView: Bool = false
     @Published var showGraveyardView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
     let deckName: String
-    var lifePointsViewModel: LifePointsViewModel = LifePointsViewModel()
+    let stage: Int
+    let lifePointsViewModel: LifePointsViewModel
     
     // For buttons
     @Published var onlyShowAttackers: Bool = false
@@ -62,7 +63,27 @@ class GameViewModel: ObservableObject {
         self.stack = []
         self.gameResult = 0
         self.deckName = deckName
-        print("STARTING WITH \(deckName)")
+        self.stage = stage
+        self.lifePointsViewModel = LifePointsViewModel()
+    }
+    
+    // Will have to do dometing cleaner at some point
+    func reset() {
+        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage)
+        let deckBasic: [Card] = deckData.0
+        let deckMidrange: [Card] = deckData.1
+        let deckEndgame: [Card] = deckData.2
+        let tokens: [Card] = deckData.3
+        self.bossCard = deckData.4
+        self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame, tokensAvailable: tokens)
+        self.cardsToCast = CardsToCast(cardsFromLibrary: [], cardsFromHand: [], cardsFromGraveyard: [])
+        self.hand = []
+        self.manaCount = 0
+        self.board = []
+        self.graveyard = []
+        self.stack = []
+        self.gameResult = 0
+        self.lifePointsViewModel.reset()
     }
     
     // Draw a card from one of the random deck if not empty, if empty draw from another one, if all empty return nil
