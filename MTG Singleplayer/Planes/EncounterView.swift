@@ -76,6 +76,7 @@ struct GoldAndLifeCountView: View {
         HStack(spacing: 40) {
             VStack(spacing: 20) {
                 GoldView(title: "x \(adventureViewModel.currentGold)").scaleEffect(1 +  goldAnimationProgress / 5)
+                    .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(40))
                 
                 GoldView(title: (newGoldValue > 0 ? "+" : "-") + " \(abs(newGoldValue))")
                     .offset(y: goldAnimationProgress * 50)
@@ -83,6 +84,7 @@ struct GoldAndLifeCountView: View {
             }
             VStack(spacing: 20) {
                 LifeView(title: "x \(adventureViewModel.currentLife)").scaleEffect(1 +  lifeAnimationProgress / 5)
+                    .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).cornerRadius(40))
                 
                 LifeView(title: (newLifeValue > 0 ? "+" : "-") + " \(abs(newLifeValue))")
                     .offset(y: lifeAnimationProgress * 50)
@@ -92,14 +94,14 @@ struct GoldAndLifeCountView: View {
         .onChange(of: adventureViewModel.currentGold) { [oldValue = adventureViewModel.currentGold] newValue in
             newGoldValue = newValue - oldValue
             goldAnimationProgress = 1
-            withAnimation(.easeInOut(duration: AnimationsDuration.average).delay(AnimationsDuration.long)) {
+            withAnimation(.easeInOut(duration: AnimationsDuration.short).delay(AnimationsDuration.short)) {
                 goldAnimationProgress = 0
             }
         }
         .onChange(of: adventureViewModel.currentLife) { [oldValue = adventureViewModel.currentLife] newValue in
             newLifeValue = newValue - oldValue
             lifeAnimationProgress = 1
-            withAnimation(.easeInOut(duration: AnimationsDuration.average).delay(AnimationsDuration.long)) {
+            withAnimation(.easeInOut(duration: AnimationsDuration.short).delay(AnimationsDuration.short)) {
                 lifeAnimationProgress = 0
             }
         }
@@ -114,7 +116,7 @@ struct GoldAndLifeCountView: View {
                 Image("Gold")
                     .resizable()
                     .frame(width: 25, height: 25)
-            }
+            }.padding(.horizontal, 15).padding(.vertical, 10)
         }
     }
     
@@ -127,7 +129,7 @@ struct GoldAndLifeCountView: View {
                 Image("Life")
                     .resizable()
                     .frame(width: 25, height: 25)
-            }
+            }.padding(.horizontal, 15).padding(.vertical, 10)
         }
     }
 }

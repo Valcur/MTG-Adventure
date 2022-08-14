@@ -139,30 +139,142 @@ struct TextTitle: View {
 }
 
 struct TextParagraphWithManaCost: View {
-    let text: String
-    var manaCostText: Text
-    let imageSize: CGFloat = 13
+    let text: NSMutableAttributedString
+    let imageSize: CGFloat = 12
+    let textSize: CGFloat = 15   // Subheadline
     
     // {2}{W}: aaeazeae -> 2,W,:aeeaze
     init(_ text: String) {
-        manaCostText = Text("")
+        let font = UIFont.systemFont(ofSize: textSize, symbolicTraits: .traitBold)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.white,
+        ]
+    
         let textSeparated = text.replacingOccurrences(of: "{", with: "").components(separatedBy: "}")
         let manaCost = textSeparated.dropLast()
+        let fullString = NSMutableAttributedString(string: "", attributes: attributes)
         for cost in manaCost {
-            manaCostText = manaCostText + Text(Image(cost))
+            let imageAttachment = NSTextAttachment()
+            imageAttachment.image = UIImage(named: cost)
+            imageAttachment.bounds = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+            let imageString = NSAttributedString(attachment: imageAttachment)
+            fullString.append(imageString)
         }
-        self.text = textSeparated.last!
+        fullString.append(NSAttributedString(string: textSeparated.last!, attributes: attributes))
+        self.text = fullString
     }
     
     var body: some View {
-        manaCostText
-        +
-        Text(text)
-            .fontWeight(.bold)
-            .font(.subheadline)
-            .foregroundColor(.white)
+        //AttributedText(text)
+        
+        TextWithAttributedString(attributedText: text)
+                 //.padding([.leading, .trailing], self.horizontalPadding)
+                 .layoutPriority(1)
+                 .background(Color.clear)
+
     }
 }
+
+extension UIFont {
+    class func systemFont(ofSize fontSize: CGFloat, symbolicTraits: UIFontDescriptor.SymbolicTraits) -> UIFont? {
+        return UIFont.systemFont(ofSize: fontSize).including(symbolicTraits: symbolicTraits)
+    }
+
+    func including(symbolicTraits: UIFontDescriptor.SymbolicTraits) -> UIFont? {
+        var _symbolicTraits = self.fontDescriptor.symbolicTraits
+        _symbolicTraits.update(with: symbolicTraits)
+        return withOnly(symbolicTraits: _symbolicTraits)
+    }
+
+    func excluding(symbolicTraits: UIFontDescriptor.SymbolicTraits) -> UIFont? {
+        var _symbolicTraits = self.fontDescriptor.symbolicTraits
+        _symbolicTraits.remove(symbolicTraits)
+        return withOnly(symbolicTraits: _symbolicTraits)
+    }
+
+    func withOnly(symbolicTraits: UIFontDescriptor.SymbolicTraits) -> UIFont? {
+        guard let fontDescriptor = fontDescriptor.withSymbolicTraits(symbolicTraits) else { return nil }
+        return .init(descriptor: fontDescriptor, size: pointSize)
+    }
+}
+
+struct TextWithAttributedString: View {
+
+   var attributedText: NSAttributedString
+   @State private var height: CGFloat = .zero
+
+   var body: some View {
+       InternalTextView(attributedText: attributedText, dynamicHeight: $height)
+           .frame(minHeight: height)
+   }
+
+   struct InternalTextView: UIViewRepresentable {
+
+       var attributedText: NSAttributedString
+       @Binding var dynamicHeight: CGFloat
+
+       func makeUIView(context: Context) -> UITextView {
+           let textView = UITextView()
+           textView.textAlignment = .justified
+           textView.isScrollEnabled = false
+           textView.isUserInteractionEnabled = false
+           textView.showsVerticalScrollIndicator = false
+           textView.showsHorizontalScrollIndicator = false
+           textView.allowsEditingTextAttributes = false
+           textView.backgroundColor = .clear
+           textView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+           textView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+           return textView
+       }
+
+       func updateUIView(_ uiView: UITextView, context: Context) {
+           uiView.attributedText = attributedText
+           DispatchQueue.main.async {
+               dynamicHeight = uiView.sizeThatFits(CGSize(width: uiView.bounds.width, height: CGFloat.greatestFiniteMagnitude)).height
+           }
+       }
+   }
+}
+/*
+struct AttributedText: View {
+    @State private var size: CGSize = .zero
+    let attributedString: NSAttributedString
+    
+    init(_ attributedString: NSAttributedString) {
+        self.attributedString = attributedString
+    }
+    
+    var body: some View {
+        AttributedTextRepresentable(attributedString: attributedString, size: $size)
+            .frame(width: size.width, height: size.height)
+    }
+    
+    struct AttributedTextRepresentable: UIViewRepresentable {
+        
+        let attributedString: NSAttributedString
+        @Binding var size: CGSize
+
+        func makeUIView(context: Context) -> UILabel {
+            let label = UILabel()
+            
+            label.lineBreakMode = .byClipping
+            label.numberOfLines = 0
+
+            return label
+        }
+        
+        func updateUIView(_ uiView: UILabel, context: Context) {
+            uiView.attributedText = attributedString
+            
+            DispatchQueue.main.async {
+                size = uiView.sizeThatFits(uiView.superview?.bounds.size ?? .zero)
+            }
+        }
+    }
+}*/
+
+
 
 struct GradientView: View {
     

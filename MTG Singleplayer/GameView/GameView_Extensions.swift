@@ -336,7 +336,9 @@ struct AddCountersOnPermanentsView: View {
                     .padding(15)
             }).opacity(gameViewModel.addCountersModeEnable ? 0.5 : 1)
         }
-        .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+        .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)).onTapGesture {
+            gameViewModel.resetModes()
+        })
         .cornerRadius(40)
         .padding(10)
         .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)

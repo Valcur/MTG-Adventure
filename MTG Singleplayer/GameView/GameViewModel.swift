@@ -192,7 +192,7 @@ extension GameViewModel {
         return nil
     }
     
-    private func resetModes(returnToHandModeEnable: Bool = false, onlyShowBlockers: Bool = false, onlyShowAttackers: Bool = false, addCountersModeEnable: Bool = false, removeCountersModeEnable: Bool = false) {
+    func resetModes(returnToHandModeEnable: Bool = false, onlyShowBlockers: Bool = false, onlyShowAttackers: Bool = false, addCountersModeEnable: Bool = false, removeCountersModeEnable: Bool = false) {
         self.returnToHandModeEnable = returnToHandModeEnable
         self.onlyShowBlockers = onlyShowBlockers
         self.onlyShowAttackers = onlyShowAttackers

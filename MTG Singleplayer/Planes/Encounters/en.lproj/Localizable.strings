@@ -8,7 +8,15 @@
 
 "Kamigawa_Intro" = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world.";
 
-"Kamigawa_Forest_Intro" = "";
+"Kamigawa_Forest_Intro" = "Calm journey is cool BUT WHAT ABOUT GOING ON AN ADVENTURE";
+
+"Kamigawa_Forest_Attack" = "";
+
+"Kamigawa_Forest_Haven" = "EPAISSE forest turns into a ZOLIE CLARIERE. You stay here for SE REPOSER";
+
+"Kamigawa_Forest_Penitent" = "You find UN VIEIL HERMITE. GO SEE THE SPIRITS";
+
+"Kamigawa_Forest_Offer" = "F TO PAY RESPECT";
 
 "Kamigawa_Shop" = "You take a break in a city on your way. It might be time to spend the gold you have while you can";
 
@@ -46,9 +54,9 @@
 
 "Kamigawa_Otawara_Reward" = "They reward you for all your help and let you rest here before continuing your adventure.";
 
-"Kamigawa_Water_Intro" = "";
+"Kamigawa_Water_Intro" = "About to cross river BUT FEEL that it might lead to good stuff";
 
-"Kamigawa_Water_Fight" = "";
+"Kamigawa_Water_Fight" = "KAPPA KOMING TO KILL";
 
 "Kamigawa_Water_Haven" = "The river lead you to CHIIIL";
 

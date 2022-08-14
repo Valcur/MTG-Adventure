@@ -29,7 +29,7 @@ class AdventureViewModel: ObservableObject {
         availableRandomEncounter = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-        setFinalBossEncounter()
+        //setFinalBossEncounter()
     }
     
     private func applyChoice(choice: EncounterChoice) {
