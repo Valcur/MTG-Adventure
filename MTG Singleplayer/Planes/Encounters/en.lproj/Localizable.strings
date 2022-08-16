@@ -6,6 +6,8 @@
   
 */
 
+// MARK: Kamigawa
+
 "Kamigawa_Intro" = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world.";
 
 "Kamigawa_Forest_Intro" = "Calm journey is cool BUT WHAT ABOUT GOING ON AN ADVENTURE";
@@ -82,6 +84,89 @@
 
 "Kamigawa_Rat_04" = "";
 
+// MARK: Zendikar
+
+"Zendikar_Intro" = "Zendikar's landscape is constantly shifting and changing, making settlements very scarce and only few outposts of civilization are present. It is a plane with powerful sources of mana, which flows differently there. Its riches in mana and other wealth has made it a destination for Planeswalkers to explore and exploit. The promise of this is also enough to lure in various local explorers and adventurers.";
+
+"Zendikar_Shop" = "";
+
+"Zendikar_Adventure_Hub" = "";
+
+"Zendikar_Adventure_Ondu_Intro" = "";
+
+"Zendikar_Adventure_Ondu_Kor_Attack" = "";
+
+"Zendikar_Adventure_Ondu_Progress" = "";
+
+"Zendikar_Adventure_Ondu_Angel_Attack_01" = "";
+
+"Zendikar_Adventure_Ondu_Angel_Success" = "";
+
+"Zendikar_Adventure_Ondu_Angel_Run" = "";
+
+"Zendikar_Adventure_Ondu_Angel_Attack_02" = "";
+
+"Zendikar_Adventure_Ondu_Ruins_Entry" = "";
+
+"Zendikar_Adventure_Ondu_Boss" = "";
+
+"Zendikar_Plains_Intro" = "";
+
+"Zendikar_Plains_Fight_01" = "";
+
+"Zendikar_Plains_Fight_02" = "";
+
+"Zendikar_Plains_Progress_01" = "";
+
+"Zendikar_Plains_Fight_03" = "";
+
+"Zendikar_Plains_Progress_02" = "";
+
+"Zendikar_Plains_Boss" = "";
+
+"Zendikar_Mushrooms_Intro" = "";
+
+"Zendikar_Mushrooms_Fight" = "";
+
+"Zendikar_Mushrooms_Beast_Calm" = "";
+
+"Zendikar_Mushrooms_Beast_Fight" = "";
+
+"Zendikar_Old_House_Intro" = "";
+
+"Zendikar_Old_House" = "";
+
+"Zendikar_Silundi_Intro" = "";
+
+"Zendikar_Silundi_Crab" = "";
+
+"Zendikar_Silundi_Entrance" = "";
+
+"Zendikar_Silundi_Boss" = "";
+
+"Zendikar_Silundi_End" = "";
+
+"Zendikar_Branches_Intro" = "";
+
+"Zendikar_Branches_Insect" = "";
+
+"Zendikar_Branches_Progress" = "";
+
+"Zendikar_Branches_Boss" = "";
+
+"Zendikar_Valakut_Intro" = "";
+
+"Zendikar_Valakut_Fight_01" = "";
+
+"Zendikar_Valakut_Forge_01" = "";
+
+"Zendikar_Valakut_Fight_02" = "";
+
+"Zendikar_Valakut_Forge_02" = "";
+
+// MARK: Boss
+
 "Boss_Garruk" = "Garruk, called the Wildspeaker.";
 
 "Boss_Shop" = "Final Shopping before fnal fight.";
+

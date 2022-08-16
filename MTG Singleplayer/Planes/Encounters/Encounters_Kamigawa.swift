@@ -23,6 +23,17 @@ class Encounters {
             case .directEncounter:
                 return plane_kamigawa_direct
             }
+        case "Zendikar":
+            switch(array) {
+            case .singleEncounter:
+                return plane_zendikar
+            case .doubleEncounter:
+                return plane_zendikar_double
+            case .endingEncounter:
+                return plane_zendikar_ending
+            case .directEncounter:
+                return plane_zendikar_direct
+            }
         default:
             return bosses
         }
