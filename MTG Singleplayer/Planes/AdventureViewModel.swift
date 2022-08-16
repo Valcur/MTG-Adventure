@@ -34,8 +34,10 @@ class AdventureViewModel: ObservableObject {
     }
     
     private func applyChoice(choice: EncounterChoice) {
+        let encounterChoice = choice.encounterId.randomElement()
+        
         // If plane is completed, siwtch to the next plane
-        if choice.encounterId[0] == EncounterChoice.planeEnd {
+        if encounterChoice == EncounterChoice.planeEnd {
             stage += 1
             
             switch(stage) {
@@ -52,14 +54,14 @@ class AdventureViewModel: ObservableObject {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage)))
         }
         // Else if we have to go to a random encounter not already played
-        else if choice.encounterId.contains(EncounterChoice.randomEncounter) {
+        else if encounterChoice == EncounterChoice.randomEncounter {
             let nextEncounter = getRandomEncounter()
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter))
             giveRewards(rewards: nextEncounter.reward, withDelay: true)
         }
         // Else we go to the specified encounter
         else {
-            let nextEncounter = Encounters.getArrayForPlane("Kamigawa", array: .directEncounter)[choice.encounterId.randomElement()!]
+            let nextEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)[encounterChoice!]
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter!))
             giveRewards(rewards: nextEncounter!.reward, withDelay: true)
         }
@@ -91,27 +93,27 @@ class AdventureViewModel: ObservableObject {
         var encounter: Encounter
         if fightCompleted >= 3 && shopVisited {
             // Ending
-            encounter = Encounters.getArrayForPlane("Kamigawa", array: .endingEncounter).randomElement()!.value
+            encounter = Encounters.getArrayForPlane(currentPlane, array: .endingEncounter).randomElement()!.value
         } else if fightCompleted >= 3 && !shopVisited {
             // Shop only
-            encounter = Encounters.getArrayForPlane("Kamigawa", array: .directEncounter)["\(currentPlane)_Shop"]!
+            encounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Shop"]!
             shopVisited = true
         } else if fightCompleted == 1 {
             // Double only
-            encounter = Encounters.getArrayForPlane("Kamigawa", array: .doubleEncounter).randomElement()!.value
+            encounter = Encounters.getArrayForPlane(currentPlane, array: .doubleEncounter).randomElement()!.value
         } else if fightCompleted == 2 {
             // Single only
             let randomEncounter = availableRandomEncounter.randomElement()
             availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
             encounter = randomEncounter!.value
-        }else {
+        } else {
             // A single or a double
             if Bool.random() {
                 let randomEncounter = availableRandomEncounter.randomElement()
                 availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
                 encounter = randomEncounter!.value
             } else {
-                encounter = Encounters.getArrayForPlane("Kamigawa", array: .doubleEncounter).randomElement()!.value
+                encounter = Encounters.getArrayForPlane(currentPlane, array: .doubleEncounter).randomElement()!.value
             }
         }
         return encounter

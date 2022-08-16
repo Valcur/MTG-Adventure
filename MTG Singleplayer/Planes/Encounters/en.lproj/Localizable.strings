@@ -164,6 +164,14 @@
 
 "Zendikar_Valakut_Forge_02" = "";
 
+"Zendikar_Jerboa_Intro" = "As you mount the camp for the night, you remarque une petite jerboa qui vous reagrde";
+
+"Zendikar_Jerboa_Success" = "";
+
+"Zendikar_Jerboa" = "";
+
+"Zendikar_Jerboa_Fight" = "";
+
 // MARK: Boss
 
 "Boss_Garruk" = "Garruk, called the Wildspeaker.";

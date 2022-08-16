@@ -28,11 +28,16 @@ extension Encounters {
                                         EncounterChoice(title: "Enter the house", encounterId: "Zendikar_Old_House"),
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
+        
+        "Zendikar_Jerboa_Intro": Encounter(title: "A wild jerboa", id: "Zendikar_Jerboa_Intro", artistName: "Antonio José Manzanedo",
+                                    choices: [
+                                        EncounterChoice(title: "Pet the cute little jerboa", encounterId: "Zendikar_Jerboa_Success"),
+                                        EncounterChoice(title: "Ignore the jerboa", encounterId: "Zendikar_Jerboa")
+                                    ]),
+        
     ]
     
     static let plane_zendikar_double = [
-        
-        
         
         "Zendikar_Forest_Shortcut_Intro": Encounter(title: "AAA", id: "Zendikar_Forest_Shortcut_Intro", artistName: "Adam Paquette",
                                     choices: [
@@ -214,7 +219,7 @@ extension Encounters {
         
         "Zendikar_Branches_Insect": Encounter(title: "AAA", id: "Zendikar_Branches_Insect", artistName: "Simon Dominic",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "AAAAA")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Branches_Progress")
                                     ]),
         
         "Zendikar_Branches_Progress": Encounter(title: "AAA", id: "Zendikar_Branches_Progress", artistName: "Titus Lunter",
@@ -263,7 +268,24 @@ extension Encounters {
         
         "Zendikar_Forest_Shortcut_Fight_02": Encounter(title: "AAA", id: "Zendikar_Forest_Shortcut_Fight_02", artistName: "Simon Dominic",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "AAAAA")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        // MARK: Jerboa
+        
+        "Zendikar_Jerboa_Success": Encounter(title: "AAA", id: "Zendikar_Jerboa_Success", artistName: "Dominik Mayer",
+                                    choices: [
+                                        EncounterChoice(title: "Ignore the jerboa", encounterId: EncounterChoice.randomEncounter)
+                                    ]),
+        
+        "Zendikar_Jerboa": Encounter(title: "AAA", id: "Zendikar_Jerboa", artistName: "Tomasz Jedruszek",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Jerboa_Fight")
+                                    ]),
+        
+        "Zendikar_Jerboa_Fight": Encounter(title: "AAA", id: "Zendikar_Jerboa_Fight", artistName: "Rudy Siswanto",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
     ]
 }
