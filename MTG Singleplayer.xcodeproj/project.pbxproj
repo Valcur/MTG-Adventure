@@ -12,7 +12,7 @@
 		DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31755A28A3CFC400799186 /* DeckTexts.strings */; };
 		DB31755C28A539F900799186 /* Kamigawa_Ninja_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */; };
 		DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */ = {isa = PBXBuildFile; fileRef = DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */; };
-		DB31756128A67B8700799186 /* EncountersBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* EncountersBoss.swift */; };
+		DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* Encounters_Boss.swift */; };
 		DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31756228A7BD8200799186 /* PermanentBonusText.strings */; };
 		DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31756528A832B100799186 /* Boss_Garruk.txt */; };
 		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
@@ -21,6 +21,7 @@
 		DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */; };
 		DB510B0828A1AAC60037C760 /* Kamigawa_Swamp.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0728A1AAC60037C760 /* Kamigawa_Swamp.txt */; };
 		DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0928A1B0870037C760 /* Kamigawa_Water.txt */; };
+		DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -34,7 +35,7 @@
 		DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7325E289857DB006834B1 /* GameView_Extensions.swift */; };
 		DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326028994EBD006834B1 /* LifePointsView.swift */; };
 		DBC732642899A97B006834B1 /* EncounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732632899A97B006834B1 /* EncounterView.swift */; };
-		DBC732662899B668006834B1 /* Encounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732652899B668006834B1 /* Encounters.swift */; };
+		DBC732662899B668006834B1 /* Encounters_Kamigawa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732652899B668006834B1 /* Encounters_Kamigawa.swift */; };
 		DBC732682899BA29006834B1 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732672899BA29006834B1 /* Decks.swift */; };
 		DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC732692899BAF8006834B1 /* AdventureViewModel.swift */; };
 		DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7326B2899BEFE006834B1 /* AdventureView.swift */; };
@@ -54,7 +55,7 @@
 		DB31755928A3CFC400799186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeckTexts.strings; sourceTree = "<group>"; };
 		DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_01.txt; sourceTree = "<group>"; };
 		DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_02; sourceTree = "<group>"; };
-		DB31756028A67B8700799186 /* EncountersBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountersBoss.swift; sourceTree = "<group>"; };
+		DB31756028A67B8700799186 /* Encounters_Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Boss.swift; sourceTree = "<group>"; };
 		DB31756228A7BD8200799186 /* PermanentBonusText.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = PermanentBonusText.strings; sourceTree = "<group>"; };
 		DB31756528A832B100799186 /* Boss_Garruk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Garruk.txt; sourceTree = "<group>"; };
 		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02_B.txt; sourceTree = "<group>"; };
 		DB510B0728A1AAC60037C760 /* Kamigawa_Swamp.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Swamp.txt; sourceTree = "<group>"; };
 		DB510B0928A1B0870037C760 /* Kamigawa_Water.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Water.txt; sourceTree = "<group>"; };
+		DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Zendikar.swift; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 		DBC7325E289857DB006834B1 /* GameView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView_Extensions.swift; sourceTree = "<group>"; };
 		DBC7326028994EBD006834B1 /* LifePointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifePointsView.swift; sourceTree = "<group>"; };
 		DBC732632899A97B006834B1 /* EncounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterView.swift; sourceTree = "<group>"; };
-		DBC732652899B668006834B1 /* Encounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters.swift; sourceTree = "<group>"; };
+		DBC732652899B668006834B1 /* Encounters_Kamigawa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Kamigawa.swift; sourceTree = "<group>"; };
 		DBC732672899BA29006834B1 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		DBC732692899BAF8006834B1 /* AdventureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewModel.swift; sourceTree = "<group>"; };
 		DBC7326B2899BEFE006834B1 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
@@ -105,9 +107,10 @@
 		DB31755F28A67B6400799186 /* Encounters */ = {
 			isa = PBXGroup;
 			children = (
-				DBC732652899B668006834B1 /* Encounters.swift */,
-				DB31756028A67B8700799186 /* EncountersBoss.swift */,
+				DBC732652899B668006834B1 /* Encounters_Kamigawa.swift */,
+				DB31756028A67B8700799186 /* Encounters_Boss.swift */,
 				DB510B0028A13CEA0037C760 /* Localizable.strings */,
+				DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 			files = (
 				DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */,
 				DBE027E9289EEFB900F8F483 /* Extensions_Class.swift in Sources */,
-				DBC732662899B668006834B1 /* Encounters.swift in Sources */,
+				DBC732662899B668006834B1 /* Encounters_Kamigawa.swift in Sources */,
 				DBC7324E28972478006834B1 /* Card+Deck.swift in Sources */,
 				DBC7326A2899BAF8006834B1 /* AdventureViewModel.swift in Sources */,
 				DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */,
@@ -320,8 +323,9 @@
 				DBC732522897D577006834B1 /* GameViewModel.swift in Sources */,
 				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,
 				DBC732542897E05F006834B1 /* GameView.swift in Sources */,
-				DB31756128A67B8700799186 /* EncountersBoss.swift in Sources */,
+				DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */,
 				DBC7325028972487006834B1 /* DownloadManager.swift in Sources */,
+				DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */,
 				DBC732682899BA29006834B1 /* Decks.swift in Sources */,
 				DBC7326128994EBD006834B1 /* LifePointsView.swift in Sources */,
 				DBC7325A2897F469006834B1 /* DeckManager.swift in Sources */,
