@@ -16,6 +16,14 @@ class CardsEffects {
         "Counsel of the Soratami": CardEffect(enterTheBattlefield: .draw(2)),
         "Papercraft Decoy": CardEffect(leaveTheBattlefield: .draw(1)),
         "Sarulf's Packmate": CardEffect(enterTheBattlefield: .draw(1)),
+        "Deliberate": CardEffect(enterTheBattlefield: .draw(1)),
+        "Divination": CardEffect(enterTheBattlefield: .draw(2)),
+        "Hedron Crawler": CardEffect(enterTheBattlefield: .addMana(1), leaveTheBattlefield: .loseMana(1)),
+        "Enatu Golem": CardEffect(leaveTheBattlefield: .gainLife(4)),
+        "Spore Crawler": CardEffect(leaveTheBattlefield: .draw(1)),
+        "Ox of Agonas": CardEffect(enterTheBattlefield: [.discardHand, .draw(3)]),
+        "Pressure Point": CardEffect(enterTheBattlefield: .draw(1)),
+        "Survival Cache": CardEffect(enterTheBattlefield: .gainLife(2)),
     ]
 }
 
@@ -70,6 +78,9 @@ enum Effect: Equatable {
     case draw(Int)
     case gainLife(Int)
     case loseLife(Int)
+    case addMana(Int)
+    case loseMana(Int)
+    case discardHand
 }
 
 extension GameViewModel {
@@ -81,6 +92,12 @@ extension GameViewModel {
             self.gainLife(life: lifeToGain)
         case .loseLife(let lifeToLose):
             self.loseLife(life: lifeToLose)
+        case .addMana(let manaGained):
+            self.addMana(mana: manaGained)
+        case .loseMana(let manaLost):
+            self.loseMana(mana: manaLost)
+        case .discardHand:
+            self.discardHand()
         }
     }
     

@@ -1,0 +1,22 @@
+## Basic Deck ##
+10 ZNR creature NO-B Magmatic Channeler 382267da-c63c-432e-8a11-f803cf0e3a3a 711c3023-1429-4aa1-b822-85ab1badf086
+4 ZEN instant NO Burst Lightning ac2086fe-98ee-4280-9c7c-c5c2d6548a8b 2dc16614-5cf8-444d-a5ae-cac25018af68
+4 ZNR instant NO Cinderclasm d7b49bee-2cb0-48e1-91c1-1e150a0da6ed 5516cf97-805f-4a21-a4c6-2d6e55865336
+4 ZNR sorcery NO Roil Eruption 6798163a-864f-4844-96b1-77585a7e7ab4 86572747-8faa-4242-b059-07d11e6be1cd
+4 ZEN instant NO Seismic Shudder 10c0f705-4c23-4761-afa9-4a29cf90e8ae 20365082-6102-4e3b-8791-c9b66846270d
+
+## Midrange Deck ##
+3 ZNR enchantment NO Roiling Vortex 34f83b7a-45a7-40a8-abcb-31d7aae4cea1 0b057eb7-8439-4d26-89df-c345ab2773e1
+5 GRN instant NO Risk Factor 7f61a2a6-2fe2-48ec-8e2e-74d147be0a0a 4eda89d9-9bd1-4a55-ac02-f9a0625d8e5b
+5 ROE sorcery NO Flame Slash 8d98d674-6811-4d45-b22a-63792e272a2b 006d2bf1-20f7-4b09-8d98-8233d91682bd
+
+## Endgame Deck ##
+3 ZEN enchantment NO Pyromancer Ascension 85845b6c-abb5-4591-b987-a375972cf25b 288d624e-d72e-4a4b-bb74-5a8b0b2e3cb0
+4 ZNR creature NO-B Rockslide Sorcerer d8b7b78e-91b2-4ad5-aeb8-6ebdca363e71 e105c546-ce4f-49c7-97ba-ea5fbe70df82
+
+
+
+
+
+
+

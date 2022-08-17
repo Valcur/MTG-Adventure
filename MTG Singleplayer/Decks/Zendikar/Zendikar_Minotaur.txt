@@ -1,0 +1,22 @@
+## Basic Deck ##
+6 HOU creature NO-AB Burning-Fist Minotaur 5460c76f-39dc-4db0-acf7-146d533d822b 52f191fb-eaf6-432f-a668-37ad48ffabaf
+9 JOU creature NO-AB Pensive Minotaur cafad9c8-9974-4596-92d4-b7fb615a0353 902b462a-a552-42d4-91f0-bd33cd9cb719
+
+## Midrange Deck ##
+3 JMP creature NO Rageblood Shaman 2608f905-a678-4e40-9e73-cf1c42ec880d 568a31c0-799b-48b6-a91c-95d176b22670
+6 M14 creature NO-AB Canyon Minotaur 0c7163e6-f5a1-45a5-88c2-19dd9ef0a587 3469d73e-6de1-4b91-83e3-b1714ac29268
+4 M20 creature NO-AB Hostile Minotaur e050a0a3-f48e-4cba-9cd4-692a92261c9f 0e1263ea-adc9-442b-b13e-9afb69596372
+2 ELD enchantment NO Ferocity of the Wilds c75bdc5f-22f2-4558-bb8f-5a53ff7ab1ac 8f7005fd-5917-4f7d-9a7d-7ccc044d0f87
+
+## Endgame Deck ##
+5 RTR creature NO-AB Minotaur Aggressor 7576bfba-eb4f-4d3e-aec5-52daee84d1d6 e22959dc-8759-454e-80b9-623a799af354
+5 ROE creature NO-AB Lord of Shatterskull Pass d369a02b-c282-454a-9f89-480f4f5d838c b2159a7d-e37a-4c43-a7b9-1e7179a7e43b
+5 ZNR creature NO-AB Akoum Warrior afedce7b-0e18-40ad-a26a-1933fddb560d d8ed0335-daa6-4dbe-a94d-4d56c8cfd093
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+## Basic Deck ##
+5 ZNR creature NO-A Grotag Bug-Catcher 1b6bfd22-2964-4274-a566-81964348b003 5b310b01-f9cb-48ce-8af3-5957d3abf098
+4 ZNR creature NO Stonework Packbeast 782c47c5-b108-415c-9b70-a033ac52956f a29e17ba-d584-4296-9f43-17467edaa25f
+3 ZNR instant NO Pressure Point d4bbdd0c-e578-49ed-b2f7-b1decb04ee87 2fe82bbf-9b92-4684-a42d-fbc50c4c5903
+4 ZNR creature NO-B Luminarch Aspirant cb9994b9-924b-4e10-9075-9cfbec88f2bf fe964e7e-e2c5-4263-889d-0a531eb51442
+
+## Midrange Deck ##
+5 ZNR creature NO-A Kargan Warleader 63324e72-e580-456a-91be-766c9f07b7b3 6f921dca-ce93-42d1-87b1-149973558467
+5 ZNR creature NO-A Expedition Champion d432857f-cff6-421e-949b-ce2f65854e1d 30084dc1-f501-4b7c-972d-1a3b9137083a
+5 ZNR creature NO-A Paired Tactician 99262e50-94c1-4796-a7bf-11d7b6164839 67930e10-4de8-4d40-af27-4a38d35ab16f
+
+## Endgame Deck ##
+3 ZNR instant NO Synchronized Spellcraft bfdb13b9-7050-43a3-ac5f-d427942b1616 d87f4637-1ad3-4d61-98ff-98c0b0be46a1
+4 ZNR creature NO-B Thundering Sparkmage a786e495-ae3a-4e15-ab32-661d524e2b2d a9e6de80-3516-426b-8a1b-bda45f8c0cac
+4 ZNR creature NO-B Rockslide Sorcerer d8b7b78e-91b2-4ad5-aeb8-6ebdca363e71 e105c546-ce4f-49c7-97ba-ea5fbe70df82
+3 NEC creature NO-A Taurean Mauler fd5ee26c-cc54-4dc0-b611-5cda14354a5e a4ee4648-dd6e-4ba9-b643-a7e4c430d51f
+
+
+
+
+
+
+
+
+
+
+
+
+
+

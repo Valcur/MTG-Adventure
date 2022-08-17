@@ -6,6 +6,8 @@
   
 */
 
+// MARK: Kamigawa
+
 "Deck_Kamigawa_Forge_01" = "If only one nonequipment creature is attacking, equip all equipments to it";
 
 "Deck_Kamigawa_Forge_02" = "";
@@ -33,3 +35,41 @@
 "Deck_Kamigawa_BG" = "";
 
 "Deck_Boss_Garruk" = "+1 if you draw a forest\n-6 if you don't draw a forest and you control 6 or more wolves\n\nWerewolf Pack Leader never uses his activated ability";
+
+// MARK: Zendikar
+
+"Deck_Zendikar_Crab" = "At the beginning of combat on your turn, trigger every Landfall on permanents you control";
+
+"Deck_Zendikar_Minotaur" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
+
+"Deck_Zendikar_Forest_Shortcut_01" = "";
+
+"Deck_Zendikar_Forest_Shortcut_02" = "";
+
+"Deck_Zendikar_Valakut_02" = "";
+
+"Deck_Zendikar_Valakut_01" = "";
+
+"Deck_Zendikar_Branches_Insect" = "";
+
+"Deck_Zendikar_Branches_02" = "";
+
+"Deck_Zendikar_Silundi_Boss" = "At the beginning of each opponent's end step, activate all Relic Golem ability if able";
+
+"Deck_Zendikar_Fungus" = "";
+
+"Deck_Zendikar_Beast" = "Whenever a land enter the battlefield under your control, you draw a card";
+
+"Deck_Zendikar_Ox" = "Whenever a land enter the battlefield under your control, you draw a card";
+
+"Deck_Zendikar_Plains_Cat" = "";
+
+"Deck_Zendikar_Plains_Bird" = "Whenever a land enter the battlefield under your control, you draw a card";
+
+"Deck_Zendikar_Plains_Boss" = "";
+
+"Deck_Zendikar_Ondu_Boss" = "";
+
+"Deck_Zendikar_Ondu_Angel" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
+
+"Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an attacking Armamanent Master of you control one. If not, equip all equipment you control to your best attacking creature";

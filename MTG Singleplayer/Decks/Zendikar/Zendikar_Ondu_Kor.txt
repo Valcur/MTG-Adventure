@@ -1,0 +1,26 @@
+## Basic Deck ##
+6 ZNR creature NO Cliffhaven Sell-Sword 5f0c8c60-96f1-4b26-a9f6-386e1cec517d 7f334767-4353-4379-a934-fa67075db439
+4 ZEN creature NO Cliff Threader 27882623-b5ad-49f2-b5ab-f0bdb93268a1 1743b625-e937-4cac-8701-9e2dd709a9a4
+5 ZNR creature NO Farsight Adept 72b10cba-0f46-4b99-9634-e7173ac4c259 5949bb9a-b4e8-4992-a12d-8e31953aff0d
+4 ZNR artifact NO Utility Knife b546c78c-5180-46c3-8594-b9d5ad9c3988 1e5c781d-cd89-4671-8fbe-fae82c33357b
+
+## Midrange Deck ##
+6 ZNR artifact NO Utility Knife b546c78c-5180-46c3-8594-b9d5ad9c3988 1e5c781d-cd89-4671-8fbe-fae82c33357b
+5 ZNR creature NO Akiri, Fearless Voyager c03ae426-2536-4c20-a73a-a24e816f76b0 69e42511-f653-4a6f-a5d4-50e21dfc8077
+4 ZEN creature NO Kor Hookmaster e6941577-8262-42ef-bf32-f6505d90b73a 68ad3199-c202-4b71-8a36-53547e70c39b
+4 ZNR creature NO Kor Blademaster 194260af-aba5-4d18-a69b-eedb97ed4a4b fc6d6049-5599-47eb-ae58-a8eb96927ece
+
+## Endgame Deck ##
+6 ZEN creature NO Armament Master f1dca9ac-8886-4688-9245-763ef486701c 975f7752-e981-4046-ae9b-90b20db6b23a
+4 ZEN instant NO Bold Defense d21994f2-75e1-456c-a25a-729c3269df1a 5f657723-dd5d-4786-9d9b-ac7ed279615a
+
+
+
+
+
+
+
+
+
+
+

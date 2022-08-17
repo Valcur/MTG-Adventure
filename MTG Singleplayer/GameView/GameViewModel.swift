@@ -397,6 +397,20 @@ extension GameViewModel {
         lifePointsViewModel.opponentLife += life
     }
     
+    func addMana(mana: Int) {
+        self.manaCount += mana
+    }
+    
+    func loseMana(mana: Int) {
+        self.manaCount -= mana
+    }
+    
+    func discardHand() {
+        for _ in 0..<hand.count {
+            graveyard.append(hand.removeFirst())
+        }
+    }
+    
     func drawXCards(x: Int) {
         for _ in 0..<x {
             drawCard()

@@ -1,0 +1,24 @@
+## Basic Deck ##
+10 ROE creature NO-B Runed Servitor 4e5e81e1-ab47-4f08-9c42-dba0adc5cf9a 9dbbbbf6-e3ed-4a36-bedf-11c3514ff965
+3 CMR instant NO Disenchant a7e97fa9-4b72-4548-b854-5be5f18a6f1a 2ba38105-bada-449a-ab2f-3d6db2764a06
+4 KHM creature NO-AB Youthful Valkyrie 6d37ba4b-ff56-4eec-9dc2-2d7f357dc9c9 ffe93b27-f8ae-4abf-8ade-90f503f132c2
+
+## Midrange Deck ##
+6 SNC creature NO-AB Inspiring Overseer d646e42b-5635-4798-b633-29c093b66a55 35d9da1d-8678-4252-b0f8-9960795642f0
+4 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
+5 WWK creature NO-AB Lightkeeper of Emeria 7f31aa43-cf75-4488-b47f-e16e923a2d01 79d0234f-d712-4ac3-bd3b-10f9c530e167
+
+## Endgame Deck ##
+3 ROE creature NO-AB Linvala, Keeper of Silence 88dadc31-dfac-41b3-bf2a-65fa89e3c16d 82b80a09-7e75-4091-a60e-04aff79339a3
+6 ZEN creature NO-AB Shepherd of the Lost d8c70f2f-985c-4982-97eb-99da3810e048 ff23b1c2-7b99-4504-8944-ada264725524
+6 ZNR sorcery NO Emeria's Call 6ec2a242-9068-4ee2-8ac8-8341cc570f56 c470539a-9cc7-4175-8f7c-c982b6072b6d
+
+## Tokens ##
+1 TZNR token NO-AB Angel Warrior b9489980-e741-4cf9-a2ef-086c712f45f1 91098481-46c2-49bf-8123-e9cab2f22b84
+
+
+
+
+
+
+

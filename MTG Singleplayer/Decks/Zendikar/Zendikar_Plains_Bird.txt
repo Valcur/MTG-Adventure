@@ -1,0 +1,16 @@
+## Basic Deck ##
+16 ZNR creature NO Fearless Fledgling 75ae9b87-7137-47a0-b3e1-8915ccd0edf1 02d73eb7-4e76-48d4-90fa-fa972dc0fccb
+8 WWK creature NO Fledgling Griffin 314748a6-4e7f-4afb-b77e-5ef366e02b90 1739550d-3bd8-421b-b2a9-95dd3bff2ce2
+
+## Midrange Deck ##
+15 ZNR enchantment NO Plains bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
+6 ZNR instant NO Pressure Point d4bbdd0c-e578-49ed-b2f7-b1decb04ee87 2fe82bbf-9b92-4684-a42d-fbc50c4c5903
+
+## Endgame Deck ##
+5 WWK creature NO Apex Hawks c025d558-aae8-4146-923b-a98035025a42 b9f038f0-6f50-4f89-855c-6bbd68d84436
+5 ROE creature NO Makindi Griffin af2a951f-7630-48fe-bb37-273b66901eb6 0f839a5e-3cbb-4179-9267-02f40645bdbc
+
+
+
+
+
