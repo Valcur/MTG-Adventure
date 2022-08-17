@@ -90,9 +90,9 @@
 
 "Zendikar_Shop" = "";
 
-"Zendikar_Adventure_Hub" = "";
+"Zendikar_Adventure_Hub" = "In search for informations, you join a group of explorers trying to find an old ruin. This ruin might contains the information you are looking for";
 
-"Zendikar_Adventure_Ondu_Intro" = "";
+"Zendikar_Adventure_Ondu_Intro" = "Ondu is one of the seven continents of Zendikar, only a short distance away from Akoum. The geography of Ondu is dominated by a sense of sweeping verticality. The precarious Makindi Trenches, the skyscraping trees of the Turntimber, and the depths of the Crypt of Agadeem all contribute to the strange sensation that travel in Ondu occurs up and down rather than east and west. The great capital city of Makindi was located in Ondu until the Ondu Skyclave turned against the capital and Makindi was destroyed.";
 
 "Zendikar_Adventure_Ondu_Kor_Attack" = "";
 
@@ -102,11 +102,11 @@
 
 "Zendikar_Adventure_Ondu_Angel_Success" = "";
 
-"Zendikar_Adventure_Ondu_Angel_Run" = "";
+"Zendikar_Adventure_Ondu_Angel_Run" = "You managed to escape but in the rush, some men fell.";
 
-"Zendikar_Adventure_Ondu_Angel_Attack_02" = "";
+"Zendikar_Adventure_Ondu_Angel_Attack_02" = "The rest was short-lived as the angels are still looking for you. This time you won't be able to escape.";
 
-"Zendikar_Adventure_Ondu_Ruins_Entry" = "";
+"Zendikar_Adventure_Ondu_Ruins_Entry" = "You finally reached the ruins.";
 
 "Zendikar_Adventure_Ondu_Boss" = "";
 
@@ -126,27 +126,27 @@
 
 "Zendikar_Mushrooms_Intro" = "";
 
-"Zendikar_Mushrooms_Fight" = "";
+"Zendikar_Mushrooms_Fight" = "You finally reach the place where to harvest the mushrooms. As he said, this place if full of mushrooms. What he did not say is that these mushrooms are on the back of Fungus who won't let you gather them freely.";
 
-"Zendikar_Mushrooms_Beast_Calm" = "";
+"Zendikar_Mushrooms_Beast_Calm" = "But his plan seems to be working as animals seems to saty away from you.";
 
 "Zendikar_Mushrooms_Beast_Fight" = "";
 
-"Zendikar_Old_House_Intro" = "";
+"Zendikar_Old_House_Intro" = "As you walk though the forest, you notice what seems to be a structure inside a big tree. It seems uninhabited.";
 
-"Zendikar_Old_House" = "";
+"Zendikar_Old_House" = "This place seems like an old house abandoned for years. It's the perfect place to stay and recover from your wounds.";
 
 "Zendikar_Silundi_Intro" = "";
 
-"Zendikar_Silundi_Crab" = "";
+"Zendikar_Silundi_Crab" = "As you disembark from your boat, you notice a crab looking at you. As time passes, you notice more and more of them coming and start eating your food supplies. You ask your men to move the supply in the forest nearby while you repel these creatures.";
 
-"Zendikar_Silundi_Entrance" = "";
+"Zendikar_Silundi_Entrance" = "You finally reach the entrance of the old ruin you were looking for.";
 
 "Zendikar_Silundi_Boss" = "";
 
 "Zendikar_Silundi_End" = "";
 
-"Zendikar_Branches_Intro" = "";
+"Zendikar_Branches_Intro" = "You find your path through the branches in Oran-Rief.";
 
 "Zendikar_Branches_Insect" = "";
 
@@ -154,23 +154,23 @@
 
 "Zendikar_Branches_Boss" = "";
 
-"Zendikar_Valakut_Intro" = "";
+"Zendikar_Valakut_Intro" = "You are now close from what you brought you here in Zendikar, an old forge alongside mount Valakut.";
 
-"Zendikar_Valakut_Fight_01" = "";
+"Zendikar_Valakut_Fight_01" = "This place may be an old ruin, it remains inhabited. And you are not welcome.";
 
-"Zendikar_Valakut_Forge_01" = "";
+"Zendikar_Valakut_Forge_01" = "You reach the forge but you have to wait until the next eruption from mount Valakut.";
 
-"Zendikar_Valakut_Fight_02" = "";
+"Zendikar_Valakut_Fight_02" = "While you wait, another group seems unhappy to see you coming for the forge.";
 
-"Zendikar_Valakut_Forge_02" = "";
+"Zendikar_Valakut_Forge_02" = "As the lava flows again along the volcano, the forge is running again.";
 
-"Zendikar_Jerboa_Intro" = "As you mount the camp for the night, you remarque une petite jerboa qui vous reagrde";
+"Zendikar_Jerboa_Intro" = "While you are setting up camp for the night, you notice a jerboa looking at you.";
 
-"Zendikar_Jerboa_Success" = "";
+"Zendikar_Jerboa_Success" = "The jerboa seems really happy. After a few minutes, she leave you.";
 
-"Zendikar_Jerboa" = "";
+"Zendikar_Jerboa" = "The jerboa disappears. An hour later, you hear noises coming toward you, suddenly the jerboa reappears in front of you with food in her mouth, followed by a group of angry minotaurs running after this little fury thief.";
 
-"Zendikar_Jerboa_Fight" = "";
+"Zendikar_Jerboa_Fight" = "The minotaurs are not happy to see you.";
 
 // MARK: Boss
 

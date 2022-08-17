@@ -21,6 +21,24 @@
 		DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */; };
 		DB510B0828A1AAC60037C760 /* Kamigawa_Swamp.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0728A1AAC60037C760 /* Kamigawa_Swamp.txt */; };
 		DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0928A1B0870037C760 /* Kamigawa_Water.txt */; };
+		DB527CB428AD09B30027000C /* Zendikar_Crab.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CB328AD09B30027000C /* Zendikar_Crab.txt */; };
+		DB527CB628AD0AD10027000C /* Zendikar_Minotaur.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CB528AD0AD10027000C /* Zendikar_Minotaur.txt */; };
+		DB527CB828AD0AF80027000C /* Zendikar_Forest_Shortcut_01.tx in Resources */ = {isa = PBXBuildFile; fileRef = DB527CB728AD0AF80027000C /* Zendikar_Forest_Shortcut_01.tx */; };
+		DB527CBA28AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CB928AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt */; };
+		DB527CBC28AD0B2D0027000C /* Zendikar_Valakut_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CBB28AD0B2D0027000C /* Zendikar_Valakut_02.txt */; };
+		DB527CBE28AD0B360027000C /* Zendikar_Valakut_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CBD28AD0B360027000C /* Zendikar_Valakut_01.txt */; };
+		DB527CC028AD0B680027000C /* Zendikar_Branches_Insect.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CBF28AD0B680027000C /* Zendikar_Branches_Insect.txt */; };
+		DB527CC228AD0B780027000C /* Zendikar_Branches_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CC128AD0B780027000C /* Zendikar_Branches_02.txt */; };
+		DB527CC428AD0B980027000C /* Zendikar_Silundi_Boss.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CC328AD0B980027000C /* Zendikar_Silundi_Boss.txt */; };
+		DB527CC628AD0BCB0027000C /* Zendikar_Fungus.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CC528AD0BCB0027000C /* Zendikar_Fungus.txt */; };
+		DB527CC828AD0BD60027000C /* Zendikar_Beast.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CC728AD0BD60027000C /* Zendikar_Beast.txt */; };
+		DB527CCA28AD0C0A0027000C /* Zendikar_Ox.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CC928AD0C0A0027000C /* Zendikar_Ox.txt */; };
+		DB527CCC28AD0C200027000C /* Zendikar_Plains_Cat.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CCB28AD0C200027000C /* Zendikar_Plains_Cat.txt */; };
+		DB527CCF28AD0C3D0027000C /* Zendikar_Plains_Bird.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CCE28AD0C3D0027000C /* Zendikar_Plains_Bird.txt */; };
+		DB527CD128AD0C4D0027000C /* Zendikar_Plains_Boss.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD028AD0C4D0027000C /* Zendikar_Plains_Boss.txt */; };
+		DB527CD328AD0C6F0027000C /* Zendikar_Ondu_Boss.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */; };
+		DB527CD528AD0C810027000C /* Zendikar_Ondu_Angel.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */; };
+		DB527CD728AD0CA50027000C /* Zendikar_Ondu_Kor.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */; };
 		DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
@@ -64,6 +82,24 @@
 		DB510B0528A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02_B.txt; sourceTree = "<group>"; };
 		DB510B0728A1AAC60037C760 /* Kamigawa_Swamp.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Swamp.txt; sourceTree = "<group>"; };
 		DB510B0928A1B0870037C760 /* Kamigawa_Water.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Water.txt; sourceTree = "<group>"; };
+		DB527CB328AD09B30027000C /* Zendikar_Crab.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Crab.txt; sourceTree = "<group>"; };
+		DB527CB528AD0AD10027000C /* Zendikar_Minotaur.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Minotaur.txt; sourceTree = "<group>"; };
+		DB527CB728AD0AF80027000C /* Zendikar_Forest_Shortcut_01.tx */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Forest_Shortcut_01.tx; sourceTree = "<group>"; };
+		DB527CB928AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Forest_Shortcut_02.txt; sourceTree = "<group>"; };
+		DB527CBB28AD0B2D0027000C /* Zendikar_Valakut_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Valakut_02.txt; sourceTree = "<group>"; };
+		DB527CBD28AD0B360027000C /* Zendikar_Valakut_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Valakut_01.txt; sourceTree = "<group>"; };
+		DB527CBF28AD0B680027000C /* Zendikar_Branches_Insect.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Branches_Insect.txt; sourceTree = "<group>"; };
+		DB527CC128AD0B780027000C /* Zendikar_Branches_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Branches_02.txt; sourceTree = "<group>"; };
+		DB527CC328AD0B980027000C /* Zendikar_Silundi_Boss.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Silundi_Boss.txt; sourceTree = "<group>"; };
+		DB527CC528AD0BCB0027000C /* Zendikar_Fungus.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Fungus.txt; sourceTree = "<group>"; };
+		DB527CC728AD0BD60027000C /* Zendikar_Beast.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Beast.txt; sourceTree = "<group>"; };
+		DB527CC928AD0C0A0027000C /* Zendikar_Ox.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ox.txt; sourceTree = "<group>"; };
+		DB527CCB28AD0C200027000C /* Zendikar_Plains_Cat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Plains_Cat.txt; sourceTree = "<group>"; };
+		DB527CCE28AD0C3D0027000C /* Zendikar_Plains_Bird.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Plains_Bird.txt; sourceTree = "<group>"; };
+		DB527CD028AD0C4D0027000C /* Zendikar_Plains_Boss.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Plains_Boss.txt; sourceTree = "<group>"; };
+		DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Boss.txt; sourceTree = "<group>"; };
+		DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Angel.txt; sourceTree = "<group>"; };
+		DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Kor.txt; sourceTree = "<group>"; };
 		DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Zendikar.swift; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
@@ -123,6 +159,31 @@
 			path = Bosses;
 			sourceTree = "<group>";
 		};
+		DB527CB228AD09910027000C /* Zendikar */ = {
+			isa = PBXGroup;
+			children = (
+				DB527CB328AD09B30027000C /* Zendikar_Crab.txt */,
+				DB527CB528AD0AD10027000C /* Zendikar_Minotaur.txt */,
+				DB527CB728AD0AF80027000C /* Zendikar_Forest_Shortcut_01.tx */,
+				DB527CB928AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt */,
+				DB527CBB28AD0B2D0027000C /* Zendikar_Valakut_02.txt */,
+				DB527CBD28AD0B360027000C /* Zendikar_Valakut_01.txt */,
+				DB527CBF28AD0B680027000C /* Zendikar_Branches_Insect.txt */,
+				DB527CC128AD0B780027000C /* Zendikar_Branches_02.txt */,
+				DB527CC328AD0B980027000C /* Zendikar_Silundi_Boss.txt */,
+				DB527CC528AD0BCB0027000C /* Zendikar_Fungus.txt */,
+				DB527CC728AD0BD60027000C /* Zendikar_Beast.txt */,
+				DB527CC928AD0C0A0027000C /* Zendikar_Ox.txt */,
+				DB527CCB28AD0C200027000C /* Zendikar_Plains_Cat.txt */,
+				DB527CCE28AD0C3D0027000C /* Zendikar_Plains_Bird.txt */,
+				DB527CD028AD0C4D0027000C /* Zendikar_Plains_Boss.txt */,
+				DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */,
+				DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */,
+				DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */,
+			);
+			path = Zendikar;
+			sourceTree = "<group>";
+		};
 		DBC7323328972458006834B1 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +229,7 @@
 		DBC732552897E087006834B1 /* Decks */ = {
 			isa = PBXGroup;
 			children = (
+				DB527CB228AD09910027000C /* Zendikar */,
 				DB31756428A832A100799186 /* Bosses */,
 				DBE027F428A04EFE00F8F483 /* Blank.txt */,
 				DB31755A28A3CFC400799186 /* DeckTexts.strings */,
@@ -283,22 +345,40 @@
 				DBE027EB289FF0A600F8F483 /* Kamigawa_Imperial_01.txt in Resources */,
 				DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */,
 				DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */,
+				DB527CD728AD0CA50027000C /* Zendikar_Ondu_Kor.txt in Resources */,
+				DB527CC828AD0BD60027000C /* Zendikar_Beast.txt in Resources */,
 				DB31755C28A539F900799186 /* Kamigawa_Ninja_01.txt in Resources */,
 				DBE027F328A04EE500F8F483 /* Kamigawa_BG.txt in Resources */,
 				DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01.txt in Resources */,
 				DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */,
 				DBE027EF289FF0D500F8F483 /* Kamigawa_Invader_02.txt in Resources */,
+				DB527CCA28AD0C0A0027000C /* Zendikar_Ox.txt in Resources */,
 				DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */,
+				DB527CB628AD0AD10027000C /* Zendikar_Minotaur.txt in Resources */,
+				DB527CCF28AD0C3D0027000C /* Zendikar_Plains_Bird.txt in Resources */,
+				DB527CC228AD0B780027000C /* Zendikar_Branches_02.txt in Resources */,
 				DBE027F528A04EFE00F8F483 /* Blank.txt in Resources */,
 				DBE027F1289FF0DE00F8F483 /* Kamigawa_Invader_01.txt in Resources */,
+				DB527CB428AD09B30027000C /* Zendikar_Crab.txt in Resources */,
+				DB527CBA28AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt in Resources */,
 				DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */,
+				DB527CC628AD0BCB0027000C /* Zendikar_Fungus.txt in Resources */,
+				DB527CC428AD0B980027000C /* Zendikar_Silundi_Boss.txt in Resources */,
+				DB527CD128AD0C4D0027000C /* Zendikar_Plains_Boss.txt in Resources */,
 				DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02.txt in Resources */,
 				DB510B0828A1AAC60037C760 /* Kamigawa_Swamp.txt in Resources */,
 				DBE027E7289ECB8300F8F483 /* Kamigawa_Shrine.txt in Resources */,
+				DB527CD528AD0C810027000C /* Zendikar_Ondu_Angel.txt in Resources */,
 				DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02.txt in Resources */,
+				DB527CB828AD0AF80027000C /* Zendikar_Forest_Shortcut_01.tx in Resources */,
 				DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */,
 				DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */,
+				DB527CC028AD0B680027000C /* Zendikar_Branches_Insect.txt in Resources */,
+				DB527CBC28AD0B2D0027000C /* Zendikar_Valakut_02.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
+				DB527CBE28AD0B360027000C /* Zendikar_Valakut_01.txt in Resources */,
+				DB527CD328AD0C6F0027000C /* Zendikar_Ondu_Boss.txt in Resources */,
+				DB527CCC28AD0C200027000C /* Zendikar_Plains_Cat.txt in Resources */,
 				DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */,
 				DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,

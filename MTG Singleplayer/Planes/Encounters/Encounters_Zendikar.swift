@@ -91,7 +91,7 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Kor_Attack": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Kor_Attack", artistName: "Ekaterina Burmak",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Progress")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Progress", deckToFight: "Zendikar_Ondu_Kor")
                                     ]),
         
         "Zendikar_Adventure_Ondu_Progress": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Progress", artistName: "Denman Rooke",
@@ -101,7 +101,7 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Angel_Attack_01": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Angel_Attack_01", artistName: "Matt Stewart",
                                     choices: [
-                                        EncounterChoice(title: "Fight", encounterId: "Zendikar_Adventure_Ondu_Angel_Success"),
+                                        EncounterChoice(title: "Fight", encounterId: "Zendikar_Adventure_Ondu_Angel_Success", deckToFight: "Zendikar_Ondu_Angel"),
                                         EncounterChoice(title: "Run", encounterId: "Zendikar_Adventure_Ondu_Angel_Run")
                                     ]),
         
@@ -117,7 +117,7 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Angel_Attack_02": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Angel_Attack_02", artistName: "Matt Stewart",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Ruins_Entry")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Ruins_Entry", deckToFight: "Zendikar_Ondu_Angel")
                                     ]),
         
         "Zendikar_Adventure_Ondu_Ruins_Entry": Encounter(title: "Approcahing the ruins", id: "Zendikar_Adventure_Ondu_Ruins_Entry", artistName: "Chase Stone",
@@ -127,7 +127,7 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Boss": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Boss", artistName: "Ryan Pancoast",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Ondu_Boss")
                                     ]),
         
         // MARK: Plains
@@ -140,12 +140,12 @@ extension Encounters {
         
         "Zendikar_Plains_Fight_01": Encounter(title: "AAA", id: "Zendikar_Plains_Fight_01", artistName: "Ilse Gort",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_01")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_01", deckToFight: "Zendikar_Ox")
                                     ]),
         
         "Zendikar_Plains_Fight_02": Encounter(title: "AAA", id: "Zendikar_Plains_Fight_02", artistName: "Ilse Gort",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_01")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_01", deckToFight: "Zendikar_Plains_Cat")
                                     ]),
         
         "Zendikar_Plains_Progress_01": Encounter(title: "AAA", id: "Zendikar_Plains_Progress_01", artistName: "Adam Paquette",
@@ -155,7 +155,7 @@ extension Encounters {
         
         "Zendikar_Plains_Fight_03": Encounter(title: "AAA", id: "Zendikar_Plains_Fight_03", artistName: "Jesper Ejsing",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_02")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_02", deckToFight: "Zendikar_Plains_Bird")
                                     ]),
         
         "Zendikar_Plains_Progress_02": Encounter(title: "AAA", id: "Zendikar_Plains_Progress_02", artistName: "Johan Grenier",
@@ -165,14 +165,14 @@ extension Encounters {
         
         "Zendikar_Plains_Boss": Encounter(title: "AAA", id: "Zendikar_Plains_Boss", artistName: "G-host Lee",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Plains_Boss")
                                     ]),
         
         // MARK: Mushrooms
         
         "Zendikar_Mushrooms_Fight": Encounter(title: "AAA", id: "Zendikar_Mushrooms_Fight", artistName: "Nicholas Gregory",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Mushrooms_Beast_Calm")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Mushrooms_Beast_Calm", deckToFight: "Zendikar_Fungus")
                                     ]),
         
         "Zendikar_Mushrooms_Beast_Calm": Encounter(title: "AAA", id: "Zendikar_Mushrooms_Beast_Calm", artistName: "Grzegorz Rutkowski",
@@ -182,7 +182,7 @@ extension Encounters {
         
         "Zendikar_Mushrooms_Beast_Fight": Encounter(title: "AAA", id: "Zendikar_Mushrooms_Beast_Fight", artistName: "Grzegorz Rutkowski",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Beast")
                                     ]),
         
         // MARK: Old house
@@ -197,7 +197,7 @@ extension Encounters {
         
         "Zendikar_Silundi_Crab": Encounter(title: "AAA", id: "Zendikar_Silundi_Crab", artistName: "Simon Dominic",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Silundi_Entrance")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Silundi_Entrance", deckToFight: "Zendikar_Crab")
                                     ]),
         
         "Zendikar_Silundi_Entrance": Encounter(title: "AAA", id: "Zendikar_Silundi_Entrance", artistName: "Adam Paquette",
@@ -207,7 +207,7 @@ extension Encounters {
         
         "Zendikar_Silundi_Boss": Encounter(title: "AAA", id: "Zendikar_Silundi_Boss", artistName: "Svetlin Velinov",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Silundi_End")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Silundi_End", deckToFight: "Zendikar_Silundi_Boss")
                                     ]),
         
         "Zendikar_Silundi_End": Encounter(title: "AAA", id: "Zendikar_Silundi_End", artistName: "Bryan Sola",
@@ -219,7 +219,7 @@ extension Encounters {
         
         "Zendikar_Branches_Insect": Encounter(title: "AAA", id: "Zendikar_Branches_Insect", artistName: "Simon Dominic",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Branches_Progress")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Branches_Progress", deckToFight: "Zendikar_Branches_Insect")
                                     ]),
         
         "Zendikar_Branches_Progress": Encounter(title: "AAA", id: "Zendikar_Branches_Progress", artistName: "Titus Lunter",
@@ -229,14 +229,14 @@ extension Encounters {
         
         "Zendikar_Branches_Boss": Encounter(title: "AAA", id: "Zendikar_Branches_Boss", artistName: "Victor Adame Minguez",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Branches_02")
                                     ]),
         
         // MARK: Valakut
         
         "Zendikar_Valakut_Fight_01": Encounter(title: "AAA", id: "Zendikar_Valakut_Fight_01", artistName: "Billy Christian",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Valakut_Forge_01")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Valakut_Forge_01", deckToFight: "Zendikar_Valakut_01")
                                     ]),
         
         "Zendikar_Valakut_Forge_01": Encounter(title: "AAA", id: "Zendikar_Valakut_Forge_01", artistName: "Campbell White",
@@ -246,7 +246,7 @@ extension Encounters {
         
         "Zendikar_Valakut_Fight_02": Encounter(title: "AAA", id: "Zendikar_Valakut_Fight_02", artistName: "Bryan Sola",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Valakut_Forge_02")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Valakut_Forge_02", deckToFight: "Zendikar_Valakut_02")
                                     ]),
         
         "Zendikar_Valakut_Forge_02": Encounter(title: "AAA", id: "Zendikar_Valakut_Forge_02", artistName: "Campbell White",
@@ -258,7 +258,7 @@ extension Encounters {
         
         "Zendikar_Forest_Shortcut_Fight_01": Encounter(title: "AAA", id: "Zendikar_Forest_Shortcut_Fight_01", artistName: "Grzegorz Rutkowski",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Forest_Shortcut_Progress")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Forest_Shortcut_Progress", deckToFight: "Zendikar_Forest_Shortcut_01")
                                     ]),
         
         "Zendikar_Forest_Shortcut_Progress": Encounter(title: "AAA", id: "Zendikar_Forest_Shortcut_Progress", artistName: "Cristi Balanescu",
@@ -268,7 +268,7 @@ extension Encounters {
         
         "Zendikar_Forest_Shortcut_Fight_02": Encounter(title: "AAA", id: "Zendikar_Forest_Shortcut_Fight_02", artistName: "Simon Dominic",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Forest_Shortcut_02")
                                     ]),
         
         // MARK: Jerboa
@@ -285,7 +285,7 @@ extension Encounters {
         
         "Zendikar_Jerboa_Fight": Encounter(title: "AAA", id: "Zendikar_Jerboa_Fight", artistName: "Rudy Siswanto",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Minotaur")
                                     ]),
     ]
 }
