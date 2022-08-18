@@ -510,9 +510,9 @@ struct GameViewSize {
 struct StackCard {
     var card: Card
     var stackEffectType: StackEffectType
-    
-    enum StackEffectType {
-        case enterTheBattlefield
-        case leaveTheBattlefield
-    }
+}
+
+enum StackEffectType {
+    case enterTheBattlefield
+    case leaveTheBattlefield
 }

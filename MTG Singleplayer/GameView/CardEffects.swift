@@ -18,12 +18,15 @@ class CardsEffects {
         "Sarulf's Packmate": CardEffect(enterTheBattlefield: .draw(1)),
         "Deliberate": CardEffect(enterTheBattlefield: .draw(1)),
         "Divination": CardEffect(enterTheBattlefield: .draw(2)),
-        "Hedron Crawler": CardEffect(enterTheBattlefield: .addMana(1), leaveTheBattlefield: .loseMana(1)),
+        "Hedron Crawler": CardEffect(enterTheBattlefield: [.addMana(1), .applyWithoutShowing], leaveTheBattlefield: [.loseMana(1), .applyWithoutShowing]),
         "Enatu Golem": CardEffect(leaveTheBattlefield: .gainLife(4)),
         "Spore Crawler": CardEffect(leaveTheBattlefield: .draw(1)),
         "Ox of Agonas": CardEffect(enterTheBattlefield: [.discardHand, .draw(3)]),
         "Pressure Point": CardEffect(enterTheBattlefield: .draw(1)),
+        "Runed Servitor": CardEffect(leaveTheBattlefield: .draw(1)),
         "Survival Cache": CardEffect(enterTheBattlefield: .gainLife(2)),
+        "Farsight Adept": CardEffect(enterTheBattlefield: .draw(1)),
+        "Kor Celebrant": CardEffect(enterTheBattlefield: .gainLife(1)),
     ]
 }
 
@@ -81,6 +84,7 @@ enum Effect: Equatable {
     case addMana(Int)
     case loseMana(Int)
     case discardHand
+    case applyWithoutShowing
 }
 
 extension GameViewModel {
@@ -98,6 +102,8 @@ extension GameViewModel {
             self.loseMana(mana: manaLost)
         case .discardHand:
             self.discardHand()
+        case .applyWithoutShowing:
+            print("Not showing this one")
         }
     }
     

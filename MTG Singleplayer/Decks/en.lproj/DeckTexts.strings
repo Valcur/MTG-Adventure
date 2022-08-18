@@ -16,7 +16,7 @@
 
 "Deck_Kamigawa_Imperial_01" = "Only the strongest creature attack alone each turn";
 
-"Deck_Kamigawa_Imperial_02" = "";
+"Deck_Kamigawa_Imperial_02" = "EQUIP";
 
 "Deck_Kamigawa_Invader_01" = "";
 
@@ -33,6 +33,8 @@
 "Deck_Kamigawa_Water" = "";
 
 "Deck_Kamigawa_BG" = "";
+
+// MARK: BOSS
 
 "Deck_Boss_Garruk" = "+1 if you draw a forest\n-6 if you don't draw a forest and you control 6 or more wolves\n\nWerewolf Pack Leader never uses his activated ability";
 
@@ -72,4 +74,4 @@
 
 "Deck_Zendikar_Ondu_Angel" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 
-"Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an attacking Armamanent Master of you control one. If not, equip all equipment you control to your best attacking creature";
+"Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an attacking Armamanent Master if you control one. If not, equip all equipment you control to your best attacking creature";

@@ -90,6 +90,7 @@ extension Encounters {
                                     ]),
         
         "Zendikar_Adventure_Ondu_Kor_Attack": Encounter(title: "AAA", id: "Zendikar_Adventure_Ondu_Kor_Attack", artistName: "Ekaterina Burmak",
+                                    reward: [.life(1)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Progress", deckToFight: "Zendikar_Ondu_Kor")
                                     ]),
@@ -148,7 +149,8 @@ extension Encounters {
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_01", deckToFight: "Zendikar_Plains_Cat")
                                     ]),
         
-        "Zendikar_Plains_Progress_01": Encounter(title: "AAA", id: "Zendikar_Plains_Progress_01", artistName: "Adam Paquette",
+        "Zendikar_Plains_Progress_01": Encounter(title: "Mounting camp", id: "Zendikar_Plains_Progress_01", artistName: "Adam Paquette",
+                                    reward: [.life(1)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Fight_03")
                                     ]),

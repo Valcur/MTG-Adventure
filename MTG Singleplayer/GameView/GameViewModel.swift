@@ -151,6 +151,16 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    func addToStack(card: Card, stackType: StackEffectType) {
+        let arrayToCheck = stackType == .enterTheBattlefield ? card.cardEffect.enterTheBattlefield : card.cardEffect.leaveTheBattlefield
+
+        if arrayToCheck?.contains(.applyWithoutShowing) ?? false {
+            applyEffectFor(card: StackCard(card: card, stackEffectType: stackType))
+        } else {
+            stack.append(StackCard(card: card, stackEffectType: stackType))
+        }
+    }
+    
     func removeOneCardOnBoard(card: Card) {
         for i in (0..<board.count) {
             let c = board[i]
