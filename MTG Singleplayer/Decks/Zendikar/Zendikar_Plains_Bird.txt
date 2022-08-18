@@ -3,7 +3,7 @@
 8 WWK creature NO Fledgling Griffin 314748a6-4e7f-4afb-b77e-5ef366e02b90 1739550d-3bd8-421b-b2a9-95dd3bff2ce2
 
 ## Midrange Deck ##
-15 ZNR enchantment NO Plains bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
+15 ZNR enchantment NO Land Draw bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
 6 ZNR instant NO Pressure Point d4bbdd0c-e578-49ed-b2f7-b1decb04ee87 2fe82bbf-9b92-4684-a42d-fbc50c4c5903
 
 ## Endgame Deck ##

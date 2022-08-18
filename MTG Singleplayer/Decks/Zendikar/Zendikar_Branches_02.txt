@@ -1,7 +1,32 @@
 ## Basic Deck ##
+11 ZNR creature NO-A Brushfire Elemental b33a7ec6-b22b-41cf-9312-65add1529b51 8fc448f6-a7fe-47c4-ac7c-385a77326469
+6 M20 creature NO Creeping Trailblazer 94431642-cfcf-48f4-9e0b-fcddc5b051ef f0b96e41-caae-4e22-82f9-df5a054ea3b7
+3 ZNR sorcery NO Rabid Bite 6d5dc34b-3eea-4b77-8db7-94bc30b14c4c effe3fab-6d13-4603-8a21-8a3c2a0d9e08
+10 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Midrange Deck ##
+8 ZNR creature NO-AB Kazandu Mammoth 2ac1c95c-2a9d-40bc-9cad-9cadfa3f19f7 2f632537-63bf-4490-86e6-e6067b9c1a3b
+9 C18 creature NO-AB Zendikar Incarnate ecd307e6-9096-401f-bd82-ad190532d389 8d883c60-1512-4bcc-8a0c-3db5acce63e5
+3 ZNR instant NO Broken Wings 5e316864-d55c-496f-8f46-773567896864 c0fc2dfd-85b0-4add-be18-b39549235921
+10 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Endgame Deck ##
+6 ZNC creature NO Omnath, Locus of Rage 1816eede-c5bd-49df-958f-a3af64cb2932 08c14bb4-c9d9-41ce-a075-a441522a52c6
+9 ZNR creature NO Phylath, World Sculptor 3d79cbe2-cf1b-4313-ab47-0118fcdbfc6c e7af88c9-70ca-484c-bddf-b705e0ea7bc7
 
 ## Tokens ##
+1 TZNC token NO-A Elemental a9ea980e-4734-45e5-b5b7-4ec092db3299 920c9c33-0125-4ea3-8381-817f4593e615
+1 TZNR token NO-B Plant bcd346a7-4d96-4a0c-9725-fb740e32b730 d03d87f5-0ac6-45ca-a54b-6a36132a8eae
+
+
+
+
+
+
+
+
+
+
+
+
+

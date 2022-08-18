@@ -1,7 +1,25 @@
 ## Basic Deck ##
+10 ZNR creature NO-AB Mesa Lynx 211add65-b63d-43ad-8d69-b0598e003fef f65af09b-656f-4d81-b95d-b4f902e56bb7
+10 ZEN creature NO-A Steppe Lynx b16cef02-dcf8-4866-ac42-6ee929ddbea2 b0aaec1c-8084-4468-82e7-2e4cc5ebe244
+10 ZNR enchantment NO Land Draw bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
+5 ZNR instant NO Pressure Point d4bbdd0c-e578-49ed-b2f7-b1decb04ee87 2fe82bbf-9b92-4684-a42d-fbc50c4c5903
 
 ## Midrange Deck ##
+10 ZNR creature NO-B Prowling Felidar ed26f6bf-fcd6-4cf4-9b65-a492cb79f2df b9d1c11a-a32c-449c-95c6-450dce6c26d2
+10 ZNR enchantment NO Land Draw bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
 
 ## Endgame Deck ##
+5 ZNR enchantment NO Felidar Retreat 16629f59-bae8-4c19-bf50-443eb0ed6856 45340647-4d3e-4be1-b0e6-e40cc56a438b
 
 ## Tokens ##
+1 TZNR token NO-AB Cat Beast 8050907b-4007-4478-8ebd-25b8b2bf85c3 e2c91781-acf9-4cff-be1a-85148ad2a683
+
+
+
+
+
+
+
+
+
+

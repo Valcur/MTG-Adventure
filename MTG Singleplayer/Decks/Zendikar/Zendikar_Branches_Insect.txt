@@ -1,7 +1,25 @@
 ## Basic Deck ##
+10 ZNR creature NO-B Kazandu Nectarpot 263b526c-8b81-44ee-a7c4-5c24bf9b42a4 7c9d3f4a-ef83-454e-b8a1-1fc5d5f44be8
+8 ZEN creature NO Scute Mob f1e0eda0-4a5e-4f1f-8131-ba58a58887cf 43e2fcc6-96d3-45f5-b4dd-e049d9ec6cec
+10 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Midrange Deck ##
+10 ZNR creature NO-B Iridescent Hornbeetle 3270265f-fa9f-4ef0-a1a3-a68fc2349bf1 214ef641-b08c-42d0-94a5-3054fa7fcebc
+10 ZNR creature NO Scute Swarm aa854d50-444c-49d9-bfb1-5476b33c1c0b 61f42823-8a48-4b81-a037-664ba1c69f29
+10 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Endgame Deck ##
+10 C19 creature NO-A Giant Adephage 8e1d261d-b8d3-4fb1-922d-47789854b5b3 4fe2d4dd-983a-41d5-addb-67e748b5e339
 
 ## Tokens ##
+1 TZNR token NO-B Insect c39cd31f-c4a2-4ca8-b4f9-b2e6289743bc 84da9c36-5d9c-4e29-b6cc-c5c10e490f2e
+1 ZNR token NO-B Scute Swarm aa854d50-444c-49d9-bfb1-5476b33c1c0b 309b2cb5-b9a8-417d-b5ae-0a7d03ff93f0
+1 GTC token NO-A Giant Adephage 8e1d261d-b8d3-4fb1-922d-47789854b5b3 8bae725f-e582-4377-a855-51af035cdac3
+
+
+
+
+
+
+
+

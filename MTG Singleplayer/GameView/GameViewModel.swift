@@ -133,21 +133,20 @@ class GameViewModel: ObservableObject {
             graveyard.append(card)
         }
         if card.cardEffect.leaveTheBattlefield != nil {
-            stack.append(StackCard(card: card, stackEffectType: .leaveTheBattlefield))
+            addToStack(card: card, stackType: .leaveTheBattlefield)
         }
     }
     
     private func castCard(card: Card) {
+        if card.cardEffect.enterTheBattlefield != nil {
+            for _ in 0..<card.cardCount {
+                addToStack(card: card, stackType: .enterTheBattlefield)
+            }
+        }
         if card.cardType == .instant || card.cardType == .sorcery {
             sendToGraveyard(card: card)
         } else {
             addCardToBoad(card: card)
-        }
-        if card.cardEffect.enterTheBattlefield != nil {
-            for _ in 0..<card.cardCount {
-                //applyEnterTheBattlefieldEffectFor(card: card)
-                stack.append(StackCard(card: card, stackEffectType: .enterTheBattlefield))
-            }
         }
     }
     
@@ -155,9 +154,9 @@ class GameViewModel: ObservableObject {
         let arrayToCheck = stackType == .enterTheBattlefield ? card.cardEffect.enterTheBattlefield : card.cardEffect.leaveTheBattlefield
 
         if arrayToCheck?.contains(.applyWithoutShowing) ?? false {
-            applyEffectFor(card: StackCard(card: card, stackEffectType: stackType))
+            applyEffectFor(card: StackCard(card: card.recreateCard(), stackEffectType: stackType))
         } else {
-            stack.append(StackCard(card: card, stackEffectType: stackType))
+            stack.append(StackCard(card: card.recreateCard(), stackEffectType: stackType))
         }
     }
     

@@ -44,17 +44,17 @@
 
 "Deck_Zendikar_Minotaur" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 
-"Deck_Zendikar_Forest_Shortcut_01" = "";
+"Deck_Zendikar_Forest_Shortcut_01" = "Whenever a land enter the battlefield under your control, you draw a card";
 
-"Deck_Zendikar_Forest_Shortcut_02" = "";
+"Deck_Zendikar_Forest_Shortcut_02" = "Opponent never put Moss-Pit Skeleton on top of his library";
 
 "Deck_Zendikar_Valakut_02" = "";
 
 "Deck_Zendikar_Valakut_01" = "";
 
-"Deck_Zendikar_Branches_Insect" = "";
+"Deck_Zendikar_Branches_Insect" = "Whenever a land enter the battlefield under your control, you draw a card";
 
-"Deck_Zendikar_Branches_02" = "";
+"Deck_Zendikar_Branches_02" = "Whenever a land enter the battlefield under your control, you draw a card";
 
 "Deck_Zendikar_Silundi_Boss" = "At the beginning of each opponent's end step, activate all Relic Golem ability if able";
 
@@ -64,7 +64,7 @@
 
 "Deck_Zendikar_Ox" = "Whenever a land enter the battlefield under your control, you draw a card";
 
-"Deck_Zendikar_Plains_Cat" = "";
+"Deck_Zendikar_Plains_Cat" = "Whenever a land enter the battlefield under your control, you draw a card";
 
 "Deck_Zendikar_Plains_Bird" = "Whenever a land enter the battlefield under your control, you draw a card";
 

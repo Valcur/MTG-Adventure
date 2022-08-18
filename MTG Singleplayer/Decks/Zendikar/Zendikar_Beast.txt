@@ -1,13 +1,13 @@
 ## Basic Deck ##
 6 ZNR creature NO-AB Gnarlid Colony e5481431-c952-4ad9-94fe-355076ef632b 7327289d-eed8-44b1-8495-7172e2b49d5f
 6 WWK creature NO-AB Gnarlid Pack be6e835c-822e-45ff-a992-249d4d9781dc 68716387-c5ec-4967-be5f-723783722c64
-10 ZNR enchantment NO Forest b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
+10 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Midrange Deck ##
 10 ZNR creature NO-AB Territorial Scythecat 75d38954-6148-4d95-bf4b-cb82efcbe8df 5e0f725c-8d1f-47ff-ad81-a5007199a5e2
 5 WWK creature NO-AB Leatherback Baloth 0ee14128-3bec-4b65-8ee4-619337d4ed45 55f97b4c-42c7-4986-a150-0b8de11f0537
 3 ZNR instant NO Broken Wings 5e316864-d55c-496f-8f46-773567896864 c0fc2dfd-85b0-4add-be18-b39549235921
-9 ZNR enchantment NO Forest b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
+9 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Endgame Deck ##
 4 ZEN creature NO-AB Terra Stomper d688baac-0574-4d88-b7eb-a7384c298ef5 4ab062f4-e4b1-4129-9027-d0ca1a723273

@@ -48,6 +48,12 @@ extension Encounters {
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Branches_Insect")
                                     ]),
+        
+        "Zendikar_Plains_Intro": Encounter(title: "AAA", id: "Zendikar_Plains_Intro", artistName: "Grady Frederick",
+                                    choices: [
+                                        EncounterChoice(title: "Climb the rocky path", encounterId: "Zendikar_Plains_Fight_01"),
+                                        EncounterChoice(title: "Stay in the plains", encounterId: "Zendikar_Plains_Fight_02")
+                                    ]),
     ]
     
     static let plane_zendikar_ending = [
@@ -66,9 +72,9 @@ extension Encounters {
     
     static let plane_zendikar_direct = [
         
-        "Zendikar_Intro": Encounter(title: "Zendikar", id: "Zendikar_Intro", artistName: "Aleksi Briclot",
+        "Zendikar_Intro": Encounter(title: "Zendikar", id: "Zendikar_Intro", artistName: "Tianhua X",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Plains_Intro", "Zendikar_Adventure_Hub"])
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
                                     ]),
         
         "Zendikar_Shop": Encounter(title: "Shop", id: "Zendikar_Shop", artistName: "Philip Straub",
@@ -132,12 +138,6 @@ extension Encounters {
                                     ]),
         
         // MARK: Plains
-        
-        "Zendikar_Plains_Intro": Encounter(title: "AAA", id: "Zendikar_Plains_Intro", artistName: "Grady Frederick",
-                                    choices: [
-                                        EncounterChoice(title: "Climb the rocky path", encounterId: "Zendikar_Plains_Fight_01"),
-                                        EncounterChoice(title: "Stay in the plains", encounterId: "Zendikar_Plains_Fight_02")
-                                    ]),
         
         "Zendikar_Plains_Fight_01": Encounter(title: "AAA", id: "Zendikar_Plains_Fight_01", artistName: "Ilse Gort",
                                     choices: [

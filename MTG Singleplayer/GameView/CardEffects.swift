@@ -27,6 +27,7 @@ class CardsEffects {
         "Survival Cache": CardEffect(enterTheBattlefield: .gainLife(2)),
         "Farsight Adept": CardEffect(enterTheBattlefield: .draw(1)),
         "Kor Celebrant": CardEffect(enterTheBattlefield: .gainLife(1)),
+        "Land Draw": CardEffect(enterTheBattlefield: [.draw(1), .applyWithoutShowing]),
     ]
 }
 
