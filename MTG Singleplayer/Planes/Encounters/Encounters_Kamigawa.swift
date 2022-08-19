@@ -39,6 +39,48 @@ class Encounters {
         }
     }
     
+    static func getEncounter(encounterId: String, planeName: String) -> Encounter? {
+        var encounterArray = getArrayForPlane(planeName, array: .singleEncounter)
+        var encounter = searchForPlaneInArray(encounterId: encounterId, array: encounterArray)
+        if encounter != nil {
+            return encounter
+        }
+        
+        encounterArray = getArrayForPlane(planeName, array: .doubleEncounter)
+        encounter = searchForPlaneInArray(encounterId: encounterId, array: encounterArray)
+        if encounter != nil {
+            return encounter
+        }
+        
+        encounterArray = getArrayForPlane(planeName, array: .endingEncounter)
+        encounter = searchForPlaneInArray(encounterId: encounterId, array: encounterArray)
+        if encounter != nil {
+            return encounter
+        }
+        
+        encounterArray = getArrayForPlane(planeName, array: .directEncounter)
+        encounter = searchForPlaneInArray(encounterId: encounterId, array: encounterArray)
+        if encounter != nil {
+            return encounter
+        }
+        
+        encounterArray = bosses
+        encounter = searchForPlaneInArray(encounterId: encounterId, array: encounterArray)
+        if encounter != nil {
+            return encounter
+        }
+        
+        if encounterId == "Intro" {
+            return introEncounter
+        }
+        
+        return nil
+    }
+    
+    static private func searchForPlaneInArray(encounterId: String, array: [String:Encounter]) -> Encounter? {
+        return array[encounterId]
+    }
+    
     enum PlaneEncounterArray {
         case singleEncounter
         case doubleEncounter

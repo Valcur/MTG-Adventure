@@ -23,6 +23,9 @@ class AdventureViewModel: ObservableObject {
     var shopVisited: Bool = false
     var currentPlane = "Zendikar"
     var stage = 0
+    var numberOfPlayer = 1
+    var gameStyle: GameStyle = .edh
+    var saveNumber = 1
     
     init() {
         
@@ -31,6 +34,28 @@ class AdventureViewModel: ObservableObject {
         //let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["Kamigawa_Forge_04"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
         //setFinalBossEncounter()
+    }
+    
+    func loadSave(saveNumber: Int) {
+        let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
+        if saveInfo.currentEncounter == "Unset" {
+            let startEncounter = Encounters.introEncounter
+            currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
+            switchView()
+            saveProgress(currentEncounter: startEncounter.id)
+        } else {
+            let startEncounter = Encounters.getEncounter(encounterId: saveInfo.currentEncounter, planeName: saveInfo.currentPlane)
+            currentEncounterView = AnyView(EncounterView(encounter: startEncounter!))
+        }
+        self.fightCompleted = saveInfo.fightCompleted
+        self.shopVisited = saveInfo.shopHasBeenVisited
+        self.stage = saveInfo.difficulty
+        self.permanentBonusList = saveInfo.permanentUpgradeArray
+        self.currentGold = saveInfo.gold
+        self.currentLife = saveInfo.life
+        self.numberOfPlayer = saveInfo.numberOfPlayer
+        self.gameStyle = saveInfo.gameStyle
+        self.saveNumber = saveNumber
     }
     
     private func applyChoice(choice: EncounterChoice) {
@@ -58,12 +83,14 @@ class AdventureViewModel: ObservableObject {
             let nextEncounter = getRandomEncounter()
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter))
             giveRewards(rewards: nextEncounter.reward, withDelay: true)
+            saveProgress(currentEncounter: nextEncounter.id)
         }
         // Else we go to the specified encounter
         else {
             let nextEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)[encounterChoice!]
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter!))
             giveRewards(rewards: nextEncounter!.reward, withDelay: true)
+            saveProgress(currentEncounter: nextEncounter!.id)
         }
 
         currentEncounterChoice = choice
@@ -75,18 +102,21 @@ class AdventureViewModel: ObservableObject {
         availableRandomEncounter = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(planeName, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
+        saveProgress(currentEncounter: startEncounter.id)
     }
     
     private func setFinalShopEncounter() {
         currentPlane = "Final Shop"
         let bossShop = Encounters.bosses_shop
         currentEncounterView = AnyView(EncounterView(encounter: bossShop))
+        saveProgress(currentEncounter: bossShop.id)
     }
     
     private func setFinalBossEncounter() {
         currentPlane = "Final Boss"
         let bossEncounter = Encounters.bosses["Boss_Garruk"]!
         currentEncounterView = AnyView(EncounterView(encounter: bossEncounter))
+        saveProgress(currentEncounter: bossEncounter.id)
     }
     
     private func getRandomEncounter() -> Encounter {
@@ -119,10 +149,28 @@ class AdventureViewModel: ObservableObject {
         return encounter
     }
 
-    private func switchView() {
-        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+    private func switchView(_ shouldAnimate: Bool = true) {
+        if shouldAnimate {
+            withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                shouldAnimateTransitionNow = true
+            }
+        } else {
             shouldAnimateTransitionNow = true
         }
+    }
+    
+    private func saveProgress(currentEncounter: String) {
+        let saveInfo = SaveInfo(numberOfPlayer: numberOfPlayer,
+                                currentEncounter: currentEncounter,
+                                currentPlane: currentPlane,
+                                gold: currentGold,
+                                life: currentLife,
+                                fightCompleted: fightCompleted,
+                                shopHasBeenVisited: shopVisited,
+                                permanentUpgradeArray: permanentBonusList,
+                                difficulty: stage,
+                                gameStyle: gameStyle)
+        SaveManager.setSaveInfoFor(saveInfo: saveInfo, saveNumber: saveNumber)
     }
 }
 

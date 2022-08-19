@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    @State var menuProgress = 1
+    @EnvironmentObject var mainMenuViewModel: MainMenuViewModel
     
     var body: some View {
         ZStack {
@@ -22,30 +22,25 @@ struct MainMenuView: View {
                     MainMenuIntroView()
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
-                                menuProgress = 1
+                                mainMenuViewModel.menuProgress = 1
                             }
                         }
                 }
                 .offset(x: getMenuOffset(menuNumber: 0))
-                .opacity(menuProgress == 0 ? 1 : 0)
+                .opacity(mainMenuViewModel.menuProgress == 0 ? 1 : 0)
                 
                 // ------------------- SAVE -------------------
                 Group {
                     MainMenuSaveChoiceView()
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
-                                menuProgress = 2
-                            }
-                        }
                 }
                 .offset(x: getMenuOffset(menuNumber: 1))
-                .opacity(menuProgress == 1 ? 1 : 0)
+                .opacity(mainMenuViewModel.menuProgress == 1 ? 1 : 0)
                 
                 // ------------------- CONFIG -------------------
                 Group {
                     Button(action: {
                         withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
-                            menuProgress = 1
+                            mainMenuViewModel.menuProgress = 1
                         }
                     }, label: {
                         HStack {
@@ -59,14 +54,14 @@ struct MainMenuView: View {
                     MainMenuConfigView()
                 }
                 .offset(x: getMenuOffset(menuNumber: 2))
-                .opacity(menuProgress == 2 ? 1 : 0)
+                .opacity(mainMenuViewModel.menuProgress == 2 ? 1 : 0)
             }.frame(width: UIScreen.main.bounds.width)
             TextParagraph("Art by Emrah Elmasli").position(x: 100, y: UIScreen.main.bounds.height - 35)
-        }.ignoresSafeArea()
+        }.ignoresSafeArea().opacity(mainMenuViewModel.hideMenu ? 0 : 1)
     }
     
     func getMenuOffset(menuNumber: Int) -> CGFloat {
-        return CGFloat(menuNumber - menuProgress) * MenuViewSize.mainMenuWidth
+        return CGFloat(menuNumber - mainMenuViewModel.menuProgress) * MenuViewSize.mainMenuWidth
     }
 }
 
@@ -100,10 +95,13 @@ struct MainMenuSaveChoiceView: View {
     }
     
     struct MainMenuSaveSlotView: View {
+        @EnvironmentObject var mainMenuViewModel: MainMenuViewModel
+        @EnvironmentObject var adventureViewModel: AdventureViewModel
         let saveNumber: Int
+        let saveExist: Bool
         var gold: Int?
         var life: Int?
-        var progress: Int?
+        var progress: CGFloat?
         var numberOfPlayer: Int?
         
         var numberOfPlayerImage: Image? {
@@ -117,10 +115,23 @@ struct MainMenuSaveChoiceView: View {
             } else {
                 return Image(systemName: "person.3.fill")
             }
-
+        }
+        
+        var numberOfPlayerImageWidth: CGFloat {
+            if numberOfPlayer == nil {
+                return MenuViewSize.saveSlotImageSize
+            }
+            if numberOfPlayer == 1 {
+                return MenuViewSize.saveSlotImageSize
+            } else if numberOfPlayer == 2 {
+                return MenuViewSize.saveSlotImageSize * 1.5
+            } else {
+                return MenuViewSize.saveSlotImageSize * 2
+            }
         }
         
         init(saveNumber: Int) {
+            let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
             self.saveNumber = saveNumber
             if saveNumber == 1 {
                 self.gold = 10
@@ -128,60 +139,107 @@ struct MainMenuSaveChoiceView: View {
                 self.progress = 40
                 self.numberOfPlayer = 2
             }
-            self.numberOfPlayer = saveNumber
+            self.saveExist = saveInfo.currentEncounter != "Unset"
+            if saveExist {
+                self.gold = saveInfo.gold
+                self.life = saveInfo.life
+                self.progress = CGFloat(saveInfo.fightCompleted) / 11
+                self.numberOfPlayer = saveInfo.numberOfPlayer
+                self.numberOfPlayer = saveNumber
+            }
         }
         
         var body: some View {
-            VStack {
-                TextSubTitle("Save \(saveNumber)")
-                if numberOfPlayerImage != nil {
-                    numberOfPlayerImage!
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame(width: MenuViewSize.saveSlotImageSize * CGFloat(numberOfPlayer!) / 3 * 2, height: MenuViewSize.saveSlotImageSize)
-                }
-                Spacer()
-                
-                HStack {
-                    if gold != nil {
-                        TextParagraph("x \(gold!)")
-                        Image("Gold")
-                            .resizable()
-                            .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+            Button(action: {
+                // If deck exist -> load, else, show config
+                if saveExist {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                        mainMenuViewModel.hideMenu = true
+                        adventureViewModel.loadSave(saveNumber: saveNumber)
+                    }
+                } else {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                        mainMenuViewModel.menuProgress = 2
                     }
                 }
-                HStack {
-                    if life != nil {
-                        TextParagraph("x \(life!)")
-                        Image("Life")
-                            .resizable()
-                            .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
-                    }
-                }
-                
-                Spacer()
-                
-                if progress != nil {
-                    ZStack {
-                        Image(systemName: "circle")
+                mainMenuViewModel.saveSelected = saveNumber
+            }, label: {
+                VStack {
+                    TextSubTitle("Save \(saveNumber)")
+                    if numberOfPlayerImage != nil {
+                        numberOfPlayerImage!
                             .resizable()
                             .foregroundColor(.white)
-                            .frame(width: 50, height: 50)
-                        TextParagraph("\(progress!)")
+                            .frame(width: numberOfPlayerImageWidth, height: MenuViewSize.saveSlotImageSize)
+                    }
+                    Spacer()
+                    
+                    HStack {
+                        if gold != nil {
+                            TextParagraph("x \(gold!)")
+                            Image("Gold")
+                                .resizable()
+                                .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+                        }
+                    }
+                    HStack {
+                        if life != nil {
+                            TextParagraph("x \(life!)")
+                            Image("Life")
+                                .resizable()
+                                .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+                        }
                     }
                     
-                } else {
-                    TextParagraph("Press to start")
+                    Spacer()
+                    
+                    if progress != nil {
+                        ZStack {
+                            CircleProgressView(progress: progress!)
+                            TextParagraph("\(Int(progress!))")
+                        }
+                        
+                    } else {
+                        TextParagraph("Press to start")
+                    }
                 }
+                .frame(width: MenuViewSize.saveSlotWidth, height: MenuViewSize.saveSlotHeight)
+                .padding(30)
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
+            })
+        }
+        
+        struct CircleProgressView: View {
+            let progress: Double
+            let lineWidth: CGFloat = 5
+            
+            var body: some View {
+                ZStack {
+                    Circle()
+                        .stroke(
+                            Color.white.opacity(0.5),
+                            lineWidth: lineWidth
+                        )
+                    Circle()
+                        // 2
+                        .trim(from: 0, to: progress / 100)
+                        .stroke(
+                            Color.white,
+                            style: StrokeStyle(
+                                lineWidth: lineWidth,
+                                lineCap: .round
+                            )
+                        )
+                        .rotationEffect(.degrees(-90))
+                }.frame(width: 50, height: 50)
             }
-            .frame(width: MenuViewSize.saveSlotWidth, height: MenuViewSize.saveSlotHeight)
-            .padding(30)
-            .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
         }
     }
 }
 
 struct MainMenuConfigView: View {
+    @EnvironmentObject var mainMenuViewModel: MainMenuViewModel
+    @EnvironmentObject var adventureViewModel: AdventureViewModel
     @State var currentGameStyle: GameStyle = .edh
     @State var currentNumberOfPlayer: Int = 1
     @State var currentDifficulty: Int = 0
@@ -218,7 +276,15 @@ struct MainMenuConfigView: View {
                 TextParagraph("Increase the diffuiculty if your find the game too easy")
             }
             Spacer()
-            TextSubTitle("Press here to start")
+            Button(action: {
+                withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                    mainMenuViewModel.hideMenu = true
+                    mainMenuViewModel.createNewSave(numberOfPlayer: currentNumberOfPlayer, gameStyle: currentGameStyle, difficulty: currentDifficulty)
+                    adventureViewModel.loadSave(saveNumber: mainMenuViewModel.saveSelected)
+                }
+            }, label: {
+                TextSubTitle("Press here to start")
+            })
         }.padding(MenuViewSize.mainMenuPadding).frame(width: MenuViewSize.mainMenuWidth)
     }
     
@@ -288,28 +354,27 @@ struct MainMenuConfigView: View {
             }).frame(width: 100, height: 60)
         }
     }
+}
+
+enum GameStyle {
+    case edh
+    case classic
     
-    
-    enum GameStyle {
-        case edh
-        case classic
-        
-        func getTitle() -> String {
-            switch self {
-            case .edh:
-                return "EDH"
-            case .classic:
-                return "Classic"
-            }
+    func getTitle() -> String {
+        switch self {
+        case .edh:
+            return "EDH"
+        case .classic:
+            return "Classic"
         }
-        
-        func getParagraph(numberOfPlayer: Int) -> String {
-            switch self {
-            case .edh:
-                return "Requirements: \(6 * numberOfPlayer) boosters and a pile of random commanders\n\nEach players draw 2 random commanders. Draft the boosters between the \(numberOfPlayer). Each player discard one of the 2 random commanders and keep the other one."
-            case .classic:
-                return "Requirements: \(6 * numberOfPlayer) boosters\n\nDraft the boosters between the \(numberOfPlayer)."
-            }
+    }
+    
+    func getParagraph(numberOfPlayer: Int) -> String {
+        switch self {
+        case .edh:
+            return "Requirements: \(6 * numberOfPlayer) boosters and a pile of random commanders\n\nEach players draw 2 random commanders. Draft the boosters between the \(numberOfPlayer). Each player discard one of the 2 random commanders and keep the other one."
+        case .classic:
+            return "Requirements: \(6 * numberOfPlayer) boosters\n\nDraft the boosters between the \(numberOfPlayer)."
         }
     }
 }
@@ -326,6 +391,8 @@ struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15, *) {
             MainMenuView()
+                .environmentObject(MainMenuViewModel())
+                .environmentObject(AdventureViewModel())
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice(PreviewDevice(rawValue: "iPad Air (5th generation)"))
                 //.previewDevice(PreviewDevice(rawValue: "iPhone 8"))

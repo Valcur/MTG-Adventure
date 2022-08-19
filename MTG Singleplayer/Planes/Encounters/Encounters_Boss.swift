@@ -9,6 +9,11 @@ import Foundation
 
 extension Encounters {
     
+    static let introEncounter = Encounter(title: "Once upon a time", id: "Intro", artistName: "Alix Branwyn",
+                                          choices: [
+                                              EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                          ])
+    
     static let bosses =
     [
         "Boss_Garruk": Encounter(title: "The end", id: "Boss_Garruk", artistName: "Chase Stone",

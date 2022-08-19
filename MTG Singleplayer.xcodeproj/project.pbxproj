@@ -39,6 +39,8 @@
 		DB527CD528AD0C810027000C /* Zendikar_Ondu_Angel.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */; };
 		DB527CD728AD0CA50027000C /* Zendikar_Ondu_Kor.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */; };
 		DB527CDA28AFA80E0027000C /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CD928AFA80E0027000C /* MainMenuView.swift */; };
+		DB527CDC28B009CC0027000C /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */; };
+		DB527CDE28B00ABA0027000C /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CDD28B00ABA0027000C /* SaveManager.swift */; };
 		DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Angel.txt; sourceTree = "<group>"; };
 		DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Kor.txt; sourceTree = "<group>"; };
 		DB527CD928AFA80E0027000C /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		DB527CDD28B00ABA0027000C /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Zendikar.swift; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				DB527CD928AFA80E0027000C /* MainMenuView.swift */,
+				DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */,
+				DB527CDD28B00ABA0027000C /* SaveManager.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -409,8 +415,10 @@
 				DB31755528A2E83000799186 /* CardEffects.swift in Sources */,
 				DBC732642899A97B006834B1 /* EncounterView.swift in Sources */,
 				DBC732522897D577006834B1 /* GameViewModel.swift in Sources */,
+				DB527CDE28B00ABA0027000C /* SaveManager.swift in Sources */,
 				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,
 				DBC732542897E05F006834B1 /* GameView.swift in Sources */,
+				DB527CDC28B009CC0027000C /* MainMenuViewModel.swift in Sources */,
 				DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */,
 				DBC7325028972487006834B1 /* DownloadManager.swift in Sources */,
 				DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */,
@@ -571,6 +579,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,6 +610,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
