@@ -38,6 +38,7 @@
 		DB527CD328AD0C6F0027000C /* Zendikar_Ondu_Boss.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */; };
 		DB527CD528AD0C810027000C /* Zendikar_Ondu_Angel.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */; };
 		DB527CD728AD0CA50027000C /* Zendikar_Ondu_Kor.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */; };
+		DB527CDA28AFA80E0027000C /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CD928AFA80E0027000C /* MainMenuView.swift */; };
 		DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Boss.txt; sourceTree = "<group>"; };
 		DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Angel.txt; sourceTree = "<group>"; };
 		DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Ondu_Kor.txt; sourceTree = "<group>"; };
+		DB527CD928AFA80E0027000C /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Zendikar.swift; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 			path = Zendikar;
 			sourceTree = "<group>";
 		};
+		DB527CD828AFA7F80027000C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DB527CD928AFA80E0027000C /* MainMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		DBC7323328972458006834B1 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 		DBC7323E28972458006834B1 /* MTG Singleplayer */ = {
 			isa = PBXGroup;
 			children = (
+				DB527CD828AFA7F80027000C /* Menu */,
 				DBC732622899A969006834B1 /* Planes */,
 				DBC7325D2897F996006834B1 /* GameView */,
 				DBC732552897E087006834B1 /* Decks */,
@@ -388,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB527CDA28AFA80E0027000C /* MainMenuView.swift in Sources */,
 				DBC7325F289857DB006834B1 /* GameView_Extensions.swift in Sources */,
 				DBE027E9289EEFB900F8F483 /* Extensions_Class.swift in Sources */,
 				DBC732662899B668006834B1 /* Encounters_Kamigawa.swift in Sources */,

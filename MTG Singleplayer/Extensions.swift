@@ -95,16 +95,18 @@ struct TextParagraph: View {
 
 struct TextSubTitle: View {
     var text: String
+    var color: Color
     
-    init(_ text: String) {
+    init(_ text: String, color: Color = .white) {
         self.text = text
+        self.color = color
     }
     
     var body: some View {
         Text(text)
             .fontWeight(.bold)
             .font(.title2)
-            .foregroundColor(.white)
+            .foregroundColor(color)
     }
 }
 
