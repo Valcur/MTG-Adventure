@@ -120,7 +120,7 @@ class Encounters {
     
     static let plane_kamigawa_double = [
         
-        "Kamigawa_Otawara_Intro": Encounter(title: "Fight", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
+        "Kamigawa_Otawara_Intro": Encounter(title: "Otawara", id: "Kamigawa_Otawara_Intro", artistName: "Yuta Shimpo",
                                     choices: [
                                         EncounterChoice(title: "Help the city of Otawara", encounterId: "Kamigawa_Otawara_Fight_01"),
                                     ]),
@@ -162,22 +162,22 @@ class Encounters {
         
         // MARK: Rat
         
-        "Kamigawa_Rat_01": Encounter(title: "Rat", id: "Kamigawa_Rat_01", artistName: "Adam Paquette",
+        "Kamigawa_Rat_01": Encounter(title: "Towashi", id: "Kamigawa_Rat_01", artistName: "Adam Paquette",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_02")
                                     ]),
         
-        "Kamigawa_Rat_02": Encounter(title: "Fight 1", id: "Kamigawa_Rat_02", artistName: "Manuel Castañón",
+        "Kamigawa_Rat_02": Encounter(title: "Towashi", id: "Kamigawa_Rat_02", artistName: "Manuel Castañón",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_03", deckToFight: "AA")
                                     ]),
         
-        "Kamigawa_Rat_03": Encounter(title: "Fight 2", id: "Kamigawa_Rat_03", artistName: "Raymond Swanland",
+        "Kamigawa_Rat_03": Encounter(title: "Towashi", id: "Kamigawa_Rat_03", artistName: "Raymond Swanland",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_04", deckToFight: "AA")
                                     ]),
         
-        "Kamigawa_Rat_04": Encounter(title: "Victory", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
+        "Kamigawa_Rat_04": Encounter(title: "Towashi", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
                                     reward: [.permanentBonus("Kamigawa_Rat")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
@@ -185,17 +185,17 @@ class Encounters {
         
         // MARK: Forge
         
-        "Kamigawa_Forge_02": Encounter(title: "Fight 1", id: "Kamigawa_Forge_02", artistName: "Chris Rahn",
+        "Kamigawa_Forge_02": Encounter(title: "Forge", id: "Kamigawa_Forge_02", artistName: "Chris Rahn",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_03", deckToFight: "Kamigawa_Forge_01")
                                     ]),
         
-        "Kamigawa_Forge_03": Encounter(title: "Fight 2", id: "Kamigawa_Forge_03", artistName: "Isis Sangaré",
+        "Kamigawa_Forge_03": Encounter(title: "Forge", id: "Kamigawa_Forge_03", artistName: "Isis Sangaré",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Forge_04", deckToFight: "Kamigawa_Forge_02")
                                     ]),
         
-        "Kamigawa_Forge_04": Encounter(title: "Victory", id: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
+        "Kamigawa_Forge_04": Encounter(title: "Forge", id: "Kamigawa_Forge_04", artistName: "Julian Kok Joon Wen",
                                     reward: [.permanentBonus("Kamigawa_Forge")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
@@ -203,12 +203,12 @@ class Encounters {
         
         // MARK: Forest
         
-        "Kamigawa_Forest_Attack": Encounter(title: "Fight", id: "Kamigawa_Forest_Attack", artistName: "Ryan Pancoast",
+        "Kamigawa_Forest_Attack": Encounter(title: "Forest", id: "Kamigawa_Forest_Attack", artistName: "Ryan Pancoast",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_BG")
                                     ]),
         
-        "Kamigawa_Forest_Haven": Encounter(title: "Fight", id: "Kamigawa_Forest_Haven", artistName: "Lorenzo Lanfranconi",
+        "Kamigawa_Forest_Haven": Encounter(title: "Forest", id: "Kamigawa_Forest_Haven", artistName: "Lorenzo Lanfranconi",
                                     reward: [.life(1)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
@@ -228,7 +228,7 @@ class Encounters {
         
         // MARK: Samurai
         
-        "Kamigawa_Samurai_MakeAChoice": Encounter(title: "Fight", id: "Kamigawa_Samurai_MakeAChoice", artistName: "Johan Grenier",
+        "Kamigawa_Samurai_MakeAChoice": Encounter(title: "Make a choice", id: "Kamigawa_Samurai_MakeAChoice", artistName: "Johan Grenier",
                                     choices: [
                                         EncounterChoice(title: "Help the imperial army", encounterId: "Kamigawa_Samurai_ImperialSide_01", deckToFight: "Kamigawa_Invader_01"),
                                         EncounterChoice(title: "Help the invading army", encounterId: "Kamigawa_Samurai_InvaderSide_01", deckToFight: "Kamigawa_Imperial_01")

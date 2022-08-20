@@ -366,37 +366,39 @@ struct TokenCreationRowView: View {
     let emblemText: String = "Creatures you control have SHROUD"
     
     var body: some View {
-        HStack(spacing: 10) {
-           TextParagraph("Create")
-            
-           ScrollView(.horizontal) {
-               HStack(spacing: 10) {
-                   ForEach(gameViewModel.deck.tokensAvailable) { token in
-                       Button(action: {
-                       }, label: {
-                           CardView(card: token)
-                               .frame(width: CardSize.width.small, height: CardSize.height.small)
-                               .cornerRadius(CardSize.cornerRadius.small)
-                               .onTapGesture(count: 1) {
-                                   print("Create token button pressed")
-                                   gameViewModel.tokenRowPressed(token: token)
-                               }
-                               /*.gesture(LongPressGesture(minimumDuration: 0.1)
-                                   .sequenced(before: LongPressGesture(minimumDuration: .infinity))
-                                   .updating($isDetectingLongPress) { value, state, transaction in
-                                       switch value {
-                                           case .second(true, nil): //This means the first Gesture completed
-                                               state = true //Update the GestureState
-                                           gameViewModel.shouldZoomOnCard = true //Update the @ObservedObject property
-                                           gameViewModel.cardToZoomIn = token
-                                           default: break
-                                       }
-                                   })*/
-                           })
+        if gameViewModel.deck.tokensAvailable.count > 0 {
+            HStack(spacing: 10) {
+               TextParagraph("Create")
+                
+               ScrollView(.horizontal) {
+                   HStack(spacing: 10) {
+                       ForEach(gameViewModel.deck.tokensAvailable) { token in
+                           Button(action: {
+                           }, label: {
+                               CardView(card: token)
+                                   .frame(width: CardSize.width.small, height: CardSize.height.small)
+                                   .cornerRadius(CardSize.cornerRadius.small)
+                                   .onTapGesture(count: 1) {
+                                       print("Create token button pressed")
+                                       gameViewModel.tokenRowPressed(token: token)
+                                   }
+                                   /*.gesture(LongPressGesture(minimumDuration: 0.1)
+                                       .sequenced(before: LongPressGesture(minimumDuration: .infinity))
+                                       .updating($isDetectingLongPress) { value, state, transaction in
+                                           switch value {
+                                               case .second(true, nil): //This means the first Gesture completed
+                                                   state = true //Update the GestureState
+                                               gameViewModel.shouldZoomOnCard = true //Update the @ObservedObject property
+                                               gameViewModel.cardToZoomIn = token
+                                               default: break
+                                           }
+                                       })*/
+                               })
+                       }
                    }
-               }
-           }.frame(width: CardSize.width.small * 2 + 10)
-       }
+               }.frame(width: CardSize.width.small * 3 + 20)
+            }
+        }
     }
 }
 
