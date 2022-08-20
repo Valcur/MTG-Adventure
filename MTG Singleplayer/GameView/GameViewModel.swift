@@ -110,12 +110,24 @@ class GameViewModel: ObservableObject {
     private func setUpCardsToCastWith(cardFromLibrary: Card) {
         cardsToCast.cardsFromLibrary.append(cardFromLibrary)
         cardsToCast.cardsFromHand = self.hand
+        cardsToCast.cardsFromGraveyard = getCardInGraveyardWithFlashback()
         
         cardsToCast.cardsFromHand = Card.regroupSameCardsInArray(cardsToCast.cardsFromHand)
         cardsToCast.cardsFromLibrary = Card.regroupSameCardsInArray(cardsToCast.cardsFromLibrary)
         cardsToCast.cardsFromGraveyard = Card.regroupSameCardsInArray(cardsToCast.cardsFromGraveyard)
         
         self.hand = []
+    }
+    
+    private func getCardInGraveyardWithFlashback() -> [Card] {
+        var cards: [Card] = []
+        for card in graveyard {
+            if card.hasFlashback {
+                cards.append(card)
+                exileFromGraveyard(card: card)
+            }
+        }
+        return cards
     }
     
     private func addCardToBoad(card: Card) {

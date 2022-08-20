@@ -14,9 +14,13 @@ struct MTG_SingleplayerApp: App {
             //GameView()
                 //.environmentObject(GameViewModel(stage: 1, deckId: 1))
             
-            Main()
+            AdventureView()
+                .environmentObject(AdventureViewModel())
+            
+            /*Main()
                 .environmentObject(AdventureViewModel())
                 .environmentObject(MainMenuViewModel())
+            */
             
             //EncounterView(encounter: Encounters.plane_kamigawa["Kamigawa_Intro"]!)
         }

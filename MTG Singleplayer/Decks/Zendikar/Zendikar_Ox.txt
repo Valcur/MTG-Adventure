@@ -4,14 +4,14 @@
 
 ## Midrange Deck ##
 12 GS1 creature NO-AB Earth-Origin Yak c2b659ef-68f6-452c-94b5-2872f4e7b069 abcde784-d0cd-4bac-b1bf-bd686ac2f73d
-6 ZEN creature NO Pillarfield Ox 0f7c70c4-9795-4c76-8b27-043942a963c6 d70a8ff1-f0cf-4aef-ad90-06902f98d434
-6 ZNR creature NO Makindi Ox e4f0fa12-542b-485f-a792-3a8aba933522 fd0d164a-bce2-4474-abe0-b735eb6c9442
+6 ZEN creature NO-AB Pillarfield Ox 0f7c70c4-9795-4c76-8b27-043942a963c6 d70a8ff1-f0cf-4aef-ad90-06902f98d434
+6 ZNR creature NO-AB Makindi Ox e4f0fa12-542b-485f-a792-3a8aba933522 fd0d164a-bce2-4474-abe0-b735eb6c9442
 6 ZNR enchantment NO Land Draw bc71ebf6-2056-41f7-be35-b2e5c34afa99 5d918248-85ff-4fea-ac91-aa5466dd2829
 
 ## Endgame Deck ##
-5 NEC creature NO Ox of Agonas 22113051-c971-4108-953b-95356d21323a 00c46d18-064e-403a-bf39-ec655d78390a
-3 ME4 creature NO Ironhoof Ox 1871af55-f7cd-4b8e-affb-5d010df811b1 c8a2c5ce-ec87-46b9-b474-ecf133ccd092
-2 ME4 creature NO Wild Ox a6aa245c-b620-486c-864b-0ea4e9bc4048 b2c2a31a-4432-45ff-80fc-8bad90719736
+5 NEC creature NO-AB Ox of Agonas 22113051-c971-4108-953b-95356d21323a 00c46d18-064e-403a-bf39-ec655d78390a
+3 ME4 creature NO-AB Ironhoof Ox 1871af55-f7cd-4b8e-affb-5d010df811b1 c8a2c5ce-ec87-46b9-b474-ecf133ccd092
+2 ME4 creature NO-AB Wild Ox a6aa245c-b620-486c-864b-0ea4e9bc4048 b2c2a31a-4432-45ff-80fc-8bad90719736
 
 
 
