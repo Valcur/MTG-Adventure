@@ -26,6 +26,7 @@ class AdventureViewModel: ObservableObject {
     var numberOfPlayer = 1
     var gameStyle: GameStyle = .edh
     var saveNumber = 1
+    var currentEncounterId: String = ""
     
     init() {
         
@@ -38,15 +39,6 @@ class AdventureViewModel: ObservableObject {
     
     func loadSave(saveNumber: Int) {
         let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
-        if saveInfo.currentEncounter == "Unset" {
-            let startEncounter = Encounters.introEncounter
-            currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-            switchView()
-            saveProgress(currentEncounter: startEncounter.id)
-        } else {
-            let startEncounter = Encounters.getEncounter(encounterId: saveInfo.currentEncounter, planeName: saveInfo.currentPlane)
-            currentEncounterView = AnyView(EncounterView(encounter: startEncounter!))
-        }
         self.fightCompleted = saveInfo.fightCompleted
         self.shopVisited = saveInfo.shopHasBeenVisited
         self.stage = saveInfo.difficulty
@@ -56,6 +48,21 @@ class AdventureViewModel: ObservableObject {
         self.numberOfPlayer = saveInfo.numberOfPlayer
         self.gameStyle = saveInfo.gameStyle
         self.saveNumber = saveNumber
+        if saveInfo.currentEncounter == "Unset" {
+            let startEncounter = Encounters.introEncounter
+            currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
+            self.currentPlane = "Zendikar"
+            switchView()
+            currentEncounterId = startEncounter.id
+            saveProgress()
+        } else {
+            self.currentPlane = saveInfo.currentPlane
+            let startEncounter = Encounters.getEncounter(encounterId: saveInfo.currentEncounter, planeName: saveInfo.currentPlane)
+            currentEncounterView = AnyView(EncounterView(encounter: startEncounter!))
+            giveRewards(rewards: startEncounter!.reward, withDelay: true)
+            currentEncounterId = startEncounter!.id
+            switchView()
+        }
     }
     
     private func applyChoice(choice: EncounterChoice) {
@@ -83,14 +90,16 @@ class AdventureViewModel: ObservableObject {
             let nextEncounter = getRandomEncounter()
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter))
             giveRewards(rewards: nextEncounter.reward, withDelay: true)
-            saveProgress(currentEncounter: nextEncounter.id)
+            currentEncounterId = nextEncounter.id
+            saveProgress()
         }
         // Else we go to the specified encounter
         else {
             let nextEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)[encounterChoice!]
             currentEncounterView = AnyView(EncounterView(encounter: nextEncounter!))
             giveRewards(rewards: nextEncounter!.reward, withDelay: true)
-            saveProgress(currentEncounter: nextEncounter!.id)
+            currentEncounterId = nextEncounter!.id
+            saveProgress()
         }
 
         currentEncounterChoice = choice
@@ -102,21 +111,24 @@ class AdventureViewModel: ObservableObject {
         availableRandomEncounter = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(planeName, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-        saveProgress(currentEncounter: startEncounter.id)
+        currentEncounterId = startEncounter.id
+        saveProgress()
     }
     
     private func setFinalShopEncounter() {
         currentPlane = "Final Shop"
         let bossShop = Encounters.bosses_shop
         currentEncounterView = AnyView(EncounterView(encounter: bossShop))
-        saveProgress(currentEncounter: bossShop.id)
+        currentEncounterId = bossShop.id
+        saveProgress()
     }
     
     private func setFinalBossEncounter() {
         currentPlane = "Final Boss"
         let bossEncounter = Encounters.bosses["Boss_Garruk"]!
         currentEncounterView = AnyView(EncounterView(encounter: bossEncounter))
-        saveProgress(currentEncounter: bossEncounter.id)
+        currentEncounterId = bossEncounter.id
+        saveProgress()
     }
     
     private func getRandomEncounter() -> Encounter {
@@ -149,19 +161,15 @@ class AdventureViewModel: ObservableObject {
         return encounter
     }
 
-    private func switchView(_ shouldAnimate: Bool = true) {
-        if shouldAnimate {
-            withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                shouldAnimateTransitionNow = true
-            }
-        } else {
+    private func switchView() {
+        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
             shouldAnimateTransitionNow = true
         }
     }
     
-    private func saveProgress(currentEncounter: String) {
+    private func saveProgress() {
         let saveInfo = SaveInfo(numberOfPlayer: numberOfPlayer,
-                                currentEncounter: currentEncounter,
+                                currentEncounter: currentEncounterId,
                                 currentPlane: currentPlane,
                                 gold: currentGold,
                                 life: currentLife,
@@ -187,6 +195,7 @@ extension AdventureViewModel {
         applyChoice(choice: choice)
         DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.short) {
             self.currentGold += 10
+            self.saveProgress()
         }
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 class MainMenuViewModel: ObservableObject {
-    @Published var menuProgress = 0
+    @Published var menuProgress = 1
     @Published var saveSelected = 1
     @Published var hideMenu = false
     

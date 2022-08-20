@@ -157,17 +157,7 @@ extension Encounters {
         
         "Zendikar_Plains_Fight_03": Encounter(title: "AAA", id: "Zendikar_Plains_Fight_03", artistName: "Jesper Ejsing",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Progress_02", deckToFight: "Zendikar_Plains_Bird")
-                                    ]),
-        
-        "Zendikar_Plains_Progress_02": Encounter(title: "AAA", id: "Zendikar_Plains_Progress_02", artistName: "Johan Grenier",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Plains_Boss")
-                                    ]),
-        
-        "Zendikar_Plains_Boss": Encounter(title: "AAA", id: "Zendikar_Plains_Boss", artistName: "G-host Lee",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Plains_Boss")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Plains_Bird")
                                     ]),
         
         // MARK: Mushrooms

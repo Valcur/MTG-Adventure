@@ -21,6 +21,7 @@ class SaveManager {
         let permanentUpgradeArray: [String] = userDefault.stringArray(forKey: "Save_\(saveNumber)_PermanentUpgradeArray") ?? []
         let difficulty: Int = userDefault.integer(forKey: "Save_\(saveNumber)_Difficulty")
         let gameStyle: Int = userDefault.integer(forKey: "Save_\(saveNumber)_GameStyle")
+        print("Loading with \(gold) gold")
         return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic)
     }
     
@@ -36,11 +37,22 @@ class SaveManager {
         userDefault.set(saveInfo.permanentUpgradeArray, forKey: "Save_\(saveNumber)_PermanentUpgradeArray")
         userDefault.set(saveInfo.difficulty, forKey: "Save_\(saveNumber)_Difficulty")
         userDefault.set(saveInfo.gameStyle == .edh ? 0 : 1, forKey: "Save_\(saveNumber)_GameStyle")
+        print("Saving with \(saveInfo.currentEncounter)")
         print("Game Saved on slot \(saveNumber)")
     }
     
     static func deleteSaveInfoFor(saveNumber: Int) {
-        
+        let userDefault = UserDefaults.standard
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_NumberOfPlayer")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_CurrentEncounter")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_CurrentPlane")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_Gold")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_Life")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_FightCompleted")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_ShopHasBeenVisited")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_PermanentUpgradeArray")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_Difficulty")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_GameStyle")
     }
 }
 

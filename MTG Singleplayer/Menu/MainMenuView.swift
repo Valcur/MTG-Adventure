@@ -97,17 +97,15 @@ struct MainMenuSaveChoiceView: View {
     struct MainMenuSaveSlotView: View {
         @EnvironmentObject var mainMenuViewModel: MainMenuViewModel
         @EnvironmentObject var adventureViewModel: AdventureViewModel
+        @State private var showDeleteConfirmationMenu: Bool = false
         let saveNumber: Int
-        let saveExist: Bool
-        var gold: Int?
-        var life: Int?
-        var progress: CGFloat?
-        var numberOfPlayer: Int?
+        @State var saveExist: Bool
+        @State var gold: Int?
+        @State var life: Int?
+        @State var progress: CGFloat?
+        @State var numberOfPlayer: Int
         
-        var numberOfPlayerImage: Image? {
-            if numberOfPlayer == nil {
-                return nil
-            }
+        var numberOfPlayerImage: Image {
             if numberOfPlayer == 1 {
                 return Image(systemName: "person.fill")
             } else if numberOfPlayer == 2 {
@@ -118,9 +116,6 @@ struct MainMenuSaveChoiceView: View {
         }
         
         var numberOfPlayerImageWidth: CGFloat {
-            if numberOfPlayer == nil {
-                return MenuViewSize.saveSlotImageSize
-            }
             if numberOfPlayer == 1 {
                 return MenuViewSize.saveSlotImageSize
             } else if numberOfPlayer == 2 {
@@ -131,6 +126,7 @@ struct MainMenuSaveChoiceView: View {
         }
         
         init(saveNumber: Int) {
+            //SaveManager.deleteSaveInfoFor(saveNumber: saveNumber)
             let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
             self.saveNumber = saveNumber
             if saveNumber == 1 {
@@ -140,73 +136,112 @@ struct MainMenuSaveChoiceView: View {
                 self.numberOfPlayer = 2
             }
             self.saveExist = saveInfo.currentEncounter != "Unset"
+            
+            self.gold = saveInfo.gold
+            self.life = saveInfo.life
+            self.progress = CGFloat(saveInfo.fightCompleted) / 11 * 100
+            self.numberOfPlayer = saveInfo.numberOfPlayer
+            self.numberOfPlayer = saveNumber
+        }
+        
+        private func updateAfterDeletion() {
+            let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
+            self.saveExist = saveInfo.currentEncounter != "Unset"
             if saveExist {
                 self.gold = saveInfo.gold
                 self.life = saveInfo.life
-                self.progress = CGFloat(saveInfo.fightCompleted) / 11
+                self.progress = CGFloat(saveInfo.fightCompleted) / 11 * 100
                 self.numberOfPlayer = saveInfo.numberOfPlayer
                 self.numberOfPlayer = saveNumber
             }
         }
         
         var body: some View {
-            Button(action: {
-                // If deck exist -> load, else, show config
-                if saveExist {
-                    withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                        mainMenuViewModel.hideMenu = true
-                        adventureViewModel.loadSave(saveNumber: saveNumber)
-                    }
-                } else {
-                    withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
-                        mainMenuViewModel.menuProgress = 2
-                    }
-                }
-                mainMenuViewModel.saveSelected = saveNumber
-            }, label: {
-                VStack {
-                    TextSubTitle("Save \(saveNumber)")
-                    if numberOfPlayerImage != nil {
-                        numberOfPlayerImage!
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: numberOfPlayerImageWidth, height: MenuViewSize.saveSlotImageSize)
-                    }
-                    Spacer()
-                    
-                    HStack {
-                        if gold != nil {
-                            TextParagraph("x \(gold!)")
-                            Image("Gold")
-                                .resizable()
-                                .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+            ZStack {
+                Button(action: {
+                    // If deck exist -> load, else, show config
+                    mainMenuViewModel.saveSelected = saveNumber
+                    if saveExist {
+                        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                            mainMenuViewModel.hideMenu = true
+                            adventureViewModel.loadSave(saveNumber: saveNumber)
+                            
                         }
-                    }
-                    HStack {
-                        if life != nil {
-                            TextParagraph("x \(life!)")
-                            Image("Life")
-                                .resizable()
-                                .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                    if progress != nil {
-                        ZStack {
-                            CircleProgressView(progress: progress!)
-                            TextParagraph("\(Int(progress!))")
-                        }
-                        
                     } else {
-                        TextParagraph("Press to start")
+                        withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                            mainMenuViewModel.menuProgress = 2
+                        }
                     }
-                }
-                .frame(width: MenuViewSize.saveSlotWidth, height: MenuViewSize.saveSlotHeight)
-                .padding(30)
-                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
-            })
+                }, label: {
+                    VStack {
+                        TextSubTitle("Save \(saveNumber)")
+                        if saveExist {
+                            numberOfPlayerImage
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: numberOfPlayerImageWidth, height: MenuViewSize.saveSlotImageSize)
+                        }
+                        Spacer()
+                        
+                        if saveExist {
+                            HStack {
+                                TextParagraph("x \(gold!)")
+                                Image("Gold")
+                                    .resizable()
+                                    .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+                            }
+                            HStack {
+                                TextParagraph("x \(life!)")
+                                Image("Life")
+                                    .resizable()
+                                    .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+                            }
+                            ZStack {
+                                CircleProgressView(progress: progress!)
+                                TextParagraph("\(Int(progress!))")
+                            }
+                            
+                            Spacer()
+                        } else {
+                            TextParagraph("Press to start")
+                        }
+                    }
+                    .frame(width: MenuViewSize.saveSlotWidth, height: MenuViewSize.saveSlotHeight)
+                    .padding(30)
+                    .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
+                })
+                Button(action: {
+                        showDeleteConfirmationMenu = true
+                    }, label: {
+                        Image(systemName: "trash")
+                            .resizable()
+                            .frame(width: MenuViewSize.saveSlotImageSize, height: MenuViewSize.saveSlotImageSize)
+                            .foregroundColor(.gray)
+                    })
+                .offset(y: MenuViewSize.saveSlotHeight / 2 + MenuViewSize.saveSlotImageSize * 3)
+                .opacity(saveExist ? 1 : 0)
+                    .alert(isPresented: $showDeleteConfirmationMenu) {
+                        Alert(
+                            title: Text("Detete save \(saveNumber)"),
+                            message: Text("Are you sure want to delete save file ?"),
+                            primaryButton: .default(
+                                Text("Cancel"),
+                                action: { showDeleteConfirmationMenu = false }
+                            ),
+                            secondaryButton: .destructive(
+                                Text("Confirm"),
+                                action: {
+                                    withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                                        SaveManager.deleteSaveInfoFor(saveNumber: saveNumber)
+                                        showDeleteConfirmationMenu = false
+                                        updateAfterDeletion()
+                                    }
+                                }
+                            )
+                        )
+                    }
+            }
+
         }
         
         struct CircleProgressView: View {

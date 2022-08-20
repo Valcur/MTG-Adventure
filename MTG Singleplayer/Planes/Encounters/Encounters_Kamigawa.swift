@@ -74,6 +74,10 @@ class Encounters {
             return introEncounter
         }
         
+        if encounterId == "Boss_Shop" {
+            return bosses_shop
+        }
+        
         return nil
     }
     
