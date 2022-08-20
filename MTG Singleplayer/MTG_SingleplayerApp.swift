@@ -42,9 +42,11 @@ struct Main: View {
             MainMenuView()
         }.ignoresSafeArea()
             .onChange(of: mainMenuViewModel.hideMenu) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
-                    withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
-                        showAdventureView = true
+                if mainMenuViewModel.hideMenu == true {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
+                        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                            showAdventureView = true
+                        }
                     }
                 }
             }
