@@ -21,7 +21,6 @@ class SaveManager {
         let permanentUpgradeArray: [String] = userDefault.stringArray(forKey: "Save_\(saveNumber)_PermanentUpgradeArray") ?? []
         let difficulty: Int = userDefault.integer(forKey: "Save_\(saveNumber)_Difficulty")
         let gameStyle: Int = userDefault.integer(forKey: "Save_\(saveNumber)_GameStyle")
-        print("Loading with \(gold) gold")
         return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic)
     }
     

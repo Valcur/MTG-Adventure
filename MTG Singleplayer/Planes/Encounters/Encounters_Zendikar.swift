@@ -96,12 +96,12 @@ extension Encounters {
                                     ]),
         
         "Zendikar_Adventure_Ondu_Kor_Attack": Encounter(title: "Ondu", id: "Zendikar_Adventure_Ondu_Kor_Attack", artistName: "Ekaterina Burmak",
-                                    reward: [.life(1)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Progress", deckToFight: "Zendikar_Ondu_Kor")
                                     ]),
         
         "Zendikar_Adventure_Ondu_Progress": Encounter(title: "Ondu", id: "Zendikar_Adventure_Ondu_Progress", artistName: "Denman Rooke",
+                                    reward: [.life(1)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Angel_Attack_01")
                                     ]),
@@ -267,7 +267,7 @@ extension Encounters {
         
         "Zendikar_Jerboa_Success": Encounter(title: "A furry friend", id: "Zendikar_Jerboa_Success", artistName: "Dominik Mayer",
                                     choices: [
-                                        EncounterChoice(title: "Ignore the jerboa", encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         "Zendikar_Jerboa": Encounter(title: "A furry friend", id: "Zendikar_Jerboa", artistName: "Tomasz Jedruszek",

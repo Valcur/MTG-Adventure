@@ -61,6 +61,8 @@ class EncounterChoice: Identifiable {
     static let deckEncounter: String = "DeckEncounter:"
     static let defaultTitle: String = "Continue"
     static let planeEnd: String = "Planeswalk"
+    static let victory: String = "Victory"
+    static let returnToMenu: String = "Return to menu"
     
     init(title: String, encounterId: String, deckToFight: String? = nil) {
         self.title = title

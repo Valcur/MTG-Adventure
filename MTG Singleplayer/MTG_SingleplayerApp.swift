@@ -13,14 +13,16 @@ struct MTG_SingleplayerApp: App {
         WindowGroup {
             //GameView()
                 //.environmentObject(GameViewModel(stage: 1, deckId: 1))
-            
+            /*
             AdventureView()
                 .environmentObject(AdventureViewModel())
-            
-            /*Main()
+                .statusBar(hidden: true)
+            */
+            Main()
                 .environmentObject(AdventureViewModel())
                 .environmentObject(MainMenuViewModel())
-            */
+                .statusBar(hidden: true)
+            
             
             //EncounterView(encounter: Encounters.plane_kamigawa["Kamigawa_Intro"]!)
         }
@@ -29,6 +31,7 @@ struct MTG_SingleplayerApp: App {
 
 struct Main: View {
     @EnvironmentObject var mainMenuViewModel: MainMenuViewModel
+    @EnvironmentObject var adventureViewModel: AdventureViewModel
     @State var showAdventureView = false
     var body: some View {
         ZStack {
@@ -42,6 +45,18 @@ struct Main: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
                     withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
                         showAdventureView = true
+                    }
+                }
+            }
+            .onChange(of: adventureViewModel.currentLife) { currentLife in
+                if currentLife == -1 {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                        showAdventureView = false
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
+                        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                            mainMenuViewModel.hideMenu = false
+                        }
                     }
                 }
             }

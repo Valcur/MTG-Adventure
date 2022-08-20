@@ -21,7 +21,7 @@ class AdventureViewModel: ObservableObject {
     var availableRandomEncounter: [String:Encounter]
     var fightCompleted: Int = 0
     var shopVisited: Bool = false
-    var currentPlane = "Zendikar"
+    var currentPlane: String = "Zendikar"
     var stage = 0
     var numberOfPlayer = 1
     var gameStyle: GameStyle = .edh
@@ -29,7 +29,6 @@ class AdventureViewModel: ObservableObject {
     var currentEncounterId: String = ""
     
     init() {
-        
         availableRandomEncounter = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Intro"]!
         //let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["Kamigawa_Forge_04"]!
@@ -49,7 +48,8 @@ class AdventureViewModel: ObservableObject {
         self.gameStyle = saveInfo.gameStyle
         self.saveNumber = saveNumber
         if saveInfo.currentEncounter == "Unset" {
-            let startEncounter = Encounters.introEncounter
+            //let startEncounter = Encounters.introEncounter
+            let startEncounter = Encounters.victoryEncounter
             currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
             self.currentPlane = "Zendikar"
             switchView()
@@ -67,6 +67,11 @@ class AdventureViewModel: ObservableObject {
     
     private func applyChoice(choice: EncounterChoice) {
         let encounterChoice = choice.encounterId.randomElement()
+        if encounterChoice == EncounterChoice.returnToMenu {
+            currentLife = -1
+            //SaveManager.deleteSaveInfoFor(saveNumber: saveNumber)
+            return
+        }
         
         // If plane is completed, siwtch to the next plane
         if encounterChoice == EncounterChoice.planeEnd {
@@ -84,6 +89,9 @@ class AdventureViewModel: ObservableObject {
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage)))
+        }
+        else if encounterChoice == EncounterChoice.planeEnd {
+            setVictoryEncounter()
         }
         // Else if we have to go to a random encounter not already played
         else if encounterChoice == EncounterChoice.randomEncounter {
@@ -131,6 +139,20 @@ class AdventureViewModel: ObservableObject {
         saveProgress()
     }
     
+    private func setVictoryEncounter() {
+        currentPlane = "Victory"
+        let victoryEncounter = Encounters.victoryEncounter
+        currentEncounterView = AnyView(EncounterView(encounter: victoryEncounter))
+        SaveManager.deleteSaveInfoFor(saveNumber: saveNumber)
+    }
+    
+    private func setDefeatEncounter() {
+        currentPlane = "Defeat"
+        let defeatEncounter = Encounters.defeatEncounter
+        currentEncounterView = AnyView(EncounterView(encounter: defeatEncounter))
+        SaveManager.deleteSaveInfoFor(saveNumber: saveNumber)
+    }
+
     private func getRandomEncounter() -> Encounter {
         var encounter: Encounter
         if fightCompleted >= 3 && shopVisited {
@@ -201,8 +223,10 @@ extension AdventureViewModel {
     
     func fightLost() {
         currentLife -= 1
-        //currentEncounterView = AnyView(GameViewParent(gameViewModel: GameViewModel(deckName: "Kamigawa_Invader_02", stage: stage)))
-        //switchView()
+        if currentLife == 0 {
+            setDefeatEncounter()
+            switchView()
+        }
     }
     
     func giveRewards(rewards: [Reward]?, withDelay: Bool = false) {

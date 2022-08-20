@@ -14,11 +14,21 @@ extension Encounters {
                                               EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                           ])
     
+    static let victoryEncounter = Encounter(title: "Victory", id: "Victory", artistName: "Johannes Voss",
+                                          choices: [
+                                              EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.returnToMenu)
+                                          ])
+    
+    static let defeatEncounter = Encounter(title: "Defeat", id: "Defeat", artistName: "Johann Bodin",
+                                          choices: [
+                                              EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.returnToMenu)
+                                          ])
+    
     static let bosses =
     [
         "Boss_Garruk": Encounter(title: "The end", id: "Boss_Garruk", artistName: "Chase Stone",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Boss_Garruk")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.victory, deckToFight: "Boss_Garruk")
                                     ]),
     ]
     

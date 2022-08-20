@@ -6,6 +6,10 @@
   
 */
 
-"Kamigawa_Forge" = "{2}: You gain 1 life, then if you ate a donut today, you win the game";
+"Kamigawa_Forge" = "Blocking creatures you control have +0/+1";
 
-"Kamigawa_Rat" = "{8}: You gain 7 donuts";
+"Kamigawa_Rat" = "Attacking creatures you control have +1/+0";
+
+"Zendikar_Valakut_Forge_02" = "Blocking creatures you control have +0/+1";
+
+"Zendikar_Silundi_End" = "{2}: You gain 1 life";

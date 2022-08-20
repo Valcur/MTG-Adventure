@@ -176,6 +176,10 @@
 
 "Intro" = "";
 
+"Victory" = "";
+
+"Defeat" = "";
+
 "Boss_Garruk" = "Garruk, called the Wildspeaker.";
 
 "Boss_Shop" = "Final Shopping before fnal fight.";

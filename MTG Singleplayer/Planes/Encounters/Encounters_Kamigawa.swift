@@ -74,6 +74,14 @@ class Encounters {
             return introEncounter
         }
         
+        if encounterId == "Victory" {
+            return victoryEncounter
+        }
+        
+        if encounterId == "Defeat" {
+            return defeatEncounter
+        }
+        
         if encounterId == "Boss_Shop" {
             return bosses_shop
         }
