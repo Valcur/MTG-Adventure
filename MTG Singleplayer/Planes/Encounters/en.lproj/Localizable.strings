@@ -10,9 +10,9 @@
 
 "Kamigawa_Intro" = "The world of Kamigawa, positioned far from any other world we know, is governed by the interplay between the mortals and the kami, minor gods or spirits of the world. The Kakuriyo or Reikai is the spirit world where the kami dwell; its other half is that of the Utsushiyo where mortals live. Together they form a sphere that makes the whole of the world.";
 
-"Kamigawa_Forest_Intro" = "Calm journey is cool BUT WHAT ABOUT GOING ON AN ADVENTURE";
+"Kamigawa_Forest_Intro" = "As you walk along a peaceful road through the forest, you wonder what secrets can lurk off the trails. You tell yourself that a detour could be worth it.";
 
-"Kamigawa_Forest_Attack" = "As you walk, you feel observed.";
+"Kamigawa_Forest_Attack" = "As you walk, you feel observed. Maybe it was not a good idea to leave the road.";
 
 "Kamigawa_Forest_Haven" = "The thick forest turns into a peaceful clearing. You decide to rest there.";
 
@@ -24,7 +24,7 @@
 
 "Kamigawa_Samurai_Intro" = "In the distance, a beautifull city. As you approach the city, you see an army waiting outside. The battle will begin soon between the imperial army holding the city and the invaders";
 
-"Kamigawa_Samurai_MakeAChoice" = "Both side would be gratefull for your help.";
+"Kamigawa_Samurai_MakeAChoice" = "Both sides would be gratefull for your help.";
 
 "Kamigawa_Samurai_ImperialSide_01" = "A strong enemy general coming close to the palace to the east. You are sent to stop him";
 
@@ -32,7 +32,7 @@
 
 "Kamigawa_Samurai_InvaderSide_01" = "You are now reaching the palace.";
 
-"Kamigawa_Samurai_InvaderSide_02" = "FIRENDS MADE ALONG THE WAY BETTER THAN GOLD";
+"Kamigawa_Samurai_InvaderSide_02" = "While fighting the empire, you made friends with one of the invaders who fought by your side. As you prepare to hit the road again, he offers to accompany you.";
 
 "Kamigawa_Shrine" = "After several days in the mountains you see what appears to be an ancient temple. You get closer hoping to find refuge there. As you get closer, you realize that you are not welcome here. But it's too late and they won't let you leave this place alive.";
 
@@ -42,25 +42,25 @@
 
 "Kamigawa_Forge_03" = "You feel that you are approaching as you feel the presence of spirits who wish you harm.";
 
-"Kamigawa_Forge_04" = "";
+"Kamigawa_Forge_04" = "Deep in the mountain, you find the old forge you came here for.";
 
-"Kamigawa_Otawara_Intro" = "You reach the city of Otawara, a Moonfolk city resting on clouds, floating in the sky. After more than a thousand year, the floating city has opened its doors to intrepid researchers of all kinds";
+"Kamigawa_Otawara_Intro" = "You reach the city of Otawara, a Moonfolk city resting on clouds, floating in the sky. After more than a thousand year, the floating city has opened its doors to intrepid researchers of all kinds. As you approach the city, a group of moonfolk ask for your help. Some moonfolk have rebelled and took possession of the main hangar and mechs inside.";
 
-"Kamigawa_Otawara_Fight_01" = "Their biggest group is in the hangar. You join the Moonfolk in a fight to clear the way to the hangar";
+"Kamigawa_Otawara_Fight_01" = "You join the Moonfolk in a fight to clear the way to the hangar";
 
-"Kamigawa_Otawara_Hangar" = "You have already helped them a lot. They would understood that you want to get back to your adventure. But they still need your help to fight the remaining invaders near the hangar. They might have too many mechs and one of moonfolk have an idea to sabotage them if you are willing to send some men with him";
+"Kamigawa_Otawara_Hangar" = "They still need your help to fight the remaining invaders near the hangar. They might have too many mechs and one of the moonfolk have an idea to sabotage them if you are willing to send some men with him.";
 
 "Kamigawa_Otawara_Fight_02" = "The enemys mech's army doesn't scare you. It's time to free the city of Otawara";
 
-"Kamigawa_Otawara_Fight_02_B" = "The Moonfolk's plan is a success but you men are injured and won't be able to help you during the battle.\n\nStart this fight with 2 cards less in hand";
+"Kamigawa_Otawara_Fight_02_B" = "The Moonfolk's plan is a success but your men are injured and won't be able to help you during the battle.\n\nStart this fight with 1 card less in hand";
 
 "Kamigawa_Otawara_Reward" = "They reward you for all your help and let you rest here before continuing your adventure.";
 
-"Kamigawa_Water_Intro" = "About to cross river BUT FEEL that it might lead to good stuff";
+"Kamigawa_Water_Intro" = "Your adventure in this region is particularly calm. You are about to cross a river when you start wondering to what mysterious place the current could take you.";
 
-"Kamigawa_Water_Fight" = "KAPPA KOMING TO KILL";
+"Kamigawa_Water_Fight" = "The current takes you to a small lake. You have just entered the home of a group of kappas.";
 
-"Kamigawa_Water_Haven" = "The river lead you to CHIIIL";
+"Kamigawa_Water_Haven" = "The river takes you to a large lake where no life form seems to have been there for decades.";
 
 "Kamigawa_Swamp_Intro" = "After a few hours in the swamp, you realize that you are lost. You end up finding lanterns wich seems to indicate a path to follow.";
 
@@ -94,13 +94,13 @@
 
 "Zendikar_Adventure_Ondu_Intro" = "Ondu is one of the seven continents of Zendikar, only a short distance away from Akoum. The geography of Ondu is dominated by a sense of sweeping verticality. The precarious Makindi Trenches, the skyscraping trees of the Turntimber, and the depths of the Crypt of Agadeem all contribute to the strange sensation that travel in Ondu occurs up and down rather than east and west. The great capital city of Makindi was located in Ondu until the Ondu Skyclave turned against the capital and Makindi was destroyed.";
 
-"Zendikar_Adventure_Ondu_Kor_Attack" = "";
+"Zendikar_Adventure_Ondu_Kor_Attack" = "A group of adventurer full of supplies is a good target for raiders.";
 
-"Zendikar_Adventure_Ondu_Progress" = "You know you won't have another break for a while.";
+"Zendikar_Adventure_Ondu_Progress" = "As you get closer to the ruins, you decide to take a break and set up camp. You know you won't have another opportunity for a while.";
 
-"Zendikar_Adventure_Ondu_Angel_Attack_01" = "";
+"Zendikar_Adventure_Ondu_Angel_Attack_01" = "The ruins are close. Far above you, you notice a group of angels coming toward you.";
 
-"Zendikar_Adventure_Ondu_Angel_Success" = "";
+"Zendikar_Adventure_Ondu_Angel_Success" = "You continue your way to the ruins.";
 
 "Zendikar_Adventure_Ondu_Angel_Run" = "Most of you managed to escape.";
 
@@ -108,7 +108,7 @@
 
 "Zendikar_Adventure_Ondu_Ruins_Entry" = "You finally reached the ruins.";
 
-"Zendikar_Adventure_Ondu_Boss" = "";
+"Zendikar_Adventure_Ondu_Boss" = "As your group begins to examine the ruins, another group of angels seem to not want you near.";
 
 "Zendikar_Plains_Intro" = "";
 
@@ -120,11 +120,7 @@
 
 "Zendikar_Plains_Fight_03" = "A cracking sound is heard under your feet, as you realize you have just walked on an egg. You just enterred on what seems to be a griffin nest.";
 
-"Zendikar_Plains_Progress_02" = "Land get bigger, leave XX soon";
-
-"Zendikar_Plains_Boss" = "";
-
-"Zendikar_Mushrooms_Intro" = "XX recommends that you take a detour to find some mushrooms growing nearby. Their smell should prevent wildlife from attacking you.";
+"Zendikar_Mushrooms_Intro" = "Your guide recommends that you take a detour to find some mushrooms growing nearby. Their smell should prevent wildlife from attacking you.";
 
 "Zendikar_Mushrooms_Fight" = "You finally reach the place where to harvest the mushrooms. As he said, this place if full of mushrooms. What he did not say is that these mushrooms are on the back of Fungus who won't let you gather them freely.";
 
@@ -142,17 +138,17 @@
 
 "Zendikar_Silundi_Entrance" = "You finally reach the entrance of the old ruin you were looking for.";
 
-"Zendikar_Silundi_Boss" = "";
+"Zendikar_Silundi_Boss" = "You find the informations you were looking for. As you are about to leave, ATTACK";
 
 "Zendikar_Silundi_End" = "Deep in the ruins, you find it. ";
 
 "Zendikar_Branches_Intro" = "You find your path through the branches in Oran-Rief.";
 
-"Zendikar_Branches_Insect" = "";
+"Zendikar_Branches_Insect" = "The trees in Oran-Rief are bigger than those in most planes. Sadly, the same goes for bugs living in them.";
 
 "Zendikar_Branches_Progress" = "Soon, you will be out of Oran-Rief.";
 
-"Zendikar_Branches_Boss" = "";
+"Zendikar_Branches_Boss" = "As you get down from the trees, you realize the plants you thought were just moving with the wind are actually not plants and moving by themselves.";
 
 "Zendikar_Valakut_Intro" = "You are now close from what brought you here in Zendikar, an old forge alongside mount Valakut.";
 
@@ -182,5 +178,5 @@
 
 "Boss_Garruk" = "Garruk, called the Wildspeaker.";
 
-"Boss_Shop" = "Final Shopping before fnal fight.";
+"Boss_Shop" = "Final Shopping before final fight.";
 
