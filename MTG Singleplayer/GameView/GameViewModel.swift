@@ -24,6 +24,7 @@ class GameViewModel: ObservableObject {
     let deckName: String
     let stage: Int
     let lifePointsViewModel: LifePointsViewModel
+    let numberOfPlayer: Int
     
     // For buttons
     @Published var onlyShowAttackers: Bool = false
@@ -47,7 +48,7 @@ class GameViewModel: ObservableObject {
     ///  2. Add those cards to the board, graveyard or any zone where the card is supposed to go
     ///
     
-    init(deckName: String, stage: Int) {
+    init(deckName: String, stage: Int, numberOfPlayer: Int) {
         let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage)
         let deckBasic: [Card] = deckData.0
         let deckMidrange: [Card] = deckData.1
@@ -65,6 +66,7 @@ class GameViewModel: ObservableObject {
         self.deckName = deckName
         self.stage = stage
         self.lifePointsViewModel = LifePointsViewModel()
+        self.numberOfPlayer = numberOfPlayer
     }
     
     // Will have to do dometing cleaner at some point
@@ -107,8 +109,8 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    private func setUpCardsToCastWith(cardFromLibrary: Card) {
-        cardsToCast.cardsFromLibrary.append(cardFromLibrary)
+    private func setUpCardsToCastWith(cardsFromLibrary: [Card]) {
+        cardsToCast.cardsFromLibrary = cardsFromLibrary
         cardsToCast.cardsFromHand = self.hand
         cardsToCast.cardsFromGraveyard = getCardInGraveyardWithFlashback()
         
@@ -249,13 +251,13 @@ extension GameViewModel {
     // Starting step 1
     func newTurn() {
         manaCount += 1
-        let card = drawCardFromRandomDeck()
-        if card != nil {
-            setUpCardsToCastWith(cardFromLibrary: card!)
-        } else {
-            // All decks are empty, player won
-            gameResult = 1
+        var cards: [Card] = []
+        for _ in 0..<numberOfPlayer {
+            // If all decks are empty, player won
+            guard let card = drawCardFromRandomDeck() else { gameResult = 1; return }
+            cards.append(card)
         }
+        setUpCardsToCastWith(cardsFromLibrary: cards)
         withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
             showCardsToCastView = true
         }

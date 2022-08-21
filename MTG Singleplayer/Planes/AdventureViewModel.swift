@@ -88,7 +88,7 @@ class AdventureViewModel: ObservableObject {
         }
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
-            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage)))
+            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage, numberOfPlayer: numberOfPlayer)))
         }
         else if encounterChoice == EncounterChoice.planeEnd {
             setVictoryEncounter()
