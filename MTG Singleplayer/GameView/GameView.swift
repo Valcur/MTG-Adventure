@@ -37,6 +37,8 @@ struct GameView: View {
                 StackView()
                 GraveyardView()
                     .opacity(gameViewModel.showGraveyardView ? 1 : 0)
+                LibraryView()
+                    .opacity(gameViewModel.showLibraryView ? 1 : 0)
                 CastedCardView()
                     .opacity(gameViewModel.showCardsToCastView ? 1 : 0)
                 WinningView()
@@ -112,7 +114,7 @@ struct BottomBarView: View {
         HStack(spacing: 0) {
             // Draw a card
             Button(action: {
-                gameViewModel.drawCard()
+                gameViewModel.drawOneCard()
             }, label: {
                 GrayButtonLabel("Draw a card")
             })
@@ -272,6 +274,117 @@ struct GraveyardView: View {
     }
 }
 
+struct LibraryView: View {
+    
+    @EnvironmentObject var gameViewModel: GameViewModel
+    
+    var body: some View {
+        ZStack {
+            VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+                .onTapGesture(count: 1) {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                        gameViewModel.showLibraryView = false
+                    }
+                }
+            VStack(spacing: 20) {
+                TextParagraph("Touch a permanent card to put cast it")
+                
+                HStack {
+                    // Buttons
+                    
+                    VStack {
+                        Button(action: {
+                            gameViewModel.revealOneMoreCard()
+                        }, label: {
+                            GrayButtonLabel("Reveal one more card")
+                        })
+                        
+                        Button(action: {
+                            gameViewModel.drawOneCard()
+                        }, label: {
+                            GrayButtonLabel("Draw a card")
+                        })
+                    }
+                    
+                    // Library
+                    
+                    if gameViewModel.libraryCount - gameViewModel.cardRevealed.count  > 0 {
+                        Image("CardBack")
+                            .resizable()
+                            .frame(width: CardSize.width.big, height: CardSize.height.big)
+                            .cornerRadius(CardSize.cornerRadius.big)
+                    } else {
+                        Image("BlackBackground")
+                            .resizable()
+                            .frame(width: CardSize.width.big, height: CardSize.height.big)
+                            .cornerRadius(CardSize.cornerRadius.big)
+                    }
+                    
+                    // Card revealed
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: -CardSize.width.big / 10) {
+                            ForEach(gameViewModel.cardRevealed) { card in
+                                LibraryCardView(card: card)
+                            }
+                        }.padding(.trailing, 20)
+                    }
+                }
+            }
+        }
+    }
+    
+    struct LibraryCardView: View {
+        
+        @EnvironmentObject var gameViewModel: GameViewModel
+        let card: Card
+        
+        var body: some View {
+            HStack {
+                VStack(spacing: 20) {
+                    Button(action: {
+                        gameViewModel.exileRevealedCard(card: card)
+                    }, label: {
+                        TextSubTitle("Exile")
+                    }).frame(height: 60)
+                    
+                    Button(action: {
+                        gameViewModel.castFromGraveyard(card: card)
+                    }, label: {
+                        CardView(card: card)
+                            .frame(width: CardSize.width.big, height: CardSize.height.big)
+                            .cornerRadius(CardSize.cornerRadius.big)
+                            .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+                    })
+
+                    HStack(spacing: 0) {
+                        // To his hand
+                        Button(action: {
+                            gameViewModel.drawRevealedCard(card: card)
+                        }, label: {
+                            GrayButtonLabel(systemName: "hand.wave")
+                        })
+                        
+                        // To the bottom of his library
+                        Button(action: {
+                            gameViewModel.sendToBottomOfLibraryRevealedCard(card: card)
+                        }, label: {
+                            GrayButtonLabel(systemName: "square.3.stack.3d.bottom.filled")
+                        })
+                        
+                        // To the graveyard
+                        Button(action: {
+                            gameViewModel.sendToGraveyardRevealedCard(card: card)
+                        }, label: {
+                            GrayButtonLabel("Graveyard")
+                        })
+                    }.frame(height: 60)
+                }
+            }
+        }
+    }
+}
+
 struct HandView: View {
     
     @EnvironmentObject var gameViewModel: GameViewModel
@@ -304,13 +417,15 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15, *) {
             GameView()
-                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1))
+                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1, numberOfPlayer: 1))
+                .environmentObject(AdventureViewModel())
                 .previewInterfaceOrientation(.landscapeLeft)
                 .previewDevice(PreviewDevice(rawValue: "iPad Air (5th generation)"))
                 //.previewDevice(PreviewDevice(rawValue: "iPhone 8"))
         } else {
             GameView()
-                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1))
+                .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1, numberOfPlayer: 1))
+                .environmentObject(AdventureViewModel())
         }
     }
 }

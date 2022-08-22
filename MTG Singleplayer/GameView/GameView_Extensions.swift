@@ -160,19 +160,16 @@ struct PlayerGraveyardView: View {
 struct PlayerLibraryView: View {
     
     @EnvironmentObject var gameViewModel: GameViewModel
-    var libraryCount: Int {
-        return gameViewModel.deck.deckBasic.count + gameViewModel.deck.deckMidrange.count + gameViewModel.deck.deckEndgame.count
-    }
     
     var body: some View {
         Button(action: {
             withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
-                gameViewModel.showGraveyardView = true
+                gameViewModel.showLibraryView = true
             }
         }, label: {
             ZStack {
                 VStack {
-                    if libraryCount > 0 {
+                    if gameViewModel.libraryCount > 0 {
                         Image("CardBack")
                             .resizable()
                             .frame(width: CardSize.width.hand, height: CardSize.height.hand)
@@ -188,7 +185,7 @@ struct PlayerLibraryView: View {
                 }.frame(height: GameViewSize.graveyardAndLibraryHeight).clipped()
                 
                 
-                TextSubTitle("\(libraryCount)")
+                TextSubTitle("\(gameViewModel.libraryCount)")
             }
         })
     }

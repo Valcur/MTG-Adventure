@@ -12,6 +12,8 @@ class GameViewModel: ObservableObject {
     var deck: DeckList
     var cardsToCast: CardsToCast
     @Published var hand: [Card]
+    @Published var cardRevealed: [Card]
+    @Published var bottomOfLibrary: [Card]
     @Published var manaCount: Int
     let startEndGameAtMana: Int = 5
     @Published var board: [Card]
@@ -20,6 +22,7 @@ class GameViewModel: ObservableObject {
     @Published var stack: [StackCard]
     @Published var showCardsToCastView: Bool = false
     @Published var showGraveyardView: Bool = false
+    @Published var showLibraryView: Bool = true
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
     let deckName: String
     let stage: Int
@@ -32,6 +35,10 @@ class GameViewModel: ObservableObject {
     @Published var returnToHandModeEnable: Bool = false
     @Published var addCountersModeEnable: Bool = false
     @Published var removeCountersModeEnable: Bool = false
+    
+    var libraryCount: Int {
+        return deck.deckBasic.count + deck.deckMidrange.count + deck.deckEndgame.count + cardRevealed.count + bottomOfLibrary.count
+    }
     
     /// AI TURN
     ///
@@ -62,6 +69,8 @@ class GameViewModel: ObservableObject {
         self.board = []
         self.graveyard = []
         self.stack = []
+        self.cardRevealed = []
+        self.bottomOfLibrary = []
         self.gameResult = 0
         self.deckName = deckName
         self.stage = stage
@@ -84,6 +93,8 @@ class GameViewModel: ObservableObject {
         self.board = []
         self.graveyard = []
         self.stack = []
+        self.cardRevealed = []
+        self.bottomOfLibrary = []
         self.gameResult = 0
         self.lifePointsViewModel.reset()
     }
@@ -107,6 +118,23 @@ class GameViewModel: ObservableObject {
                 return getEndgameCardFromDeck()
             }
         }
+    }
+    
+    private func drawUnrevealedCard() -> Card? {
+        var card = drawCardFromRandomDeck()
+        if card == nil && bottomOfLibrary.count > 0 {
+            card = bottomOfLibrary.removeFirst()
+        }
+        return card
+    }
+    
+    private func drawCard() -> Card? {
+        // If a card has been revealed, return it
+        if cardRevealed.count > 0 {
+            return cardRevealed.removeLast()
+        }
+        // If not, draw as usual
+        return drawUnrevealedCard()
     }
     
     private func setUpCardsToCastWith(cardsFromLibrary: [Card]) {
@@ -254,7 +282,7 @@ extension GameViewModel {
         var cards: [Card] = []
         for _ in 0..<numberOfPlayer {
             // If all decks are empty, player won
-            guard let card = drawCardFromRandomDeck() else { gameResult = 1; return }
+            guard let card = drawCard() else { gameResult = 1; return }
             cards.append(card)
         }
         setUpCardsToCastWith(cardsFromLibrary: cards)
@@ -285,8 +313,8 @@ extension GameViewModel {
         //}
     }
     
-    func drawCard() {
-        let card = drawCardFromRandomDeck()
+    func drawOneCard() {
+        let card = drawCard()
         if card != nil {
             withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
                 hand.append(card!)
@@ -409,8 +437,54 @@ extension GameViewModel {
         }
     }
     
+    func revealOneMoreCard() {
+        manaCount += cardRevealed.count
+        guard let card = drawUnrevealedCard() else { manaCount -= cardRevealed.count; return }
+        withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+            cardRevealed.insert(card, at: 0)
+        }
+        manaCount -= cardRevealed.count - 1
+    }
     
+    func exileRevealedCard(card: Card) {
+        for i in (0..<cardRevealed.count) {
+            let c = cardRevealed[i]
+            if card.id == c.id {
+                cardRevealed.remove(at: i)
+                return
+            }
+        }
+    }
     
+    func drawRevealedCard(card: Card) {
+        for i in (0..<cardRevealed.count) {
+            let c = cardRevealed[i]
+            if card.id == c.id {
+                hand.append(cardRevealed.remove(at: i))
+                return
+            }
+        }
+    }
+    
+    func sendToGraveyardRevealedCard(card: Card) {
+        for i in (0..<cardRevealed.count) {
+            let c = cardRevealed[i]
+            if card.id == c.id {
+                graveyard.append(cardRevealed.remove(at: i))
+                return
+            }
+        }
+    }
+    
+    func sendToBottomOfLibraryRevealedCard(card: Card) {
+        for i in (0..<cardRevealed.count) {
+            let c = cardRevealed[i]
+            if card.id == c.id {
+                bottomOfLibrary.append(cardRevealed.remove(at: i))
+                return
+            }
+        }
+    }
     
     func loseLife(life: Int) {
         lifePointsViewModel.opponentLife -= life
@@ -436,7 +510,7 @@ extension GameViewModel {
     
     func drawXCards(x: Int) {
         for _ in 0..<x {
-            drawCard()
+            drawOneCard()
         }
     }
 }
