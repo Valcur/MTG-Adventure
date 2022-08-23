@@ -168,6 +168,20 @@
 
 "Zendikar_Jerboa_Fight" = "The minotaurs are not happy to see you.";
 
+"Zendikar_Spider_Intro" = "You decide to take a shortcut through a cave. XXXXXX";
+
+"Zendikar_Spider_Fight" = "You tried to escape but you get stuck in the webs that litter the cave. The fight is inevitable.";
+
+"Zendikar_Spider_Prepare" = "You are ready and prepare for XXXXXX";
+
+"Zendikar_Goblin_Intro" = "";
+
+"Zendikar_Goblin_Fight_01" = "Robing";
+
+"Zendikar_Goblin_Progress" = "";
+
+"Zendikar_Goblin_Fight_02" = "Ambush";
+
 // MARK: Boss
 
 "Intro" = "";

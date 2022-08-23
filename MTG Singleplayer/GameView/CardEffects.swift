@@ -28,6 +28,7 @@ class CardsEffects {
         "Farsight Adept": CardEffect(enterTheBattlefield: .draw(1)),
         "Kor Celebrant": CardEffect(enterTheBattlefield: .gainLife(1)),
         "Land Draw": CardEffect(enterTheBattlefield: [.draw(1), .applyWithoutShowing]),
+        "Deathsprout": CardEffect(enterTheBattlefield: .addMana(1)),
     ]
 }
 

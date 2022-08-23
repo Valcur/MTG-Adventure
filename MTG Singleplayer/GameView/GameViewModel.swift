@@ -438,12 +438,12 @@ extension GameViewModel {
     }
     
     func revealOneMoreCard() {
-        manaCount += cardRevealed.count
-        guard let card = drawUnrevealedCard() else { manaCount -= cardRevealed.count; return }
+        manaCount += cardRevealed.count + 1
+        guard let card = drawUnrevealedCard() else { manaCount -= cardRevealed.count + 1; return }
         withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
             cardRevealed.insert(card, at: 0)
         }
-        manaCount -= cardRevealed.count - 1
+        manaCount -= cardRevealed.count
     }
     
     func exileRevealedCard(card: Card) {
@@ -484,6 +484,11 @@ extension GameViewModel {
                 return
             }
         }
+    }
+    
+    func castRevealedCard(card: Card) {
+        castCard(card: card)
+        exileRevealedCard(card: card)
     }
     
     func loseLife(life: Int) {

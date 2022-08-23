@@ -15,6 +15,9 @@
 		DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* Encounters_Boss.swift */; };
 		DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31756228A7BD8200799186 /* PermanentBonusText.strings */; };
 		DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31756528A832B100799186 /* Boss_Garruk.txt */; };
+		DB48BAC928B4F49F00443552 /* Zendikar_Spider.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB48BAC828B4F49F00443552 /* Zendikar_Spider.txt */; };
+		DB48BACB28B4F98300443552 /* Zendikar_Goblin_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB48BACA28B4F98300443552 /* Zendikar_Goblin_01.txt */; };
+		DB48BACD28B4F99400443552 /* Zendikar_Goblin_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB48BACC28B4F99400443552 /* Zendikar_Goblin_02.txt */; };
 		DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0028A13CEA0037C760 /* Localizable.strings */; };
 		DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */; };
 		DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */; };
@@ -78,6 +81,9 @@
 		DB31756028A67B8700799186 /* Encounters_Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Boss.swift; sourceTree = "<group>"; };
 		DB31756228A7BD8200799186 /* PermanentBonusText.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = PermanentBonusText.strings; sourceTree = "<group>"; };
 		DB31756528A832B100799186 /* Boss_Garruk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Garruk.txt; sourceTree = "<group>"; };
+		DB48BAC828B4F49F00443552 /* Zendikar_Spider.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Spider.txt; sourceTree = "<group>"; };
+		DB48BACA28B4F98300443552 /* Zendikar_Goblin_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Goblin_01.txt; sourceTree = "<group>"; };
+		DB48BACC28B4F99400443552 /* Zendikar_Goblin_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Goblin_02.txt; sourceTree = "<group>"; };
 		DB510AFF28A13CEA0037C760 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB510B0128A1A2000037C760 /* Kamigawa_Vehicle_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_01.txt; sourceTree = "<group>"; };
 		DB510B0328A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Vehicle_02.txt; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 				DB527CD228AD0C6F0027000C /* Zendikar_Ondu_Boss.txt */,
 				DB527CD428AD0C810027000C /* Zendikar_Ondu_Angel.txt */,
 				DB527CD628AD0CA50027000C /* Zendikar_Ondu_Kor.txt */,
+				DB48BAC828B4F49F00443552 /* Zendikar_Spider.txt */,
+				DB48BACA28B4F98300443552 /* Zendikar_Goblin_01.txt */,
+				DB48BACC28B4F99400443552 /* Zendikar_Goblin_02.txt */,
 			);
 			path = Zendikar;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 				DBE027F328A04EE500F8F483 /* Kamigawa_BG.txt in Resources */,
 				DBC7325C2897F91A006834B1 /* Kamigawa_Forge_01.txt in Resources */,
 				DB510B0428A1A4BE0037C760 /* Kamigawa_Vehicle_02.txt in Resources */,
+				DB48BACD28B4F99400443552 /* Zendikar_Goblin_02.txt in Resources */,
 				DBE027EF289FF0D500F8F483 /* Kamigawa_Invader_02.txt in Resources */,
 				DB527CCA28AD0C0A0027000C /* Zendikar_Ox.txt in Resources */,
 				DB510B0628A1A6080037C760 /* Kamigawa_Vehicle_02_B.txt in Resources */,
@@ -387,6 +397,7 @@
 				DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */,
 				DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */,
 				DB527CC028AD0B680027000C /* Zendikar_Branches_Insect.txt in Resources */,
+				DB48BAC928B4F49F00443552 /* Zendikar_Spider.txt in Resources */,
 				DB527CBC28AD0B2D0027000C /* Zendikar_Valakut_02.txt in Resources */,
 				DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */,
 				DB527CBE28AD0B360027000C /* Zendikar_Valakut_01.txt in Resources */,
@@ -394,6 +405,7 @@
 				DB527CCC28AD0C200027000C /* Zendikar_Plains_Cat.txt in Resources */,
 				DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */,
 				DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */,
+				DB48BACB28B4F98300443552 /* Zendikar_Goblin_01.txt in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

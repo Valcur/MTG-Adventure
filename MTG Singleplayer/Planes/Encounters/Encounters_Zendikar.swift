@@ -35,6 +35,17 @@ extension Encounters {
                                         EncounterChoice(title: "Ignore the jerboa", encounterId: "Zendikar_Jerboa")
                                     ]),
         
+        "Zendikar_Spider_Intro": Encounter(title: "In the Web", id: "Zendikar_Spider_Fight", artistName: "Johannes Voss",
+                                    choices: [
+                                        EncounterChoice(title: "Prepare and wait for them", encounterId: "Zendikar_Spider_Prepare"),
+                                        EncounterChoice(title: "Try to escape", encounterId: [EncounterChoice.randomEncounter, "Zendikar_Spider_Fight", "Zendikar_Spider_Fight"])
+                                    ]),
+        
+        "Zendikar_Goblin_Intro": Encounter(title: "Goblin", id: "Zendikar_Goblin_Intro", artistName: "Piotr Dura",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
+                                    ]),
+        
     ]
     
     static let plane_zendikar_double = [
@@ -278,6 +289,35 @@ extension Encounters {
         "Zendikar_Jerboa_Fight": Encounter(title: "A furry friend", id: "Zendikar_Jerboa_Fight", artistName: "Rudy Siswanto",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Minotaur")
+                                    ]),
+        
+        // MARK: Spiders
+        
+        "Zendikar_Spider_Fight": Encounter(title: "In the Web", id: "Zendikar_Spider_Fight", artistName: "Brian Valeza",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Spider")
+                                    ]),
+        
+        "Zendikar_Spider_Prepare": Encounter(title: "In the Web", id: "Zendikar_Spider_Prepare", artistName: "Brian Valeza",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Spider")
+                                    ]),
+        
+        // MARK: Goblin
+        
+        "Zendikar_Goblin_Fight_01": Encounter(title: "Goblin", id: "Zendikar_Goblin_Fight_01", artistName: "Slawomir Maniak",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Progress", deckToFight: "Zendikar_Goblin_01")
+                                    ]),
+        
+        "Zendikar_Goblin_Progress": Encounter(title: "Goblin", id: "Zendikar_Goblin_Progress", artistName: "Andreas Rocha",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_02")
+                                    ]),
+        
+        "Zendikar_Goblin_Fight_02": Encounter(title: "Goblin", id: "Zendikar_Goblin_Fight_02", artistName: "Kekai Kotaki",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Goblin_02")
                                     ]),
     ]
 }

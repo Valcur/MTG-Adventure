@@ -16,7 +16,7 @@
 
 "Deck_Kamigawa_Imperial_01" = "Only the strongest creature attack alone each turn";
 
-"Deck_Kamigawa_Imperial_02" = "EQUIP";
+"Deck_Kamigawa_Imperial_02" = "At the beginning of combat on your turn, equi Konda's Banner to Konda, Lord of Eiganjo";
 
 "Deck_Kamigawa_Invader_01" = "";
 
@@ -71,6 +71,12 @@
 "Deck_Zendikar_Plains_Boss" = "";
 
 "Deck_Zendikar_Ondu_Boss" = "";
+
+"Deck_Zendikar_Spider" = "";
+
+"Deck_Zendikar_Goblin_01" = "";
+
+"Deck_Zendikar_Goblin_02" = "";
 
 "Deck_Zendikar_Ondu_Angel" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 

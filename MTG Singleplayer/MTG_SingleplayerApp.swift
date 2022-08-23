@@ -11,20 +11,22 @@ import SwiftUI
 struct MTG_SingleplayerApp: App {
     var body: some Scene {
         WindowGroup {
+            /*
             GameView()
                 .environmentObject(GameViewModel(deckName: "Kamigawa_Forge_01", stage: 1, numberOfPlayer: 1))
                 .environmentObject(AdventureViewModel())
+             */
             /*
             AdventureView()
                 .environmentObject(AdventureViewModel())
                 .statusBar(hidden: true)
             */
-            /*
+            
             Main()
                 .environmentObject(AdventureViewModel())
                 .environmentObject(MainMenuViewModel())
                 .statusBar(hidden: true)
-            */
+            
             
             //EncounterView(encounter: Encounters.plane_kamigawa["Kamigawa_Intro"]!)
         }

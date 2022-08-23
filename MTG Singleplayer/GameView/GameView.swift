@@ -116,7 +116,7 @@ struct BottomBarView: View {
             Button(action: {
                 gameViewModel.drawOneCard()
             }, label: {
-                GrayButtonLabel("Draw a card")
+                GrayButtonLabel("Draw")
             })
             
             // Return to hand
@@ -349,7 +349,7 @@ struct LibraryView: View {
                     }).frame(height: 60)
                     
                     Button(action: {
-                        gameViewModel.castFromGraveyard(card: card)
+                        gameViewModel.castRevealedCard(card: card)
                     }, label: {
                         CardView(card: card)
                             .frame(width: CardSize.width.big, height: CardSize.height.big)
@@ -369,7 +369,7 @@ struct LibraryView: View {
                         Button(action: {
                             gameViewModel.sendToBottomOfLibraryRevealedCard(card: card)
                         }, label: {
-                            GrayButtonLabel(systemName: "square.3.stack.3d.bottom.filled")
+                            GrayButtonLabel(systemName: "square.3.stack.3d.bottom.fill")
                         })
                         
                         // To the graveyard

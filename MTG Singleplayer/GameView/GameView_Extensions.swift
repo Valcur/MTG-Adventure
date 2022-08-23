@@ -105,9 +105,9 @@ struct ManaCounterView: View {
             })
             Spacer()
             ZStack {
-                Image(systemName: "pentagon.fill")
+                /*Image(systemName: "pentagon.fill")
                     .font(.largeTitle)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.gray)*/
                 TextTitle("\(gameViewModel.manaCount)")
             }
             Spacer()
