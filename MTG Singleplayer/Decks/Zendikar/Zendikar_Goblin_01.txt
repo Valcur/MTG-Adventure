@@ -1,8 +1,19 @@
 ## Basic Deck ##
+10 ZEN creature NO-AB Goblin Guide 51d9564b-44fc-4de1-9119-09d7b4089378 b2e2a777-0705-4a37-937d-c6e020ebc0f0
+10 ZEN creature NO-AB Goblin Shortcutter 29863706-fa4e-49ed-9f40-69ae503abba3 5daeaa2e-68e5-4f49-9220-58c0c9b1a3d0
 
 ## Midrange Deck ##
+20 ZNR creature NO-AB Relic Robber 85eafa00-51df-4070-9b2d-247457ba3364 4540205c-eee8-4db3-8757-710de874b313
 
 ## Endgame Deck ##
+3 A25 enchantment NO Goblin War Drums 29c21edd-781b-448e-824a-17bc8b8f4077 6d18b250-cbfb-4248-96c6-c1b36f8299b8
+5 ROE enchantment NO Raid Bombardment 1734e777-d34a-4526-ae24-ef034f147cc5 9c2d1a48-efde-4134-95f0-b23f6cf85259
+5 VOC instant NO Rakdos Charm 5e62b51d-faec-4aa0-9504-cf2c282d08ea 179d2088-2032-41c2-953e-f8ecbe135d77
 
 ## Tokens ##
+
+
+
+
+
 

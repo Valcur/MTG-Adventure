@@ -1,8 +1,23 @@
 ## Basic Deck ##
+10 ZNR creature NO-AB Fireblade Charger 4d83ad77-dbac-4a03-8034-43d950d0a18c ca657846-f352-4ac4-b2b3-d0ced6607163
+10 ZEN creature NO-AB Goblin Bushwhacker 878b6808-48af-4047-ac35-bfc58bf92e7d 4085a5bf-a71b-4c73-9b39-0dcc328fe11b
 
 ## Midrange Deck ##
+5 ROE sorcery NO Wrap in Flames b46efd59-eda7-4fe6-ace7-67ca8f6c088d babdaf80-f9a3-42cb-9df6-10878301f335
+4 WWK enchantment NO Quest for the Goblin Lord 2e19baba-2d66-4e3a-b2bf-cb27dce89f44 e23adb09-d216-47f5-a7d4-cb6a2ce48ada
+4 ZEN creature NO-AB Goblin Ruinblaster d99fa026-6347-450a-9011-1fd79070a55c 0d95d1f3-7ec1-4279-ade7-3f339f2f33da
+7 ZEN creature NO-AB Torch Slinger 64231f03-ea89-4589-8ef8-a87dc9448e7b f4648820-9e87-4c67-8d97-cd7603f2e484
 
 ## Endgame Deck ##
+8 JMP creature NO-A Goblin Chieftain 368b4052-174e-4458-a6e6-eaf8093aa0fe 89fcc35b-76fa-4408-8620-a1e11b2caf1f
+2 A25 enchantment NO Goblin War Drums 29c21edd-781b-448e-824a-17bc8b8f4077 6d18b250-cbfb-4248-96c6-c1b36f8299b8
 
 ## Tokens ##
+
+
+
+
+
+
+
 

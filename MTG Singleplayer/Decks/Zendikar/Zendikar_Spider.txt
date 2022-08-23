@@ -1,8 +1,32 @@
 ## Basic Deck ##
+10 M14 creature NO-B Deadly Recluse 6b941291-1802-4ced-9869-39fa43825550 c82cc190-7ec0-4493-b3dc-dad0cbffa2f8
+10 SHM creature NO-AB Juvenile Gloomwidow d2546d25-07cd-4830-ba66-34bdbf8a245c d7f323d5-f26c-46e9-9d6a-be5c254fe8b6
 
 ## Midrange Deck ##
+5 HOU creature NO-AB Obelisk Spider f7289e62-ce5e-4f11-8d64-9fb62531b578 ae054604-0d77-45d0-b17b-55a83fb18e39
+3 ZEN creature NO-AB Oran-Rief Recluse 043fa53c-8a46-4fbd-836f-2403c62e0121 37a69043-23f5-478e-bf9b-f170e326c0e0
+8 MH1 creature NO-AB Twin-Silk Spider a2193302-402a-4cf0-8014-5facecad647b 7cf3188c-879b-4b18-88b4-6237d7162271
+4 MIC enchantment NO Curse of Clinging Webs d063f1d4-eb6b-40fa-97b7-f15ea53397fb 5e2d349e-fe5f-4627-84b7-2f01982603d2
 
 ## Endgame Deck ##
+5 MBS creature NO-B Blightwidow 282003f4-862a-4f80-8f45-e470fc0fe2fe 26da4278-ba44-4555-8837-e24627b46533
+4 WAR instant NO-AB Deathsprout 793b0c73-601c-41dc-b49a-45fee4970d52 6d615557-aea8-4057-9fbd-d62dd98edc13
+2 CMR creature NO-AB Stingerfling Spider 056770e2-8ab7-424d-a2d8-7be6d6cc73f1 18f45424-2c26-43fa-9afe-eeb22ce772e1
+3 THB creature NO-AB Arasta of the Endless Web 695eea46-1535-48c5-bbb6-0b8379e77bfc 7c38833a-96c5-48b5-8dd8-23f10e798537
+6 UMA sorcery YES Spider Spawning da113cc9-bb2b-4af4-9c43-32c165b87363 eef12c5a-deb9-48dd-9805-cba89aab51c1
 
 ## Tokens ##
+1 TTHB token NO-AB Spider bd386399-69f0-4653-96a1-fd05b8fd148c 56f28541-9711-42cd-9c83-993a81af96b6
+
+
+
+
+
+
+
+
+
+
+
+
 

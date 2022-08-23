@@ -48,8 +48,8 @@ class AdventureViewModel: ObservableObject {
         self.gameStyle = saveInfo.gameStyle
         self.saveNumber = saveNumber
         if saveInfo.currentEncounter == "Unset" {
-            //let startEncounter = Encounters.introEncounter
-            let startEncounter = Encounters.victoryEncounter
+            let startEncounter = Encounters.introEncounter
+            //let startEncounter = Encounters.victoryEncounter
             currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
             self.currentPlane = "Zendikar"
             switchView()

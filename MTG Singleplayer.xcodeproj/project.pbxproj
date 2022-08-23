@@ -45,6 +45,8 @@
 		DB527CDC28B009CC0027000C /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */; };
 		DB527CDE28B00ABA0027000C /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB527CDD28B00ABA0027000C /* SaveManager.swift */; };
 		DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */; };
+		DB9A388B28B565A100131614 /* Zendikar_Vampire_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A388A28B565A100131614 /* Zendikar_Vampire_01.txt */; };
+		DB9A388D28B565AC00131614 /* Zendikar_Vampire_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -111,6 +113,8 @@
 		DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		DB527CDD28B00ABA0027000C /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Zendikar.swift; sourceTree = "<group>"; };
+		DB9A388A28B565A100131614 /* Zendikar_Vampire_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Vampire_01.txt; sourceTree = "<group>"; };
+		DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Vampire_02.txt; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				DB48BAC828B4F49F00443552 /* Zendikar_Spider.txt */,
 				DB48BACA28B4F98300443552 /* Zendikar_Goblin_01.txt */,
 				DB48BACC28B4F99400443552 /* Zendikar_Goblin_02.txt */,
+				DB9A388A28B565A100131614 /* Zendikar_Vampire_01.txt */,
+				DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */,
 			);
 			path = Zendikar;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				DB527CBA28AD0B0A0027000C /* Zendikar_Forest_Shortcut_02.txt in Resources */,
 				DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */,
 				DB527CC628AD0BCB0027000C /* Zendikar_Fungus.txt in Resources */,
+				DB9A388B28B565A100131614 /* Zendikar_Vampire_01.txt in Resources */,
 				DB527CC428AD0B980027000C /* Zendikar_Silundi_Boss.txt in Resources */,
 				DBE027ED289FF0C100F8F483 /* Kamigawa_Imperial_02.txt in Resources */,
 				DB510B0828A1AAC60037C760 /* Kamigawa_Swamp.txt in Resources */,
@@ -405,6 +412,7 @@
 				DB527CCC28AD0C200027000C /* Zendikar_Plains_Cat.txt in Resources */,
 				DB510B0A28A1B0870037C760 /* Kamigawa_Water.txt in Resources */,
 				DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */,
+				DB9A388D28B565AC00131614 /* Zendikar_Vampire_02.txt in Resources */,
 				DB48BACB28B4F98300443552 /* Zendikar_Goblin_01.txt in Resources */,
 				DBC732442897245A006834B1 /* Assets.xcassets in Resources */,
 			);

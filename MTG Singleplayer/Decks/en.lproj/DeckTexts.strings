@@ -72,12 +72,16 @@
 
 "Deck_Zendikar_Ondu_Boss" = "";
 
-"Deck_Zendikar_Spider" = "";
+"Deck_Zendikar_Spider" = "When casting Curse of Clinging Webs, target a random opponent;
 
 "Deck_Zendikar_Goblin_01" = "";
 
-"Deck_Zendikar_Goblin_02" = "";
+"Deck_Zendikar_Goblin_02" = "Goblin Chieftain only attacks if its power is 4 or more";
 
 "Deck_Zendikar_Ondu_Angel" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 
 "Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an attacking Armamanent Master if you control one. If not, equip all equipment you control to your best attacking creature";
+
+"Deck_Zendikar_Vampire_01" = "";
+
+"Deck_Zendikar_Vampire_02" = "";

@@ -68,7 +68,7 @@ struct LosingView: View {
                 }.frame(height: EncounterViewSize.rewardImageSize)
 
                 Spacer()
-                TextSubTitle("press anywhere to try again")
+                TextSubTitle("Press anywhere to try again")
             }.frame(height: UIScreen.main.bounds.height / 2)
         }
         .onTapGesture(count: 1) {
@@ -284,6 +284,7 @@ struct EmblemView: View {
     var body: some View {
         VStack {
             TextParagraph(NSLocalizedString("Deck_\(gameViewModel.deckName)", tableName: "DeckTexts", comment: "The deck special text"))
+                .frame(height: 100)
             //Spacer()
         }
         .padding(5)
@@ -304,7 +305,7 @@ struct PlayerEmblemView: View {
             ForEach(adventureViewModel.permanentBonusList, id:\.self) { bonus in
                 TextParagraphWithManaCost(NSLocalizedString(bonus, tableName: "PermanentBonusText", comment: "Player permanent bonus"))
             }
-            //Spacer()
+            Spacer()
         }
         .padding(5)
         //.frame(width: CardSize.width.hand, height: CardSize.height.hand)

@@ -35,15 +35,10 @@ extension Encounters {
                                         EncounterChoice(title: "Ignore the jerboa", encounterId: "Zendikar_Jerboa")
                                     ]),
         
-        "Zendikar_Spider_Intro": Encounter(title: "In the Web", id: "Zendikar_Spider_Fight", artistName: "Johannes Voss",
+        "Zendikar_Spider_Intro": Encounter(title: "In the Web", id: "Zendikar_Spider_Intro", artistName: "Johannes Voss",
                                     choices: [
                                         EncounterChoice(title: "Prepare and wait for them", encounterId: "Zendikar_Spider_Prepare"),
                                         EncounterChoice(title: "Try to escape", encounterId: [EncounterChoice.randomEncounter, "Zendikar_Spider_Fight", "Zendikar_Spider_Fight"])
-                                    ]),
-        
-        "Zendikar_Goblin_Intro": Encounter(title: "Goblin", id: "Zendikar_Goblin_Intro", artistName: "Piotr Dura",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
                                     ]),
         
     ]
@@ -64,6 +59,16 @@ extension Encounters {
                                     choices: [
                                         EncounterChoice(title: "Climb the rocky path", encounterId: "Zendikar_Plains_Fight_01"),
                                         EncounterChoice(title: "Stay in the plains", encounterId: "Zendikar_Plains_Fight_02")
+                                    ]),
+        
+        "Zendikar_Vampire_Intro": Encounter(title: "Vampire", id: "Zendikar_Vampire_Intro", artistName: "Vance Kovacs",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_Fight_01")
+                                    ]),
+        
+        "Zendikar_Goblin_Intro": Encounter(title: "Goblin", id: "Zendikar_Goblin_Intro", artistName: "Piotr Dura",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
                                     ]),
     ]
     
@@ -318,6 +323,23 @@ extension Encounters {
         "Zendikar_Goblin_Fight_02": Encounter(title: "Goblin", id: "Zendikar_Goblin_Fight_02", artistName: "Kekai Kotaki",
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Goblin_02")
+                                    ]),
+        
+        // MARK: Vampire
+        
+        "Zendikar_Vampire_Fight_01": Encounter(title: "Vampire", id: "Zendikar_Vampire_Fight_01", artistName: "Heonhwa Choe",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_Fight_02", deckToFight: "Zendikar_Vampire_01")
+                                    ]),
+        
+        "Zendikar_Vampire_Fight_02": Encounter(title: "Vampire", id: "Zendikar_Vampire_Fight_02", artistName: "Caio Monteiro",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_End", deckToFight: "Zendikar_Vampire_02")
+                                    ]),
+        
+        "Zendikar_Vampire_End": Encounter(title: "Vampire", id: "Zendikar_Vampire_End", artistName: "Titus Lunter",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
     ]
 }

@@ -22,7 +22,7 @@ class GameViewModel: ObservableObject {
     @Published var stack: [StackCard]
     @Published var showCardsToCastView: Bool = false
     @Published var showGraveyardView: Bool = false
-    @Published var showLibraryView: Bool = true
+    @Published var showLibraryView: Bool = false
     @Published var gameResult: Int                      // 0 = game in progress, 1 = game won, -1 = game lost
     let deckName: String
     let stage: Int

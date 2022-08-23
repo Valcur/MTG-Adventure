@@ -138,9 +138,17 @@
 
 "Zendikar_Silundi_Entrance" = "You finally reach the entrance of the old ruin you were looking for.";
 
-"Zendikar_Silundi_Boss" = "You find the informations you were looking for. As you are about to leave, ATTACK";
+"Zendikar_Silundi_Boss" = "";
 
 "Zendikar_Silundi_End" = "Deep in the ruins, you find it. ";
+
+"Zendikar_Forest_Shortcut_Intro" = "";
+
+"Zendikar_Forest_Shortcut_Fight_01" = "";
+
+"Zendikar_Forest_Shortcut_Progress" = "";
+
+"Zendikar_Forest_Shortcut_Fight_02" = "";
 
 "Zendikar_Branches_Intro" = "You find your path through the branches in Oran-Rief.";
 
@@ -181,6 +189,14 @@
 "Zendikar_Goblin_Progress" = "";
 
 "Zendikar_Goblin_Fight_02" = "Ambush";
+
+"Zendikar_Vampire_Intro" = "";
+
+"Zendikar_Vampire_Fight_01" = "";
+
+"Zendikar_Vampire_Fight_02" = "";
+
+"Zendikar_Vampire_End" = "Light ahead, back to the surface";
 
 // MARK: Boss
 

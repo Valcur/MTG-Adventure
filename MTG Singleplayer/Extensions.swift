@@ -174,7 +174,7 @@ struct TextParagraphWithManaCost: View {
                  //.padding([.leading, .trailing], self.horizontalPadding)
                  .layoutPriority(1)
                  .background(Color.clear)
-                 .frame(height: 150)
+                 .frame(height: 100)
 
     }
 }
