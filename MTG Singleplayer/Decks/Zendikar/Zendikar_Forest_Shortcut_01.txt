@@ -2,7 +2,7 @@
 8 ZEN creature NO-AB Scute Mob f1e0eda0-4a5e-4f1f-8131-ba58a58887cf 43e2fcc6-96d3-45f5-b4dd-e049d9ec6cec
 8 ZEN creature NO-B Grazing Gladehart f19f28e5-9cad-4398-b2d4-9e7fefb23cb4 078b5290-a613-496f-bd23-8fd109549f31
 4 ZNR sorcery NO Rabid Bite 6d5dc34b-3eea-4b77-8db7-94bc30b14c4c effe3fab-6d13-4603-8a21-8a3c2a0d9e08
-8 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
+14 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Midrange Deck ##
 3 ZNR creature NO-AB Territorial Scythecat 75d38954-6148-4d95-bf4b-cb82efcbe8df 5e0f725c-8d1f-47ff-ad81-a5007199a5e2
@@ -10,11 +10,11 @@
 5 ZNR creature NO-AB Canopy Baloth 4493828f-144f-49cf-9fd2-61de86e632ec 6b04160c-89a7-4dcd-b05d-5dc846824d64
 2 ZEN enchantment NO Beastmaster Ascension 11b5308d-5bc0-4782-875f-a28be36e665d 02d7ea78-d539-4c34-8bb3-941353e3da46
 3 ZNR instant NO Broken Wings 5e316864-d55c-496f-8f46-773567896864 c0fc2dfd-85b0-4add-be18-b39549235921
-8 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
+14 ZNR enchantment NO Land Draw b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6 e2ef9b74-481b-424b-8e33-f0b910f66370
 
 ## Endgame Deck ##
-5 ZNR creature NO Ancient Greenwarden-B 3bcf090c-e890-4a9f-a8aa-6079e4ec9947 dfe08e59-fdc4-436f-b05c-6ad386c46310
-5 ZEN creature NO Rampaging Baloths-A 2d3e6549-6cc6-434f-a189-ba3b55e64c34 66ae703d-b133-4749-9d38-216abe6c6647
+5 ZNR creature NO-B Ancient Greenwarden-B 3bcf090c-e890-4a9f-a8aa-6079e4ec9947 dfe08e59-fdc4-436f-b05c-6ad386c46310
+5 ZEN creature NO-B Rampaging Baloths-A 2d3e6549-6cc6-434f-a189-ba3b55e64c34 66ae703d-b133-4749-9d38-216abe6c6647
 
 ## Tokens ##
 1 TCMR token NO Beast-AB 695b14a0-920a-47bd-bd4a-7989862cdd0a 50d90039-6e75-4c76-893d-cd1686a36be9

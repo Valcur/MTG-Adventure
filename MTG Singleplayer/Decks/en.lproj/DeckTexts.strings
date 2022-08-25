@@ -70,9 +70,9 @@
 
 "Deck_Zendikar_Plains_Boss" = "";
 
-"Deck_Zendikar_Ondu_Boss" = "";
+"Deck_Zendikar_Ondu_Boss" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 
-"Deck_Zendikar_Spider" = "When casting Curse of Clinging Webs, target a random opponent;
+"Deck_Zendikar_Spider" = "When casting Curse of Clinging Webs, target a random opponent";
 
 "Deck_Zendikar_Goblin_01" = "";
 

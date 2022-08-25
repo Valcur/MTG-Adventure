@@ -167,8 +167,8 @@ class LifePointsViewModel: ObservableObject {
     @Published var mainPLayerLife: Int
     @Published var opponentLife: Int
     
-    init() {
-        self.startingLife = 1
+    init(numberOfPlayer: Int = 1) {
+        self.startingLife = numberOfPlayer * 20
         self.mainPLayerLife = startingLife
         self.opponentLife = startingLife
         // 60 if two player mode

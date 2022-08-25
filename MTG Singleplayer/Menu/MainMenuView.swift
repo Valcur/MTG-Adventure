@@ -407,9 +407,9 @@ enum GameStyle {
     func getParagraph(numberOfPlayer: Int) -> String {
         switch self {
         case .edh:
-            return "Requirements: \(6 * numberOfPlayer) boosters and a pile of random commanders\n\nEach players draw 2 random commanders. Draft the boosters between the \(numberOfPlayer). Each player discard one of the 2 random commanders and keep the other one."
+            return "Requirements: \(6 * numberOfPlayer) boosters and a pile of random commanders\n\nEach players draw 2 random commanders. Draft the boosters between the players. Each player discard one of the 2 random commanders and keep the other one. Each players must have a deck of at least 40 cards."
         case .classic:
-            return "Requirements: \(6 * numberOfPlayer) boosters\n\nDraft the boosters between the \(numberOfPlayer)."
+            return "Requirements: \(6 * numberOfPlayer) boosters\n\nDraft the boosters between the players. Each players must have a deck of at least 40 cards."
         }
     }
 }

@@ -2,15 +2,15 @@
 15 OGW creature NO-B Hedron Crawler 0b9a4e06-b21d-4cbe-906f-9dbd08dbe5d3 9f827f92-1df6-4fd0-aa61-ec2e53476f9c
 
 ## Midrange Deck ##
-10 ZNR creature NO-AB Relic Golem 14d9bb24-df7b-4f41-aeca-aad639b280db 0b59c75b-d8f8-4f95-9030-ed73c67d988e
+10 ZNR creature NO-B Relic Golem 14d9bb24-df7b-4f41-aeca-aad639b280db 0b59c75b-d8f8-4f95-9030-ed73c67d988e
 4 M15 sorcery NO Divination 273b339c-964b-4a18-8eb5-ceb8abcdfd9e ddd1187d-f43f-4508-b312-7af0bb8b9789
 3 M19 enchantment NO Psychic Corrosion 328b42f1-d679-4f9c-80e3-38fe3b965d10 285d22fa-1623-463a-83c0-a9aa7c969ce2
 
 ## Endgame Deck ##
-4 ROE creature NO-AB Enatu Golem 1cb3f27c-2670-43b8-9305-8adf2e7bd3ae 74b2e63d-61c6-46e4-9a6f-56653c49b2ea
+4 ROE creature NO-B Enatu Golem 1cb3f27c-2670-43b8-9305-8adf2e7bd3ae 74b2e63d-61c6-46e4-9a6f-56653c49b2ea
 4 ZNR sorcery NO Maddening Cacophony e0f0f290-c83f-4d97-9f5d-786c7136b0d1 10a79733-702c-4611-b073-71db7f1158b2
-4 ZNR creature NO-AB Myriad Construct f54111c8-9c20-4a73-a7c4-24d216e7de07 db9b1de4-9aba-4145-804d-2072f258af3b
-5 ZNR creature NO-AB Skyclave Sentinel 3b7b166b-4329-4194-a9a7-f1fec7a92cec fac8809a-77cd-4090-8a89-12121a8da676
+4 ZNR creature NO-B Myriad Construct f54111c8-9c20-4a73-a7c4-24d216e7de07 db9b1de4-9aba-4145-804d-2072f258af3b
+5 ZNR creature NO-B Skyclave Sentinel 3b7b166b-4329-4194-a9a7-f1fec7a92cec fac8809a-77cd-4090-8a89-12121a8da676
 
 ## Tokens ##
 1 TZNR token NO-B Construct 180881c9-5ae7-4810-a17a-06b5994a48a1 3462c167-e6cf-46f8-9b77-2a88815e3b82

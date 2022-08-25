@@ -16,6 +16,7 @@ class CardsEffects {
         "Counsel of the Soratami": CardEffect(enterTheBattlefield: .draw(2)),
         "Papercraft Decoy": CardEffect(leaveTheBattlefield: .draw(1)),
         "Sarulf's Packmate": CardEffect(enterTheBattlefield: .draw(1)),
+        "Inspiring Overseer": CardEffect(enterTheBattlefield: [.draw(1), .gainLife(1)]),
         "Deliberate": CardEffect(enterTheBattlefield: .draw(1)),
         "Divination": CardEffect(enterTheBattlefield: .draw(2)),
         "Hedron Crawler": CardEffect(enterTheBattlefield: [.addMana(1), .applyWithoutShowing], leaveTheBattlefield: [.loseMana(1), .applyWithoutShowing]),

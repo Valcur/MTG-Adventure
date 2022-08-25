@@ -7,6 +7,7 @@
 3 BBD creature NO-AB Wandering Wolf 1750cf0a-0709-4f02-90ea-572ff88a37a5 96d4361f-a889-4031-8b95-27dbef3922f3
 3 VOW creature NO-AB Sporeback Wolf 6fd5f773-e53e-4a7d-9093-dddd9b2e741f 3fb04879-9348-4d4f-9a23-c82fd99d04c6
 3 M20 creature NO-AB Ferocious Pup a1112750-8d38-49e0-ab1c-77110b2bbc4d 2354cb24-5c70-4aaa-8636-46866f0950c1
+5 SOI instant NO Moonlight Hunt f38a6cb4-79dd-4c12-9896-8c6655e275f8 d9633603-a80f-448d-98d9-00064d379c26
 
 ## Midrange Deck ##
 3 KHM creature NO-AB Sarulf's Packmate f32caf11-abc1-4cae-a311-10210176ea3a 6061113e-7dd8-4739-b4dd-55bb7f9e39a2
@@ -24,21 +25,5 @@
 ## Tokens ##
 1 TMID token NO-AB Wolf b2224843-8274-4872-a7ca-2adf69cc066b 364e04d9-9a8a-49df-921c-7a9bf62dc731
 1 TELD token NO-AB Wolf 21c3b763-b6a2-4e9e-8621-d2ab62e448f2 88452ed7-1065-41c3-94a6-dc41108c45c1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1 SOI instant NO Moonlight Hunt f38a6cb4-79dd-4c12-9896-8c6655e275f8 d9633603-a80f-448d-98d9-00064d379c26
 
 

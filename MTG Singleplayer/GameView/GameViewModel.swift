@@ -40,7 +40,7 @@ class GameViewModel: ObservableObject {
         return deck.deckBasic.count + deck.deckMidrange.count + deck.deckEndgame.count + cardRevealed.count + bottomOfLibrary.count
     }
     
-    /// AI TURN
+    /// AI TURN [OLD]
     ///
     /// 1. Draw a card from one of the deck at random following this rule
     ///         roll a 6 sided die :
@@ -50,6 +50,9 @@ class GameViewModel: ObservableObject {
     ///          - 1 - 3 : Play top card of basic deck
     ///          - 4 -5 : Play top card of midrange deck
     ///          -  6 : Play top card of endgame deck
+    ///
+    ///        [NEW]
+    ///
     ///  Show the card with any card from the AI hand and wait for player input
     ///
     ///  2. Add those cards to the board, graveyard or any zone where the card is supposed to go
@@ -74,7 +77,7 @@ class GameViewModel: ObservableObject {
         self.gameResult = 0
         self.deckName = deckName
         self.stage = stage
-        self.lifePointsViewModel = LifePointsViewModel()
+        self.lifePointsViewModel = LifePointsViewModel(numberOfPlayer: numberOfPlayer)
         self.numberOfPlayer = numberOfPlayer
     }
     
@@ -101,22 +104,44 @@ class GameViewModel: ObservableObject {
     
     // Draw a card from one of the random deck if not empty, if empty draw from another one, if all empty return nil
     private func drawCardFromRandomDeck() -> Card? {
-        let dieResult = Int.random(in: 1...6)
+        /* OLD
+         let dieResult = Int.random(in: 1...6)
+         
+         if manaCount < startEndGameAtMana {
+             if dieResult < 5 {
+                 return getBasicCardFromDeck()
+             } else {
+                 return getMidrangeCardFromDeck()
+             }
+         } else {
+             if dieResult < 4 {
+                 return getBasicCardFromDeck()
+             } else if dieResult < 6 {
+                 return getMidrangeCardFromDeck()
+             } else {
+                 return getEndgameCardFromDeck()
+             }
+         }
+         */
         
-        if manaCount < startEndGameAtMana {
-            if dieResult < 5 {
-                return getBasicCardFromDeck()
-            } else {
-                return getMidrangeCardFromDeck()
-            }
+        // New
+        
+        if manaCount == 3 {
+            return getMidrangeCardFromDeck()
+        }
+        
+        if manaCount == 5 {
+            return getEndgameCardFromDeck()
+        }
+        
+        let dieResult = Int.random(in: 1...manaCount)
+        
+        if dieResult <= 2 {
+            return getBasicCardFromDeck()
+        } else if dieResult <= 4 {
+            return getMidrangeCardFromDeck()
         } else {
-            if dieResult < 4 {
-                return getBasicCardFromDeck()
-            } else if dieResult < 6 {
-                return getMidrangeCardFromDeck()
-            } else {
-                return getEndgameCardFromDeck()
-            }
+            return getEndgameCardFromDeck()
         }
     }
     
@@ -298,6 +323,7 @@ extension GameViewModel {
         
         for card in cardsToCast.cardsFromGraveyard {
             castCard(card: card)
+            exileFromGraveyard(card: card)
         }
         
         for card in cardsToCast.cardsFromHand {
