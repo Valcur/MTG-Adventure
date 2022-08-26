@@ -162,6 +162,20 @@ class GameViewModel: ObservableObject {
         return drawUnrevealedCard()
     }
     
+    // Draw one more card if the card is weak while mana count is high
+    private func shouldDrawOneMoreCard(cardDraw: Card) -> Bool {
+        if manaCount >= 4 && cardDraw.cardInDeck == DeckManagerSelectedDeck.basicDeck {
+            return true
+        }
+        if manaCount >= 6 && cardDraw.cardInDeck == DeckManagerSelectedDeck.midrangeDeck {
+            return true
+        }
+        if manaCount >= 10 {
+            return true
+        }
+        return false
+    }
+    
     private func setUpCardsToCastWith(cardsFromLibrary: [Card]) {
         cardsToCast.cardsFromLibrary = cardsFromLibrary
         cardsToCast.cardsFromHand = self.hand
@@ -309,6 +323,11 @@ extension GameViewModel {
             // If all decks are empty, player won
             guard let card = drawCard() else { gameResult = 1; return }
             cards.append(card)
+            // If the card is too weak, draw one more
+            if shouldDrawOneMoreCard(cardDraw: card) {
+                guard let card = drawCard() else { gameResult = 1; return }
+                cards.append(card)
+            }
         }
         setUpCardsToCastWith(cardsFromLibrary: cards)
         withAnimation(.easeInOut(duration: AnimationsDuration.short)) {

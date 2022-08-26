@@ -51,7 +51,7 @@ class AdventureViewModel: ObservableObject {
             let startEncounter = Encounters.introEncounter
             //let startEncounter = Encounters.victoryEncounter
             currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-            self.currentPlane = "Zendikar"
+            self.currentPlane = "Kamigawa"
             switchView()
             currentEncounterId = startEncounter.id
             saveProgress()

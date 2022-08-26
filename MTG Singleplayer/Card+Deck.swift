@@ -24,6 +24,7 @@ class Card: Hashable, Identifiable, ObservableObject {
     @Published var cardCount: Int = 1
     let cardEffect: CardEffect
     @Published var countersOnCard: Int = 0
+    let cardInDeck: Int = DeckManagerSelectedDeck.basicDeck
         
     init(cardName: String, cardType: CardType, cardImageURL: String = "get-on-scryfall", cardUIImage: Image = Image("BlackBackground"), hasFlashback: Bool = false, shouldCardAttack: Bool = false, shouldCardBlock: Bool = false, specificSet: String = "", cardOracleId: String = "", cardId: String = ""){
         self.cardType = cardType

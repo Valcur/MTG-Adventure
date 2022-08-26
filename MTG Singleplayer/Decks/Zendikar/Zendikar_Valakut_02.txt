@@ -6,12 +6,12 @@
 4 ZEN instant NO Seismic Shudder 10c0f705-4c23-4761-afa9-4a29cf90e8ae 20365082-6102-4e3b-8791-c9b66846270d
 
 ## Midrange Deck ##
+3 ZEN enchantment NO Pyromancer Ascension 85845b6c-abb5-4591-b987-a375972cf25b 288d624e-d72e-4a4b-bb74-5a8b0b2e3cb0
 3 ZNR enchantment NO Roiling Vortex 34f83b7a-45a7-40a8-abcb-31d7aae4cea1 0b057eb7-8439-4d26-89df-c345ab2773e1
-5 GRN instant NO Risk Factor 7f61a2a6-2fe2-48ec-8e2e-74d147be0a0a 4eda89d9-9bd1-4a55-ac02-f9a0625d8e5b
 5 ROE sorcery NO Flame Slash 8d98d674-6811-4d45-b22a-63792e272a2b 006d2bf1-20f7-4b09-8d98-8233d91682bd
 
 ## Endgame Deck ##
-3 ZEN enchantment NO Pyromancer Ascension 85845b6c-abb5-4591-b987-a375972cf25b 288d624e-d72e-4a4b-bb74-5a8b0b2e3cb0
+5 GRN instant NO Risk Factor 7f61a2a6-2fe2-48ec-8e2e-74d147be0a0a 4eda89d9-9bd1-4a55-ac02-f9a0625d8e5b
 4 ZNR creature NO-B Rockslide Sorcerer d8b7b78e-91b2-4ad5-aeb8-6ebdca363e71 e105c546-ce4f-49c7-97ba-ea5fbe70df82
 
 

@@ -147,12 +147,12 @@ struct DeckManager {
         static let cardShouldAttack = "A"
         static let cardShouldBlock = "B"
     }
-    
-    struct DeckManagerSelectedDeck {
-        static let basicDeck = 1
-        static let midrangeDeck = 2
-        static let endgameDeck = 3
-        static let tokensAvailable = 4
-        static let boss = 5
-    }
+}
+
+struct DeckManagerSelectedDeck {
+    static let basicDeck = 1
+    static let midrangeDeck = 2
+    static let endgameDeck = 3
+    static let tokensAvailable = 4
+    static let boss = 5
 }
