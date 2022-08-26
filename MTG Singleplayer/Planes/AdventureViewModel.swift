@@ -21,7 +21,7 @@ class AdventureViewModel: ObservableObject {
     var availableRandomEncounter: [String:Encounter]
     var fightCompleted: Int = 0
     var shopVisited: Bool = false
-    var currentPlane: String = "Zendikar"
+    var currentPlane: String = "Kamigawa"
     var stage = 0
     var numberOfPlayer = 1
     var gameStyle: GameStyle = .edh

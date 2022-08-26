@@ -250,14 +250,85 @@ struct CardOnBoardView: View {
                 // Remove or return to hand
                 if gameViewModel.returnToHandModeEnable {
                     print("Send \(card.cardName) to hand")
-                    gameViewModel.returnToHand(card: card)
+                    gameViewModel.returnToHandFromBoard(card: card)
                 } else if gameViewModel.addCountersModeEnable {
                     gameViewModel.addCountersToCardOnBoard(card: card)
                 } else if gameViewModel.removeCountersModeEnable {
                     gameViewModel.removeCountersFromCardOnBoard(card: card)
                 } else {
                     print("Send \(card.cardName) to graveyard")
-                    gameViewModel.destroyPermanent(card: card)
+                    gameViewModel.destroyPermanentOnBoard(card: card)
+                }
+            }
+        })
+    }
+    
+    struct CountersOnCardView: View {
+        let countersCount: Int
+        var body: some View {
+            ZStack {
+                TextSubTitle("\(countersCount)")
+            }
+            .frame(width: GameViewSize.attackBlockerImageSize * 1.1, height: GameViewSize.attackBlockerImageSize * 1.1)
+            .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
+            .cornerRadius(40)
+            .shadow(color: Color("ShadowColor"), radius: 4, x: 0, y: 4)
+        }
+    }
+}
+
+struct CardOnNewToTheBoardView: View {
+    
+    @EnvironmentObject var gameViewModel: GameViewModel
+    let card: Card
+    
+    var body: some View {
+        Button(action: {
+            
+        }, label: {
+            ZStack {
+                CardView(card: card)
+                    .frame(width: CardSize.width.normal, height: CardSize.height.normal)
+                    .cornerRadius(CardSize.cornerRadius.normal)
+                
+                if card.cardCount > 1 {
+                    TextSubTitle("x\(card.cardCount)")
+                }
+                
+                HStack {
+                    if card.countersOnCard > 0 {
+                        CountersOnCardView(countersCount: card.countersOnCard)
+                    }
+                    Spacer()
+                    if card.shouldCardAttack {
+                        Image("Attacker")
+                            .resizable()
+                            .frame(width: GameViewSize.attackBlockerImageSize, height: GameViewSize.attackBlockerImageSize)
+                    }
+                    if card.shouldCardAttack && card.shouldCardBlock {
+                        TextTitle("/")
+                    }
+                    if card.shouldCardBlock {
+                        Image("Blocker")
+                            .resizable()
+                            .frame(width: GameViewSize.attackBlockerImageSize, height: GameViewSize.attackBlockerImageSize)
+                    }
+                }.offset(y: -CardSize.height.normal / 3.1).padding(.horizontal, CardSize.height.normal / 17)
+                
+            }
+            .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+            .onTapGesture(count: 1) {
+                // Remove or return to hand
+                if gameViewModel.returnToHandModeEnable {
+                    print("Send \(card.cardName) to hand")
+                    gameViewModel.returnToHandFromNewToTheBoard(card: card)
+                } else if gameViewModel.addCountersModeEnable {
+                    gameViewModel.addCountersToCardOnNewToTheBoard(card: card)
+                } else if gameViewModel.removeCountersModeEnable {
+                    gameViewModel.removeCountersFromCardOnNewToTheBoard(card: card)
+                } else {
+                    print("Send \(card.cardName) to graveyard")
+                    gameViewModel.destroyPermanentOnNewToTheBoard(card: card)
                 }
             }
         })
@@ -505,6 +576,7 @@ struct GameViewSize {
     static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 5
     static let attackBlockerImageSize: CGFloat = CardSize.height.normal / 8.5
     static let graveyardAndLibraryHeight: CGFloat = 100
+    static let boardDescriptionHeight: CGFloat = 50
 }
 
 struct StackCard {

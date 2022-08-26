@@ -17,6 +17,7 @@ class GameViewModel: ObservableObject {
     @Published var manaCount: Int
     let startEndGameAtMana: Int = 5
     @Published var board: [Card]
+    @Published var newToTheBoard: [Card]
     var bossCard: Card?
     @Published var graveyard: [Card]
     @Published var stack: [StackCard]
@@ -70,6 +71,7 @@ class GameViewModel: ObservableObject {
         self.hand = []
         self.manaCount = 0
         self.board = []
+        self.newToTheBoard = []
         self.graveyard = []
         self.stack = []
         self.cardRevealed = []
@@ -94,6 +96,7 @@ class GameViewModel: ObservableObject {
         self.hand = []
         self.manaCount = 0
         self.board = []
+        self.newToTheBoard = []
         self.graveyard = []
         self.stack = []
         self.cardRevealed = []
@@ -199,14 +202,24 @@ class GameViewModel: ObservableObject {
         return cards
     }
     
-    private func addCardToBoad(card: Card) {
-        // type and attack/not attack make the card appears at different place
+    private func addCardToBoard(card: Card) {
+        // type make the card appears at different place
         if card.cardType == .enchantment || card.cardType == .artifact {
             board.insert(card, at: 0)
         } else {
             board.append(card)
         }
         board = Card.regroupSameCardsInArray(board)
+    }
+    
+    private func addCardToNewToTheBoad(card: Card) {
+        // type make the card appears at different place
+        if card.cardType == .enchantment || card.cardType == .artifact {
+            newToTheBoard.insert(card, at: 0)
+        } else {
+            newToTheBoard.append(card)
+        }
+        newToTheBoard = Card.regroupSameCardsInArray(newToTheBoard)
     }
     
     private func sendToGraveyard(card: Card) {
@@ -227,7 +240,7 @@ class GameViewModel: ObservableObject {
         if card.cardType == .instant || card.cardType == .sorcery {
             sendToGraveyard(card: card)
         } else {
-            addCardToBoad(card: card)
+            addCardToNewToTheBoad(card: card)
         }
     }
     
@@ -248,6 +261,19 @@ class GameViewModel: ObservableObject {
                 c.cardCount -= 1
                 if c.cardCount <= 0 {
                     board.remove(at: i)
+                }
+                return
+            }
+        }
+    }
+    
+    func removeOneCardOnNewToTheBoard(card: Card) {
+        for i in (0..<newToTheBoard.count) {
+            let c = newToTheBoard[i]
+            if card == c {
+                c.cardCount -= 1
+                if c.cardCount <= 0 {
+                    newToTheBoard.remove(at: i)
                 }
                 return
             }
@@ -318,6 +344,12 @@ extension GameViewModel {
     // Starting step 1
     func newTurn() {
         manaCount += 1
+        for card in newToTheBoard {
+            addCardToBoard(card: card)
+        }
+        newToTheBoard = []
+        board = Card.regroupSameCardsInArray(board)
+        
         var cards: [Card] = []
         for _ in 0..<numberOfPlayer {
             // If all decks are empty, player won
@@ -371,8 +403,15 @@ extension GameViewModel {
         resetModes()
     }
     
-    func destroyPermanent(card: Card) {
+    func destroyPermanentOnBoard(card: Card) {
         removeOneCardOnBoard(card: card)
+        let tmpCard = card.recreateCard()
+        tmpCard.cardCount = 1
+        sendToGraveyard(card: tmpCard)
+    }
+    
+    func destroyPermanentOnNewToTheBoard(card: Card) {
+        removeOneCardOnNewToTheBoard(card: card)
         let tmpCard = card.recreateCard()
         tmpCard.cardCount = 1
         sendToGraveyard(card: tmpCard)
@@ -430,7 +469,7 @@ extension GameViewModel {
         }
     }
     
-    func returnToHand(card: Card) {
+    func returnToHandFromBoard(card: Card) {
         removeOneCardOnBoard(card: card)
         if card.cardType != .token {
             let tmpCard = card.recreateCard()
@@ -440,6 +479,19 @@ extension GameViewModel {
             }
         } else {
             board = Card.regroupSameCardsInArray(board)
+        }
+    }
+    
+    func returnToHandFromNewToTheBoard(card: Card) {
+        removeOneCardOnNewToTheBoard(card: card)
+        if card.cardType != .token {
+            let tmpCard = card.recreateCard()
+            tmpCard.cardCount = 1
+            withAnimation(.easeInOut(duration: AnimationsDuration.average)) {
+                hand.append(tmpCard)
+            }
+        } else {
+            newToTheBoard = Card.regroupSameCardsInArray(newToTheBoard)
         }
     }
     
@@ -462,11 +514,37 @@ extension GameViewModel {
         board = Card.regroupSameCardsInArray(board)
     }
     
+    func addCountersToCardOnNewToTheBoard(card: Card) {
+        if card.cardCount > 1 {
+            let tmpCard = card.recreateCard()
+            tmpCard.cardCount = card.cardCount - 1
+            card.cardCount = 1
+            card.countersOnCard += 1
+            var cardIndexOnBoard = 0
+            for i in 0..<newToTheBoard.count {
+                if newToTheBoard[i] == card {
+                    cardIndexOnBoard = i
+                }
+            }
+            newToTheBoard.insert(tmpCard, at: cardIndexOnBoard + 1)
+        } else {
+            card.countersOnCard += 1
+        }
+        newToTheBoard = Card.regroupSameCardsInArray(newToTheBoard)
+    }
+    
     func removeCountersFromCardOnBoard(card: Card) {
         if card.countersOnCard > 0 {
             card.countersOnCard -= 1
         }
         board = Card.regroupSameCardsInArray(board)
+    }
+    
+    func removeCountersFromCardOnNewToTheBoard(card: Card) {
+        if card.countersOnCard > 0 {
+            card.countersOnCard -= 1
+        }
+        newToTheBoard = Card.regroupSameCardsInArray(newToTheBoard)
     }
     
     func applyStackEffect() {

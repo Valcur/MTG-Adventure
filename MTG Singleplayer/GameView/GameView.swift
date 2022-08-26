@@ -83,26 +83,48 @@ struct BoardView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
-                if gameViewModel.bossCard != nil {
-                    CardView(card: gameViewModel.bossCard!)
-                        .frame(width: CardSize.width.normal, height: CardSize.height.normal)
-                        .cornerRadius(CardSize.cornerRadius.normal)
-                        .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+            HStack(spacing: 80) {
+                if gameViewModel.board.count > 0 || gameViewModel.bossCard != nil {
+                    VStack(spacing: 0) {
+                        TextParagraph("Board").frame(height: GameViewSize.boardDescriptionHeight)
+                        LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
+                            if gameViewModel.bossCard != nil {
+                                CardView(card: gameViewModel.bossCard!)
+                                    .frame(width: CardSize.width.normal, height: CardSize.height.normal)
+                                    .cornerRadius(CardSize.cornerRadius.normal)
+                                    .shadow(color: Color("ShadowColor"), radius: 3, x: 0, y: 4)
+                            }
+                            ForEach(gameViewModel.board) { card in
+                                if (!gameViewModel.onlyShowBlockers || (gameViewModel.onlyShowBlockers && card.shouldCardBlock)) && (!gameViewModel.onlyShowAttackers || (gameViewModel.onlyShowAttackers && card.shouldCardAttack)) {
+                                    CardOnBoardView(card: card)
+                                        .transition(.scale.combined(with: .opacity))
+                                }
+                            }
+                        }
+                        .animation(Animation.easeInOut(duration: 0.5), value: gameViewModel.board)
+                    }
                 }
-                ForEach(gameViewModel.board) { card in
-                    if (!gameViewModel.onlyShowBlockers || (gameViewModel.onlyShowBlockers && card.shouldCardBlock)) && (!gameViewModel.onlyShowAttackers || (gameViewModel.onlyShowAttackers && card.shouldCardAttack)) {
-                        CardOnBoardView(card: card)
-                            .transition(.scale.combined(with: .opacity))
+                if gameViewModel.newToTheBoard.count > 0 {
+                    VStack(spacing: 0) {
+                        TextParagraph("New to the board").frame(height: GameViewSize.boardDescriptionHeight)
+                        LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
+                            ForEach(gameViewModel.newToTheBoard) { card in
+                                if (!gameViewModel.onlyShowBlockers || (gameViewModel.onlyShowBlockers && card.shouldCardBlock)) && (!gameViewModel.onlyShowAttackers || (gameViewModel.onlyShowAttackers && card.shouldCardAttack)) {
+                                    CardOnNewToTheBoardView(card: card)
+                                        .transition(.scale.combined(with: .opacity))
+                                }
+                            }
+                        }
+                        .animation(Animation.easeInOut(duration: 0.5), value: gameViewModel.newToTheBoard)
                     }
                 }
             }
             .padding(.leading, 10)
             .padding(.trailing, GameViewSize.lifePointsWidth + 20)
             .padding(.bottom, 10)
-            .animation(Animation.easeInOut(duration: 0.5), value: gameViewModel.board)
         }
-        .padding(.top, GameViewSize.handHeight)
+        .frame(minHeight: CardSize.height.normal * 2 + 15 + GameViewSize.boardDescriptionHeight)
+        .padding(.top, GameViewSize.handHeight - GameViewSize.boardDescriptionHeight)
     }
 }
 
