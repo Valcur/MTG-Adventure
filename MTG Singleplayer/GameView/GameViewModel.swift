@@ -348,7 +348,6 @@ extension GameViewModel {
             addCardToBoard(card: card)
         }
         newToTheBoard = []
-        board = Card.regroupSameCardsInArray(board)
         
         var cards: [Card] = []
         for _ in 0..<numberOfPlayer {
@@ -408,6 +407,7 @@ extension GameViewModel {
         let tmpCard = card.recreateCard()
         tmpCard.cardCount = 1
         sendToGraveyard(card: tmpCard)
+        board = Card.regroupSameCardsInArray(board)
     }
     
     func destroyPermanentOnNewToTheBoard(card: Card) {
@@ -415,6 +415,7 @@ extension GameViewModel {
         let tmpCard = card.recreateCard()
         tmpCard.cardCount = 1
         sendToGraveyard(card: tmpCard)
+        newToTheBoard = Card.regroupSameCardsInArray(newToTheBoard)
     }
     
     func exileFromGraveyard(card: Card) {

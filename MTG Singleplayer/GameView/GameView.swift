@@ -85,7 +85,7 @@ struct BoardView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 80) {
                 if gameViewModel.board.count > 0 || gameViewModel.bossCard != nil {
-                    VStack(spacing: 0) {
+                    VStack(alignment: .leading, spacing: 0) {
                         TextParagraph("Board").frame(height: GameViewSize.boardDescriptionHeight)
                         LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
                             if gameViewModel.bossCard != nil {
@@ -105,7 +105,7 @@ struct BoardView: View {
                     }
                 }
                 if gameViewModel.newToTheBoard.count > 0 {
-                    VStack(spacing: 0) {
+                    VStack(alignment: .leading, spacing: 0) {
                         TextParagraph("New to the board").frame(height: GameViewSize.boardDescriptionHeight)
                         LazyHGrid(rows: Array(repeating: .init(.fixed(CardSize.height.normal), spacing: 15), count: 2), alignment: .top, spacing: 15) {
                             ForEach(gameViewModel.newToTheBoard) { card in

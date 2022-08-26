@@ -21,7 +21,7 @@ class AdventureViewModel: ObservableObject {
     var availableRandomEncounter: [String:Encounter]
     var fightCompleted: Int = 0
     var shopVisited: Bool = false
-    var currentPlane: String = "Kamigawa"
+    var currentPlane: String = "Zendikar"
     var stage = 0
     var numberOfPlayer = 1
     var gameStyle: GameStyle = .edh
@@ -51,7 +51,7 @@ class AdventureViewModel: ObservableObject {
             let startEncounter = Encounters.introEncounter
             //let startEncounter = Encounters.victoryEncounter
             currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
-            self.currentPlane = "Kamigawa"
+            self.currentPlane = "Zendikar"
             switchView()
             currentEncounterId = startEncounter.id
             saveProgress()
