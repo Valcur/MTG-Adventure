@@ -1,7 +1,37 @@
 ## Basic Deck ##
+14 M19 creature NO-AB Child of Night c650a7bc-e350-44a0-a698-d4a233d66156 3867704d-d2ef-4185-b53d-84eba6a6776f
+10 ZNR creature NO-AB Malakir Blood-Priest 3a3cb6fe-24ef-4c09-8ff8-f303fc472a8b 3d14ea81-d303-47db-90b4-7d10588f7ea6
 
 ## Midrange Deck ##
+4 ZNR creature NO-AB Nighthawk Scavenger 379ed4ec-8f2e-448b-9ed2-a3181e2f877e eb348f07-1d48-4877-8a56-60655d64a3f7
+4 ZNR creature NO Marauding Blight-Priest 814b87fe-2a75-4ff2-8637-7e69e3fb285b 730ddbcd-0814-4e22-85e9-78b0878324b6
+4 OGW creature NO-AB Cliffhaven Vampire 1915a311-209b-4628-8122-af3055a78fed 5544247d-1f8f-443f-a4c4-d8461db28a79
+4 BFZ creature NO-AB Drana's Emissary ef49b53d-e5b6-423a-88f0-51a7b2021c46 99e82d47-9bbb-4bf9-a935-2c0b27b64a84
+4 ZNR creature NO-AB Nullpriest of Oblivion c1111228-ef88-4b64-91e0-66ee32a1f5e4 086fc7fb-efcf-4676-8455-39b63edaec6a
+4 ZNR sorcery NO Mind Drain 0a88d1b1-ac3c-41da-b3f5-b689af0e45d7 0683d586-a54b-425a-a24d-2efb2342f150
 
 ## Endgame Deck ##
+5 ZEN creature NO-AB Malakir Bloodwitch 870e199e-1d54-44ec-8e24-f24af93ae9c5 865ac36f-4c61-468b-a2ed-ed2d1bbbf4e3
+5 ZNR creature NO-AB Scion of the Swarm ccaeabe1-42fa-4f29-bf80-d9b73498eec6 043926fe-d25f-40b4-b556-181503434e68
+5 WWK creature NO Kalastria Highborn 77e319da-d782-4258-bf0e-626755e5adc9 f1efd1dd-903c-47a0-b746-5571a3ea1755
+3 ZEN sorcery NO Blood Tribute aa2da79c-b36c-4120-8d7d-f5571e87e45e c76487d3-1d52-4c31-917e-eb929907218d
 
 ## Tokens ##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

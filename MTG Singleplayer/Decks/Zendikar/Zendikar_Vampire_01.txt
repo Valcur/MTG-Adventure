@@ -1,8 +1,20 @@
 ## Basic Deck ##
+5 WWK creature NO-AB Pulse Tracker f916f689-a314-4952-8107-41c4c2f2e811 4604a63c-ebe0-420f-968e-3ffc7641ce22
+5 ZEN creature NO-AB Guul Draz Vampire 00d3fcdf-6959-4437-9bad-93a8625510a1 f3c92575-1c97-48bf-801b-22f34040cf9a
+5 ORI creature NO-AB Malakir Cullblade 4fbaf052-a8c3-4395-8f40-0cb3a10d5ccd 70861692-1eb2-4cb1-8d7f-b881386c37d1
+5 WWK creature NO-AB Ruthless Cullblade b7748ad6-a8cd-45e7-a4d6-4ee747722657 1da2dc92-0352-4757-8249-67f08a2464d1
 
 ## Midrange Deck ##
+8 ZEN creature NO Blood Seeker 41087db6-34c4-4e2b-9f54-5e4488ca9c0b d1abc9e8-9ecf-4665-9ea5-ee18ab83c148
+4 ZEN creature NO-AB Gatekeeper of Malakir 6781f8ae-2a86-4e3d-bc43-48809c9d6c26 71db3698-a45c-4eaf-87e6-30502c0c10f4
+3 WWK creature NO-AB Bloodhusk Ritualist 93e1d3a6-e12f-4a0a-be0f-fbf568d89f1a 5b5445e2-1fa8-4c66-b441-892a76675810
+4 ZEN sorcery NO Feast of Blood fed05740-01b2-4c7a-8b97-55e64837c07f 1a7dd5e2-b2a5-46ab-a67c-499451706505
+8 ZEN creature NO-AB Vampire Nighthawk feb244f8-bcb1-44cf-9940-2719221a7309 44f19fe3-7a17-4c45-adfa-590f73dfebfa
 
 ## Endgame Deck ##
+4 BFZ creature NO-B Drana, Liberator of Malakir 89b24b5f-d837-4274-8877-8ff7dc2708ba d3f6ed18-eb6f-4d07-8660-cf7c074c87cd
+6 M13 creature NO-AB Vampire Nocturnus 2109c49e-dc81-4a10-8265-3cf8c90db523 8daccbbb-6600-4467-810f-277f01a11771
 
 ## Tokens ##
+
 

@@ -158,9 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				DBC732652899B668006834B1 /* Encounters_Kamigawa.swift */,
+				DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */,
 				DB31756028A67B8700799186 /* Encounters_Boss.swift */,
 				DB510B0028A13CEA0037C760 /* Localizable.strings */,
-				DB58CD7328A980F600A22482 /* Encounters_Zendikar.swift */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";

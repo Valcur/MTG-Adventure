@@ -73,7 +73,7 @@ struct LeftView: View {
             Spacer()
             
             //EmblemView()
-        }.ignoresSafeArea().frame(maxHeight: .infinity).padding(.vertical, 20).background(/*VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))*/ Color.black.opacity(0.3))
+        }.ignoresSafeArea().frame(maxHeight: .infinity).background(/*VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))*/ Color.black.opacity(0.3))
     }
 }
 

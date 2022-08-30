@@ -571,7 +571,7 @@ struct CardSize {
 
 struct GameViewSize {
     static let bottomBar: CGFloat = 60
-    static let leftPanelWitdh: CGFloat = 200
+    static let leftPanelWitdh: CGFloat = 210
     static let handHeight: CGFloat = 80
     static let lifePointsWidth: CGFloat = UIScreen.main.bounds.width / 6
     static let tokenCreationRowWidth: CGFloat = UIScreen.main.bounds.width / 5

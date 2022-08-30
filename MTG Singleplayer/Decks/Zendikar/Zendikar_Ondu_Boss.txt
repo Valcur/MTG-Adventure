@@ -1,21 +1,19 @@
 ## Basic Deck ##
-5 ZNR creature NO-B Expedition Healer e8fbdf4b-ef64-4b82-b67f-ae5568772256 11a00a88-de0e-4012-9ad8-ccb187dff7df
-5 ZNR creature NO-B Farsight Adept 72b10cba-0f46-4b99-9634-e7173ac4c259 5949bb9a-b4e8-4992-a12d-8e31953aff0d
-5 ZNR creature NO Kor Celebrant 3f8f0ce9-d2ce-45cc-9fbf-0e2819b07a3e 87c37e46-a961-4739-8893-f783013e2be6
-4 ROE sorcery YES Survival Cache 5fb8be5a-3666-4680-84e2-341cb269df07 4333f864-6b1c-4720-b2d6-490d5c7b31a1
+10 ZNR creature NO-AB Expedition Healer e8fbdf4b-ef64-4b82-b67f-ae5568772256 11a00a88-de0e-4012-9ad8-ccb187dff7df
+8 ZNR creature NO Farsight Adept 72b10cba-0f46-4b99-9634-e7173ac4c259 5949bb9a-b4e8-4992-a12d-8e31953aff0d
+6 ZNR creature NO Kor Celebrant 3f8f0ce9-d2ce-45cc-9fbf-0e2819b07a3e 87c37e46-a961-4739-8893-f783013e2be6
 
 ## Midrange Deck ##
-3 M20 creature NO-AB Angel of Vitality 635fe908-6f58-4c9e-ac55-0775a7c6f278 e2f39777-b80a-4618-9310-a9e5b91bb2a2
-5 ZNR creature NO-AB Shepherd of Heroes 6a732900-6529-4d5c-ab94-52bd0048d483 1f70baa3-5232-4e10-80b4-a9ead6ed6ec3
-4 ZNR creature NO-B Attended Healer 9442a18b-9093-4a10-ab61-6962f5af3bb6 6ca80b5a-3943-41ca-8cd1-8e3db1b2a1c8
-4 ROE creature NO Hedron-Field Purists ecc3e2ac-6534-4350-92f4-2c1f578d854e c48e9f90-4b13-4281-943c-126be4ff1ce0
+6 ROE sorcery YES Survival Cache 5fb8be5a-3666-4680-84e2-341cb269df07 4333f864-6b1c-4720-b2d6-490d5c7b31a1
+8 ZNR creature NO-B Attended Healer 9442a18b-9093-4a10-ab61-6962f5af3bb6 6ca80b5a-3943-41ca-8cd1-8e3db1b2a1c8
 
 ## Endgame Deck ##
-17 ZNR creature NO-A Angel of Destiny 02f46271-c90d-4318-9004-74e7bee64a89 9897074a-0ac4-4d1a-9aac-e77830cc5c78
+6 ZNR creature NO-AB Shepherd of Heroes 6a732900-6529-4d5c-ab94-52bd0048d483 1f70baa3-5232-4e10-80b4-a9ead6ed6ec3
+4 ROE creature NO Hedron-Field Purists ecc3e2ac-6534-4350-92f4-2c1f578d854e c48e9f90-4b13-4281-943c-126be4ff1ce0
+12 ZNR creature NO-A Angel of Destiny 02f46271-c90d-4318-9004-74e7bee64a89 9897074a-0ac4-4d1a-9aac-e77830cc5c78
 
 ## Tokens ##
 1 TZNR token NO-B Cat 5ae6251d-cef9-4fb7-bdcd-e870a062f042 5f458f39-27b6-4121-bda9-1a0d1b42f5fb
-3 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
 
 
 

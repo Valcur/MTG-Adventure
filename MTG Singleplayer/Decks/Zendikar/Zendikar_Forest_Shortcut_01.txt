@@ -17,7 +17,7 @@
 5 ZEN creature NO-B Rampaging Baloths-A 2d3e6549-6cc6-434f-a189-ba3b55e64c34 66ae703d-b133-4749-9d38-216abe6c6647
 
 ## Tokens ##
-1 TCMR token NO Beast-AB 695b14a0-920a-47bd-bd4a-7989862cdd0a 50d90039-6e75-4c76-893d-cd1686a36be9
+1 TCMR token NO-AB Beast 695b14a0-920a-47bd-bd4a-7989862cdd0a 50d90039-6e75-4c76-893d-cd1686a36be9
 
 
 
