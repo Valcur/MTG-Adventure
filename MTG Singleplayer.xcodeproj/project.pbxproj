@@ -11,7 +11,7 @@
 		DB31755528A2E83000799186 /* CardEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31755428A2E83000799186 /* CardEffects.swift */; };
 		DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31755A28A3CFC400799186 /* DeckTexts.strings */; };
 		DB31755C28A539F900799186 /* Kamigawa_Ninja_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */; };
-		DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */ = {isa = PBXBuildFile; fileRef = DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */; };
+		DB31755E28A5523600799186 /* Kamigawa_Ninja_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31755D28A5523600799186 /* Kamigawa_Ninja_02.txt */; };
 		DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31756028A67B8700799186 /* Encounters_Boss.swift */; };
 		DB31756328A7BD8200799186 /* PermanentBonusText.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB31756228A7BD8200799186 /* PermanentBonusText.strings */; };
 		DB31756628A832B100799186 /* Boss_Garruk.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB31756528A832B100799186 /* Boss_Garruk.txt */; };
@@ -79,7 +79,7 @@
 		DB31755428A2E83000799186 /* CardEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEffects.swift; sourceTree = "<group>"; };
 		DB31755928A3CFC400799186 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeckTexts.strings; sourceTree = "<group>"; };
 		DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_01.txt; sourceTree = "<group>"; };
-		DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_02; sourceTree = "<group>"; };
+		DB31755D28A5523600799186 /* Kamigawa_Ninja_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kamigawa_Ninja_02.txt; sourceTree = "<group>"; };
 		DB31756028A67B8700799186 /* Encounters_Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters_Boss.swift; sourceTree = "<group>"; };
 		DB31756228A7BD8200799186 /* PermanentBonusText.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = PermanentBonusText.strings; sourceTree = "<group>"; };
 		DB31756528A832B100799186 /* Boss_Garruk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Garruk.txt; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 				DB510B0728A1AAC60037C760 /* Kamigawa_Swamp.txt */,
 				DB510B0928A1B0870037C760 /* Kamigawa_Water.txt */,
 				DB31755B28A539F900799186 /* Kamigawa_Ninja_01.txt */,
-				DB31755D28A5523600799186 /* Kamigawa_Ninja_02 */,
+				DB31755D28A5523600799186 /* Kamigawa_Ninja_02.txt */,
 			);
 			path = Kamigawa;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				DB527CD528AD0C810027000C /* Zendikar_Ondu_Angel.txt in Resources */,
 				DB11CD3A289DA3AB000DB136 /* Kamigawa_Forge_02.txt in Resources */,
 				DB527CB828AD0AF80027000C /* Zendikar_Forest_Shortcut_01.txt in Resources */,
-				DB31755E28A5523600799186 /* Kamigawa_Ninja_02 in Resources */,
+				DB31755E28A5523600799186 /* Kamigawa_Ninja_02.txt in Resources */,
 				DB31755828A3CFC400799186 /* DeckTexts.strings in Resources */,
 				DB527CC028AD0B680027000C /* Zendikar_Branches_Insect.txt in Resources */,
 				DB48BAC928B4F49F00443552 /* Zendikar_Spider.txt in Resources */,

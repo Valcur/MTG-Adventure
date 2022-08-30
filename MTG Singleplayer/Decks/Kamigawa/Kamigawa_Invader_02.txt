@@ -10,11 +10,11 @@
 3 NEO creature NO  Heiko Yamazaki, the General a4d67f2d-6b0f-4feb-bf7d-90ab4f2e46ab 9ea5e61c-d903-410b-9acf-96a917ce05cc
 5 NEO creature NO  Isshin, Two Heavens as One 65114758-9a75-43a7-96e8-0aa68faa6b24 f26eeb39-77ab-4e60-8b10-1420e755c372
 4 NEO creature NO-AB  Risona, Asari Commander 44c4839f-c92a-4535-817b-1838c47fcb5e 51d8f1fa-ca92-4e2e-91e8-195bdad82def
-3 NEO artifact NO Mirror Box 3bed1944-58dc-4679-9aee-7be4d94fb55c d507daa3-3f16-4ab1-81ea-794e5bb488fc
+3 BOK artifact NO Mirror Gallery 7c9c3060-ca9d-4868-84c6-2a95b0fa8885 00beba34-54cc-4a30-8424-71a1215647a6
 
 ## Endgame Deck ##
 4 NEO creature NO  Asari Captain 32e7385e-525e-4925-8cfd-bfea21fcd1bf 834b4e6a-1812-4399-8fe4-bb1686ba49ef
 2 NEO creature NO  Raiyuu, Storm's Edge 9028f726-50c7-49f3-8386-e584415dcba2 37748b74-0eda-4b20-a08f-faa418adb9ff
 2 BOK creature NO-AB Ronin Cliffrider ce8fc1bb-5dd0-41b1-909a-bbfe6b165158 f9f12b75-af29-49ea-a23d-915052db9fef
 2 2X2 instant NO Crackling Doom ee81f37b-2a81-46d7-8d2f-9091123846c4 a66e5673-e34b-46e8-a0e4-55f3ee20f99a
-2 NEO sorcery NO Invoke Despair f9ee4c80-20fb-4322-be02-1c78d37d7a99 35af9d5c-4449-4549-b549-c3ba4a67dee0
+1 NEO sorcery NO Invoke Despair f9ee4c80-20fb-4322-be02-1c78d37d7a99 35af9d5c-4449-4549-b549-c3ba4a67dee0

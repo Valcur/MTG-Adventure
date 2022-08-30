@@ -6,7 +6,6 @@
 
 ## Midrange Deck ##
 3 M20 creature NO-AB Angel of Vitality 635fe908-6f58-4c9e-ac55-0775a7c6f278 e2f39777-b80a-4618-9310-a9e5b91bb2a2
-3 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
 5 ZNR creature NO-AB Shepherd of Heroes 6a732900-6529-4d5c-ab94-52bd0048d483 1f70baa3-5232-4e10-80b4-a9ead6ed6ec3
 4 ZNR creature NO-B Attended Healer 9442a18b-9093-4a10-ab61-6962f5af3bb6 6ca80b5a-3943-41ca-8cd1-8e3db1b2a1c8
 4 ROE creature NO Hedron-Field Purists ecc3e2ac-6534-4350-92f4-2c1f578d854e c48e9f90-4b13-4281-943c-126be4ff1ce0
@@ -16,7 +15,7 @@
 
 ## Tokens ##
 1 TZNR token NO-B Cat 5ae6251d-cef9-4fb7-bdcd-e870a062f042 5f458f39-27b6-4121-bda9-1a0d1b42f5fb
-
+3 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
 
 
 

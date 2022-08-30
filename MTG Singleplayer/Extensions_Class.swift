@@ -148,7 +148,7 @@ enum Reward: Equatable {
         case .life(let value):
             return "+ \(value)"
         case .booster:
-            return "Open a booster"
+            return "Get 3 random cards from the reserve"
         case .partner:
             return "Get a new partner"
         case .permanentBonus(let bonusName):

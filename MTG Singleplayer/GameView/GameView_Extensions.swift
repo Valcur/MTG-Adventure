@@ -355,7 +355,7 @@ struct EmblemView: View {
     var body: some View {
         VStack {
             TextParagraph(NSLocalizedString("Deck_\(gameViewModel.deckName)", tableName: "DeckTexts", comment: "The deck special text"))
-                .frame(height: 100)
+                .frame(height: 180)
             //Spacer()
         }
         .padding(5)
@@ -375,6 +375,7 @@ struct PlayerEmblemView: View {
         VStack {
             ForEach(adventureViewModel.permanentBonusList, id:\.self) { bonus in
                 TextParagraphWithManaCost(NSLocalizedString(bonus, tableName: "PermanentBonusText", comment: "Player permanent bonus"))
+                    .frame(height: 100)
             }
             Spacer()
         }

@@ -10,7 +10,7 @@
 
 "Deck_Kamigawa_Forge_01" = "If only one nonequipment creature is attacking, equip all equipments to it";
 
-"Deck_Kamigawa_Forge_02" = "";
+"Deck_Kamigawa_Forge_02" = "Activate Baku Altar each turn if able";
 
 "Deck_Kamigawa_Shrine" = "Activate all shrine abilities each turn";
 
@@ -22,11 +22,11 @@
 
 "Deck_Kamigawa_Invader_02" = "Only the strongest creature attack alone each turn";
 
-"Deck_Kamigawa_Vehicle_01" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+"Deck_Kamigawa_Vehicle_01" = "At the beginning of combat on your turn, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
 
-"Deck_Kamigawa_Vehicle_02" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+"Deck_Kamigawa_Vehicle_02" = "At the beginning of combat on your turn, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
 
-"Deck_Kamigawa_Vehicle_02_B" = "At the beginning of each combat, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
+"Deck_Kamigawa_Vehicle_02_B" = "At the beginning of combat on your turn, non vehicle creatures pilot as many vehicles as possible. All vehicles attack each turn if able";
 
 "Deck_Kamigawa_Swamp" = "When casting Devouring Greed, sacrifice all nonlegendary spirits";
 
@@ -80,7 +80,7 @@
 
 "Deck_Zendikar_Ondu_Angel" = "At the beginning of combat on your turn, put a level counter on every permanent you control with a level up ability";
 
-"Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an attacking Armamanent Master if you control one. If not, equip all equipment you control to your best attacking creature";
+"Deck_Zendikar_Ondu_Kor" = "At the beginning of combat on your turn, equip all equipment you control to an Armamanent Master if you control one. If not, equip all equipment you control to your best attacking creature";
 
 "Deck_Zendikar_Vampire_01" = "";
 

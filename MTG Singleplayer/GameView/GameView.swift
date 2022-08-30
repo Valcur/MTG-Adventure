@@ -322,6 +322,12 @@ struct LibraryView: View {
                         })
                         
                         Button(action: {
+                            gameViewModel.millTopCardOfLibrary()
+                        }, label: {
+                            GrayButtonLabel("Mill a card")
+                        })
+                        
+                        Button(action: {
                             gameViewModel.drawOneCard()
                         }, label: {
                             GrayButtonLabel("Draw a card")

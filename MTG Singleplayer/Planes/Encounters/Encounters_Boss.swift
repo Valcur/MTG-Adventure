@@ -11,7 +11,7 @@ extension Encounters {
     
     static let introEncounter = Encounter(title: "Once upon a time", id: "Intro", artistName: "Alix Branwyn",
                                           choices: [
-                                              EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
+                                              EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.planeEnd)
                                           ])
     
     static let victoryEncounter = Encounter(title: "Victory", id: "Victory", artistName: "Johannes Voss",

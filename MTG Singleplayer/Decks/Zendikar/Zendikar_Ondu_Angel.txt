@@ -5,7 +5,6 @@
 
 ## Midrange Deck ##
 6 SNC creature NO-AB Inspiring Overseer d646e42b-5635-4798-b633-29c093b66a55 35d9da1d-8678-4252-b0f8-9960795642f0
-4 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
 5 WWK creature NO-AB Lightkeeper of Emeria 7f31aa43-cf75-4488-b47f-e16e923a2d01 79d0234f-d712-4ac3-bd3b-10f9c530e167
 
 ## Endgame Deck ##
@@ -15,7 +14,7 @@
 
 ## Tokens ##
 1 TZNR token NO-AB Angel Warrior b9489980-e741-4cf9-a2ef-086c712f45f1 91098481-46c2-49bf-8123-e9cab2f22b84
-
+4 KHM creature NO-AB Righteous Valkyrie 891d2690-7144-4f87-b6ef-96f2469780a9 02fb5f9f-8750-4eb5-a03a-6dacc60e0b90
 
 
 

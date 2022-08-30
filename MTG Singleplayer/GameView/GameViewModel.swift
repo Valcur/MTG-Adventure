@@ -164,8 +164,7 @@ class GameViewModel: ObservableObject {
         // If not, draw as usual
         return drawUnrevealedCard()
     }
-    
-    // Draw one more card if the card is weak while mana count is high
+
     private func shouldDrawOneMoreCard(cardDraw: Card) -> Bool {
         if manaCount >= 4 && cardDraw.cardInDeck == DeckManagerSelectedDeck.basicDeck {
             return true
@@ -177,6 +176,26 @@ class GameViewModel: ObservableObject {
             return true
         }
         return false
+    }
+    
+    // Draw one more card if the card is weak while mana count is high
+    private func drawOneMoreCardIfNeeded(cardDraw: Card) -> Card? {
+        if manaCount >= 4 && cardDraw.cardInDeck == DeckManagerSelectedDeck.basicDeck {
+            if cardRevealed.count > 0 {
+                return drawCard()
+            }
+            return getBasicCardFromDeck()
+        }
+        if manaCount >= 6 && cardDraw.cardInDeck == DeckManagerSelectedDeck.midrangeDeck {
+            if cardRevealed.count > 0 {
+                return drawCard()
+            }
+            return getBasicCardFromDeck()
+        }
+        if manaCount >= 10 {
+            return drawCard()
+        }
+        return nil
     }
     
     private func setUpCardsToCastWith(cardsFromLibrary: [Card]) {
@@ -356,8 +375,8 @@ extension GameViewModel {
             cards.append(card)
             // If the card is too weak, draw one more
             if shouldDrawOneMoreCard(cardDraw: card) {
-                guard let card = drawCard() else { gameResult = 1; return }
-                cards.append(card)
+                guard let secondCard = drawOneMoreCardIfNeeded(cardDraw: card) else { gameResult = 1; return }
+                cards.append(secondCard)
             }
         }
         setUpCardsToCastWith(cardsFromLibrary: cards)
@@ -608,6 +627,11 @@ extension GameViewModel {
                 return
             }
         }
+    }
+    
+    func millTopCardOfLibrary() {
+        guard let topCard = drawCard() else { gameResult = 1; return }
+        sendToGraveyard(card: topCard)
     }
     
     func castRevealedCard(card: Card) {

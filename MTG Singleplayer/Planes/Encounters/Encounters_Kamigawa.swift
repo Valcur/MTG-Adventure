@@ -177,12 +177,12 @@ class Encounters {
         
         "Kamigawa_Rat_02": Encounter(title: "Towashi", id: "Kamigawa_Rat_02", artistName: "Manuel Castañón",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_03", deckToFight: "AA")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_03", deckToFight: "Kamigawa_Ninja_01")
                                     ]),
         
         "Kamigawa_Rat_03": Encounter(title: "Towashi", id: "Kamigawa_Rat_03", artistName: "Raymond Swanland",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_04", deckToFight: "AA")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Kamigawa_Rat_04", deckToFight: "Kamigawa_Ninja_02")
                                     ]),
         
         "Kamigawa_Rat_04": Encounter(title: "Towashi", id: "Kamigawa_Rat_04", artistName: "Ilse Gort",
@@ -275,8 +275,7 @@ class Encounters {
                                     reward: [.gold(10)],
                                     choices: [
                                         EncounterChoice(title: "Fight the remaining troups", encounterId: "Kamigawa_Otawara_Fight_02"),
-                                        EncounterChoice(title: "Send some soldiers to sabotage the enemy mechs", encounterId: "Kamigawa_Otawara_Fight_02_B"),
-                                        EncounterChoice(title: "Leave", encounterId: EncounterChoice.randomEncounter)
+                                        EncounterChoice(title: "Send some soldiers to sabotage the enemy mechs", encounterId: "Kamigawa_Otawara_Fight_02_B")
                                     ]),
         
         "Kamigawa_Otawara_Fight_02": Encounter(title: "Fight", id: "Kamigawa_Otawara_Fight_02", artistName: "Victor Adame Minguez",

@@ -1,12 +1,12 @@
 ## Basic Deck ##
-6 CHK creature NO-B Floating-Dream Zubera 3d2e9712-d546-40ac-a5ea-2dd7b7d9e0c1 63ea55a8-6c21-4cc1-a2c4-86cd60cddced
-3 CHK creature NO-B Wandering Ones 1bbddbd2-9c85-4a1d-87aa-0c2eb2e0fb73 8f973d6b-4a34-4b0e-b092-ead05bf2e535
+4 CHK creature NO-B Floating-Dream Zubera 3d2e9712-d546-40ac-a5ea-2dd7b7d9e0c1 63ea55a8-6c21-4cc1-a2c4-86cd60cddced
+6 CHK creature NO-B Wandering Ones 1bbddbd2-9c85-4a1d-87aa-0c2eb2e0fb73 8f973d6b-4a34-4b0e-b092-ead05bf2e535
 8 NEO creature NO-B Papercraft Decoy b0494c34-f142-441f-b7f8-e981416f0bad 3453084c-42cc-4241-b244-c79e704f96c8
 
 ## Midrange Deck ##
 1 SOK creature NO Kami of the Crescent Moon 38cfe4a0-6ead-435b-9f86-928205c0a52c f01ee008-76dd-4d4d-8273-ad5b28c8a2c7
 4 CHK sorcery NO Counsel of the Soratami 62ddc5ae-ced9-4319-854c-1a114c6afc3f 4401911c-bfb0-4c94-9fc1-49198ccecc94
-4 CHK sorcery NO Gale Force 337b0807-94cb-48d0-b752-61fbd05560e4 26c5c233-a373-4ac4-9b99-81ed97df1f9b
+3 CHK sorcery NO Gale Force 337b0807-94cb-48d0-b752-61fbd05560e4 26c5c233-a373-4ac4-9b99-81ed97df1f9b
 4 SOK creature NO-B Rushing-Tide Zubera d99b44bc-375a-4cf1-9148-ef6fe615cb10 51a5357b-b479-46a7-8c3a-d51ed8f71a17
 
 ## Endgame Deck ##
