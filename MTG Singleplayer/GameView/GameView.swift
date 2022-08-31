@@ -268,7 +268,7 @@ struct GraveyardView: View {
                     Button(action: {
                         gameViewModel.exileFromGraveyard(card: card)
                     }, label: {
-                        TextSubTitle("Exile")
+                        TextSubTitle("Exile").padding(10)
                     })
                     
                     Button(action: {
@@ -288,7 +288,19 @@ struct GraveyardView: View {
                             GrayButtonLabel(systemName: "hand.wave")
                         })
                         
-                        // To library ???
+                        // To top of library
+                        Button(action: {
+                            gameViewModel.sendToTopOfLibraryFromGraveyard(card: card)
+                        }, label: {
+                            GrayButtonLabel(systemName: "square.3.stack.3d.top.fill")
+                        })
+                        
+                        // To bottom of library
+                        Button(action: {
+                            gameViewModel.sendToBottomOfLibraryFromGraveyard(card: card)
+                        }, label: {
+                            GrayButtonLabel(systemName: "square.3.stack.3d.bottom.fill")
+                        })
                     }
                 }
             }

@@ -18,7 +18,7 @@ class AdventureViewModel: ObservableObject {
     @Published var currentLife: Int = 3
     var permanentBonusList: [String] = ["Kamigawa_Forge", "Kamigawa_Forge"]
     
-    var availableRandomEncounter: [String:Encounter]
+    var availableRandomEncounter: [String] = []
     var fightCompleted: Int = 0
     var shopVisited: Bool = false
     var currentPlane: String = "Zendikar"
@@ -30,7 +30,6 @@ class AdventureViewModel: ObservableObject {
     var currentEncounterId: String = ""
     
     init() {
-        availableRandomEncounter = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
         let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["\(currentPlane)_Intro"]!
         //let startEncounter = Encounters.getArrayForPlane(currentPlane, array: .directEncounter)["Kamigawa_Forge_04"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
@@ -48,6 +47,7 @@ class AdventureViewModel: ObservableObject {
         self.numberOfPlayer = saveInfo.numberOfPlayer
         self.gameStyle = saveInfo.gameStyle
         self.saveNumber = saveNumber
+        self.availableRandomEncounter = saveInfo.availableRandomEncounter
         if saveInfo.currentEncounter == "Unset" {
             let startEncounter = Encounters.introEncounter
             //let startEncounter = Encounters.victoryEncounter
@@ -119,7 +119,11 @@ class AdventureViewModel: ObservableObject {
         currentPlane = planeName
         shopVisited = stage == 0
         stage += 1
-        availableRandomEncounter = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
+        let possibleRandomEncounters = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
+        for enc in possibleRandomEncounters {
+            availableRandomEncounter.append(enc.key)
+        }
+        availableRandomEncounter.shuffle()
         let startEncounter = Encounters.getArrayForPlane(planeName, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
         currentEncounterId = startEncounter.id
@@ -171,14 +175,14 @@ class AdventureViewModel: ObservableObject {
         } else if fightCompleted == 2 {
             // Single only
             let randomEncounter = availableRandomEncounter.randomElement()
-            availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
-            encounter = randomEncounter!.value
+            availableRandomEncounter.removeLast()
+            encounter = Encounters.getEncounter(encounterId: randomEncounter!, planeName: currentPlane)!
         } else {
             // A single or a double
             if Bool.random() {
                 let randomEncounter = availableRandomEncounter.randomElement()
-                availableRandomEncounter.removeValue(forKey: randomEncounter!.key)
-                encounter = randomEncounter!.value
+                availableRandomEncounter.removeLast()
+                encounter = Encounters.getEncounter(encounterId: randomEncounter!, planeName: currentPlane)!
             } else {
                 encounter = Encounters.getArrayForPlane(currentPlane, array: .doubleEncounter).randomElement()!.value
             }
@@ -202,7 +206,8 @@ class AdventureViewModel: ObservableObject {
                                 shopHasBeenVisited: shopVisited,
                                 permanentUpgradeArray: permanentBonusList,
                                 difficulty: stage,
-                                gameStyle: gameStyle)
+                                gameStyle: gameStyle,
+                                availableRandomEncounter: availableRandomEncounter)
         SaveManager.setSaveInfoFor(saveInfo: saveInfo, saveNumber: saveNumber)
     }
 }

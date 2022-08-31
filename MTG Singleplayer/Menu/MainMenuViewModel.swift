@@ -22,7 +22,8 @@ class MainMenuViewModel: ObservableObject {
                                 shopHasBeenVisited: false,
                                 permanentUpgradeArray: [],
                                 difficulty: difficulty,
-                                gameStyle: gameStyle)
+                                gameStyle: gameStyle,
+                                availableRandomEncounter: [])
         SaveManager.setSaveInfoFor(saveInfo: saveInfo, saveNumber: saveSelected)
     }
 }

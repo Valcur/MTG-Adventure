@@ -457,6 +457,16 @@ extension GameViewModel {
         exileFromGraveyard(card: card)
     }
     
+    func sendToTopOfLibraryFromGraveyard(card: Card) {
+        cardRevealed.append(card)
+        exileFromGraveyard(card: card)
+    }
+    
+    func sendToBottomOfLibraryFromGraveyard(card: Card) {
+        bottomOfLibrary.append(card)
+        exileFromGraveyard(card: card)
+    }
+    
     func toggleOnlyShowAttackers() {
         onlyShowAttackers.toggle()
         resetModes(onlyShowAttackers: onlyShowAttackers)
