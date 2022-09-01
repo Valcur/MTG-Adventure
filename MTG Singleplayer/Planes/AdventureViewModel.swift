@@ -20,6 +20,7 @@ class AdventureViewModel: ObservableObject {
     
     var availableRandomEncounter: [String] = []
     var fightCompleted: Int = 0
+    var fightCompletedSinceBeginning: Int = 0
     var shopVisited: Bool = false
     var currentPlane: String = "Zendikar"
     var possiblePlanes: [String] = ["Zendikar", "Kamigawa"]
@@ -40,7 +41,7 @@ class AdventureViewModel: ObservableObject {
         let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
         self.fightCompleted = saveInfo.fightCompleted
         self.shopVisited = saveInfo.shopHasBeenVisited
-        self.stage = saveInfo.difficulty - 2                        // CHANGE LATER
+        self.stage = saveInfo.difficulty + 1                        // CHANGE LATER
         self.permanentBonusList = saveInfo.permanentUpgradeArray
         self.currentGold = saveInfo.gold
         self.currentLife = saveInfo.life
@@ -48,6 +49,7 @@ class AdventureViewModel: ObservableObject {
         self.gameStyle = saveInfo.gameStyle
         self.saveNumber = saveNumber
         self.availableRandomEncounter = saveInfo.availableRandomEncounter
+        self.fightCompletedSinceBeginning = saveInfo.fightCompletedSinceBeginning
         if saveInfo.currentEncounter == "Unset" {
             let startEncounter = Encounters.introEncounter
             //let startEncounter = Encounters.victoryEncounter
@@ -81,18 +83,15 @@ class AdventureViewModel: ObservableObject {
             switch(stage) {
             case 2:             // Final shop before the boss
                 setFinalShopEncounter()
-            case 3:             // We reach the boss
-                setFinalBossEncounter()
+            case 3:             // We defeated the boss
+                setVictoryEncounter()
             default:            // Next plane
-                setIntroEncounter(planeName: possiblePlanes[stage + 1])
+                setIntroEncounter(planeName: possiblePlanes[stage])
             }
         }
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
             currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage, numberOfPlayer: numberOfPlayer)))
-        }
-        else if encounterChoice == EncounterChoice.planeEnd {
-            setVictoryEncounter()
         }
         // Else if we have to go to a random encounter not already played
         else if encounterChoice == EncounterChoice.randomEncounter {
@@ -118,7 +117,7 @@ class AdventureViewModel: ObservableObject {
     private func setIntroEncounter(planeName: String) {
         currentPlane = planeName
         shopVisited = stage == 0
-        stage += 1
+        fightCompleted = 0
         let possibleRandomEncounters = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
         for enc in possibleRandomEncounters {
             availableRandomEncounter.append(enc.key)
@@ -131,7 +130,13 @@ class AdventureViewModel: ObservableObject {
     }
     
     private func setFinalShopEncounter() {
-        currentPlane = "Final Shop"
+        currentPlane = "Final Boss"
+        shopVisited = true
+        let possibleRandomEncounters = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
+        for enc in possibleRandomEncounters {
+            availableRandomEncounter.append(enc.key)
+        }
+        availableRandomEncounter.shuffle()
         let bossShop = Encounters.bosses_shop
         currentEncounterView = AnyView(EncounterView(encounter: bossShop))
         currentEncounterId = bossShop.id
@@ -139,11 +144,9 @@ class AdventureViewModel: ObservableObject {
     }
     
     private func setFinalBossEncounter() {
-        currentPlane = "Final Boss"
-        let bossEncounter = Encounters.bosses["Boss_Garruk"]!
-        currentEncounterView = AnyView(EncounterView(encounter: bossEncounter))
-        currentEncounterId = bossEncounter.id
-        stage -= 1  // UGLY, DO IT WITH RANDOM ENCOUNTER WHEN OTHER BOSSES ARE ADDED
+        let bossEncounter = availableRandomEncounter.removeLast()
+        currentEncounterView = AnyView(EncounterView(encounter: Encounters.getEncounter(encounterId: bossEncounter, planeName: currentPlane)!))
+        currentEncounterId = bossEncounter
         saveProgress()
     }
     
@@ -174,15 +177,13 @@ class AdventureViewModel: ObservableObject {
             encounter = Encounters.getArrayForPlane(currentPlane, array: .doubleEncounter).randomElement()!.value
         } else if fightCompleted == 2 {
             // Single only
-            let randomEncounter = availableRandomEncounter.randomElement()
-            availableRandomEncounter.removeLast()
-            encounter = Encounters.getEncounter(encounterId: randomEncounter!, planeName: currentPlane)!
+            let randomEncounter = availableRandomEncounter.removeLast()
+            encounter = Encounters.getEncounter(encounterId: randomEncounter, planeName: currentPlane)!
         } else {
             // A single or a double
             if Bool.random() {
-                let randomEncounter = availableRandomEncounter.randomElement()
-                availableRandomEncounter.removeLast()
-                encounter = Encounters.getEncounter(encounterId: randomEncounter!, planeName: currentPlane)!
+                let randomEncounter = availableRandomEncounter.removeLast()
+                encounter = Encounters.getEncounter(encounterId: randomEncounter, planeName: currentPlane)!
             } else {
                 encounter = Encounters.getArrayForPlane(currentPlane, array: .doubleEncounter).randomElement()!.value
             }
@@ -207,7 +208,8 @@ class AdventureViewModel: ObservableObject {
                                 permanentUpgradeArray: permanentBonusList,
                                 difficulty: stage,
                                 gameStyle: gameStyle,
-                                availableRandomEncounter: availableRandomEncounter)
+                                availableRandomEncounter: availableRandomEncounter,
+                                fightCompletedSinceBeginning: fightCompletedSinceBeginning)
         SaveManager.setSaveInfoFor(saveInfo: saveInfo, saveNumber: saveNumber)
     }
 }
@@ -220,17 +222,24 @@ extension AdventureViewModel {
     }
     
     func fightWon() {
-        let choice = EncounterChoice(title: currentEncounterChoice!.title, encounterId: currentEncounterChoice!.encounterId)
         fightCompleted += 1
-        applyChoice(choice: choice)
-        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.short) {
-            self.currentGold += 10
+        fightCompletedSinceBeginning += 1
+        if currentEncounterChoice!.encounterId.first! == EncounterChoice.victory {
+            setVictoryEncounter()
             self.saveProgress()
+            switchView()
+        } else {
+            let choice = EncounterChoice(title: currentEncounterChoice!.title, encounterId: currentEncounterChoice!.encounterId)
+            applyChoice(choice: choice)
+            DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.short) {
+                self.currentGold += 10
+                self.saveProgress()
+            }
         }
     }
     
     func fightLost() {
-        currentLife -= 1
+        self.currentLife -= 1
         if currentLife == 0 {
             setDefeatEncounter()
             switchView()

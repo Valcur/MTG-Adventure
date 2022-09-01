@@ -46,12 +46,15 @@ struct LosingView: View {
                                 .offset(x: animateLifeLoss ? -geo.size.width / 2 : 0)
                                 .opacity(animateLifeLoss ? 0 : 1)
                                 .onChange(of: gameViewModel.gameResult) { result in
-                                    self.animateLifeLoss = false
                                     if result == -1 {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
                                             withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
                                                 self.animateLifeLoss = true
                                             }
+                                        }
+                                    } else {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
+                                            self.animateLifeLoss = false
                                         }
                                     }
                                 }
@@ -68,7 +71,7 @@ struct LosingView: View {
                 }.frame(height: EncounterViewSize.rewardImageSize)
 
                 Spacer()
-                TextSubTitle("Press anywhere to try again")
+                TextSubTitle("Press anywhere to continue")
             }.frame(height: UIScreen.main.bounds.height / 2)
         }
         .onTapGesture(count: 1) {

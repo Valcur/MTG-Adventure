@@ -22,7 +22,8 @@ class SaveManager {
         let difficulty: Int = userDefault.integer(forKey: "Save_\(saveNumber)_Difficulty")
         let gameStyle: Int = userDefault.integer(forKey: "Save_\(saveNumber)_GameStyle")
         let availableRandomEncounter: [String] = userDefault.stringArray(forKey: "Save_\(saveNumber)_AvailableRandomEncounter") ?? []
-        return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic, availableRandomEncounter: availableRandomEncounter)
+        let fightCompletedSinceBeginning: Int = userDefault.integer(forKey: "Save_\(saveNumber)_FightCompletedSinceBeginning")
+        return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic, availableRandomEncounter: availableRandomEncounter, fightCompletedSinceBeginning: fightCompletedSinceBeginning)
     }
     
     static func setSaveInfoFor(saveInfo: SaveInfo, saveNumber: Int) {
@@ -38,6 +39,7 @@ class SaveManager {
         userDefault.set(saveInfo.difficulty, forKey: "Save_\(saveNumber)_Difficulty")
         userDefault.set(saveInfo.gameStyle == .edh ? 0 : 1, forKey: "Save_\(saveNumber)_GameStyle")
         userDefault.set(saveInfo.availableRandomEncounter, forKey: "Save_\(saveNumber)_AvailableRandomEncounter")
+        userDefault.set(saveInfo.fightCompletedSinceBeginning, forKey: "Save_\(saveNumber)_FightCompletedSinceBeginning")
         print("Saving with \(saveInfo.currentEncounter)")
         print("Game Saved on slot \(saveNumber)")
     }
@@ -55,6 +57,7 @@ class SaveManager {
         userDefault.removeObject(forKey: "Save_\(saveNumber)_Difficulty")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_GameStyle")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_AvailableRandomEncounter")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_FightCompletedSinceBeginning")
     }
 }
 
@@ -70,4 +73,5 @@ struct SaveInfo {
     let difficulty: Int
     let gameStyle: GameStyle
     let availableRandomEncounter: [String]
+    let fightCompletedSinceBeginning: Int
 }

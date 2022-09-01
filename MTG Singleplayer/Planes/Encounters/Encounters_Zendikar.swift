@@ -90,8 +90,8 @@ extension Encounters {
         
         "Zendikar_Intro": Encounter(title: "Zendikar", id: "Zendikar_Intro", artistName: "Tianhua X",
                                     choices: [
-                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_Fight_01")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
+                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_Fight_01")
                                     ]),
         
         "Zendikar_Shop": Encounter(title: "Shop", id: "Zendikar_Shop", artistName: "Philip Straub",
@@ -131,7 +131,7 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Angel_Success": Encounter(title: "Ondu", id: "Zendikar_Adventure_Ondu_Angel_Success", artistName: "Matt Stewart",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Ruins_Entry")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Boss")
                                     ]),
         
         "Zendikar_Adventure_Ondu_Angel_Run": Encounter(title: "Close escape", id: "Zendikar_Adventure_Ondu_Angel_Run", artistName: "James Paick",
@@ -141,17 +141,17 @@ extension Encounters {
         
         "Zendikar_Adventure_Ondu_Angel_Attack_02": Encounter(title: "Ondu", id: "Zendikar_Adventure_Ondu_Angel_Attack_02", artistName: "Matt Stewart",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Ruins_Entry", deckToFight: "Zendikar_Ondu_Angel")
-                                    ]),
-        
-        "Zendikar_Adventure_Ondu_Ruins_Entry": Encounter(title: "Approcahing the ruins", id: "Zendikar_Adventure_Ondu_Ruins_Entry", artistName: "Chase Stone",
-                                    choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Boss")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Boss", deckToFight: "Zendikar_Ondu_Angel")
                                     ]),
         
         "Zendikar_Adventure_Ondu_Boss": Encounter(title: "Ondu", id: "Zendikar_Adventure_Ondu_Boss", artistName: "Ryan Pancoast",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter, deckToFight: "Zendikar_Ondu_Boss")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Adventure_Ondu_Ruins", deckToFight: "Zendikar_Ondu_Boss")
+                                    ]),
+        
+        "Zendikar_Adventure_Ondu_Ruins": Encounter(title: "Approcahing the ruins", id: "Zendikar_Adventure_Ondu_Ruins_Entry", artistName: "Chase Stone",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         // MARK: Plains

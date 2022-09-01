@@ -23,7 +23,8 @@ class MainMenuViewModel: ObservableObject {
                                 permanentUpgradeArray: [],
                                 difficulty: difficulty,
                                 gameStyle: gameStyle,
-                                availableRandomEncounter: [])
+                                availableRandomEncounter: [],
+                                fightCompletedSinceBeginning: 0)
         SaveManager.setSaveInfoFor(saveInfo: saveInfo, saveNumber: saveSelected)
     }
 }

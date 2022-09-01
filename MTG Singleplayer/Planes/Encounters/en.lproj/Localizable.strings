@@ -106,9 +106,9 @@
 
 "Zendikar_Adventure_Ondu_Angel_Attack_02" = "The rest was short-lived as the angels are still looking for you. This time you won't be able to escape.";
 
-"Zendikar_Adventure_Ondu_Ruins_Entry" = "You finally reached the ruins.";
+"Zendikar_Adventure_Ondu_Boss" = "You finally reached the ruins. As your group begins to examine them, another group of angels seem to not want you near.";
 
-"Zendikar_Adventure_Ondu_Boss" = "As your group begins to examine the ruins, another group of angels seem to not want you near.";
+"Zendikar_Adventure_Ondu_Ruins" = "SUCCESS";
 
 "Zendikar_Plains_Intro" = "";
 

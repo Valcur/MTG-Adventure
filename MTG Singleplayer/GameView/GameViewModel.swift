@@ -276,7 +276,7 @@ class GameViewModel: ObservableObject {
     func removeOneCardOnBoard(card: Card) {
         for i in (0..<board.count) {
             let c = board[i]
-            if card == c {
+            if card == c && card.countersOnCard == c.countersOnCard {
                 c.cardCount -= 1
                 if c.cardCount <= 0 {
                     board.remove(at: i)
@@ -289,7 +289,7 @@ class GameViewModel: ObservableObject {
     func removeOneCardOnNewToTheBoard(card: Card) {
         for i in (0..<newToTheBoard.count) {
             let c = newToTheBoard[i]
-            if card == c {
+            if card == c && card.countersOnCard == c.countersOnCard  {
                 c.cardCount -= 1
                 if c.cardCount <= 0 {
                     newToTheBoard.remove(at: i)

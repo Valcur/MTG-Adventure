@@ -139,7 +139,7 @@ struct MainMenuSaveChoiceView: View {
             
             self.gold = saveInfo.gold
             self.life = saveInfo.life
-            self.progress = CGFloat(saveInfo.fightCompleted) / 11 * 100
+            self.progress = CGFloat(saveInfo.fightCompletedSinceBeginning) / 11 * 100
             self.numberOfPlayer = saveInfo.numberOfPlayer
             self.numberOfPlayer = saveNumber
         }
@@ -150,7 +150,7 @@ struct MainMenuSaveChoiceView: View {
             if saveExist {
                 self.gold = saveInfo.gold
                 self.life = saveInfo.life
-                self.progress = CGFloat(saveInfo.fightCompleted) / 11 * 100
+                self.progress = CGFloat(saveInfo.fightCompletedSinceBeginning) / 11 * 100
                 self.numberOfPlayer = saveInfo.numberOfPlayer
                 self.numberOfPlayer = saveNumber
             }

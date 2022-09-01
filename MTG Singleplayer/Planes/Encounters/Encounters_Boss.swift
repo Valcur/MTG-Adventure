@@ -35,6 +35,6 @@ extension Encounters {
     static let bosses_shop = Encounter(title: "One last stop", id: "Boss_Shop", artistName: "Jonas de Ro",
                                        offer: [.gold(10, .life(1), .repeatable), .gold(45, .booster, .repeatable)],
                                        choices: [
-                                           EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.planeEnd)
+                                           EncounterChoice(title: EncounterChoice.planeEnd, encounterId: EncounterChoice.randomEncounter)
                                        ])
 }
