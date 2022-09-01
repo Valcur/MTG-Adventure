@@ -41,7 +41,7 @@ class AdventureViewModel: ObservableObject {
         let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
         self.fightCompleted = saveInfo.fightCompleted
         self.shopVisited = saveInfo.shopHasBeenVisited
-        self.stage = saveInfo.difficulty + 1                        // CHANGE LATER
+        self.stage = saveInfo.difficulty - 1                        // CHANGE LATER
         self.permanentBonusList = saveInfo.permanentUpgradeArray
         self.currentGold = saveInfo.gold
         self.currentLife = saveInfo.life

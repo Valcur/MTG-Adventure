@@ -90,8 +90,8 @@ extension Encounters {
         
         "Zendikar_Intro": Encounter(title: "Zendikar", id: "Zendikar_Intro", artistName: "Tianhua X",
                                     choices: [
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
-                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Vampire_Fight_01")
+                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
                                     ]),
         
         "Zendikar_Shop": Encounter(title: "Shop", id: "Zendikar_Shop", artistName: "Philip Straub",
