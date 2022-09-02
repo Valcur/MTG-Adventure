@@ -99,3 +99,8 @@ class Encounters {
         case directEncounter
     }
 }
+
+struct OffersPrices {
+    static let lifePrice: Int = 10
+    static let cardsPrice: Int = 25
+}

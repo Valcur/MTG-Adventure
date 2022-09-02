@@ -13,6 +13,7 @@ class AdventureViewModel: ObservableObject {
     @Published var currentEncounterView: AnyView
     @Published var shouldAnimateTransitionNow: Bool = false
     private var currentEncounterChoice: EncounterChoice?
+    var currentEncounterChoiceType: String?
     
     @Published var currentGold: Int = 10
     @Published var currentLife: Int = 3
@@ -111,6 +112,7 @@ class AdventureViewModel: ObservableObject {
         }
 
         currentEncounterChoice = choice
+        currentEncounterChoiceType = choice.deckToFight == nil ? encounterChoice : "Classic"
         switchView()
     }
     

@@ -30,6 +30,11 @@ extension Encounters {
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.victory, deckToFight: "Boss_Garruk")
                                     ]),
+        
+        "Boss_Liliana": Encounter(title: "The end", id: "Boss_Liliana", artistName: "Karla Ortiz",
+                                    choices: [
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.victory, deckToFight: "Boss_Liliana")
+                                    ]),
     ]
     
     static let bosses_shop = Encounter(title: "One last stop", id: "Boss_Shop", artistName: "Jonas de Ro",

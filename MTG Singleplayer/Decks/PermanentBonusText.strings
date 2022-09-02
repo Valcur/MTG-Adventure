@@ -10,6 +10,6 @@
 
 "Kamigawa_Rat" = "Attacking creatures you control have +1/+0";
 
-"Zendikar_Valakut_Forge_02" = "Blocking creatures you control have +0/+1";
+"Zendikar_Valakut" = "Blocking creatures you control have +0/+1";
 
-"Zendikar_Silundi_End" = "{2}: You gain 1 life";
+"Zendikar_Silundi" = "{2}: You gain 1 life";

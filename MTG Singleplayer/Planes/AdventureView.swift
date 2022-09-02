@@ -13,6 +13,7 @@ struct AdventureView: View {
     @State var currentEncounterView: AnyView?
     @State var oldEncounterView: AnyView?
     @State var animationProgress: CGFloat = 0
+    @State var animationPart2Progress: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -25,7 +26,7 @@ struct AdventureView: View {
             
             if oldEncounterView != nil {
                 Color.black
-                    .opacity(1 - animationProgress)
+                    .opacity(1 - animationPart2Progress)
                 oldEncounterView
                     .environmentObject(adventureViewModel)
                     .ignoresSafeArea()
@@ -47,10 +48,31 @@ struct AdventureView: View {
                     animationProgress = 1
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
-                    adventureViewModel.shouldAnimateTransitionNow = false
-                    oldEncounterView = nil
-                    animationProgress = 0
+                if adventureViewModel.currentEncounterChoiceType == EncounterChoice.randomEncounter || adventureViewModel.currentEncounterChoiceType == EncounterChoice.planeEnd
+                {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.average) {
+                        withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                            animationPart2Progress = 1
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
+                            adventureViewModel.shouldAnimateTransitionNow = false
+                            oldEncounterView = nil
+                            animationProgress = 0
+                            animationPart2Progress = 0
+                        }
+                    }
+                } else {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.long)) {
+                        animationPart2Progress = 1
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + AnimationsDuration.long) {
+                        adventureViewModel.shouldAnimateTransitionNow = false
+                        oldEncounterView = nil
+                        animationProgress = 0
+                        animationPart2Progress = 0
+                    }
                 }
             }
         }

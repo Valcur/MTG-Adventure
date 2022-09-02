@@ -65,15 +65,14 @@ extension Encounters {
     static let plane_kamigawa_direct = [
         
         "Kamigawa_Intro": Encounter(title: "Kamigawa", id: "Kamigawa_Intro", artistName: "Piotr Dura",
-                                    reward: [.life(1), .permanentBonus("Kamigawa_Forge"), .gold(10), .booster, .partner],
-                                    offer: [.gold(10, .life(1), .nonrepeatable)],
                                     choices: [
-                                        EncounterChoice(title: "Fight", encounterId: EncounterChoice.randomEncounter, deckToFight: "Kamigawa_Shrine"),//Kamigawa_Shrine //Kamigawa_Swamp
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
         
         "Kamigawa_Shop": Encounter(title: "Shop", id: "Kamigawa_Shop", artistName: "Adam Paquette",
-                                   offer: [.gold(45, .booster, .repeatable)],
+                                    offer: [
+                                       .gold(OffersPrices.cardsPrice, .booster, .repeatable),
+                                       .gold(OffersPrices.lifePrice, .life(1), .repeatable)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),

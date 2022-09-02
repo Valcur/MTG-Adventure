@@ -48,6 +48,7 @@
 		DB9A388B28B565A100131614 /* Zendikar_Vampire_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A388A28B565A100131614 /* Zendikar_Vampire_01.txt */; };
 		DB9A388D28B565AC00131614 /* Zendikar_Vampire_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */; };
 		DB9A388F28BFE75A00131614 /* Encounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9A388E28BFE75A00131614 /* Encounters.swift */; };
+		DB9A389128C2861E00131614 /* Boss_Liliana.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A389028C2861E00131614 /* Boss_Liliana.txt */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -117,6 +118,7 @@
 		DB9A388A28B565A100131614 /* Zendikar_Vampire_01.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Vampire_01.txt; sourceTree = "<group>"; };
 		DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Vampire_02.txt; sourceTree = "<group>"; };
 		DB9A388E28BFE75A00131614 /* Encounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters.swift; sourceTree = "<group>"; };
+		DB9A389028C2861E00131614 /* Boss_Liliana.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Liliana.txt; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DB31756528A832B100799186 /* Boss_Garruk.txt */,
+				DB9A389028C2861E00131614 /* Boss_Liliana.txt */,
 			);
 			path = Bosses;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9A389128C2861E00131614 /* Boss_Liliana.txt in Resources */,
 				DBE027EB289FF0A600F8F483 /* Kamigawa_Imperial_01.txt in Resources */,
 				DB510AFE28A13CEA0037C760 /* Localizable.strings in Resources */,
 				DB510B0228A1A2000037C760 /* Kamigawa_Vehicle_01.txt in Resources */,

@@ -1,0 +1,24 @@
+## Boss ##
+1 WAR enchantment NO Liliana, Dreadhorde General 5e958212-6a5b-4288-8d31-f1572619d7dc d75ebba8-34ca-47a0-bf13-8318ad73b343
+
+## Basic Deck ##
+35 PISD creature NO Diregraf Ghoul 6048fc70-0dcc-4b54-977d-16e240225f82 b9cf8ad2-de95-417c-8808-83e60df9c007
+
+## Midrange Deck ##
+20 M21 creature NO Walking Corpse fea95888-e16a-4209-9cd4-623f7f4d2f67 053b59b4-a22c-4228-aadc-ae9da6bb465e
+
+## Endgame Deck ##
+5 MIC enchantment NO Liliana's Mastery bd104c7e-311e-4b03-98d3-5f20f3a99d26 a92ee6ec-eebf-40b4-9dd9-c0551e33f5ff
+
+## Tokens ##
+1 TC19 token NO Zombie ddc8c973-c31e-463f-be45-f3fa7d632362 8e214f84-01ee-49c1-8801-4e550b5ade5d
+
+
+
+
+
+
+
+
+
+

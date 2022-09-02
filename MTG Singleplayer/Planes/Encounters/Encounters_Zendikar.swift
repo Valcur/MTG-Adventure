@@ -90,12 +90,14 @@ extension Encounters {
         
         "Zendikar_Intro": Encounter(title: "Zendikar", id: "Zendikar_Intro", artistName: "Tianhua X",
                                     choices: [
-                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
-                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
+                                        EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: [EncounterChoice.randomEncounter, EncounterChoice.randomEncounter, "Zendikar_Adventure_Hub"])
+                                        //EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: "Zendikar_Goblin_Fight_01")
                                     ]),
         
         "Zendikar_Shop": Encounter(title: "Shop", id: "Zendikar_Shop", artistName: "Philip Straub",
-                                    offer: [.gold(45, .booster, .repeatable)],
+                                    offer: [
+                                        .gold(OffersPrices.cardsPrice, .booster, .repeatable),
+                                        .gold(OffersPrices.lifePrice, .life(1), .repeatable)],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.randomEncounter)
                                     ]),
@@ -220,6 +222,7 @@ extension Encounters {
                                     ]),
         
         "Zendikar_Silundi_End": Encounter(title: "Silundi isle", id: "Zendikar_Silundi_End", artistName: "Bryan Sola",
+                                    reward: [.permanentBonus("Zendikar_Silundi")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.planeEnd)
                                     ]),
@@ -259,6 +262,7 @@ extension Encounters {
                                     ]),
         
         "Zendikar_Valakut_Forge_02": Encounter(title: "Mount Valakut", id: "Zendikar_Valakut_Forge_02", artistName: "Campbell White",
+                                    reward: [.permanentBonus("Zendikar_Valakut")],
                                     choices: [
                                         EncounterChoice(title: EncounterChoice.defaultTitle, encounterId: EncounterChoice.planeEnd)
                                     ]),
