@@ -286,27 +286,27 @@ struct MainMenuConfigView: View {
             Group {
                 HStack {
                     TextParagraph("Number of player")
+                    Spacer()
                     NumberOfPlayerConfigView(numberOfPlayer: 1, currentnumberOfPlayer: $currentNumberOfPlayer)
                     NumberOfPlayerConfigView(numberOfPlayer: 2, currentnumberOfPlayer: $currentNumberOfPlayer)
                     NumberOfPlayerConfigView(numberOfPlayer: 3, currentnumberOfPlayer: $currentNumberOfPlayer)
-                    Spacer()
                 }
             }
             Group {
                 HStack {
+                    TextParagraph("Format")
                     Spacer()
                     GameStyleConfigView(gameStyle: .edh, currentGameStyle: $currentGameStyle)
                     GameStyleConfigView(gameStyle: .classic, currentGameStyle: $currentGameStyle)
-                    Spacer()
                 }
                 TextParagraph(currentGameStyle.getParagraph(numberOfPlayer: currentNumberOfPlayer))
             }
             Group {
                 HStack {
                     TextParagraph("Difficulty")
+                    Spacer()
                     DifficultyConfigView(difficulty: 0, currentDifficulty: $currentDifficulty)
                     DifficultyConfigView(difficulty: 1, currentDifficulty: $currentDifficulty)
-                    Spacer()
                 }
                 TextParagraph("Increase the diffuiculty if your find the game too easy")
             }
@@ -337,9 +337,12 @@ struct MainMenuConfigView: View {
                     currentGameStyle = gameStyle
                 }
             }, label: {
-                TextSubTitle(gameStyle.getTitle(), color: isSelected ? .white : .gray)
-                    .scaleEffect(isSelected ? 1 : 0.8)
-            }).frame(width: 150, height: 60)
+                ZStack {
+                    TextSubTitle(gameStyle.getTitle(), color: isSelected ? .white : .gray)
+                        .scaleEffect(isSelected ? 1 : 0.8)
+                }.frame(width: 130, height: 60)
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
+            })
         }
     }
     
@@ -357,9 +360,12 @@ struct MainMenuConfigView: View {
                     currentnumberOfPlayer = numberOfPlayer
                 }
             }, label: {
-                TextSubTitle("\(numberOfPlayer)", color: isSelected ? .white : .gray)
-                    .scaleEffect(isSelected ? 1 : 0.8)
-            }).frame(width: 40, height: 60)
+                ZStack {
+                    TextSubTitle("\(numberOfPlayer)", color: isSelected ? .white : .gray)
+                        .scaleEffect(isSelected ? 1 : 0.8)
+                }.frame(width: 60, height: 60)
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
+            })
         }
     }
     
@@ -384,9 +390,12 @@ struct MainMenuConfigView: View {
                     currentDifficulty = difficulty
                 }
             }, label: {
-                TextSubTitle(difficultyTitle, color: isSelected ? .white : .gray)
-                    .scaleEffect(isSelected ? 1 : 0.8)
-            }).frame(width: 100, height: 60)
+                ZStack {
+                    TextSubTitle(difficultyTitle, color: isSelected ? .white : .gray)
+                        .scaleEffect(isSelected ? 1 : 0.8)
+                }.frame(width: 120, height: 60)
+                .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))).cornerRadius(15)
+            })
         }
     }
 }

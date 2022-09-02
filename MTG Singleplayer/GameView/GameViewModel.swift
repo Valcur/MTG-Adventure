@@ -224,7 +224,11 @@ class GameViewModel: ObservableObject {
     private func addCardToBoard(card: Card) {
         // type make the card appears at different place
         if card.cardType == .enchantment || card.cardType == .artifact {
-            board.insert(card, at: 0)
+            if board.contains(card) {
+                board.append(card)  // Add to the end to prevent popping animation bug when regrouping
+            } else {
+                board.insert(card, at: 0)
+            }
         } else {
             board.append(card)
         }
@@ -234,7 +238,11 @@ class GameViewModel: ObservableObject {
     private func addCardToNewToTheBoad(card: Card) {
         // type make the card appears at different place
         if card.cardType == .enchantment || card.cardType == .artifact {
-            newToTheBoard.insert(card, at: 0)
+            if newToTheBoard.contains(card) {
+                newToTheBoard.append(card)  // Add to the end to prevent popping animation bug when regrouping
+            } else {
+                newToTheBoard.insert(card, at: 0)
+            }
         } else {
             newToTheBoard.append(card)
         }
