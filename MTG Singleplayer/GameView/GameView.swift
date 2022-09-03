@@ -10,11 +10,13 @@ import SwiftUI
 struct GameView: View {
     
     @EnvironmentObject var gameViewModel: GameViewModel
+    let rulesView = RulesView()
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 GradientView()
+                
                 HStack(spacing: 0) {
                     LeftView()
                         .frame(width: GameViewSize.leftPanelWitdh)
@@ -24,6 +26,7 @@ struct GameView: View {
                             .frame(height: GameViewSize.bottomBar)
                     }
                 }
+                
                 HStack {
                     Spacer()
                     LifePointsView()
@@ -33,18 +36,35 @@ struct GameView: View {
                         .padding(.trailing, 10)
                         .shadow(color: Color("ShadowColor"), radius: 6, x: 0, y: 4)
                 }
-                HandView()
-                StackView()
-                GraveyardView()
-                    .opacity(gameViewModel.showGraveyardView ? 1 : 0)
-                LibraryView()
-                    .opacity(gameViewModel.showLibraryView ? 1 : 0)
-                CastedCardView()
-                    .opacity(gameViewModel.showCardsToCastView ? 1 : 0)
-                WinningView()
-                    .opacity(gameViewModel.gameResult == 1 ? 1 : 0)
-                LosingView()
-                    .opacity(gameViewModel.gameResult == -1 ? 1 : 0)
+                
+                Group {
+                    HandView()
+                    StackView()
+                    GraveyardView()
+                        .opacity(gameViewModel.showGraveyardView ? 1 : 0)
+                    LibraryView()
+                        .opacity(gameViewModel.showLibraryView ? 1 : 0)
+                    CastedCardView()
+                        .opacity(gameViewModel.showCardsToCastView ? 1 : 0)
+                    WinningView()
+                        .opacity(gameViewModel.gameResult == 1 ? 1 : 0)
+                    LosingView()
+                        .opacity(gameViewModel.gameResult == -1 ? 1 : 0)
+                }
+                
+                Button(action: {
+                    withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
+                        rulesView.showRules = true
+                    }
+                }, label: {
+                    Image(systemName: "questionmark")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 28, height: 40)
+                }).position(x: geo.size.width - 30, y: 30)
+                
+                rulesView
+                
             }.frame(width: geo.size.width, height: geo.size.height)
         }.ignoresSafeArea()
     }

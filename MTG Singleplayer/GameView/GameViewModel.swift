@@ -107,27 +107,7 @@ class GameViewModel: ObservableObject {
     
     // Draw a card from one of the random deck if not empty, if empty draw from another one, if all empty return nil
     private func drawCardFromRandomDeck() -> Card? {
-        /* OLD
-         let dieResult = Int.random(in: 1...6)
-         
-         if manaCount < startEndGameAtMana {
-             if dieResult < 5 {
-                 return getBasicCardFromDeck()
-             } else {
-                 return getMidrangeCardFromDeck()
-             }
-         } else {
-             if dieResult < 4 {
-                 return getBasicCardFromDeck()
-             } else if dieResult < 6 {
-                 return getMidrangeCardFromDeck()
-             } else {
-                 return getEndgameCardFromDeck()
-             }
-         }
-         */
-        
-        // New
+        if manaCount <= 0 { return getBasicCardFromDeck() }
         
         if manaCount == 3 {
             return getMidrangeCardFromDeck()

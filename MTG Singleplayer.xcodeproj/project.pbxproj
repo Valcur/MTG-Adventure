@@ -49,6 +49,7 @@
 		DB9A388D28B565AC00131614 /* Zendikar_Vampire_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */; };
 		DB9A388F28BFE75A00131614 /* Encounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9A388E28BFE75A00131614 /* Encounters.swift */; };
 		DB9A389128C2861E00131614 /* Boss_Liliana.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB9A389028C2861E00131614 /* Boss_Liliana.txt */; };
+		DB9A389328C3D85A00131614 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9A389228C3D85A00131614 /* RulesView.swift */; };
 		DBC7324028972458006834B1 /* MTG_SingleplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */; };
 		DBC732442897245A006834B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732432897245A006834B1 /* Assets.xcassets */; };
 		DBC732472897245A006834B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC732462897245A006834B1 /* Preview Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		DB9A388C28B565AC00131614 /* Zendikar_Vampire_02.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Zendikar_Vampire_02.txt; sourceTree = "<group>"; };
 		DB9A388E28BFE75A00131614 /* Encounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encounters.swift; sourceTree = "<group>"; };
 		DB9A389028C2861E00131614 /* Boss_Liliana.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Boss_Liliana.txt; sourceTree = "<group>"; };
+		DB9A389228C3D85A00131614 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		DBC7323C28972458006834B1 /* MTG Singleplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTG Singleplayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC7323F28972458006834B1 /* MTG_SingleplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_SingleplayerApp.swift; sourceTree = "<group>"; };
 		DBC732432897245A006834B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				DB527CD928AFA80E0027000C /* MainMenuView.swift */,
 				DB527CDB28B009CC0027000C /* MainMenuViewModel.swift */,
 				DB527CDD28B00ABA0027000C /* SaveManager.swift */,
+				DB9A389228C3D85A00131614 /* RulesView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				DBC7326C2899BEFE006834B1 /* AdventureView.swift in Sources */,
 				DBC732542897E05F006834B1 /* GameView.swift in Sources */,
 				DB527CDC28B009CC0027000C /* MainMenuViewModel.swift in Sources */,
+				DB9A389328C3D85A00131614 /* RulesView.swift in Sources */,
 				DB31756128A67B8700799186 /* Encounters_Boss.swift in Sources */,
 				DBC7325028972487006834B1 /* DownloadManager.swift in Sources */,
 				DB58CD7428A980F600A22482 /* Encounters_Zendikar.swift in Sources */,

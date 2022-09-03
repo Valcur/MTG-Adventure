@@ -8,7 +8,7 @@
 
 // MARK: Kamigawa
 
-"Deck_Kamigawa_Forge_01" = "If only one nonequipment creature is attacking, equip all equipments to it";
+"Deck_Kamigawa_Forge_01" = "If one or more nonequipment creature is attacking, equip all equipments to your best non equipment attacking creature";
 
 "Deck_Kamigawa_Forge_02" = "Activate Baku Altar each turn if able";
 

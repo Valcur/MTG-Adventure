@@ -441,7 +441,7 @@ struct TokenCreationRowView: View {
     var body: some View {
         if gameViewModel.deck.tokensAvailable.count > 0 {
             HStack(spacing: 10) {
-               TextParagraph("Create")
+               TextParagraph("Create").frame(width: 60)
                 
                ScrollView(.horizontal) {
                    HStack(spacing: 10) {
