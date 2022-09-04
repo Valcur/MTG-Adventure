@@ -190,13 +190,13 @@
 
 "Zendikar_Goblin_Fight_02" = "You hear a now familiar noise in the rocks around you.";
 
-"Zendikar_Vampire_Intro" = "";
+"Zendikar_Vampire_Intro" = "XXXXX";
 
-"Zendikar_Vampire_Fight_01" = "ambush";
+"Zendikar_Vampire_Fight_01" = "The place is dark and unwelcoming, but not uninhabited. You just fell into an ambush.";
 
-"Zendikar_Vampire_Fight_02" = "sound of battle alert other vampires";
+"Zendikar_Vampire_Fight_02" = "As you have just recovered from this ambush, another group of vampires, attracted by the noise, approaches you.";
 
-"Zendikar_Vampire_End" = "Light ahead, back to the surface";
+"Zendikar_Vampire_End" = "Light ahead, back to the surface.";
 
 // MARK: Boss
 
