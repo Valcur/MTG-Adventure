@@ -69,7 +69,7 @@ class GameViewModel: ObservableObject {
         self.deck = DeckList(deckBasic: deckBasic, deckMidrange: deckMidrange, deckEndgame: deckEndgame, tokensAvailable: tokens)
         self.cardsToCast = CardsToCast(cardsFromLibrary: [], cardsFromHand: [], cardsFromGraveyard: [])
         self.hand = []
-        self.manaCount = 0
+        self.manaCount = stage - 1
         self.board = []
         self.newToTheBoard = []
         self.graveyard = []

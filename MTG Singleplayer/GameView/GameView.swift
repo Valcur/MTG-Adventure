@@ -60,7 +60,7 @@ struct GameView: View {
                     Image(systemName: "questionmark")
                         .resizable()
                         .foregroundColor(.white)
-                        .frame(width: 28, height: 40)
+                        .frame(width: 25, height: 40)
                 }).position(x: geo.size.width - 30, y: 30)
                 
                 rulesView

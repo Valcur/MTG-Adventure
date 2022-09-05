@@ -21,6 +21,7 @@ class MainMenuViewModel: ObservableObject {
                                 fightCompleted: 0,
                                 shopHasBeenVisited: false,
                                 permanentUpgradeArray: [],
+                                currentStage: 0,
                                 difficulty: difficulty,
                                 gameStyle: gameStyle,
                                 availableRandomEncounter: [],

@@ -19,11 +19,12 @@ class SaveManager {
         let fightCompleted: Int = userDefault.integer(forKey: "Save_\(saveNumber)_FightCompleted")
         let shopHasBeenVisited: Bool = userDefault.bool(forKey: "Save_\(saveNumber)_ShopHasBeenVisited")
         let permanentUpgradeArray: [String] = userDefault.stringArray(forKey: "Save_\(saveNumber)_PermanentUpgradeArray") ?? []
+        let currentStage: Int = userDefault.integer(forKey: "Save_\(saveNumber)_CurrentStage")
         let difficulty: Int = userDefault.integer(forKey: "Save_\(saveNumber)_Difficulty")
         let gameStyle: Int = userDefault.integer(forKey: "Save_\(saveNumber)_GameStyle")
         let availableRandomEncounter: [String] = userDefault.stringArray(forKey: "Save_\(saveNumber)_AvailableRandomEncounter") ?? []
         let fightCompletedSinceBeginning: Int = userDefault.integer(forKey: "Save_\(saveNumber)_FightCompletedSinceBeginning")
-        return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic, availableRandomEncounter: availableRandomEncounter, fightCompletedSinceBeginning: fightCompletedSinceBeginning)
+        return SaveInfo(numberOfPlayer: numberOfPlayer, currentEncounter: currentEncounter, currentPlane: currentPlane, gold: gold, life: life, fightCompleted: fightCompleted, shopHasBeenVisited: shopHasBeenVisited, permanentUpgradeArray: permanentUpgradeArray, currentStage: currentStage, difficulty: difficulty, gameStyle: gameStyle == 0 ? .edh : .classic, availableRandomEncounter: availableRandomEncounter, fightCompletedSinceBeginning: fightCompletedSinceBeginning)
     }
     
     static func setSaveInfoFor(saveInfo: SaveInfo, saveNumber: Int) {
@@ -36,6 +37,7 @@ class SaveManager {
         userDefault.set(saveInfo.fightCompleted, forKey: "Save_\(saveNumber)_FightCompleted")
         userDefault.set(saveInfo.shopHasBeenVisited, forKey: "Save_\(saveNumber)_ShopHasBeenVisited")
         userDefault.set(saveInfo.permanentUpgradeArray, forKey: "Save_\(saveNumber)_PermanentUpgradeArray")
+        userDefault.set(saveInfo.currentStage, forKey: "Save_\(saveNumber)_CurrentStage")
         userDefault.set(saveInfo.difficulty, forKey: "Save_\(saveNumber)_Difficulty")
         userDefault.set(saveInfo.gameStyle == .edh ? 0 : 1, forKey: "Save_\(saveNumber)_GameStyle")
         userDefault.set(saveInfo.availableRandomEncounter, forKey: "Save_\(saveNumber)_AvailableRandomEncounter")
@@ -54,6 +56,7 @@ class SaveManager {
         userDefault.removeObject(forKey: "Save_\(saveNumber)_FightCompleted")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_ShopHasBeenVisited")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_PermanentUpgradeArray")
+        userDefault.removeObject(forKey: "Save_\(saveNumber)_CurrentStage")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_Difficulty")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_GameStyle")
         userDefault.removeObject(forKey: "Save_\(saveNumber)_AvailableRandomEncounter")
@@ -70,6 +73,7 @@ struct SaveInfo {
     let fightCompleted: Int
     let shopHasBeenVisited: Bool
     let permanentUpgradeArray: [String]
+    let currentStage: Int
     let difficulty: Int
     let gameStyle: GameStyle
     let availableRandomEncounter: [String]

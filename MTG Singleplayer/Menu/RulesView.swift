@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RulesView: View {
     
-    @State public var showRules = true
+    @State public var showRules = false
     
     var body: some View {
         HStack {

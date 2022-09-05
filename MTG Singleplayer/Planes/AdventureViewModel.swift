@@ -26,6 +26,7 @@ class AdventureViewModel: ObservableObject {
     var currentPlane: String = "Zendikar"
     var possiblePlanes: [String] = ["Zendikar", "Kamigawa"]
     var stage = 0
+    var difficulty = 0
     var numberOfPlayer = 1
     var gameStyle: GameStyle = .edh
     var saveNumber = 1
@@ -42,7 +43,8 @@ class AdventureViewModel: ObservableObject {
         let saveInfo = SaveManager.getSaveInfoFor(saveNumber: saveNumber)
         self.fightCompleted = saveInfo.fightCompleted
         self.shopVisited = saveInfo.shopHasBeenVisited
-        self.stage = saveInfo.difficulty - 1                        // CHANGE LATER
+        self.difficulty = saveInfo.difficulty
+        self.stage = saveInfo.currentStage                        // CHANGE LATER
         self.permanentBonusList = saveInfo.permanentUpgradeArray
         self.currentGold = saveInfo.gold
         self.currentLife = saveInfo.life
@@ -87,12 +89,12 @@ class AdventureViewModel: ObservableObject {
             case 3:             // We defeated the boss
                 setVictoryEncounter()
             default:            // Next plane
-                setIntroEncounter(planeName: possiblePlanes[stage])
+                setIntroEncounter(planeName: possiblePlanes[stage - 1])
             }
         }
         // If player have to fight a deck before going to the specified encounter
         else if choice.deckToFight != nil {
-            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage, numberOfPlayer: numberOfPlayer)))
+            currentEncounterView = AnyView(GameView().environmentObject(GameViewModel(deckName: choice.deckToFight!, stage: stage + difficulty, numberOfPlayer: numberOfPlayer)))
         }
         // Else if we have to go to a random encounter not already played
         else if encounterChoice == EncounterChoice.randomEncounter {
@@ -118,13 +120,9 @@ class AdventureViewModel: ObservableObject {
     
     private func setIntroEncounter(planeName: String) {
         currentPlane = planeName
-        shopVisited = stage == 0
+        shopVisited = stage == 1
         fightCompleted = 0
-        let possibleRandomEncounters = Encounters.getArrayForPlane(planeName, array: .singleEncounter)
-        for enc in possibleRandomEncounters {
-            availableRandomEncounter.append(enc.key)
-        }
-        availableRandomEncounter.shuffle()
+        setupAvailableRandomEncountersWith(plane: planeName)
         let startEncounter = Encounters.getArrayForPlane(planeName, array: .directEncounter)["\(currentPlane)_Intro"]!
         currentEncounterView = AnyView(EncounterView(encounter: startEncounter))
         currentEncounterId = startEncounter.id
@@ -134,11 +132,7 @@ class AdventureViewModel: ObservableObject {
     private func setFinalShopEncounter() {
         currentPlane = "Final Boss"
         shopVisited = true
-        let possibleRandomEncounters = Encounters.getArrayForPlane(currentPlane, array: .singleEncounter)
-        for enc in possibleRandomEncounters {
-            availableRandomEncounter.append(enc.key)
-        }
-        availableRandomEncounter.shuffle()
+        setupAvailableRandomEncountersWith(plane: currentPlane)
         let bossShop = Encounters.bosses_shop
         currentEncounterView = AnyView(EncounterView(encounter: bossShop))
         currentEncounterId = bossShop.id
@@ -199,6 +193,15 @@ class AdventureViewModel: ObservableObject {
         }
     }
     
+    private func setupAvailableRandomEncountersWith(plane: String) {
+        availableRandomEncounter = []
+        let possibleRandomEncounters = Encounters.getArrayForPlane(plane, array: .singleEncounter)
+        for enc in possibleRandomEncounters {
+            availableRandomEncounter.append(enc.key)
+        }
+        availableRandomEncounter.shuffle()
+    }
+    
     private func saveProgress() {
         let saveInfo = SaveInfo(numberOfPlayer: numberOfPlayer,
                                 currentEncounter: currentEncounterId,
@@ -208,7 +211,8 @@ class AdventureViewModel: ObservableObject {
                                 fightCompleted: fightCompleted,
                                 shopHasBeenVisited: shopVisited,
                                 permanentUpgradeArray: permanentBonusList,
-                                difficulty: stage,
+                                currentStage: stage,
+                                difficulty: difficulty,
                                 gameStyle: gameStyle,
                                 availableRandomEncounter: availableRandomEncounter,
                                 fightCompletedSinceBeginning: fightCompletedSinceBeginning)
