@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView: View {
     
     @EnvironmentObject var gameViewModel: GameViewModel
-    let rulesView = RulesView()
+    @State var showMenu = false
     
     var body: some View {
         GeometryReader { geo in
@@ -54,16 +54,16 @@ struct GameView: View {
                 
                 Button(action: {
                     withAnimation(.easeInOut(duration: AnimationsDuration.short)) {
-                        rulesView.showRules = true
+                        showMenu = true
                     }
                 }, label: {
                     Image(systemName: "questionmark")
                         .resizable()
                         .foregroundColor(.white)
-                        .frame(width: 25, height: 40)
+                        .frame(width: 18, height: 30)
                 }).position(x: geo.size.width - 30, y: 30)
                 
-                rulesView
+                RulesView(showRules: $showMenu)
                 
             }.frame(width: geo.size.width, height: geo.size.height)
         }.ignoresSafeArea()

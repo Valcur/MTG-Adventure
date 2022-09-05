@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RulesView: View {
     
-    @State public var showRules = false
+    @Binding public var showRules: Bool
     
     var body: some View {
         HStack {
@@ -54,7 +54,7 @@ struct RulesView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         TextSubTitle("Left row")
                         
-                        TextParagraph("The elements from top to bottom")
+                        TextParagraph("The elements from top to bottom :")
                         
                         TextParagraph("AI mana : show the current mana of the AI, if an effect CONTROLLED BY YOU would increase/decrease the AI mana, use the buttons -/+ (see 'Play the game section')")
                         
@@ -64,7 +64,7 @@ struct RulesView: View {
                         
                         TextParagraph("The AI library : press to access")
                         
-                        TextParagraph("The speical bonus you gained through your journey")
+                        TextParagraph("The special bonus you gained through your journey")
                     }
                     
                     VStack(alignment: .leading, spacing: 20) {
@@ -136,7 +136,7 @@ struct RulesView: View {
         static let iconSize: CGFloat = 25
     }
 }
-
+/*
 struct RulesView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15, *) {
@@ -149,3 +149,4 @@ struct RulesView_Previews: PreviewProvider {
         }
     }
 }
+*/
