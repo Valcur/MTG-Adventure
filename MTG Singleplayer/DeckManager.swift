@@ -10,9 +10,18 @@ import SwiftUI
  
 struct DeckManager {
     
-    static func getDeckFor(deckName: String, stage: Int) -> ([Card], [Card], [Card], [Card], Card?) {
+    static func getDeckFor(deckName: String, stage: Int, numberOfPlayer: Int) -> ([Card], [Card], [Card], [Card], Card?) {
         let deckData: String = readDeckDataFromFile(fileName: "\(deckName)")
-        return createDeckListFromDeckData(deckData: deckData)
+        let deckList = createDeckListFromDeckData(deckData: deckData)
+        var deck0 = deckList.0
+        var deck1 = deckList.1
+        var deck2 = deckList.2
+        for _ in 1..<numberOfPlayer {
+            deck0 = deck0 + deckList.0
+            deck1 = deck1 + deckList.1
+            deck2 = deck2 + deckList.2
+        }
+        return (deck0, deck1, deck2, deckList.3, deckList.4)
     }
     
     static func createDeckListFromDeckData(deckData: String) -> ([Card], [Card], [Card], [Card], Card?){

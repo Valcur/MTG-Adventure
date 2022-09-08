@@ -60,7 +60,7 @@ class GameViewModel: ObservableObject {
     ///
     
     init(deckName: String, stage: Int, numberOfPlayer: Int) {
-        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage)
+        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage, numberOfPlayer: numberOfPlayer)
         let deckBasic: [Card] = deckData.0
         let deckMidrange: [Card] = deckData.1
         let deckEndgame: [Card] = deckData.2
@@ -85,7 +85,7 @@ class GameViewModel: ObservableObject {
     
     // Will have to do dometing cleaner at some point
     func reset() {
-        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage)
+        let deckData = DeckManager.getDeckFor(deckName: deckName, stage: stage, numberOfPlayer: numberOfPlayer)
         let deckBasic: [Card] = deckData.0
         let deckMidrange: [Card] = deckData.1
         let deckEndgame: [Card] = deckData.2
